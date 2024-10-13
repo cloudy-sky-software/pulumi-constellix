@@ -20,7 +20,7 @@ import (
 const packageName = "constellix"
 
 // PulumiSchema will generate a Pulumi schema for the given k8s schema.
-func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.ProviderMetadata) {
+func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.ProviderMetadata, openapi3.T) {
 	pkg := pschema.PackageSpec{
 		Name:        packageName,
 		Description: "A Pulumi package for creating and managing Constellix resources.",
