@@ -1,0 +1,5 @@
+{
+  "resource": true,
+  "name": "constellix",
+  "server": "github://api.github.com/cloudy-sky-software/pulumi-constellix"
+}

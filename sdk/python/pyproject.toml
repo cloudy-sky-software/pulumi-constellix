@@ -1,0 +1,22 @@
+[project]
+  name = "pulumi_constellix"
+  description = "A Pulumi package for creating and managing Constellix resources."
+  dependencies = ["parver>=0.2.1", "pulumi>=3.0.0,<4.0.0", "semver>=2.8.1", "typing-extensions>=4.11; python_version < \"3.11\""]
+  keywords = ["pulumi", "constellix", "category/cloud", "kind/native"]
+  readme = "README.md"
+  requires-python = ">=3.8"
+  version = "0.0.0"
+  [project.license]
+    text = "Apache-2.0"
+  [project.urls]
+    Homepage = "https://cloudysky.software"
+    Repository = "https://github.com/cloudy-sky-software/pulumi-constellix"
+
+[build-system]
+  requires = ["setuptools>=61.0"]
+  build-backend = "setuptools.build_meta"
+
+[tool]
+  [tool.setuptools]
+    [tool.setuptools.package-data]
+      pulumi_constellix = ["py.typed", "pulumi-plugin.json"]
