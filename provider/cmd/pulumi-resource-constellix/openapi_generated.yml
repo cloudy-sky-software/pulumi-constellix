@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.1.0
 components:
     parameters:
         PaginationPage:
@@ -121,6 +121,8 @@ components:
         a:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: A Record
                   properties:
                     lastValues:
@@ -194,6 +196,8 @@ components:
         aaaa:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - properties:
                     lastValues:
                         description: The previous values of the record in the different modes
@@ -346,6 +350,8 @@ components:
         aname:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - properties:
                     lastValues:
                         description: The previous values of the record in the different modes
@@ -432,6 +438,8 @@ components:
         caa:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: CAA Record
                   properties:
                     lastValues:
@@ -455,6 +463,8 @@ components:
         cert:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: CAA Record
                   properties:
                     lastValues:
@@ -483,6 +493,8 @@ components:
         cname:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: CNAME Record
                   properties:
                     lastValues:
@@ -1134,36 +1146,17 @@ components:
                     type: integer
             type: object
         domainrecord:
-            allOf:
-                - oneOf:
-                    - $ref: '#/components/schemas/a'
-                    - $ref: '#/components/schemas/aaaa'
-                    - $ref: '#/components/schemas/cname'
-                    - $ref: '#/components/schemas/aname'
-                    - $ref: '#/components/schemas/caa'
-                    - $ref: '#/components/schemas/cert'
-                    - $ref: '#/components/schemas/hinfo'
-                    - $ref: '#/components/schemas/mx'
-                    - $ref: '#/components/schemas/naptr'
-                    - $ref: '#/components/schemas/ns'
-                    - $ref: '#/components/schemas/rp'
-                    - $ref: '#/components/schemas/ptr'
-                    - $ref: '#/components/schemas/txt'
-                    - $ref: '#/components/schemas/spf'
-                    - $ref: '#/components/schemas/srv'
-                    - $ref: '#/components/schemas/http'
-                - properties:
-                    domain:
-                        $ref: '#/components/schemas/simple-domain'
-                    links:
-                        description: Links for the domain record
-                        properties:
-                            self:
-                                example: https://api.dns.constellix.com/v4/domains/366246/records/732673
-                                format: url
-                                type: string
-                        type: object
-                  type: object
+            properties:
+                domain:
+                    $ref: '#/components/schemas/simple-domain'
+                links:
+                    description: Links for the domain record
+                    properties:
+                        self:
+                            example: https://api.dns.constellix.com/v4/domains/366246/records/732673
+                            format: url
+                            type: string
+                    type: object
             type: object
         domainsearchresult:
             description: Represents a search result when searching for domains
@@ -1298,6 +1291,8 @@ components:
         hinfo:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: HINFO Record
                   properties:
                     lastValues:
@@ -1326,6 +1321,8 @@ components:
         http:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: HTTP Redirection Record
                   properties:
                     lastValues:
@@ -1346,7 +1343,7 @@ components:
                         type: string
                   type: object
                 - $ref: '#/components/schemas/value-http'
-            title: HTTP Redirection
+            title: Http
             type: object
         ipfilter:
             properties:
@@ -1541,6 +1538,8 @@ components:
         mx:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: MX Record
                   properties:
                     lastValues:
@@ -1569,6 +1568,8 @@ components:
         naptr:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: NAPTR Record
                   properties:
                     lastValues:
@@ -1597,6 +1598,8 @@ components:
         ns:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: NS Record
                   properties:
                     lastValues:
@@ -1997,6 +2000,8 @@ components:
         ptr:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: PTR Record
                   properties:
                     lastValues:
@@ -2075,551 +2080,451 @@ components:
                     type: integer
             type: object
         record-create:
+            discriminator:
+                mapping:
+                    a: '#/components/schemas/record-create-update-a'
+                    aaaa: '#/components/schemas/record-create-update-aaaa'
+                    aname: '#/components/schemas/record-create-update-aname'
+                    caa: '#/components/schemas/record-create-update-caa'
+                    cert: '#/components/schemas/record-create-update-cert'
+                    cname: '#/components/schemas/record-create-update-cname'
+                    hinfo: '#/components/schemas/record-create-update-hinfo'
+                    http: '#/components/schemas/record-create-update-http'
+                    mx: '#/components/schemas/record-create-update-mx'
+                    naptr: '#/components/schemas/record-create-update-naptr'
+                    ns: '#/components/schemas/record-create-update-ns'
+                    ptr: '#/components/schemas/record-create-update-ptr'
+                    rp: '#/components/schemas/record-create-update-rp'
+                    spf: '#/components/schemas/record-create-update-spf'
+                    srv: '#/components/schemas/record-create-update-srv'
+                    txt: '#/components/schemas/record-create-update-txt'
+                propertyName: type
+            oneOf:
+                - $ref: '#/components/schemas/record-create-update-a'
+                - $ref: '#/components/schemas/record-create-update-aaaa'
+                - $ref: '#/components/schemas/record-create-update-cname'
+                - $ref: '#/components/schemas/record-create-update-aname'
+                - $ref: '#/components/schemas/record-create-update-caa'
+                - $ref: '#/components/schemas/record-create-update-cert'
+                - $ref: '#/components/schemas/record-create-update-hinfo'
+                - $ref: '#/components/schemas/record-create-update-mx'
+                - $ref: '#/components/schemas/record-create-update-http'
+                - $ref: '#/components/schemas/record-create-update-naptr'
+                - $ref: '#/components/schemas/record-create-update-ptr'
+                - $ref: '#/components/schemas/record-create-update-rp'
+                - $ref: '#/components/schemas/record-create-update-spf'
+                - $ref: '#/components/schemas/record-create-update-srv'
+                - $ref: '#/components/schemas/record-create-update-txt'
+            type: object
+        record-create-details:
+            properties:
+                contacts:
+                    description: Contact lists to be notified if a failover happens in a failover mode.
+                    items:
+                        description: Numeric ID for the contact list
+                        example: 2.668228e+06
+                        type: integer
+                    type: array
+                enabled:
+                    description: Whether the record is enabled
+                    example: true
+                    type: boolean
+                geoFailover:
+                    description: Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+                    example: true
+                    type: boolean
+                geoproximity:
+                    description: The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter.
+                    example: 4.367769e+06
+                    type: integer
+                ipfilter:
+                    description: The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity.
+                    example: 4.7345837e+07
+                    type: integer
+                ipfilterDrop:
+                    description: If the requesting IP matches the IP filter, don't return a response
+                    example: true
+                    type: boolean
+                name:
+                    description: The name for the record
+                    example: www
+                    type: string
+                notes:
+                    description: A description of the record. It must be 512 characters or less.
+                    example: This is my A record
+                    type: string
+                region:
+                    description: Optional region for this record. Will default to 'default'.
+                    enum:
+                        - default
+                        - europe
+                        - us-east
+                        - us-west
+                        - asia-pacific
+                        - oceania
+                        - south-america
+                    example: europe
+                    type: string
+                skipLookup:
+                    description: Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+                    example: true
+                    nullable: true
+                    type: boolean
+                ttl:
+                    description: How long DNS servers should cache the record for
+                    example: 60
+                    type: integer
+            type: object
+        record-create-update-a:
             allOf:
+                - $ref: '#/components/schemas/record-create-details'
                 - properties:
-                    contacts:
-                        description: Contact lists to be notified if a failover happens in a failover mode.
-                        items:
-                            description: Numeric ID for the contact list
-                            example: 2.668228e+06
-                            type: integer
-                        type: array
-                    enabled:
-                        description: Whether the record is enabled
-                        example: true
-                        type: boolean
-                    geoFailover:
-                        description: Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
-                        example: true
-                        type: boolean
-                    geoproximity:
-                        description: The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter.
-                        example: 4.367769e+06
-                        type: integer
-                    ipfilter:
-                        description: The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity.
-                        example: 4.7345837e+07
-                        type: integer
-                    ipfilterDrop:
-                        description: If the requesting IP matches the IP filter, don't return a response
-                        example: true
-                        type: boolean
-                    name:
-                        description: The name for the record
-                        example: www
-                        type: string
-                    notes:
-                        description: A description of the record. It must be 512 characters or less.
-                        example: This is my A record
-                        type: string
-                    region:
-                        description: Optional region for this record. Will default to 'default'.
+                    mode:
+                        description: The current mode for this record
                         enum:
-                            - default
-                            - europe
-                            - us-east
-                            - us-west
-                            - asia-pacific
-                            - oceania
-                            - south-america
-                        example: europe
+                            - standard
+                            - failover
+                            - roundrobin-failover
+                            - pools
+                        example: standard
                         type: string
-                    skipLookup:
-                        description: Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
-                        example: true
-                        nullable: true
-                        type: boolean
-                    ttl:
-                        description: How long DNS servers should cache the record for
-                        example: 60
-                        type: integer
-                  required:
-                    - type
-                    - value
+                    type:
+                        description: The type of record
+                        enum:
+                            - A
+                        type: string
                   type: object
-                - oneOf:
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                    - failover
-                                    - roundrobin-failover
-                                    - pools
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - A
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-a-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                    - failover
-                                    - roundrobin-failover
-                                    - pools
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - AAAA
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-aaaa-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                    - failover
-                                    - pools
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - CNAME
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-cname-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                    - failover
-                                    - pools
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - ANAME
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-aname-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - CAA
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-caa'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - CERT
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-cert'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - HINFO
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-hinfo'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - MX
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-mx'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - HTTP
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-http'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - NAPTR
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-naptr'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - NS
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-ns'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - PTR
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-ptr'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - RP
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-rp'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - SPF
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-spf'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - SRV
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-srv'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                            type:
-                                description: The type of record
-                                enum:
-                                    - TXT
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-txt'
+                - $ref: '#/components/schemas/value-a-request'
+            title: A
+            type: object
+        record-create-update-aaaa:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                            - failover
+                            - roundrobin-failover
+                            - pools
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - AAAA
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-aaaa-request'
+            title: Aaaa
+            type: object
+        record-create-update-aname:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                            - failover
+                            - pools
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - ANAME
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-aname-request'
+            title: Aname
+            type: object
+        record-create-update-caa:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - CAA
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-caa'
+            title: Caa
+            type: object
+        record-create-update-cert:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - CERT
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-cert'
+            title: Cert
+            type: object
+        record-create-update-cname:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                            - failover
+                            - pools
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - CNAME
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-cname-request'
+            title: Cname
+            type: object
+        record-create-update-hinfo:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - HINFO
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-hinfo'
+            title: Hinfo
+            type: object
+        record-create-update-http:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - HTTP
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-http'
+            title: Http
+            type: object
+        record-create-update-mx:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - MX
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-mx'
+            title: Mx
+            type: object
+        record-create-update-naptr:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - NAPTR
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-naptr'
+            title: Naptr
+            type: object
+        record-create-update-ns:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - NS
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-ns'
+            title: Ns
+            type: object
+        record-create-update-ptr:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - PTR
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-ptr'
+            title: Ptr
+            type: object
+        record-create-update-rp:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - RP
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-rp'
+            title: Rp
+            type: object
+        record-create-update-spf:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - SPF
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-spf'
+            title: Spf
+            type: object
+        record-create-update-srv:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - SRV
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-srv'
+            title: Srv
+            type: object
+        record-create-update-txt:
+            allOf:
+                - $ref: '#/components/schemas/record-create-details'
+                - properties:
+                    mode:
+                        description: The current mode for this record
+                        enum:
+                            - standard
+                        example: standard
+                        type: string
+                    type:
+                        description: The type of record
+                        enum:
+                            - TXT
+                        type: string
+                  type: object
+                - $ref: '#/components/schemas/value-txt'
+            title: Txt
             type: object
         record-update:
-            allOf:
-                - properties:
-                    contacts:
-                        description: Contact lists to be notified if a failover happens in a failover mode.
-                        items:
-                            description: Numeric ID for the contact list
-                            example: 2.668228e+06
-                            type: integer
-                        type: array
-                    enabled:
-                        description: Whether the record is enabled
-                        example: true
-                        type: boolean
-                    geoFailover:
-                        description: Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
-                        example: true
-                        type: boolean
-                    geoproximity:
-                        description: The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter.
-                        example: 4.367769e+06
-                        type: integer
-                    ipfilter:
-                        description: The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity.
-                        example: 4.7345837e+07
-                        type: integer
-                    ipfilterDrop:
-                        description: If the requesting IP matches the IP filter, don't return a response
-                        example: true
-                        type: boolean
-                    name:
-                        description: The name for the record
-                        example: www
-                        type: string
-                    notes:
-                        description: A description of the record. It must be 512 characters or less.
-                        example: This is my A record
-                        type: string
-                    region:
-                        description: Optional region for this record. Will default to 'default'.
-                        enum:
-                            - default
-                            - europe
-                            - us-east
-                            - us-west
-                            - asia-pacific
-                            - oceania
-                            - south-america
-                        example: europe
-                        type: string
-                    skipLookup:
-                        description: Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
-                        example: true
-                        nullable: true
-                        type: boolean
-                    ttl:
-                        description: How long DNS servers should cache the record for
-                        example: 60
-                        type: integer
-                  type: object
-                - oneOf:
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                    - failover
-                                    - roundrobin-failover
-                                    - pools
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-a-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                    - failover
-                                    - roundrobin-failover
-                                    - pools
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-aaaa-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                    - failover
-                                    - pools
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-cname-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                    - failover
-                                    - pools
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-aname-request'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-caa'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-cert'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-hinfo'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-http'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-mx'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-naptr'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-ns'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-ptr'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-rp'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-spf'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-srv'
-                    - allOf:
-                        - properties:
-                            mode:
-                                description: The current mode for this record.
-                                enum:
-                                    - standard
-                                example: standard
-                                type: string
-                          type: object
-                        - $ref: '#/components/schemas/value-txt'
+            discriminator:
+                mapping:
+                    a: '#/components/schemas/record-create-update-a'
+                    aaaa: '#/components/schemas/record-create-update-aaaa'
+                    aname: '#/components/schemas/record-create-update-aname'
+                    caa: '#/components/schemas/record-create-update-caa'
+                    cert: '#/components/schemas/record-create-update-cert'
+                    cname: '#/components/schemas/record-create-update-cname'
+                    hinfo: '#/components/schemas/record-create-update-hinfo'
+                    http: '#/components/schemas/record-create-update-http'
+                    mx: '#/components/schemas/record-create-update-mx'
+                    naptr: '#/components/schemas/record-create-update-naptr'
+                    ns: '#/components/schemas/record-create-update-ns'
+                    ptr: '#/components/schemas/record-create-update-ptr'
+                    rp: '#/components/schemas/record-create-update-rp'
+                    spf: '#/components/schemas/record-create-update-spf'
+                    srv: '#/components/schemas/record-create-update-srv'
+                    txt: '#/components/schemas/record-create-update-txt'
+                propertyName: type
+            oneOf:
+                - $ref: '#/components/schemas/record-create-update-a'
+                - $ref: '#/components/schemas/record-create-update-aaaa'
+                - $ref: '#/components/schemas/record-create-update-cname'
+                - $ref: '#/components/schemas/record-create-update-aname'
+                - $ref: '#/components/schemas/record-create-update-caa'
+                - $ref: '#/components/schemas/record-create-update-cert'
+                - $ref: '#/components/schemas/record-create-update-hinfo'
+                - $ref: '#/components/schemas/record-create-update-mx'
+                - $ref: '#/components/schemas/record-create-update-http'
+                - $ref: '#/components/schemas/record-create-update-naptr'
+                - $ref: '#/components/schemas/record-create-update-ptr'
+                - $ref: '#/components/schemas/record-create-update-rp'
+                - $ref: '#/components/schemas/record-create-update-spf'
+                - $ref: '#/components/schemas/record-create-update-srv'
+                - $ref: '#/components/schemas/record-create-update-txt'
         region:
             description: IP Filter Region
             properties:
@@ -2643,6 +2548,8 @@ components:
         rp:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: RP Record
                   properties:
                     lastValues:
@@ -2879,6 +2786,8 @@ components:
         spf:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: SPF Record
                   properties:
                     lastValues:
@@ -2907,6 +2816,8 @@ components:
         srv:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: SRV Record
                   properties:
                     lastValues:
@@ -3017,40 +2928,23 @@ components:
                     type: string
             type: object
         templaterecord:
-            allOf:
-                - oneOf:
-                    - $ref: '#/components/schemas/a'
-                    - $ref: '#/components/schemas/aaaa'
-                    - $ref: '#/components/schemas/cname'
-                    - $ref: '#/components/schemas/aname'
-                    - $ref: '#/components/schemas/caa'
-                    - $ref: '#/components/schemas/cert'
-                    - $ref: '#/components/schemas/hinfo'
-                    - $ref: '#/components/schemas/mx'
-                    - $ref: '#/components/schemas/naptr'
-                    - $ref: '#/components/schemas/ns'
-                    - $ref: '#/components/schemas/rp'
-                    - $ref: '#/components/schemas/ptr'
-                    - $ref: '#/components/schemas/txt'
-                    - $ref: '#/components/schemas/spf'
-                    - $ref: '#/components/schemas/srv'
-                    - $ref: '#/components/schemas/http'
-                - properties:
-                    links:
-                        description: Links for the domain record
-                        properties:
-                            self:
-                                example: https://api.dns.constellix.com/v4/templates/83675283/records/732673
-                                format: url
-                                type: string
-                        type: object
-                    template:
-                        $ref: '#/components/schemas/simple-template'
-                  type: object
+            properties:
+                links:
+                    description: Links for the domain record
+                    properties:
+                        self:
+                            example: https://api.dns.constellix.com/v4/templates/83675283/records/732673
+                            format: url
+                            type: string
+                    type: object
+                template:
+                    $ref: '#/components/schemas/simple-template'
             type: object
         txt:
             allOf:
                 - $ref: '#/components/schemas/record'
+                - $ref: '#/components/schemas/domainrecord'
+                - $ref: '#/components/schemas/templaterecord'
                 - description: TXT Record
                   properties:
                     lastValues:
@@ -5531,7 +5425,55 @@ paths:
                                         description: The records for this page
                                         items:
                                             allOf:
-                                                - $ref: '#/components/schemas/domainrecord'
+                                                - discriminator:
+                                                    mapping:
+                                                        a: '#/components/schemas/a'
+                                                        aaaa: '#/components/schemas/aaaa'
+                                                        aname: '#/components/schemas/aname'
+                                                        caa: '#/components/schemas/caa'
+                                                        cert: '#/components/schemas/cert'
+                                                        cname: '#/components/schemas/cname'
+                                                        hinfo: '#/components/schemas/hinfo'
+                                                        http: '#/components/schemas/http'
+                                                        mx: '#/components/schemas/mx'
+                                                        naptr: '#/components/schemas/naptr'
+                                                        ns: '#/components/schemas/ns'
+                                                        ptr: '#/components/schemas/ptr'
+                                                        rp: '#/components/schemas/rp'
+                                                        spf: '#/components/schemas/spf'
+                                                        srv: '#/components/schemas/srv'
+                                                        txt: '#/components/schemas/txt'
+                                                    propertyName: type
+                                                  oneOf:
+                                                    - $ref: '#/components/schemas/a'
+                                                    - $ref: '#/components/schemas/aaaa'
+                                                    - $ref: '#/components/schemas/cname'
+                                                    - $ref: '#/components/schemas/aname'
+                                                    - $ref: '#/components/schemas/caa'
+                                                    - $ref: '#/components/schemas/cert'
+                                                    - $ref: '#/components/schemas/hinfo'
+                                                    - $ref: '#/components/schemas/mx'
+                                                    - $ref: '#/components/schemas/naptr'
+                                                    - $ref: '#/components/schemas/ns'
+                                                    - $ref: '#/components/schemas/rp'
+                                                    - $ref: '#/components/schemas/ptr'
+                                                    - $ref: '#/components/schemas/txt'
+                                                    - $ref: '#/components/schemas/spf'
+                                                    - $ref: '#/components/schemas/srv'
+                                                    - $ref: '#/components/schemas/http'
+                                                - properties:
+                                                    domain:
+                                                        $ref: '#/components/schemas/simple-domain'
+                                                    links:
+                                                        description: Links for the domain record
+                                                        properties:
+                                                            self:
+                                                                example: https://api.dns.constellix.com/v4/domains/366246/records/732673
+                                                                format: url
+                                                                type: string
+                                                        type: object
+                                                  type: object
+                                            type: object
                                         type: array
                                     meta:
                                         $ref: '#/components/schemas/ListMetadata'
@@ -5597,6 +5539,11 @@ paths:
         delete:
             description: Remove the record
             operationId: deleteDomainRecord
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/record-update'
             responses:
                 "204":
                     description: The record was deleted successfully
@@ -5616,8 +5563,42 @@ paths:
                     content:
                         application/json:
                             schema:
-                                allOf:
-                                    - $ref: '#/components/schemas/domainrecord'
+                                discriminator:
+                                    mapping:
+                                        a: '#/components/schemas/a'
+                                        aaaa: '#/components/schemas/aaaa'
+                                        aname: '#/components/schemas/aname'
+                                        caa: '#/components/schemas/caa'
+                                        cert: '#/components/schemas/cert'
+                                        cname: '#/components/schemas/cname'
+                                        hinfo: '#/components/schemas/hinfo'
+                                        http: '#/components/schemas/http'
+                                        mx: '#/components/schemas/mx'
+                                        naptr: '#/components/schemas/naptr'
+                                        ns: '#/components/schemas/ns'
+                                        ptr: '#/components/schemas/ptr'
+                                        rp: '#/components/schemas/rp'
+                                        spf: '#/components/schemas/spf'
+                                        srv: '#/components/schemas/srv'
+                                        txt: '#/components/schemas/txt'
+                                    propertyName: type
+                                oneOf:
+                                    - $ref: '#/components/schemas/a'
+                                    - $ref: '#/components/schemas/aaaa'
+                                    - $ref: '#/components/schemas/cname'
+                                    - $ref: '#/components/schemas/aname'
+                                    - $ref: '#/components/schemas/caa'
+                                    - $ref: '#/components/schemas/cert'
+                                    - $ref: '#/components/schemas/hinfo'
+                                    - $ref: '#/components/schemas/mx'
+                                    - $ref: '#/components/schemas/naptr'
+                                    - $ref: '#/components/schemas/ns'
+                                    - $ref: '#/components/schemas/rp'
+                                    - $ref: '#/components/schemas/ptr'
+                                    - $ref: '#/components/schemas/txt'
+                                    - $ref: '#/components/schemas/spf'
+                                    - $ref: '#/components/schemas/srv'
+                                    - $ref: '#/components/schemas/http'
                     description: Fetch a record for the domain
                 "401":
                     $ref: '#/components/responses/Unauthorized'
@@ -5657,8 +5638,42 @@ paths:
                     content:
                         application/json:
                             schema:
-                                allOf:
-                                    - $ref: '#/components/schemas/domainrecord'
+                                discriminator:
+                                    mapping:
+                                        a: '#/components/schemas/a'
+                                        aaaa: '#/components/schemas/aaaa'
+                                        aname: '#/components/schemas/aname'
+                                        caa: '#/components/schemas/caa'
+                                        cert: '#/components/schemas/cert'
+                                        cname: '#/components/schemas/cname'
+                                        hinfo: '#/components/schemas/hinfo'
+                                        http: '#/components/schemas/http'
+                                        mx: '#/components/schemas/mx'
+                                        naptr: '#/components/schemas/naptr'
+                                        ns: '#/components/schemas/ns'
+                                        ptr: '#/components/schemas/ptr'
+                                        rp: '#/components/schemas/rp'
+                                        spf: '#/components/schemas/spf'
+                                        srv: '#/components/schemas/srv'
+                                        txt: '#/components/schemas/txt'
+                                    propertyName: type
+                                oneOf:
+                                    - $ref: '#/components/schemas/a'
+                                    - $ref: '#/components/schemas/aaaa'
+                                    - $ref: '#/components/schemas/cname'
+                                    - $ref: '#/components/schemas/aname'
+                                    - $ref: '#/components/schemas/caa'
+                                    - $ref: '#/components/schemas/cert'
+                                    - $ref: '#/components/schemas/hinfo'
+                                    - $ref: '#/components/schemas/mx'
+                                    - $ref: '#/components/schemas/naptr'
+                                    - $ref: '#/components/schemas/ns'
+                                    - $ref: '#/components/schemas/rp'
+                                    - $ref: '#/components/schemas/ptr'
+                                    - $ref: '#/components/schemas/txt'
+                                    - $ref: '#/components/schemas/spf'
+                                    - $ref: '#/components/schemas/srv'
+                                    - $ref: '#/components/schemas/http'
                     description: The updated record resource
                 "401":
                     $ref: '#/components/responses/Unauthorized'
@@ -6646,6 +6661,11 @@ paths:
         delete:
             description: Remove the record.
             operationId: deleteTemplateRecord
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/record-update'
             responses:
                 "204":
                     description: The record was deleted successfully
@@ -6665,8 +6685,42 @@ paths:
                     content:
                         application/json:
                             schema:
-                                allOf:
-                                    - $ref: '#/components/schemas/templaterecord'
+                                discriminator:
+                                    mapping:
+                                        a: '#/components/schemas/a'
+                                        aaaa: '#/components/schemas/aaaa'
+                                        aname: '#/components/schemas/aname'
+                                        caa: '#/components/schemas/caa'
+                                        cert: '#/components/schemas/cert'
+                                        cname: '#/components/schemas/cname'
+                                        hinfo: '#/components/schemas/hinfo'
+                                        http: '#/components/schemas/http'
+                                        mx: '#/components/schemas/mx'
+                                        naptr: '#/components/schemas/naptr'
+                                        ns: '#/components/schemas/ns'
+                                        ptr: '#/components/schemas/ptr'
+                                        rp: '#/components/schemas/rp'
+                                        spf: '#/components/schemas/spf'
+                                        srv: '#/components/schemas/srv'
+                                        txt: '#/components/schemas/txt'
+                                    propertyName: type
+                                oneOf:
+                                    - $ref: '#/components/schemas/a'
+                                    - $ref: '#/components/schemas/aaaa'
+                                    - $ref: '#/components/schemas/cname'
+                                    - $ref: '#/components/schemas/aname'
+                                    - $ref: '#/components/schemas/caa'
+                                    - $ref: '#/components/schemas/cert'
+                                    - $ref: '#/components/schemas/hinfo'
+                                    - $ref: '#/components/schemas/mx'
+                                    - $ref: '#/components/schemas/naptr'
+                                    - $ref: '#/components/schemas/ns'
+                                    - $ref: '#/components/schemas/rp'
+                                    - $ref: '#/components/schemas/ptr'
+                                    - $ref: '#/components/schemas/txt'
+                                    - $ref: '#/components/schemas/spf'
+                                    - $ref: '#/components/schemas/srv'
+                                    - $ref: '#/components/schemas/http'
                     description: Fetch a record for the template
                 "401":
                     $ref: '#/components/responses/Unauthorized'
@@ -6706,8 +6760,42 @@ paths:
                     content:
                         application/json:
                             schema:
-                                allOf:
-                                    - $ref: '#/components/schemas/templaterecord'
+                                discriminator:
+                                    mapping:
+                                        a: '#/components/schemas/a'
+                                        aaaa: '#/components/schemas/aaaa'
+                                        aname: '#/components/schemas/aname'
+                                        caa: '#/components/schemas/caa'
+                                        cert: '#/components/schemas/cert'
+                                        cname: '#/components/schemas/cname'
+                                        hinfo: '#/components/schemas/hinfo'
+                                        http: '#/components/schemas/http'
+                                        mx: '#/components/schemas/mx'
+                                        naptr: '#/components/schemas/naptr'
+                                        ns: '#/components/schemas/ns'
+                                        ptr: '#/components/schemas/ptr'
+                                        rp: '#/components/schemas/rp'
+                                        spf: '#/components/schemas/spf'
+                                        srv: '#/components/schemas/srv'
+                                        txt: '#/components/schemas/txt'
+                                    propertyName: type
+                                oneOf:
+                                    - $ref: '#/components/schemas/a'
+                                    - $ref: '#/components/schemas/aaaa'
+                                    - $ref: '#/components/schemas/cname'
+                                    - $ref: '#/components/schemas/aname'
+                                    - $ref: '#/components/schemas/caa'
+                                    - $ref: '#/components/schemas/cert'
+                                    - $ref: '#/components/schemas/hinfo'
+                                    - $ref: '#/components/schemas/mx'
+                                    - $ref: '#/components/schemas/naptr'
+                                    - $ref: '#/components/schemas/ns'
+                                    - $ref: '#/components/schemas/rp'
+                                    - $ref: '#/components/schemas/ptr'
+                                    - $ref: '#/components/schemas/txt'
+                                    - $ref: '#/components/schemas/spf'
+                                    - $ref: '#/components/schemas/srv'
+                                    - $ref: '#/components/schemas/http'
                     description: The updated record resource
                 "401":
                     $ref: '#/components/responses/Unauthorized'
