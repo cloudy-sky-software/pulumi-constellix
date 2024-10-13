@@ -5,6 +5,7 @@
 /nuget/
 **/bin/
 **/obj/
+**/venv/
 **/node_modules/
 yarn.lock
 
