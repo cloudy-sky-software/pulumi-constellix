@@ -89,9 +89,13 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 	}
 
 	openAPICtx := &openapigen.OpenAPIContext{
-		Doc:           openapiDoc,
-		Pkg:           &pkg,
-		ExcludedPaths: []string{},
+		Doc: openapiDoc,
+		Pkg: &pkg,
+		ExcludedPaths: []string{
+			// The response type is text/plain which is not
+			// supported by pulschema at the time of writing.
+			"/domains/{domain_id}/bind",
+		},
 	}
 
 	providerMetadata, updatedOpenAPIDoc, err := openAPICtx.GatherResourcesFromAPI(csharpNamespaces)

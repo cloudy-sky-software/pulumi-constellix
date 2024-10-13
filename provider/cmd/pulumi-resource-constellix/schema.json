@@ -1,0 +1,4979 @@
+{
+    "name": "constellix",
+    "displayName": "Constellix",
+    "description": "A Pulumi package for creating and managing Constellix resources.",
+    "keywords": [
+        "pulumi",
+        "constellix",
+        "category/cloud",
+        "kind/native"
+    ],
+    "homepage": "https://cloudysky.software",
+    "license": "Apache-2.0",
+    "repository": "https://github.com/cloudy-sky-software/pulumi-constellix",
+    "pluginDownloadURL": "github://api.github.com/cloudy-sky-software/pulumi-constellix",
+    "publisher": "Cloudy Sky Software",
+    "language": {
+        "csharp": {
+            "namespaces": {
+                "": "Provider",
+                "analytics": "Analytics",
+                "announcements": "Announcements",
+                "constellix": "CONSTELLIX",
+                "contactlists": "Contactlists",
+                "domains": "Domains",
+                "geoproximities": "Geoproximities",
+                "ipfilters": "Ipfilters",
+                "ping": "Ping",
+                "pools": "Pools",
+                "search": "Search",
+                "tags": "Tags",
+                "templates": "Templates",
+                "vanitynameservers": "Vanitynameservers"
+            },
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "rootNamespace": "Pulumi"
+        },
+        "go": {
+            "importBasePath": "github.com/cloudy-sky-software/pulumi-constellix/sdk/go/constellix"
+        },
+        "nodejs": {
+            "packageName": "@cloudyskysoftware/pulumi-constellix"
+        },
+        "python": {
+            "packageName": "pulumi_constellix",
+            "pyproject": {
+                "enabled": true
+            },
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            }
+        }
+    },
+    "config": {
+        "variables": {
+            "apiKey": {
+                "type": "string",
+                "description": "The API key",
+                "language": {
+                    "csharp": {
+                        "name": "ApiKey"
+                    }
+                },
+                "secret": true
+            }
+        }
+    },
+    "types": {
+        "constellix:analytics:Analytics": {
+            "description": "Analytics for your account",
+            "properties": {
+                "end": {
+                    "type": "string",
+                    "description": "The end date for the analytics"
+                },
+                "interval": {
+                    "$ref": "#/types/constellix:analytics:AnalyticsIntervalProperties",
+                    "description": "Details about the interval between time periods in the analytics"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:analytics:AnalyticsLinksProperties"
+                },
+                "start": {
+                    "type": "string",
+                    "description": "The start date for the analytics"
+                },
+                "stats": {
+                    "$ref": "#/types/constellix:analytics:AnalyticsStatsProperties",
+                    "description": "Some statistics for these analytics"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:analytics:AnalyticsValuesItemProperties"
+                    },
+                    "description": "Query counts for all dates within the requested range"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:analytics:AnalyticsIntervalProperties": {
+            "description": "Details about the interval between time periods in the analytics",
+            "properties": {
+                "max": {
+                    "type": "integer",
+                    "description": "The maximum number of seconds between time periods"
+                },
+                "mean": {
+                    "type": "number",
+                    "description": "The mean average number of seconds between time periods"
+                },
+                "min": {
+                    "type": "integer",
+                    "description": "The minimum number of seconds between time periods"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:analytics:AnalyticsLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for these analytics"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:analytics:AnalyticsStatsProperties": {
+            "description": "Some statistics for these analytics",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of time periods"
+                },
+                "max": {
+                    "type": "integer",
+                    "description": "The maximum number of queries for one time period"
+                },
+                "mean": {
+                    "type": "number",
+                    "description": "The mean average number of queries per time period"
+                },
+                "min": {
+                    "type": "integer",
+                    "description": "The minimum number of queries for one time period"
+                },
+                "sum": {
+                    "type": "integer",
+                    "description": "The sum of queries for this date range"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:analytics:AnalyticsValuesItemProperties": {
+            "description": "Query count for a particular date",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:analytics:ListAnalyticsProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:analytics:Analytics",
+                    "description": "Analytics for your account"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:Announcement": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "A numeric ID for the Announcement"
+                },
+                "link": {
+                    "type": "string",
+                    "description": "A link for the announcement"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:announcements:AnnouncementLinksProperties",
+                    "description": "Links for announcements"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The announcement"
+                },
+                "type": {
+                    "$ref": "#/types/constellix:announcements:AnnouncementType",
+                    "description": "The type of Announcement"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:AnnouncementLinksProperties": {
+            "description": "Links for announcements",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:AnnouncementType": {
+            "description": "The type of Announcement",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "DashboardLinks",
+                    "value": "DashboardLinks"
+                }
+            ]
+        },
+        "constellix:announcements:GetAnnouncementProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:announcements:Announcement"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:ListAnnouncementsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:announcements:Announcement"
+                    },
+                    "description": "The announcements for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:announcements:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:announcements:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:announcements:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:announcements:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:Contactlist": {
+            "description": "Lists of email addresses used for notifications and messages about domains and records.",
+            "properties": {
+                "emailCount": {
+                    "type": "integer",
+                    "description": "The number of emails in this contact list"
+                },
+                "emails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:contactlists:ContactlistEmailsItemProperties"
+                    },
+                    "description": "The emails in this list"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistLinksProperties",
+                    "description": "Links for the object"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this contact list"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistEmail": {
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "contactlist": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistEmailContactlistProperties"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistEmailLinksProperties",
+                    "description": "Links for the email address"
+                },
+                "verified": {
+                    "type": "boolean",
+                    "description": "Has the email been verified or not"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistEmailContactlistProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistEmailContactlistPropertiesLinksProperties",
+                    "description": "Links for the contact list"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistEmailContactlistPropertiesLinksProperties": {
+            "description": "Links for the contact list",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistEmailLinksProperties": {
+            "description": "Links for the email address",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistEmailsItemProperties": {
+            "description": "An object for a single email in the contact list",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "verified": {
+                    "type": "boolean",
+                    "description": "Has the email been verified or not"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistLinksProperties": {
+            "description": "Links for the object",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistSlack": {
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "The channel to send the message to"
+                },
+                "contactlist": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistSlackContactlistProperties"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistSlackLinksProperties",
+                    "description": "Links for the Slack webhook"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "The inbound webhook URL for Slack"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistSlackContactlistProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistSlackContactlistPropertiesLinksProperties",
+                    "description": "Links for the contact list"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistSlackContactlistPropertiesLinksProperties": {
+            "description": "Links for the contact list",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistSlackLinksProperties": {
+            "description": "Links for the Slack webhook",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistTeams": {
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "The channel to send the message to"
+                },
+                "contactlist": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistTeamsContactlistProperties"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistTeamsLinksProperties",
+                    "description": "Links for the MS Teams Webhook"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "The inbound webhook URL for MS Teams"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistTeamsContactlistProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistTeamsContactlistPropertiesLinksProperties",
+                    "description": "Links for the contact list"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistTeamsContactlistPropertiesLinksProperties": {
+            "description": "Links for the contact list",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistTeamsLinksProperties": {
+            "description": "Links for the MS Teams Webhook",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:Contactlistwithoutemails": {
+            "description": "Lists of email addresses used for notifications and messages about domains and records.",
+            "properties": {
+                "emailCount": {
+                    "type": "integer",
+                    "description": "The number of emails in this contact list"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistwithoutemailsLinksProperties",
+                    "description": "Links for the object"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this contact list"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ContactlistwithoutemailsLinksProperties": {
+            "description": "Links for the object",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the email address"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactEmailProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistEmail"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactEmailsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:contactlists:ContactlistEmail"
+                    },
+                    "description": "The emails for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:Contactlist",
+                    "description": "Lists of email addresses used for notifications and messages about domains and records."
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactSlackWebhookProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistSlack"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactSlackWebhooksProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:contactlists:ContactlistSlack"
+                    },
+                    "description": "The webhooks for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactTeamProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:ContactlistTeams"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactTeamsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:contactlists:ContactlistTeams"
+                    },
+                    "description": "The webhooks for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListContactsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:contactlists:Contactlistwithoutemails"
+                    }
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:contactlists:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:contactlists:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DataProperties": {
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:domains:DataPropertiesLinksProperties"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the snapshot"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:Domain": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:SimpleContactlist"
+                    },
+                    "description": "An array of contact lists that will be notified when records in this domain change."
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is the domain enabled"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the domain"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the domain"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "A unique numeric ID for this domain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:DomainLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "nameservers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The nameservers for the domain"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "A note for the domain"
+                },
+                "soa": {
+                    "$ref": "#/types/constellix:domains:Soa",
+                    "description": "SOA (Start of Authority) Record"
+                },
+                "status": {
+                    "$ref": "#/types/constellix:domains:DomainStatus"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:Tag"
+                    },
+                    "description": "An array of tags for this domain."
+                },
+                "template": {
+                    "$ref": "#/types/constellix:domains:SimpleTemplate"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "vanityNameserver": {
+                    "$ref": "#/types/constellix:domains:SimpleVanitynameserver",
+                    "description": "A simplied version of a rebranded nameserver using your own domain name."
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainRecordPropertiesRegion": {
+            "description": "Optional region for this record. Will default to 'default'.",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Default",
+                    "value": "default"
+                },
+                {
+                    "name": "Europe",
+                    "value": "europe"
+                },
+                {
+                    "name": "UsEast",
+                    "value": "us-east"
+                },
+                {
+                    "name": "UsWest",
+                    "value": "us-west"
+                },
+                {
+                    "name": "AsiaPacific",
+                    "value": "asia-pacific"
+                },
+                {
+                    "name": "Oceania",
+                    "value": "oceania"
+                },
+                {
+                    "name": "SouthAmerica",
+                    "value": "south-america"
+                }
+            ]
+        },
+        "constellix:domains:DomainStatus": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Active",
+                    "value": "ACTIVE"
+                },
+                {
+                    "name": "Suspended",
+                    "value": "SUSPENDED"
+                },
+                {
+                    "name": "Terminated",
+                    "value": "TERMINATED"
+                }
+            ]
+        },
+        "constellix:domains:Domainanalytics": {
+            "description": "Analytics for a specific domain",
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "end": {
+                    "type": "string",
+                    "description": "The end date for the analytics"
+                },
+                "interval": {
+                    "$ref": "#/types/constellix:domains:DomainanalyticsIntervalProperties",
+                    "description": "Details about the interval between time periods in the analytics"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:DomainanalyticsLinksProperties"
+                },
+                "queries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:DomainanalyticsQueriesItemProperties"
+                    },
+                    "description": "An array of analytics data for different types of query"
+                },
+                "start": {
+                    "type": "string",
+                    "description": "The start date for the analytics"
+                },
+                "stats": {
+                    "$ref": "#/types/constellix:domains:DomainanalyticsStatsProperties",
+                    "description": "Some statistics for these analytics"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsIntervalProperties": {
+            "description": "Details about the interval between time periods in the analytics",
+            "properties": {
+                "max": {
+                    "type": "integer",
+                    "description": "The maximum number of seconds between time periods"
+                },
+                "mean": {
+                    "type": "number",
+                    "description": "The mean average number of seconds between time periods"
+                },
+                "min": {
+                    "type": "integer",
+                    "description": "The minimum number of seconds between time periods"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsLinksProperties": {
+            "properties": {
+                "domain": {
+                    "type": "string",
+                    "description": "The URL for the domain"
+                },
+                "self": {
+                    "type": "string",
+                    "description": "The URL for these analytics"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsQueriesItemProperties": {
+            "description": "Analytics for a particular query type",
+            "properties": {
+                "stats": {
+                    "$ref": "#/types/constellix:domains:DomainanalyticsQueriesItemPropertiesStatsProperties",
+                    "description": "Some statistics for these analytics"
+                },
+                "type": {
+                    "$ref": "#/types/constellix:domains:DomainanalyticsQueriesItemPropertiesType",
+                    "description": "The type of query the analytics are for"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:DomainanalyticsQueriesItemPropertiesValuesItemProperties"
+                    },
+                    "description": "Query counts for all dates within the requested range"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsQueriesItemPropertiesStatsProperties": {
+            "description": "Some statistics for these analytics",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of time periods"
+                },
+                "max": {
+                    "type": "integer",
+                    "description": "The maximum number of queries for one time period"
+                },
+                "mean": {
+                    "type": "number",
+                    "description": "The mean average number of queries per time period"
+                },
+                "min": {
+                    "type": "integer",
+                    "description": "The minimum number of queries for one time period"
+                },
+                "sum": {
+                    "type": "integer",
+                    "description": "The sum of queries for this date range"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsQueriesItemPropertiesType": {
+            "description": "The type of query the analytics are for",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "GeoProximity",
+                    "value": "geo_proximity"
+                },
+                {
+                    "name": "Standard",
+                    "value": "standard"
+                },
+                {
+                    "name": "GeoFilter",
+                    "value": "geo_filter"
+                }
+            ]
+        },
+        "constellix:domains:DomainanalyticsQueriesItemPropertiesValuesItemProperties": {
+            "description": "Query count for a particular date",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainanalyticsStatsProperties": {
+            "description": "Some statistics for these analytics",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of time periods"
+                },
+                "max": {
+                    "type": "integer",
+                    "description": "The maximum number of queries for one time period"
+                },
+                "mean": {
+                    "type": "number",
+                    "description": "The mean average number of queries per time period"
+                },
+                "min": {
+                    "type": "integer",
+                    "description": "The minimum number of queries for one time period"
+                },
+                "sum": {
+                    "type": "integer",
+                    "description": "The sum of queries for this date range"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:Domainhistory": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:DomainrecordPropertiesLinksProperties": {
+            "description": "Links for the domain record",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:Domainsnapshot": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainAnalyticProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:Domainanalytics",
+                    "description": "Analytics for a specific domain"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainHistoryVersionProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:Domainhistory"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainNameserverProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:GetDomainNameserverPropertiesDataProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainNameserverPropertiesDataProperties": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:GetDomainNameserverPropertiesDataPropertiesLinksProperties"
+                },
+                "nameservers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainNameserverPropertiesDataPropertiesLinksProperties": {
+            "properties": {
+                "domain": {
+                    "type": "string",
+                    "description": "The URL for the domain"
+                },
+                "self": {
+                    "type": "string",
+                    "description": "The URL for these nameservers"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:Domain"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainRecord": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:DomainrecordPropertiesLinksProperties",
+                    "description": "Links for the domain record"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:GetDomainSnapshotProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:Domainsnapshot"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainHistoryProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:ListDomainHistoryPropertiesDataItem"
+                    },
+                    "description": "The domain history for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:domains:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainHistoryPropertiesDataItem": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainRecordsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:ListDomainRecordsPropertiesDataItem"
+                    },
+                    "description": "The records for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:domains:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainRecordsPropertiesDataItem": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:DomainrecordPropertiesLinksProperties",
+                    "description": "Links for the domain record"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainSnapshotsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:ListDomainSnapshotsPropertiesDataItem"
+                    },
+                    "description": "The domain snapshots for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:domains:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainSnapshotsPropertiesDataItem": {
+            "properties": {
+                "domain": {
+                    "$ref": "#/types/constellix:domains:SimpleDomain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListDomainsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:Domain"
+                    },
+                    "description": "The domains for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:domains:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:domains:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:domains:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleContactlist": {
+            "description": "A simple version of a contact list when inclued with other resources",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:SimpleContactlistLinksProperties",
+                    "description": "Links for domain objects"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleContactlistLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleDomain": {
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is the domain enabled"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the domain"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the domain"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "A unique numeric ID for this domain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:SimpleDomainLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "A note for the domain"
+                },
+                "status": {
+                    "$ref": "#/types/constellix:domains:SimpleDomainStatus"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:domains:Tag"
+                    },
+                    "description": "An array of tags for this domain."
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleDomainLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleDomainStatus": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Active",
+                    "value": "ACTIVE"
+                },
+                {
+                    "name": "Suspended",
+                    "value": "SUSPENDED"
+                },
+                {
+                    "name": "Terminated",
+                    "value": "TERMINATED"
+                }
+            ]
+        },
+        "constellix:domains:SimpleTemplate": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for this template"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:SimpleTemplateLinksProperties",
+                    "description": "Links for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the template"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the template resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleTemplateLinksProperties": {
+            "description": "Links for the template",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleVanitynameserver": {
+            "description": "A simplied version of a rebranded nameserver using your own domain name.",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "A unique ID for the vanity nameserver"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:SimpleVanitynameserverLinksProperties",
+                    "description": "Links relevant to this object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SimpleVanitynameserverLinksProperties": {
+            "description": "Links relevant to this object",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:Soa": {
+            "description": "SOA (Start of Authority) Record",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "Email of the administrator for the domain. @ should be replaced with ."
+                },
+                "expire": {
+                    "type": "integer",
+                    "description": "Number of seconds after which secondary nameservers should stop responding to queries, if the master does not respond"
+                },
+                "negativeCache": {
+                    "type": "integer",
+                    "description": "How long NXDOMAIN responses should be cached for"
+                },
+                "primaryNameserver": {
+                    "type": "string",
+                    "description": "Primary master nameserver for the domain"
+                },
+                "refresh": {
+                    "type": "integer",
+                    "description": "The interval for secondary nameservers should query for the SOA record"
+                },
+                "retry": {
+                    "type": "integer",
+                    "description": "The number of seconds after which secondary servers should retry to request the serial number if the master does not respond"
+                },
+                "serial": {
+                    "type": "integer",
+                    "description": "A serial number for this version of the records for this domain"
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "The Time To Live (TTL) in seconds for the SOA record"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:SoaProperties": {
+            "description": "The SOA details for the domain",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "Email of the administrator for the domain. @ should be replaced with ."
+                },
+                "expire": {
+                    "type": "integer",
+                    "description": "Number of seconds after which secondary nameservers should stop responding to queries, if the master does not respond"
+                },
+                "negativeCache": {
+                    "type": "integer",
+                    "description": "How long NXDOMAIN responses should be cached for"
+                },
+                "primaryNameserver": {
+                    "type": "string",
+                    "description": "Primary master nameserver for the domain"
+                },
+                "refresh": {
+                    "type": "integer",
+                    "description": "The interval for secondary nameservers should query for the SOA record"
+                },
+                "retry": {
+                    "type": "integer",
+                    "description": "The number of seconds after which secondary servers should retry to request the serial number if the master does not respond"
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "The Time To Live (TTL) in seconds for the SOA record"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:Tag": {
+            "description": "A tag is used to group resources together",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the tag"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:domains:TagLinksProperties",
+                    "description": "Links for tags"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this tag"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:domains:TagLinksProperties": {
+            "description": "Links for tags",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:geoproximities:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:Geoproximity": {
+            "description": "Geo Proximity Location",
+            "properties": {
+                "city": {
+                    "type": "integer",
+                    "description": "ID of the city"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "2 digit ISO country code"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for the Geo Proximity location"
+                },
+                "latitude": {
+                    "type": "number",
+                    "description": "Latitude of the location"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:geoproximities:GeoproximityLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "longitude": {
+                    "type": "number",
+                    "description": "Longitude of the location"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Geo Proximity location"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "Region, state or province code"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:GeoproximityLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:GetGeoProximityLocationProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:geoproximities:Geoproximity",
+                    "description": "Geo Proximity Location"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:ListGeoProximityLocationsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:geoproximities:Geoproximity"
+                    }
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:geoproximities:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:geoproximities:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:geoproximities:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:geoproximities:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:ContinentsItem": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "World",
+                    "value": "world"
+                },
+                {
+                    "name": "Af",
+                    "value": "AF"
+                },
+                {
+                    "name": "An",
+                    "value": "AN"
+                },
+                {
+                    "name": "As",
+                    "value": "AS"
+                },
+                {
+                    "name": "Eu",
+                    "value": "EU"
+                },
+                {
+                    "name": "Na",
+                    "value": "NA"
+                },
+                {
+                    "name": "Oc",
+                    "value": "OC"
+                },
+                {
+                    "name": "Sa",
+                    "value": "SA"
+                }
+            ]
+        },
+        "constellix:ipfilters:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:ipfilters:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:GetIPFilterProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:ipfilters:Ipfilter"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:Ipfilter": {
+            "properties": {
+                "asn": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "AS Numbers that this rule applies to. Values must be between 0 and 4,294,967,295"
+                },
+                "continents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:IpfilterContinentsItem"
+                    },
+                    "description": "A list of continents in this filter"
+                },
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "2 digit ISO code for countries in this filter - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for this IP filter"
+                },
+                "ipv4": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv4 addresses and CIDRs that this filter applies to"
+                },
+                "ipv6": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv6 addresses and CIDRs that this filter applies to"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:ipfilters:IpfilterLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for this IP filter"
+                },
+                "regions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:Region"
+                    },
+                    "description": "Regions for this IP filter."
+                },
+                "rulesLimit": {
+                    "type": "integer",
+                    "description": "Values should be multiples of 100. Upper limit is the quota assigned to the account."
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:IpfilterContinentsItem": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Af",
+                    "value": "AF"
+                },
+                {
+                    "name": "An",
+                    "value": "AN"
+                },
+                {
+                    "name": "As",
+                    "value": "AS"
+                },
+                {
+                    "name": "Eu",
+                    "value": "EU"
+                },
+                {
+                    "name": "Na",
+                    "value": "NA"
+                },
+                {
+                    "name": "Oc",
+                    "value": "OC"
+                },
+                {
+                    "name": "Sa",
+                    "value": "SA"
+                }
+            ]
+        },
+        "constellix:ipfilters:IpfilterLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:ListIPFiltersProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:Ipfilter"
+                    }
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:ipfilters:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:ipfilters:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:ipfilters:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:Region": {
+            "description": "IP Filter Region",
+            "properties": {
+                "asn": {
+                    "type": "integer",
+                    "description": "AS Number for this region"
+                },
+                "continent": {
+                    "type": "string",
+                    "description": "The continent for this region"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "The country for the region"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "The region code",
+                    "language": {
+                        "csharp": {
+                            "name": "RegionValue"
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:RegionsItemProperties": {
+            "properties": {
+                "asn": {
+                    "type": "integer",
+                    "description": "Optional AS Number that this rule applies to. Values must be between 0 and 4,294,967,295"
+                },
+                "continent": {
+                    "$ref": "#/types/constellix:ipfilters:RegionsItemPropertiesContinent",
+                    "description": "The continent for this region"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Optional 2 digit ISO code for the country - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "Optional 2 digit code for the region"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:ipfilters:RegionsItemPropertiesContinent": {
+            "description": "The continent for this region",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "World",
+                    "value": "world"
+                },
+                {
+                    "name": "Af",
+                    "value": "AF"
+                },
+                {
+                    "name": "An",
+                    "value": "AN"
+                },
+                {
+                    "name": "As",
+                    "value": "AS"
+                },
+                {
+                    "name": "Eu",
+                    "value": "EU"
+                },
+                {
+                    "name": "Na",
+                    "value": "NA"
+                },
+                {
+                    "name": "Oc",
+                    "value": "OC"
+                },
+                {
+                    "name": "Sa",
+                    "value": "SA"
+                }
+            ]
+        },
+        "constellix:ping:Ping": {
+            "properties": {
+                "ip": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:GetPoolProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:pools:Pool"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:pools:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:pools:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:ListPoolsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:Poolindex"
+                    },
+                    "description": "The pools for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:pools:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:Pool": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleContactlist"
+                    },
+                    "description": "Contactlists that will be notified when the pool is updated"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleDomain"
+                    },
+                    "description": "Domains that are using this pool"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the pool is enabled or not"
+                },
+                "failed": {
+                    "type": "boolean",
+                    "description": "Whether the pool is considered failed or not"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "ito": {
+                    "$ref": "#/types/constellix:pools:Poolito"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:PoolLinksProperties",
+                    "description": "Links for the pool"
+                },
+                "minimumFailover": {
+                    "type": "integer",
+                    "description": "The number of records that must be available for this pool to be used for failover. Between 0 and 64."
+                },
+                "name": {
+                    "type": "string"
+                },
+                "return": {
+                    "type": "integer",
+                    "description": "The minimum number of entries from the pool to return when queried. Between 0 and 64."
+                },
+                "templates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleTemplate"
+                    },
+                    "description": "Templates that are using this pool"
+                },
+                "type": {
+                    "$ref": "#/types/constellix:pools:PoolType",
+                    "description": "The type of pool"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:PoolValuesItemProperties"
+                    },
+                    "description": "The values for this pool"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolLinksProperties": {
+            "description": "Links for the pool",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolType": {
+            "description": "The type of pool",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "A",
+                    "value": "A"
+                },
+                {
+                    "name": "Aaaa",
+                    "value": "AAAA"
+                },
+                {
+                    "name": "Cname",
+                    "value": "CNAME"
+                }
+            ]
+        },
+        "constellix:pools:PoolValuesItemProperties": {
+            "description": "A possible value for the pool. Depends on the type of pool.",
+            "properties": {
+                "activated": {
+                    "type": "boolean",
+                    "description": "Is the value active or not?"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is this value enabled or not?"
+                },
+                "failed": {
+                    "type": "boolean",
+                    "description": "Is this value considered failed by monitoring"
+                },
+                "handicap": {
+                    "type": "number",
+                    "description": "A handicap for this value"
+                },
+                "policy": {
+                    "$ref": "#/types/constellix:pools:PoolValuesItemPropertiesPolicy",
+                    "description": "The failover/check policy for this value"
+                },
+                "sonarCheckId": {
+                    "type": "integer",
+                    "description": "The ID of the check to use from Sonar"
+                },
+                "speed": {
+                    "type": "number",
+                    "description": "The response time in the last check"
+                },
+                "value": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "A weight for the value. Must be between 1 and 1000000"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolValuesItemPropertiesPolicy": {
+            "description": "The failover/check policy for this value",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "FollowSonar",
+                    "value": "follow_sonar"
+                },
+                {
+                    "name": "AlwaysOff",
+                    "value": "always_off"
+                },
+                {
+                    "name": "AlwaysOn",
+                    "value": "always_on"
+                },
+                {
+                    "name": "OffOnFailure",
+                    "value": "off_on_failure"
+                }
+            ]
+        },
+        "constellix:pools:Poolindex": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleContactlist"
+                    },
+                    "description": "Contactlists that will be notified when the pool is updated"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "domains": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleDomain"
+                    },
+                    "description": "Domains that are using this pool"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the pool is enabled or not"
+                },
+                "failed": {
+                    "type": "boolean",
+                    "description": "Whether the pool is considered failed or not"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "ito": {
+                    "$ref": "#/types/constellix:pools:Poolito"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:PoolindexLinksProperties",
+                    "description": "Links for the pool"
+                },
+                "minimumFailover": {
+                    "type": "integer",
+                    "description": "The number of records that must be available for this pool to be used for failover. Between 0 and 64."
+                },
+                "name": {
+                    "type": "string"
+                },
+                "return": {
+                    "type": "integer",
+                    "description": "The minimum number of entries from the pool to return when queried. Between 0 and 64."
+                },
+                "templates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:SimpleTemplate"
+                    },
+                    "description": "Templates that are using this pool"
+                },
+                "type": {
+                    "$ref": "#/types/constellix:pools:PoolindexType",
+                    "description": "The type of pool"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:PoolindexValuesItemProperties"
+                    },
+                    "description": "The values for this pool"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolindexLinksProperties": {
+            "description": "Links for the pool",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolindexType": {
+            "description": "The type of pool",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "A",
+                    "value": "A"
+                },
+                {
+                    "name": "Aaaa",
+                    "value": "AAAA"
+                },
+                {
+                    "name": "Cname",
+                    "value": "CNAME"
+                }
+            ]
+        },
+        "constellix:pools:PoolindexValuesItemProperties": {
+            "description": "A possible value for the pool. Depends on the type of pool.",
+            "properties": {
+                "value": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "A weight for the value. Must be between 1 amd 1000000"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:Poolito": {
+            "properties": {
+                "config": {
+                    "$ref": "#/types/constellix:pools:PoolitoConfigProperties",
+                    "description": "The Ito configuration"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is Ito enabled for this pool?"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolitoConfigProperties": {
+            "description": "The Ito configuration",
+            "properties": {
+                "deviationAllowance": {
+                    "$ref": "#/types/constellix:pools:PoolitoConfigPropertiesDeviationAllowance",
+                    "description": "Percentage of how much is the response time allowed to deviate?"
+                },
+                "handicapFactor": {
+                    "$ref": "#/types/constellix:pools:PoolitoConfigPropertiesHandicapFactor"
+                },
+                "maximumNumberOfResults": {
+                    "type": "integer",
+                    "description": "The maximum number of results to return"
+                },
+                "monitoringRegion": {
+                    "$ref": "#/types/constellix:pools:PoolitoConfigPropertiesMonitoringRegion",
+                    "description": "Where monitoring should be performed from"
+                },
+                "period": {
+                    "$ref": "#/types/constellix:pools:PoolitoConfigPropertiesPeriod",
+                    "description": "The number of seconds between each check"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:PoolitoConfigPropertiesDeviationAllowance": {
+            "description": "Percentage of how much is the response time allowed to deviate?",
+            "type": "integer",
+            "enum": [
+                {
+                    "name": "%!d(float64=10)",
+                    "value": 10
+                },
+                {
+                    "name": "%!d(float64=20)",
+                    "value": 20
+                },
+                {
+                    "name": "%!d(float64=30)",
+                    "value": 30
+                },
+                {
+                    "name": "%!d(float64=40)",
+                    "value": 40
+                },
+                {
+                    "name": "%!d(float64=50)",
+                    "value": 50
+                },
+                {
+                    "name": "%!d(float64=60)",
+                    "value": 60
+                },
+                {
+                    "name": "%!d(float64=70)",
+                    "value": 70
+                },
+                {
+                    "name": "%!d(float64=80)",
+                    "value": 80
+                },
+                {
+                    "name": "%!d(float64=90)",
+                    "value": 90
+                }
+            ]
+        },
+        "constellix:pools:PoolitoConfigPropertiesHandicapFactor": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "None",
+                    "value": "none"
+                },
+                {
+                    "name": "Percent",
+                    "value": "percent"
+                },
+                {
+                    "name": "Speed",
+                    "value": "speed"
+                }
+            ]
+        },
+        "constellix:pools:PoolitoConfigPropertiesMonitoringRegion": {
+            "description": "Where monitoring should be performed from",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "World",
+                    "value": "world"
+                },
+                {
+                    "name": "Asiapac",
+                    "value": "asiapac"
+                },
+                {
+                    "name": "Europe",
+                    "value": "europe"
+                },
+                {
+                    "name": "Nacentral",
+                    "value": "nacentral"
+                },
+                {
+                    "name": "Naeast",
+                    "value": "naeast"
+                },
+                {
+                    "name": "Nawest",
+                    "value": "nawest"
+                },
+                {
+                    "name": "Oceania",
+                    "value": "oceania"
+                },
+                {
+                    "name": "Southamerica",
+                    "value": "southamerica"
+                }
+            ]
+        },
+        "constellix:pools:PoolitoConfigPropertiesPeriod": {
+            "description": "The number of seconds between each check",
+            "type": "integer",
+            "enum": [
+                {
+                    "name": "%!d(float64=30)",
+                    "value": 30
+                },
+                {
+                    "name": "%!d(float64=60)",
+                    "value": 60
+                },
+                {
+                    "name": "%!d(float64=120)",
+                    "value": 120
+                },
+                {
+                    "name": "%!d(float64=180)",
+                    "value": 180
+                },
+                {
+                    "name": "%!d(float64=240)",
+                    "value": 240
+                },
+                {
+                    "name": "%!d(float64=300)",
+                    "value": 300
+                }
+            ]
+        },
+        "constellix:pools:SimpleContactlist": {
+            "description": "A simple version of a contact list when inclued with other resources",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the contact list"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:SimpleContactlistLinksProperties",
+                    "description": "Links for domain objects"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:SimpleContactlistLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:SimpleDomain": {
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is the domain enabled"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the domain"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the domain"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "A unique numeric ID for this domain"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:SimpleDomainLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "A note for the domain"
+                },
+                "status": {
+                    "$ref": "#/types/constellix:pools:SimpleDomainStatus"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:Tag"
+                    },
+                    "description": "An array of tags for this domain."
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the domain resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:SimpleDomainLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:SimpleDomainStatus": {
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Active",
+                    "value": "ACTIVE"
+                },
+                {
+                    "name": "Suspended",
+                    "value": "SUSPENDED"
+                },
+                {
+                    "name": "Terminated",
+                    "value": "TERMINATED"
+                }
+            ]
+        },
+        "constellix:pools:SimpleTemplate": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for this template"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:SimpleTemplateLinksProperties",
+                    "description": "Links for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the template"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the template resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:SimpleTemplateLinksProperties": {
+            "description": "Links for the template",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:Tag": {
+            "description": "A tag is used to group resources together",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the tag"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:pools:TagLinksProperties",
+                    "description": "Links for tags"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this tag"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:TagLinksProperties": {
+            "description": "Links for tags",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:Type": {
+            "description": "The type of pool, either A, AAAA or CNAME",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "A",
+                    "value": "A"
+                },
+                {
+                    "name": "Aaaa",
+                    "value": "AAAA"
+                },
+                {
+                    "name": "Cname",
+                    "value": "CNAME"
+                }
+            ]
+        },
+        "constellix:pools:ValuesItemProperties": {
+            "description": "A possible value for the pool. Depends on the type of pool.",
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is this value enabled or not?"
+                },
+                "handicap": {
+                    "type": "integer",
+                    "description": "A handicap for this value"
+                },
+                "policy": {
+                    "$ref": "#/types/constellix:pools:ValuesItemPropertiesPolicy",
+                    "description": "The failover/check policy for this value"
+                },
+                "sonarCheckId": {
+                    "type": "integer",
+                    "description": "The ID of the check to use from Sonar"
+                },
+                "value": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "A weight for the value. Must be between 1 and 1000000"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:pools:ValuesItemPropertiesPolicy": {
+            "description": "The failover/check policy for this value",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "FollowSonar",
+                    "value": "follow_sonar"
+                },
+                {
+                    "name": "AlwaysOff",
+                    "value": "always_off"
+                },
+                {
+                    "name": "AlwaysOn",
+                    "value": "always_on"
+                },
+                {
+                    "name": "OffOnFailure",
+                    "value": "off_on_failure"
+                }
+            ]
+        },
+        "constellix:search:Domainsearchresult": {
+            "description": "Represents a search result when searching for domains",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID for the domain name"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:search:DomainsearchresultLinksProperties",
+                    "description": "Links for domain search results"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:search:DomainsearchresultLinksProperties": {
+            "description": "Links for domain search results",
+            "properties": {
+                "domain": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:search:GetSearchDomainProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:search:Domainsearchresult"
+                    },
+                    "description": "The search results for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:search:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:search:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:search:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:search:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:search:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:search:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:tags:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:GetTagProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:tags:Tag",
+                    "description": "A tag is used to group resources together"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:tags:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:tags:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:ListTagsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:tags:Tag"
+                    }
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:tags:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:Tag": {
+            "description": "A tag is used to group resources together",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Unique ID for the tag"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:tags:TagLinksProperties",
+                    "description": "Links for tags"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this tag"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:tags:TagLinksProperties": {
+            "description": "Links for tags",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:templates:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:GetTemplateProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:templates:Template",
+                    "description": "A domain template"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:GetTemplateRecord": {
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:templates:TemplaterecordPropertiesLinksProperties",
+                    "description": "Links for the domain record"
+                },
+                "template": {
+                    "$ref": "#/types/constellix:templates:SimpleTemplate"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:templates:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:templates:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListTemplateRecordsProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:templates:ListTemplateRecordsPropertiesDataItem"
+                    },
+                    "description": "The records for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:templates:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListTemplateRecordsPropertiesDataItem": {
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:templates:TemplaterecordPropertiesLinksProperties",
+                    "description": "Links for the domain record"
+                },
+                "template": {
+                    "$ref": "#/types/constellix:templates:SimpleTemplate"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:ListTemplatesProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:templates:Template"
+                    },
+                    "description": "The records for this page"
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:templates:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:SimpleTemplate": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for this template"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:templates:SimpleTemplateLinksProperties",
+                    "description": "Links for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the template"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the template resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:SimpleTemplateLinksProperties": {
+            "description": "Links for the template",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:Template": {
+            "description": "A domain template",
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the template"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the template"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The unique ID for this template"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:templates:TemplateLinksProperties",
+                    "description": "Links for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the template"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The version of the template resource"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:TemplateLinksProperties": {
+            "description": "Links for the template",
+            "properties": {
+                "records": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:templates:TemplateRecordPropertiesRegion": {
+            "description": "Optional region for this record. Will default to 'default'.",
+            "type": "string",
+            "enum": [
+                {
+                    "name": "Default",
+                    "value": "default"
+                },
+                {
+                    "name": "Europe",
+                    "value": "europe"
+                },
+                {
+                    "name": "UsEast",
+                    "value": "us-east"
+                },
+                {
+                    "name": "UsWest",
+                    "value": "us-west"
+                },
+                {
+                    "name": "AsiaPacific",
+                    "value": "asia-pacific"
+                },
+                {
+                    "name": "Oceania",
+                    "value": "oceania"
+                },
+                {
+                    "name": "SouthAmerica",
+                    "value": "south-america"
+                }
+            ]
+        },
+        "constellix:templates:TemplaterecordPropertiesLinksProperties": {
+            "description": "Links for the domain record",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:DataProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the object"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:vanitynameservers:DataPropertiesLinksProperties"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:DataPropertiesLinksProperties": {
+            "properties": {
+                "self": {
+                    "type": "string",
+                    "description": "The URL for the new object"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:GetVanityNameserverProperties": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:vanitynameservers:Vanitynameserver",
+                    "description": "A rebranded nameserver using your own domain name."
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:ListMetadata": {
+            "description": "Metadata for list responses",
+            "properties": {
+                "links": {
+                    "$ref": "#/types/constellix:vanitynameservers:ListMetadataLinksProperties",
+                    "description": "Relevant links for this list"
+                },
+                "pagination": {
+                    "$ref": "#/types/constellix:vanitynameservers:ListMetadataPaginationProperties",
+                    "description": "Pagination details"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:ListMetadataLinksProperties": {
+            "description": "Relevant links for this list",
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:ListMetadataPaginationProperties": {
+            "description": "Pagination details",
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "description": "The number of items in this page of the response"
+                },
+                "currentPage": {
+                    "type": "integer",
+                    "description": "The current results page"
+                },
+                "perPage": {
+                    "type": "integer",
+                    "description": "The number of items per page"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "The total number of objects matching the query"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "description": "The total number of pages"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:ListVanityNameserversProperties": {
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:vanitynameservers:Vanitynameserver"
+                    }
+                },
+                "meta": {
+                    "$ref": "#/types/constellix:vanitynameservers:ListMetadata",
+                    "description": "Metadata for list responses"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:NameserverGroupProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the nameserver group"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:Vanitynameserver": {
+            "description": "A rebranded nameserver using your own domain name.",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "description": "Is this the default nameserver for domains in the account"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "A unique ID for the vanity nameserver"
+                },
+                "links": {
+                    "$ref": "#/types/constellix:vanitynameservers:VanitynameserverLinksProperties",
+                    "description": "Links for domain objects"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A unique name for this vanity nameserver"
+                },
+                "nameserverGroup": {
+                    "$ref": "#/types/constellix:vanitynameservers:VanitynameserverNameserverGroupProperties"
+                },
+                "nameservers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The nameserver hostnames"
+                },
+                "public": {
+                    "type": "boolean",
+                    "description": "Is this nameserver public?"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:VanitynameserverLinksProperties": {
+            "description": "Links for domain objects",
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "constellix:vanitynameservers:VanitynameserverNameserverGroupProperties": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the nameserver group"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the nameserver group"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "provider": {
+        "description": "The provider type for the Constellix package.",
+        "type": "object",
+        "inputProperties": {
+            "apiKey": {
+                "type": "string",
+                "description": "The Constellix API key.",
+                "defaultInfo": {
+                    "environment": [
+                        "CONSTELLIX_APIKEY"
+                    ]
+                },
+                "language": {
+                    "csharp": {
+                        "name": "ApiKey"
+                    }
+                },
+                "secret": true
+            }
+        }
+    },
+    "resources": {
+        "constellix:contactlists:ContactList": {
+            "description": "Lists of email addresses used for notifications and messages about domains and records.",
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:DataProperties"
+                },
+                "emails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The emails in this list"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this contact list"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "emails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The emails in this list"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this contact list"
+                }
+            }
+        },
+        "constellix:contactlists:ContactListEmail": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "The email address"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:DataProperties"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "address": {
+                    "type": "string",
+                    "description": "The email address"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The ID of the Contact List"
+                }
+            }
+        },
+        "constellix:contactlists:ContactListSlackWebhook": {
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "Slack channel to send notifications to"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:DataProperties"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "Incoming Webhook URL"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "channel": {
+                    "type": "string",
+                    "description": "Slack channel to send notifications to"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The ID of the Contact List"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "Incoming Webhook URL"
+                }
+            }
+        },
+        "constellix:contactlists:ContactListTeam": {
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "Teams channel to send notifications to"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:contactlists:DataProperties"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "Incoming Webhook URL"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "channel": {
+                    "type": "string",
+                    "description": "Teams channel to send notifications to"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The ID of the Contact List"
+                },
+                "webhook": {
+                    "type": "string",
+                    "description": "Incoming Webhook URL"
+                }
+            }
+        },
+        "constellix:domains:ApplyDomainHistory": {
+            "type": "object",
+            "inputProperties": {
+                "domainId": {
+                    "type": "string",
+                    "description": "The ID of the domain object"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The version number of the domain"
+                }
+            }
+        },
+        "constellix:domains:ApplyDomainSnapshot": {
+            "type": "object",
+            "inputProperties": {
+                "domainId": {
+                    "type": "string",
+                    "description": "The ID of the domain object"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The snapshot version of the domain"
+                }
+            }
+        },
+        "constellix:domains:Domain": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contactlists to be notified if the domain is updated"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:domains:DataProperties"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is the domain enabled"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the domain"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the domain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "A note for the domain"
+                },
+                "soa": {
+                    "$ref": "#/types/constellix:domains:SoaProperties",
+                    "description": "The SOA details for the domain"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The numeric IDs of tags you want to apply to this domain"
+                },
+                "template": {
+                    "type": "integer",
+                    "description": "The template to use for creating this domain. It will be linked to this template so any changes made to the template will apply to this domain."
+                },
+                "vanityNameserver": {
+                    "type": "integer",
+                    "description": "The vanity nameserver to use for this domain."
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contactlists to be notified if the domain is updated"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Is the domain enabled"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the domain"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the domain"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the domain"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "A note for the domain"
+                },
+                "soa": {
+                    "$ref": "#/types/constellix:domains:SoaProperties",
+                    "description": "The SOA details for the domain"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The numeric IDs of tags you want to apply to this domain"
+                },
+                "template": {
+                    "type": "integer",
+                    "description": "The template to use for creating this domain. It will be linked to this template so any changes made to the template will apply to this domain."
+                },
+                "vanityNameserver": {
+                    "type": "integer",
+                    "description": "The vanity nameserver to use for this domain."
+                }
+            }
+        },
+        "constellix:domains:DomainRecord": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be notified if a failover happens in a failover mode."
+                },
+                "data": {
+                    "$ref": "#/types/constellix:domains:DataProperties"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the record is enabled"
+                },
+                "geoFailover": {
+                    "type": "boolean",
+                    "description": "Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead."
+                },
+                "geoproximity": {
+                    "type": "integer",
+                    "description": "The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter."
+                },
+                "ipfilter": {
+                    "type": "integer",
+                    "description": "The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity."
+                },
+                "ipfilterDrop": {
+                    "type": "boolean",
+                    "description": "If the requesting IP matches the IP filter, don't return a response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the record"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "A description of the record. It must be 512 characters or less."
+                },
+                "region": {
+                    "$ref": "#/types/constellix:domains:DomainRecordPropertiesRegion",
+                    "description": "Optional region for this record. Will default to 'default'."
+                },
+                "skipLookup": {
+                    "type": "boolean",
+                    "description": "Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise."
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "How long DNS servers should cache the record for"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be notified if a failover happens in a failover mode."
+                },
+                "domainId": {
+                    "type": "string",
+                    "description": "The ID of the domain object"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the record is enabled"
+                },
+                "geoFailover": {
+                    "type": "boolean",
+                    "description": "Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead."
+                },
+                "geoproximity": {
+                    "type": "integer",
+                    "description": "The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter."
+                },
+                "ipfilter": {
+                    "type": "integer",
+                    "description": "The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity."
+                },
+                "ipfilterDrop": {
+                    "type": "boolean",
+                    "description": "If the requesting IP matches the IP filter, don't return a response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the record"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "A description of the record. It must be 512 characters or less."
+                },
+                "region": {
+                    "$ref": "#/types/constellix:domains:DomainRecordPropertiesRegion",
+                    "description": "Optional region for this record. Will default to 'default'."
+                },
+                "skipLookup": {
+                    "type": "boolean",
+                    "description": "Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise."
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "How long DNS servers should cache the record for"
+                }
+            }
+        },
+        "constellix:domains:SnapshotDomainHistory": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:domains:DataProperties"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "domainId": {
+                    "type": "string",
+                    "description": "The ID of the domain object"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The version number of the domain"
+                }
+            }
+        },
+        "constellix:geoproximities:GeoProximityLocation": {
+            "description": "Geo Proximity Location",
+            "properties": {
+                "city": {
+                    "type": "integer",
+                    "description": "The numeric ID for a city"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "2 digit ISO country code"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:geoproximities:DataProperties"
+                },
+                "latitude": {
+                    "type": "number",
+                    "description": "Latitude of the location"
+                },
+                "longitude": {
+                    "type": "number",
+                    "description": "Longitude of the location"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Geo Proximity location"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "Region, state or province code"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "city": {
+                    "type": "integer",
+                    "description": "The numeric ID for a city"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "2 digit ISO country code"
+                },
+                "latitude": {
+                    "type": "number",
+                    "description": "Latitude of the location"
+                },
+                "longitude": {
+                    "type": "number",
+                    "description": "Longitude of the location"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the Geo Proximity location"
+                },
+                "region": {
+                    "type": "string",
+                    "description": "Region, state or province code"
+                }
+            }
+        },
+        "constellix:ipfilters:IPFilter": {
+            "properties": {
+                "asn": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "AS Numbers that this rule applies to. Values must be between 0 and 4,294,967,295"
+                },
+                "continents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:ContinentsItem"
+                    },
+                    "description": "A list of continents in this filter"
+                },
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "2 digit ISO code for countries in this filter - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:ipfilters:DataProperties"
+                },
+                "ipv4": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv4 addresses and CIDRs that this filter applies to"
+                },
+                "ipv6": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv6 addresses and CIDRs that this filter applies to"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for this IP filter"
+                },
+                "regions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:RegionsItemProperties"
+                    },
+                    "description": "Combinations of Regions, Countries, Continents and optionally ASNs."
+                },
+                "rulesLimit": {
+                    "type": "integer",
+                    "description": "Values should be multiples of 100. Upper limit is the quota assigned to the account."
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "asn": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "AS Numbers that this rule applies to. Values must be between 0 and 4,294,967,295"
+                },
+                "continents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:ContinentsItem"
+                    },
+                    "description": "A list of continents in this filter"
+                },
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "2 digit ISO code for countries in this filter - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+                },
+                "ipv4": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv4 addresses and CIDRs that this filter applies to"
+                },
+                "ipv6": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IPv6 addresses and CIDRs that this filter applies to"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for this IP filter"
+                },
+                "regions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:ipfilters:RegionsItemProperties"
+                    },
+                    "description": "Combinations of Regions, Countries, Continents and optionally ASNs."
+                },
+                "rulesLimit": {
+                    "type": "integer",
+                    "description": "Values should be multiples of 100. Upper limit is the quota assigned to the account."
+                }
+            }
+        },
+        "constellix:pools:Pool": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be emailed when this pool changes"
+                },
+                "data": {
+                    "$ref": "#/types/constellix:pools:DataProperties"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the pool is enabled or not"
+                },
+                "ito": {
+                    "$ref": "#/types/constellix:pools:Poolito"
+                },
+                "minimumFailover": {
+                    "type": "integer",
+                    "description": "The number of records that must be available for this pool to be used for failover. Between 0 and 64."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the pool"
+                },
+                "return": {
+                    "type": "integer",
+                    "description": "The minimum number of entries from the pool to return when queried. Between 0 and 64."
+                },
+                "type": {
+                    "$ref": "#/types/constellix:pools:Type",
+                    "description": "The type of pool, either A, AAAA or CNAME"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:ValuesItemProperties"
+                    },
+                    "description": "The values for this pool"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be emailed when this pool changes"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the pool is enabled or not"
+                },
+                "ito": {
+                    "$ref": "#/types/constellix:pools:Poolito"
+                },
+                "minimumFailover": {
+                    "type": "integer",
+                    "description": "The number of records that must be available for this pool to be used for failover. Between 0 and 64."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the pool"
+                },
+                "return": {
+                    "type": "integer",
+                    "description": "The minimum number of entries from the pool to return when queried. Between 0 and 64."
+                },
+                "type": {
+                    "$ref": "#/types/constellix:pools:Type",
+                    "description": "The type of pool, either A, AAAA or CNAME"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/constellix:pools:ValuesItemProperties"
+                    },
+                    "description": "The values for this pool"
+                }
+            }
+        },
+        "constellix:tags:Tag": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:tags:DataProperties"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for this tag"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "name": {
+                    "type": "string",
+                    "description": "A name for this tag"
+                }
+            }
+        },
+        "constellix:templates:Template": {
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:templates:DataProperties"
+                },
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the template"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the template"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "geoip": {
+                    "type": "boolean",
+                    "description": "Is GeoIP functionality enabled for the template"
+                },
+                "gtd": {
+                    "type": "boolean",
+                    "description": "Is Global Traffic Director enabled for the template"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the template"
+                }
+            }
+        },
+        "constellix:templates:TemplateRecord": {
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be notified if a failover happens in a failover mode."
+                },
+                "data": {
+                    "$ref": "#/types/constellix:templates:DataProperties"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the record is enabled"
+                },
+                "geoFailover": {
+                    "type": "boolean",
+                    "description": "Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead."
+                },
+                "geoproximity": {
+                    "type": "integer",
+                    "description": "The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter."
+                },
+                "ipfilter": {
+                    "type": "integer",
+                    "description": "The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity."
+                },
+                "ipfilterDrop": {
+                    "type": "boolean",
+                    "description": "If the requesting IP matches the IP filter, don't return a response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the record"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "A description of the record. It must be 512 characters or less."
+                },
+                "region": {
+                    "$ref": "#/types/constellix:templates:TemplateRecordPropertiesRegion",
+                    "description": "Optional region for this record. Will default to 'default'."
+                },
+                "skipLookup": {
+                    "type": "boolean",
+                    "description": "Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise."
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "How long DNS servers should cache the record for"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "contacts": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Contact lists to be notified if a failover happens in a failover mode."
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the record is enabled"
+                },
+                "geoFailover": {
+                    "type": "boolean",
+                    "description": "Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead."
+                },
+                "geoproximity": {
+                    "type": "integer",
+                    "description": "The integer ID of a GeoProximity to use for this record. Cannot be used with IP Filter."
+                },
+                "ipfilter": {
+                    "type": "integer",
+                    "description": "The integer ID of an IP Filter to use for this record. Cannot be used with GeoPeoximity."
+                },
+                "ipfilterDrop": {
+                    "type": "boolean",
+                    "description": "If the requesting IP matches the IP filter, don't return a response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name for the record"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "A description of the record. It must be 512 characters or less."
+                },
+                "region": {
+                    "$ref": "#/types/constellix:templates:TemplateRecordPropertiesRegion",
+                    "description": "Optional region for this record. Will default to 'default'."
+                },
+                "skipLookup": {
+                    "type": "boolean",
+                    "description": "Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise."
+                },
+                "templateId": {
+                    "type": "string",
+                    "description": "The ID of the template object"
+                },
+                "ttl": {
+                    "type": "integer",
+                    "description": "How long DNS servers should cache the record for"
+                }
+            }
+        },
+        "constellix:vanitynameservers:VanityNameserver": {
+            "description": "A rebranded nameserver using your own domain name.",
+            "properties": {
+                "data": {
+                    "$ref": "#/types/constellix:vanitynameservers:DataProperties"
+                },
+                "default": {
+                    "type": "boolean",
+                    "description": "Is this the default nameserver for domains in the account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A unique name for this vanity nameserver"
+                },
+                "nameserverGroup": {
+                    "$ref": "#/types/constellix:vanitynameservers:NameserverGroupProperties"
+                },
+                "nameservers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The nameserver hostnames"
+                }
+            },
+            "type": "object",
+            "inputProperties": {
+                "default": {
+                    "type": "boolean",
+                    "description": "Is this the default nameserver for domains in the account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A unique name for this vanity nameserver"
+                },
+                "nameserverGroup": {
+                    "$ref": "#/types/constellix:vanitynameservers:NameserverGroupProperties"
+                },
+                "nameservers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The nameserver hostnames"
+                }
+            }
+        }
+    },
+    "functions": {
+        "constellix:analytics:listAnalytics": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:analytics:ListAnalyticsProperties"
+            }
+        },
+        "constellix:announcements:getAnnouncement": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the announcement"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:announcements:GetAnnouncementProperties"
+            }
+        },
+        "constellix:announcements:listAnnouncements": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:announcements:ListAnnouncementsProperties"
+            }
+        },
+        "constellix:contactlists:listContact": {
+            "inputs": {
+                "properties": {
+                    "contactlistId": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    }
+                },
+                "required": [
+                    "contactlistId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactProperties"
+            }
+        },
+        "constellix:contactlists:listContactEmail": {
+            "inputs": {
+                "properties": {
+                    "contactlistId": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the email address"
+                    }
+                },
+                "required": [
+                    "contactlistId",
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactEmailProperties"
+            }
+        },
+        "constellix:contactlists:listContactEmails": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactEmailsProperties"
+            }
+        },
+        "constellix:contactlists:listContactSlackWebhook": {
+            "inputs": {
+                "properties": {
+                    "contactlistId": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Slack Webhook"
+                    }
+                },
+                "required": [
+                    "contactlistId",
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactSlackWebhookProperties"
+            }
+        },
+        "constellix:contactlists:listContactSlackWebhooks": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactSlackWebhooksProperties"
+            }
+        },
+        "constellix:contactlists:listContactTeam": {
+            "inputs": {
+                "properties": {
+                    "contactlistId": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the MS Teams Webhook"
+                    }
+                },
+                "required": [
+                    "contactlistId",
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactTeamProperties"
+            }
+        },
+        "constellix:contactlists:listContactTeams": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Contact List"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactTeamsProperties"
+            }
+        },
+        "constellix:contactlists:listContacts": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:contactlists:ListContactsProperties"
+            }
+        },
+        "constellix:domains:getDomain": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainProperties"
+            }
+        },
+        "constellix:domains:getDomainAnalytic": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainAnalyticProperties"
+            }
+        },
+        "constellix:domains:getDomainHistoryVersion": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "The version number of the domain"
+                    }
+                },
+                "required": [
+                    "domainId",
+                    "version"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainHistoryVersionProperties"
+            }
+        },
+        "constellix:domains:getDomainNameserver": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainNameserverProperties"
+            }
+        },
+        "constellix:domains:getDomainRecord": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the record"
+                    }
+                },
+                "required": [
+                    "domainId",
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainRecord"
+            }
+        },
+        "constellix:domains:getDomainSnapshot": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "The version number of the snapshot"
+                    }
+                },
+                "required": [
+                    "domainId",
+                    "version"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:GetDomainSnapshotProperties"
+            }
+        },
+        "constellix:domains:listDomainHistory": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "domainId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:ListDomainHistoryProperties"
+            }
+        },
+        "constellix:domains:listDomainRecords": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "domainId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:ListDomainRecordsProperties"
+            }
+        },
+        "constellix:domains:listDomainSnapshots": {
+            "inputs": {
+                "properties": {
+                    "domainId": {
+                        "type": "string",
+                        "description": "The ID of the domain object"
+                    }
+                },
+                "required": [
+                    "domainId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:domains:ListDomainSnapshotsProperties"
+            }
+        },
+        "constellix:domains:listDomains": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:domains:ListDomainsProperties"
+            }
+        },
+        "constellix:geoproximities:getGeoProximityLocation": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Geo Proximity"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:geoproximities:GetGeoProximityLocationProperties"
+            }
+        },
+        "constellix:geoproximities:listGeoProximityLocations": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:geoproximities:ListGeoProximityLocationsProperties"
+            }
+        },
+        "constellix:ipfilters:getIPFilter": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the IP Filter"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:ipfilters:GetIPFilterProperties"
+            }
+        },
+        "constellix:ipfilters:listIPFilters": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:ipfilters:ListIPFiltersProperties"
+            }
+        },
+        "constellix:ping:getPing": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:ping:Ping"
+            }
+        },
+        "constellix:pools:getPool": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the pool"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of pool"
+                    }
+                },
+                "required": [
+                    "id",
+                    "type"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:pools:GetPoolProperties"
+            }
+        },
+        "constellix:pools:listPools": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:pools:ListPoolsProperties"
+            }
+        },
+        "constellix:search:getSearchDomain": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:search:GetSearchDomainProperties"
+            }
+        },
+        "constellix:tags:getTag": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Tag"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:tags:GetTagProperties"
+            }
+        },
+        "constellix:tags:listTags": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:tags:ListTagsProperties"
+            }
+        },
+        "constellix:templates:getTemplate": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the template object"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:templates:GetTemplateProperties"
+            }
+        },
+        "constellix:templates:getTemplateRecord": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the record"
+                    },
+                    "templateId": {
+                        "type": "string",
+                        "description": "The ID of the template object"
+                    }
+                },
+                "required": [
+                    "id",
+                    "templateId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:templates:GetTemplateRecord"
+            }
+        },
+        "constellix:templates:listTemplateRecords": {
+            "inputs": {
+                "properties": {
+                    "templateId": {
+                        "type": "string",
+                        "description": "The ID of the template object"
+                    }
+                },
+                "required": [
+                    "templateId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:templates:ListTemplateRecordsProperties"
+            }
+        },
+        "constellix:templates:listTemplates": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:templates:ListTemplatesProperties"
+            }
+        },
+        "constellix:vanitynameservers:getVanityNameserver": {
+            "inputs": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The ID of the Vanity Nameserver"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/constellix:vanitynameservers:GetVanityNameserverProperties"
+            }
+        },
+        "constellix:vanitynameservers:listVanityNameservers": {
+            "inputs": {},
+            "outputs": {
+                "$ref": "#/types/constellix:vanitynameservers:ListVanityNameserversProperties"
+            }
+        }
+    }
+}
