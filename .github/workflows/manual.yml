@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
 
 env:
-  PROVIDER: "xyz"
+  PROVIDER: "constellix"
 
 jobs:
   publish-binary:
