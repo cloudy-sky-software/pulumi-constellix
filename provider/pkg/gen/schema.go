@@ -72,6 +72,21 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 					},
 					Secret: true,
 				},
+				"secretKey": {
+					DefaultInfo: &pschema.DefaultSpec{
+						Environment: []string{
+							"CONSTELLIX_SECRETKEY",
+						},
+					},
+					Description: "The Constellix Secret key.",
+					TypeSpec:    pschema.TypeSpec{Type: "string"},
+					Language: map[string]pschema.RawMessage{
+						"csharp": rawMessage(map[string]interface{}{
+							"name": "SecretKey",
+						}),
+					},
+					Secret: true,
+				},
 			},
 		},
 
@@ -83,7 +98,7 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 	}
 
 	csharpNamespaces := map[string]string{
-		"constellix": "CONSTELLIX",
+		"constellix": "Constellix",
 		// TODO: Is this needed?
 		"": "Provider",
 	}
@@ -112,7 +127,7 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 	}
 
 	pkg.Language["csharp"] = rawMessage(map[string]interface{}{
-		"rootNamespace": "Pulumi",
+		"rootNamespace": "CloudySkySoftware.Pulumi",
 		"packageReferences": map[string]string{
 			"Pulumi": "3.*",
 		},
