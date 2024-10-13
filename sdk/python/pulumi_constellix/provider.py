@@ -19,15 +19,21 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 api_key: Optional[pulumi.Input[str]] = None):
+                 api_key: Optional[pulumi.Input[str]] = None,
+                 secret_key: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[str] api_key: The Constellix API key.
+        :param pulumi.Input[str] secret_key: The Constellix Secret key.
         """
         if api_key is None:
             api_key = _utilities.get_env('CONSTELLIX_APIKEY')
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
+        if secret_key is None:
+            secret_key = _utilities.get_env('CONSTELLIX_SECRETKEY')
+        if secret_key is not None:
+            pulumi.set(__self__, "secret_key", secret_key)
 
     @property
     @pulumi.getter(name="apiKey")
@@ -41,6 +47,18 @@ class ProviderArgs:
     def api_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "api_key", value)
 
+    @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Constellix Secret key.
+        """
+        return pulumi.get(self, "secret_key")
+
+    @secret_key.setter
+    def secret_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_key", value)
+
 
 class Provider(pulumi.ProviderResource):
     @overload
@@ -48,6 +66,7 @@ class Provider(pulumi.ProviderResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 secret_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         The provider type for the Constellix package.
@@ -55,6 +74,7 @@ class Provider(pulumi.ProviderResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_key: The Constellix API key.
+        :param pulumi.Input[str] secret_key: The Constellix Secret key.
         """
         ...
     @overload
@@ -81,6 +101,7 @@ class Provider(pulumi.ProviderResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 secret_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -93,6 +114,9 @@ class Provider(pulumi.ProviderResource):
             if api_key is None:
                 api_key = _utilities.get_env('CONSTELLIX_APIKEY')
             __props__.__dict__["api_key"] = None if api_key is None else pulumi.Output.secret(api_key)
+            if secret_key is None:
+                secret_key = _utilities.get_env('CONSTELLIX_SECRETKEY')
+            __props__.__dict__["secret_key"] = None if secret_key is None else pulumi.Output.secret(secret_key)
         super(Provider, __self__).__init__(
             'constellix',
             resource_name,

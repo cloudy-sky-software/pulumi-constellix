@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.CONSTELLIX
+namespace CloudySkySoftware.Pulumi.Constellix
 {
     public static class Config
     {

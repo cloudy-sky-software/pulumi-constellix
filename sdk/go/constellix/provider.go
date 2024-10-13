@@ -28,8 +28,16 @@ func NewProvider(ctx *pulumi.Context,
 			args.ApiKey = pulumi.StringPtr(d.(string))
 		}
 	}
+	if args.SecretKey == nil {
+		if d := internal.GetEnvOrDefault(nil, nil, "CONSTELLIX_SECRETKEY"); d != nil {
+			args.SecretKey = pulumi.StringPtr(d.(string))
+		}
+	}
 	if args.ApiKey != nil {
 		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrInput)
+	}
+	if args.SecretKey != nil {
+		args.SecretKey = pulumi.ToSecret(args.SecretKey).(pulumi.StringPtrInput)
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
@@ -43,12 +51,16 @@ func NewProvider(ctx *pulumi.Context,
 type providerArgs struct {
 	// The Constellix API key.
 	ApiKey *string `pulumi:"apiKey"`
+	// The Constellix Secret key.
+	SecretKey *string `pulumi:"secretKey"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
 	// The Constellix API key.
 	ApiKey pulumi.StringPtrInput
+	// The Constellix Secret key.
+	SecretKey pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {

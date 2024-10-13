@@ -35,6 +35,7 @@ export class Provider extends pulumi.ProviderResource {
         opts = opts || {};
         {
             resourceInputs["apiKey"] = (args?.apiKey ? pulumi.secret(args.apiKey) : undefined) ?? utilities.getEnv("CONSTELLIX_APIKEY");
+            resourceInputs["secretKey"] = (args?.secretKey ? pulumi.secret(args.secretKey) : undefined) ?? utilities.getEnv("CONSTELLIX_SECRETKEY");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
@@ -49,4 +50,8 @@ export interface ProviderArgs {
      * The Constellix API key.
      */
     apiKey?: pulumi.Input<string>;
+    /**
+     * The Constellix Secret key.
+     */
+    secretKey?: pulumi.Input<string>;
 }

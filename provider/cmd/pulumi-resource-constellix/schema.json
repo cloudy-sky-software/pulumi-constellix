@@ -19,7 +19,7 @@
                 "": "Provider",
                 "analytics": "Analytics",
                 "announcements": "Announcements",
-                "constellix": "CONSTELLIX",
+                "constellix": "Constellix",
                 "contactlists": "Contactlists",
                 "domains": "Domains",
                 "geoproximities": "Geoproximities",
@@ -34,7 +34,7 @@
             "packageReferences": {
                 "Pulumi": "3.*"
             },
-            "rootNamespace": "Pulumi"
+            "rootNamespace": "CloudySkySoftware.Pulumi"
         },
         "go": {
             "importBasePath": "github.com/cloudy-sky-software/pulumi-constellix/sdk/go/constellix"
@@ -3625,6 +3625,21 @@
                 "language": {
                     "csharp": {
                         "name": "ApiKey"
+                    }
+                },
+                "secret": true
+            },
+            "secretKey": {
+                "type": "string",
+                "description": "The Constellix Secret key.",
+                "defaultInfo": {
+                    "environment": [
+                        "CONSTELLIX_SECRETKEY"
+                    ]
+                },
+                "language": {
+                    "csharp": {
+                        "name": "SecretKey"
                     }
                 },
                 "secret": true
