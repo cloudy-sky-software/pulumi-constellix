@@ -41,8 +41,19 @@ model ListMetadata {
   };
 }
 
+model link {
+  /**
+   * Links for the domain record
+   */
+  links?: {
+    @format("url")
+    self?: string;
+  };
+}
+
 model a {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-a`;
@@ -73,6 +84,7 @@ model a {
 
 model aaaa {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-aaaa`;
@@ -99,11 +111,6 @@ model aaaa {
    * How the record should work
    */
   mode?: "standard" | "failover" | "pools" | "roundrobin-failover";
-
-  /**
-   * The type of record
-   */
-  type?: "AAAA";
 }
 
 /**
@@ -155,6 +162,7 @@ model analytics {
 
 model aname {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-aname`;
@@ -207,11 +215,12 @@ model announcement {
   /**
    * The type of Announcement
    */
-  type?: "DashboardLinks";
+  type: "DashboardLinks";
 }
 
 model caa {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-caa`;
@@ -231,6 +240,7 @@ model caa {
 
 model cert {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-cert`;
@@ -250,11 +260,12 @@ model cert {
   /**
    * The type of record
    */
-  type?: "CAA";
+  type: "CAA";
 }
 
 model cname {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-cname`;
@@ -698,7 +709,7 @@ model domainanalytics {
       min?: integer;
       sum?: integer;
     };
-    type?: "geo_proximity" | "standard" | "geo_filter";
+    type: "geo_proximity" | "standard" | "geo_filter";
     values?: {
       date?: utcDateTime;
       value?: integer;
@@ -913,7 +924,7 @@ model hinfo {
   /**
    * The type of record
    */
-  type?: "HINFO";
+  type: "HINFO";
 }
 
 model http {
@@ -937,7 +948,7 @@ model http {
   /**
    * The type of record
    */
-  type?: "HTTP";
+  type: "HTTP";
 }
 
 model ipfilter {
@@ -1066,6 +1077,7 @@ model items {
 
 model mx {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-mx`;
@@ -1085,11 +1097,12 @@ model mx {
   /**
    * The type of record
    */
-  type?: "MX";
+  type: "MX";
 }
 
 model naptr {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-naptr`;
@@ -1109,11 +1122,12 @@ model naptr {
   /**
    * The type of record
    */
-  type?: "NAPTR";
+  type: "NAPTR";
 }
 
 model ns {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-ns`;
@@ -1133,7 +1147,7 @@ model ns {
   /**
    * The type of record
    */
-  type?: "NS";
+  type: "NS";
 }
 
 model ping {
@@ -1196,7 +1210,7 @@ model pool {
   /**
    * The type of pool
    */
-  type?: "A" | "AAAA" | "CNAME";
+  type: "A" | "AAAA" | "CNAME";
 
   updatedAt?: utcDateTime;
 
@@ -1250,7 +1264,7 @@ model `pool-createupdate` {
   /**
    * The type of pool, either A, AAAA or CNAME
    */
-  type?: "A" | "AAAA" | "CNAME";
+  type: "A" | "AAAA" | "CNAME";
 
   /**
    * The values for this pool
@@ -1322,7 +1336,7 @@ model poolindex {
   /**
    * The type of pool
    */
-  type?: "A" | "AAAA" | "CNAME";
+  type: "A" | "AAAA" | "CNAME";
 
   updatedAt?: utcDateTime;
 
@@ -1382,6 +1396,7 @@ model `properties-value-items` {
 
 model ptr {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-ptr`;
@@ -1401,19 +1416,11 @@ model ptr {
   /**
    * The type of record
    */
-  type?: "PTR";
+  type: "PTR";
 }
 
 model domainrecord {
   domain?: `simple-domain`;
-
-  /**
-   * Links for the domain record
-   */
-  links?: {
-    @format("url")
-    self?: string;
-  };
 }
 
 /**
@@ -1555,7 +1562,7 @@ model `record-create-update-a` {
   /**
    * The type of record
    */
-  type?: "A";
+  type: "A";
 }
 
 model `record-create-update-aaaa` {
@@ -1570,7 +1577,7 @@ model `record-create-update-aaaa` {
   /**
    * The type of record
    */
-  type?: "AAAA";
+  type: "AAAA";
 }
 
 model `record-create-update-cname` {
@@ -1585,7 +1592,7 @@ model `record-create-update-cname` {
   /**
    * The type of record
    */
-  type?: "CNAME";
+  type: "CNAME";
 }
 
 model `record-create-update-aname` {
@@ -1600,7 +1607,7 @@ model `record-create-update-aname` {
   /**
    * The type of record
    */
-  type?: "ANAME";
+  type: "ANAME";
 }
 
 model `record-create-update-caa` {
@@ -1615,7 +1622,7 @@ model `record-create-update-caa` {
   /**
    * The type of record
    */
-  type?: "CAA";
+  type: "CAA";
 }
 
 model `record-create-update-cert` {
@@ -1630,7 +1637,7 @@ model `record-create-update-cert` {
   /**
    * The type of record
    */
-  type?: "CERT";
+  type: "CERT";
 }
 
 model `record-create-update-hinfo` {
@@ -1645,7 +1652,7 @@ model `record-create-update-hinfo` {
   /**
    * The type of record
    */
-  type?: "HINFO";
+  type: "HINFO";
 }
 
 model `record-create-update-mx` {
@@ -1660,7 +1667,7 @@ model `record-create-update-mx` {
   /**
    * The type of record
    */
-  type?: "MX";
+  type: "MX";
 }
 
 model `record-create-update-http` {
@@ -1675,7 +1682,7 @@ model `record-create-update-http` {
   /**
    * The type of record
    */
-  type?: "HTTP";
+  type: "HTTP";
 }
 
 model `record-create-update-naptr` {
@@ -1690,7 +1697,7 @@ model `record-create-update-naptr` {
   /**
    * The type of record
    */
-  type?: "NAPTR";
+  type: "NAPTR";
 }
 
 model `record-create-update-ns` {
@@ -1705,7 +1712,7 @@ model `record-create-update-ns` {
   /**
    * The type of record
    */
-  type?: "NS";
+  type: "NS";
 }
 
 model `record-create-update-ptr` {
@@ -1720,7 +1727,7 @@ model `record-create-update-ptr` {
   /**
    * The type of record
    */
-  type?: "PTR";
+  type: "PTR";
 }
 
 model `record-create-update-rp` {
@@ -1735,7 +1742,7 @@ model `record-create-update-rp` {
   /**
    * The type of record
    */
-  type?: "RP";
+  type: "RP";
 }
 
 model `record-create-update-spf` {
@@ -1750,7 +1757,7 @@ model `record-create-update-spf` {
   /**
    * The type of record
    */
-  type?: "SPF";
+  type: "SPF";
 }
 
 model `record-create-update-srv` {
@@ -1765,7 +1772,7 @@ model `record-create-update-srv` {
   /**
    * The type of record
    */
-  type?: "SRV";
+  type: "SRV";
 }
 
 model `record-create-update-txt` {
@@ -1780,7 +1787,7 @@ model `record-create-update-txt` {
   /**
    * The type of record
    */
-  type?: "TXT";
+  type: "TXT";
 }
 
 @discriminator("type")
@@ -1869,7 +1876,7 @@ model rp {
   /**
    * The type of record
    */
-  type?: "RP";
+  type: "RP";
 }
 
 /**
@@ -2095,6 +2102,7 @@ model soa {
 
 model spf {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-spf`;
@@ -2114,11 +2122,12 @@ model spf {
   /**
    * The type of record
    */
-  type?: "SPF";
+  type: "SPF";
 }
 
 model srv {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-srv`;
@@ -2138,7 +2147,7 @@ model srv {
   /**
    * The type of record
    */
-  type?: "SRV";
+  type: "SRV";
 }
 
 /**
@@ -2234,19 +2243,12 @@ model `template-createupdate` {
 }
 
 model templaterecord {
-  /**
-   * Links for the domain record
-   */
-  links?: {
-    @format("url")
-    self?: string;
-  };
-
   template?: `simple-template`;
 }
 
 model txt {
   ...record;
+  ...link;
   ...domainrecord;
   ...templaterecord;
   ...`value-txt`;
@@ -2266,7 +2268,7 @@ model txt {
   /**
    * The type of record
    */
-  type?: "TXT";
+  type: "TXT";
 }
 
 model value {
@@ -2288,7 +2290,7 @@ model value {
   /**
    * The type of redirect, either 301, 302 or frame.
    */
-  redirectType?: string;
+  redirecttype: string;
 
   /**
    * The title of the page containing the redirect frame
@@ -2308,7 +2310,7 @@ model `value-a` {
   /**
    * The type of record
    */
-  type?: "A";
+  type: "A";
 
   @oneOf value?:
     | {
@@ -2367,7 +2369,7 @@ model `value-aaaa` {
   /**
    * The type of record
    */
-  type?: "AAAA";
+  type: "AAAA";
 
   @oneOf value?:
     | {
@@ -2430,7 +2432,7 @@ model `value-aname` {
   /**
    * The type of record
    */
-  type?: "ANAME";
+  type: "ANAME";
 
   @oneOf value?: {
     enabled?: boolean;
@@ -2495,7 +2497,7 @@ model `value-cert` {
     @format("base64 encoded")
     certificate?: string;
 
-    certificateType?: integer;
+    certificatetype: integer;
     enabled?: boolean;
     keyTag?: integer;
   }[];
@@ -2508,7 +2510,7 @@ model `value-cname` {
   /**
    * The type of record
    */
-  type?: "CNAME";
+  type: "CNAME";
 
   @oneOf value?: {
     enabled?: boolean;
@@ -2567,7 +2569,7 @@ model `value-http` {
     description?: string;
     hard?: boolean;
     keywords?: string;
-    redirectType?: string;
+    redirecttype: string;
     title?: string;
 
     @format("url")
@@ -2589,7 +2591,7 @@ model `value-items` {
   /**
    * An integer representing the type of certificate
    */
-  certificateType?: integer;
+  certificatetype: integer;
 
   /**
    * Whether the entry is enabled or not. Disabled entries will not be included in a response
