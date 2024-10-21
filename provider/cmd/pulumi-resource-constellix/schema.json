@@ -1299,29 +1299,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:ValueAValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:domains:ValueAValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:ValueAValueItem"
-                            }
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:domains:ValueAValue"
                 }
             },
             "type": "object"
@@ -1398,29 +1376,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:ValueAaaaValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:domains:ValueAaaaValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:ValueAaaaValueItem"
-                            }
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:domains:ValueAaaaValue"
                 }
             },
             "type": "object"
@@ -2260,23 +2216,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:ValueCnameValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:domains:ValueCnameValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:domains:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:domains:ValueCnameValue"
                 }
             },
             "type": "object"
@@ -4556,40 +4496,7 @@
                 }
             ]
         },
-        "constellix:domains:ValueAValueItem": {
-            "properties": {
-                "active": {
-                    "type": "boolean",
-                    "description": "Whether this entry is considered active or not"
-                },
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the failover entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "failed": {
-                    "type": "boolean",
-                    "description": "Does sonar consider this entry to be failed"
-                },
-                "order": {
-                    "type": "integer",
-                    "description": "The sort order of the entry. Lower order entries are preferred over higher order entries"
-                },
-                "sonarCheckId": {
-                    "type": "integer",
-                    "description": "The ID in Sonar to use for checking if the record should be used"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The status of the value in Sonar"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:domains:ValueAValueProperties": {
-            "description": "Failover record mode",
+        "constellix:domains:ValueAValue": {
             "properties": {
                 "mode": {
                     "$ref": "#/types/constellix:domains:ValueAValuePropertiesMode",
@@ -4734,40 +4641,7 @@
                 }
             ]
         },
-        "constellix:domains:ValueAaaaValueItem": {
-            "properties": {
-                "active": {
-                    "type": "boolean",
-                    "description": "Whether this entry is considered active or not"
-                },
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the failover entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "failed": {
-                    "type": "boolean",
-                    "description": "Does sonar consider this entry to be failed"
-                },
-                "order": {
-                    "type": "integer",
-                    "description": "The sort order of the entry. Lower order entries are preferred over higher order entries"
-                },
-                "sonarCheckId": {
-                    "type": "integer",
-                    "description": "The ID in Sonar to use for checking if the record should be used"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The status of the value in Sonar"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:domains:ValueAaaaValueProperties": {
-            "description": "Failover record mode",
+        "constellix:domains:ValueAaaaValue": {
             "properties": {
                 "enabled": {
                     "type": "boolean",
@@ -5138,20 +5012,7 @@
                 }
             ]
         },
-        "constellix:domains:ValueCnameValueItemProperties": {
-            "properties": {
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:domains:ValueCnameValueProperties": {
-            "description": "Failover record mode",
+        "constellix:domains:ValueCnameValue": {
             "properties": {
                 "mode": {
                     "$ref": "#/types/constellix:domains:ValueCnameValuePropertiesMode",
@@ -7383,29 +7244,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:ValueAValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:templates:ValueAValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:ValueAValueItem"
-                            }
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:templates:ValueAValue"
                 }
             },
             "type": "object"
@@ -7482,29 +7321,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:ValueAaaaValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:templates:ValueAaaaValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:ValueAaaaValueItem"
-                            }
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:templates:ValueAaaaValue"
                 }
             },
             "type": "object"
@@ -8344,23 +8161,7 @@
                     "description": "The type of record"
                 },
                 "value": {
-                    "oneOf": [
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:ValueCnameValueItemProperties"
-                            }
-                        },
-                        {
-                            "$ref": "#/types/constellix:templates:ValueCnameValueProperties"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/types/constellix:templates:SimplePool"
-                            }
-                        }
-                    ]
+                    "$ref": "#/types/constellix:templates:ValueCnameValue"
                 }
             },
             "type": "object"
@@ -10452,40 +10253,7 @@
                 }
             ]
         },
-        "constellix:templates:ValueAValueItem": {
-            "properties": {
-                "active": {
-                    "type": "boolean",
-                    "description": "Whether this entry is considered active or not"
-                },
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the failover entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "failed": {
-                    "type": "boolean",
-                    "description": "Does sonar consider this entry to be failed"
-                },
-                "order": {
-                    "type": "integer",
-                    "description": "The sort order of the entry. Lower order entries are preferred over higher order entries"
-                },
-                "sonarCheckId": {
-                    "type": "integer",
-                    "description": "The ID in Sonar to use for checking if the record should be used"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The status of the value in Sonar"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:templates:ValueAValueProperties": {
-            "description": "Failover record mode",
+        "constellix:templates:ValueAValue": {
             "properties": {
                 "mode": {
                     "$ref": "#/types/constellix:templates:ValueAValuePropertiesMode",
@@ -10630,40 +10398,7 @@
                 }
             ]
         },
-        "constellix:templates:ValueAaaaValueItem": {
-            "properties": {
-                "active": {
-                    "type": "boolean",
-                    "description": "Whether this entry is considered active or not"
-                },
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the failover entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "failed": {
-                    "type": "boolean",
-                    "description": "Does sonar consider this entry to be failed"
-                },
-                "order": {
-                    "type": "integer",
-                    "description": "The sort order of the entry. Lower order entries are preferred over higher order entries"
-                },
-                "sonarCheckId": {
-                    "type": "integer",
-                    "description": "The ID in Sonar to use for checking if the record should be used"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The status of the value in Sonar"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:templates:ValueAaaaValueProperties": {
-            "description": "Failover record mode",
+        "constellix:templates:ValueAaaaValue": {
             "properties": {
                 "enabled": {
                     "type": "boolean",
@@ -11034,20 +10769,7 @@
                 }
             ]
         },
-        "constellix:templates:ValueCnameValueItemProperties": {
-            "properties": {
-                "enabled": {
-                    "type": "boolean",
-                    "description": "Whether the entry is enabled or not. Disabled entries will not be included in a response"
-                },
-                "value": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "constellix:templates:ValueCnameValueProperties": {
-            "description": "Failover record mode",
+        "constellix:templates:ValueCnameValue": {
             "properties": {
                 "mode": {
                     "$ref": "#/types/constellix:templates:ValueCnameValuePropertiesMode",

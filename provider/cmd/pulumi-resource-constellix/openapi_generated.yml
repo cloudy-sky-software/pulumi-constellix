@@ -3007,7 +3007,7 @@ components:
                         - A
                     type: string
                 value:
-                    oneOf:
+                    allOf:
                         - description: Standard record mode
                           items:
                             properties:
@@ -3152,7 +3152,7 @@ components:
                         - AAAA
                     type: string
                 value:
-                    oneOf:
+                    allOf:
                         - description: Standard record mode
                           items:
                             properties:
@@ -3489,7 +3489,7 @@ components:
                         - CNAME
                     type: string
                 value:
-                    oneOf:
+                    allOf:
                         - description: Standard record mode
                           items:
                             properties:
