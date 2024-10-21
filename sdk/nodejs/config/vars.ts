@@ -8,12 +8,23 @@ declare var exports: any;
 const __config = new pulumi.Config("constellix");
 
 /**
- * The API key
+ * The Constellix API key
  */
 export declare const apiKey: string | undefined;
 Object.defineProperty(exports, "apiKey", {
     get() {
         return __config.get("apiKey");
+    },
+    enumerable: true,
+});
+
+/**
+ * The Constellix secret key
+ */
+export declare const secretKey: string | undefined;
+Object.defineProperty(exports, "secretKey", {
+    get() {
+        return __config.get("secretKey");
     },
     enumerable: true,
 });

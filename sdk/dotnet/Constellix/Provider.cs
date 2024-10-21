@@ -64,7 +64,7 @@ namespace CloudySkySoftware.Pulumi.Constellix
         private Input<string>? _secretKey;
 
         /// <summary>
-        /// The Constellix Secret key.
+        /// The Constellix secret key.
         /// </summary>
         public Input<string>? SecretKey
         {

@@ -34,12 +34,22 @@ namespace CloudySkySoftware.Pulumi.Constellix
 
         private static readonly __Value<string?> _apiKey = new __Value<string?>(() => __config.Get("apiKey"));
         /// <summary>
-        /// The API key
+        /// The Constellix API key
         /// </summary>
         public static string? ApiKey
         {
             get => _apiKey.Get();
             set => _apiKey.Set(value);
+        }
+
+        private static readonly __Value<string?> _secretKey = new __Value<string?>(() => __config.Get("secretKey"));
+        /// <summary>
+        /// The Constellix secret key
+        /// </summary>
+        public static string? SecretKey
+        {
+            get => _secretKey.Get();
+            set => _secretKey.Set(value);
         }
 
     }

@@ -16,6 +16,11 @@ from .. import _utilities
 
 apiKey: Optional[str]
 """
-The API key
+The Constellix API key
+"""
+
+secretKey: Optional[str]
+"""
+The Constellix secret key
 """
 

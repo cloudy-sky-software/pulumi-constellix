@@ -24,7 +24,7 @@ class ProviderArgs:
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[str] api_key: The Constellix API key.
-        :param pulumi.Input[str] secret_key: The Constellix Secret key.
+        :param pulumi.Input[str] secret_key: The Constellix secret key.
         """
         if api_key is None:
             api_key = _utilities.get_env('CONSTELLIX_APIKEY')
@@ -51,7 +51,7 @@ class ProviderArgs:
     @pulumi.getter(name="secretKey")
     def secret_key(self) -> Optional[pulumi.Input[str]]:
         """
-        The Constellix Secret key.
+        The Constellix secret key.
         """
         return pulumi.get(self, "secret_key")
 
@@ -74,7 +74,7 @@ class Provider(pulumi.ProviderResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_key: The Constellix API key.
-        :param pulumi.Input[str] secret_key: The Constellix Secret key.
+        :param pulumi.Input[str] secret_key: The Constellix secret key.
         """
         ...
     @overload

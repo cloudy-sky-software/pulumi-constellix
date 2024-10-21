@@ -51,7 +51,7 @@ func NewProvider(ctx *pulumi.Context,
 type providerArgs struct {
 	// The Constellix API key.
 	ApiKey *string `pulumi:"apiKey"`
-	// The Constellix Secret key.
+	// The Constellix secret key.
 	SecretKey *string `pulumi:"secretKey"`
 }
 
@@ -59,7 +59,7 @@ type providerArgs struct {
 type ProviderArgs struct {
 	// The Constellix API key.
 	ApiKey pulumi.StringPtrInput
-	// The Constellix Secret key.
+	// The Constellix secret key.
 	SecretKey pulumi.StringPtrInput
 }
 

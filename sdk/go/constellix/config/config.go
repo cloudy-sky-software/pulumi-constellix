@@ -11,7 +11,12 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// The API key
+// The Constellix API key
 func GetApiKey(ctx *pulumi.Context) string {
 	return config.Get(ctx, "constellix:apiKey")
+}
+
+// The Constellix secret key
+func GetSecretKey(ctx *pulumi.Context) string {
+	return config.Get(ctx, "constellix:secretKey")
 }

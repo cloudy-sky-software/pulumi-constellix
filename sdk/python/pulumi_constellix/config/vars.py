@@ -23,7 +23,14 @@ class _ExportableConfig(types.ModuleType):
     @property
     def api_key(self) -> Optional[str]:
         """
-        The API key
+        The Constellix API key
         """
         return __config__.get('apiKey')
+
+    @property
+    def secret_key(self) -> Optional[str]:
+        """
+        The Constellix secret key
+        """
+        return __config__.get('secretKey')
 

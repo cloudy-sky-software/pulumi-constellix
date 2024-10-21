@@ -51,7 +51,7 @@ export interface ProviderArgs {
      */
     apiKey?: pulumi.Input<string>;
     /**
-     * The Constellix Secret key.
+     * The Constellix secret key.
      */
     secretKey?: pulumi.Input<string>;
 }
