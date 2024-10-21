@@ -10,130 +10,127 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Optional region for this record. Will default to 'default'.
-type DomainRecordPropertiesRegion string
+// The current mode for this record
+type APropertiesMode string
 
 const (
-	DomainRecordPropertiesRegionDefault      = DomainRecordPropertiesRegion("default")
-	DomainRecordPropertiesRegionEurope       = DomainRecordPropertiesRegion("europe")
-	DomainRecordPropertiesRegionUsEast       = DomainRecordPropertiesRegion("us-east")
-	DomainRecordPropertiesRegionUsWest       = DomainRecordPropertiesRegion("us-west")
-	DomainRecordPropertiesRegionAsiaPacific  = DomainRecordPropertiesRegion("asia-pacific")
-	DomainRecordPropertiesRegionOceania      = DomainRecordPropertiesRegion("oceania")
-	DomainRecordPropertiesRegionSouthAmerica = DomainRecordPropertiesRegion("south-america")
+	APropertiesModeStandard           = APropertiesMode("standard")
+	APropertiesModeFailover           = APropertiesMode("failover")
+	APropertiesModeRoundrobinFailover = APropertiesMode("roundrobin-failover")
+	APropertiesModePools              = APropertiesMode("pools")
 )
 
-func (DomainRecordPropertiesRegion) ElementType() reflect.Type {
-	return reflect.TypeOf((*DomainRecordPropertiesRegion)(nil)).Elem()
+func (APropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*APropertiesMode)(nil)).Elem()
 }
 
-func (e DomainRecordPropertiesRegion) ToDomainRecordPropertiesRegionOutput() DomainRecordPropertiesRegionOutput {
-	return pulumi.ToOutput(e).(DomainRecordPropertiesRegionOutput)
+func (e APropertiesMode) ToAPropertiesModeOutput() APropertiesModeOutput {
+	return pulumi.ToOutput(e).(APropertiesModeOutput)
 }
 
-func (e DomainRecordPropertiesRegion) ToDomainRecordPropertiesRegionOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionOutput {
-	return pulumi.ToOutputWithContext(ctx, e).(DomainRecordPropertiesRegionOutput)
+func (e APropertiesMode) ToAPropertiesModeOutputWithContext(ctx context.Context) APropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(APropertiesModeOutput)
 }
 
-func (e DomainRecordPropertiesRegion) ToDomainRecordPropertiesRegionPtrOutput() DomainRecordPropertiesRegionPtrOutput {
-	return e.ToDomainRecordPropertiesRegionPtrOutputWithContext(context.Background())
+func (e APropertiesMode) ToAPropertiesModePtrOutput() APropertiesModePtrOutput {
+	return e.ToAPropertiesModePtrOutputWithContext(context.Background())
 }
 
-func (e DomainRecordPropertiesRegion) ToDomainRecordPropertiesRegionPtrOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionPtrOutput {
-	return DomainRecordPropertiesRegion(e).ToDomainRecordPropertiesRegionOutputWithContext(ctx).ToDomainRecordPropertiesRegionPtrOutputWithContext(ctx)
+func (e APropertiesMode) ToAPropertiesModePtrOutputWithContext(ctx context.Context) APropertiesModePtrOutput {
+	return APropertiesMode(e).ToAPropertiesModeOutputWithContext(ctx).ToAPropertiesModePtrOutputWithContext(ctx)
 }
 
-func (e DomainRecordPropertiesRegion) ToStringOutput() pulumi.StringOutput {
+func (e APropertiesMode) ToStringOutput() pulumi.StringOutput {
 	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
 }
 
-func (e DomainRecordPropertiesRegion) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+func (e APropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
 	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
 }
 
-func (e DomainRecordPropertiesRegion) ToStringPtrOutput() pulumi.StringPtrOutput {
+func (e APropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
 	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
 }
 
-func (e DomainRecordPropertiesRegion) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+func (e APropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
 	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
 }
 
-type DomainRecordPropertiesRegionOutput struct{ *pulumi.OutputState }
+type APropertiesModeOutput struct{ *pulumi.OutputState }
 
-func (DomainRecordPropertiesRegionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DomainRecordPropertiesRegion)(nil)).Elem()
+func (APropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*APropertiesMode)(nil)).Elem()
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToDomainRecordPropertiesRegionOutput() DomainRecordPropertiesRegionOutput {
+func (o APropertiesModeOutput) ToAPropertiesModeOutput() APropertiesModeOutput {
 	return o
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToDomainRecordPropertiesRegionOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionOutput {
+func (o APropertiesModeOutput) ToAPropertiesModeOutputWithContext(ctx context.Context) APropertiesModeOutput {
 	return o
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToDomainRecordPropertiesRegionPtrOutput() DomainRecordPropertiesRegionPtrOutput {
-	return o.ToDomainRecordPropertiesRegionPtrOutputWithContext(context.Background())
+func (o APropertiesModeOutput) ToAPropertiesModePtrOutput() APropertiesModePtrOutput {
+	return o.ToAPropertiesModePtrOutputWithContext(context.Background())
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToDomainRecordPropertiesRegionPtrOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v DomainRecordPropertiesRegion) *DomainRecordPropertiesRegion {
+func (o APropertiesModeOutput) ToAPropertiesModePtrOutputWithContext(ctx context.Context) APropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v APropertiesMode) *APropertiesMode {
 		return &v
-	}).(DomainRecordPropertiesRegionPtrOutput)
+	}).(APropertiesModePtrOutput)
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToStringOutput() pulumi.StringOutput {
+func (o APropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
 	return o.ToStringOutputWithContext(context.Background())
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, e DomainRecordPropertiesRegion) string {
+func (o APropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e APropertiesMode) string {
 		return string(e)
 	}).(pulumi.StringOutput)
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+func (o APropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
 	return o.ToStringPtrOutputWithContext(context.Background())
 }
 
-func (o DomainRecordPropertiesRegionOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, e DomainRecordPropertiesRegion) *string {
+func (o APropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e APropertiesMode) *string {
 		v := string(e)
 		return &v
 	}).(pulumi.StringPtrOutput)
 }
 
-type DomainRecordPropertiesRegionPtrOutput struct{ *pulumi.OutputState }
+type APropertiesModePtrOutput struct{ *pulumi.OutputState }
 
-func (DomainRecordPropertiesRegionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**DomainRecordPropertiesRegion)(nil)).Elem()
+func (APropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**APropertiesMode)(nil)).Elem()
 }
 
-func (o DomainRecordPropertiesRegionPtrOutput) ToDomainRecordPropertiesRegionPtrOutput() DomainRecordPropertiesRegionPtrOutput {
+func (o APropertiesModePtrOutput) ToAPropertiesModePtrOutput() APropertiesModePtrOutput {
 	return o
 }
 
-func (o DomainRecordPropertiesRegionPtrOutput) ToDomainRecordPropertiesRegionPtrOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionPtrOutput {
+func (o APropertiesModePtrOutput) ToAPropertiesModePtrOutputWithContext(ctx context.Context) APropertiesModePtrOutput {
 	return o
 }
 
-func (o DomainRecordPropertiesRegionPtrOutput) Elem() DomainRecordPropertiesRegionOutput {
-	return o.ApplyT(func(v *DomainRecordPropertiesRegion) DomainRecordPropertiesRegion {
+func (o APropertiesModePtrOutput) Elem() APropertiesModeOutput {
+	return o.ApplyT(func(v *APropertiesMode) APropertiesMode {
 		if v != nil {
 			return *v
 		}
-		var ret DomainRecordPropertiesRegion
+		var ret APropertiesMode
 		return ret
-	}).(DomainRecordPropertiesRegionOutput)
+	}).(APropertiesModeOutput)
 }
 
-func (o DomainRecordPropertiesRegionPtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+func (o APropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
 	return o.ToStringPtrOutputWithContext(context.Background())
 }
 
-func (o DomainRecordPropertiesRegionPtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, e *DomainRecordPropertiesRegion) *string {
+func (o APropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *APropertiesMode) *string {
 		if e == nil {
 			return nil
 		}
@@ -142,48 +139,1863 @@ func (o DomainRecordPropertiesRegionPtrOutput) ToStringPtrOutputWithContext(ctx 
 	}).(pulumi.StringPtrOutput)
 }
 
-// DomainRecordPropertiesRegionInput is an input type that accepts values of the DomainRecordPropertiesRegion enum
-// A concrete instance of `DomainRecordPropertiesRegionInput` can be one of the following:
+// APropertiesModeInput is an input type that accepts values of the APropertiesMode enum
+// A concrete instance of `APropertiesModeInput` can be one of the following:
 //
-//	DomainRecordPropertiesRegionDefault
-//	DomainRecordPropertiesRegionEurope
-//	DomainRecordPropertiesRegionUsEast
-//	DomainRecordPropertiesRegionUsWest
-//	DomainRecordPropertiesRegionAsiaPacific
-//	DomainRecordPropertiesRegionOceania
-//	DomainRecordPropertiesRegionSouthAmerica
-type DomainRecordPropertiesRegionInput interface {
+//	APropertiesModeStandard
+//	APropertiesModeFailover
+//	APropertiesModeRoundrobinFailover
+//	APropertiesModePools
+type APropertiesModeInput interface {
 	pulumi.Input
 
-	ToDomainRecordPropertiesRegionOutput() DomainRecordPropertiesRegionOutput
-	ToDomainRecordPropertiesRegionOutputWithContext(context.Context) DomainRecordPropertiesRegionOutput
+	ToAPropertiesModeOutput() APropertiesModeOutput
+	ToAPropertiesModeOutputWithContext(context.Context) APropertiesModeOutput
 }
 
-var domainRecordPropertiesRegionPtrType = reflect.TypeOf((**DomainRecordPropertiesRegion)(nil)).Elem()
+var apropertiesModePtrType = reflect.TypeOf((**APropertiesMode)(nil)).Elem()
 
-type DomainRecordPropertiesRegionPtrInput interface {
+type APropertiesModePtrInput interface {
 	pulumi.Input
 
-	ToDomainRecordPropertiesRegionPtrOutput() DomainRecordPropertiesRegionPtrOutput
-	ToDomainRecordPropertiesRegionPtrOutputWithContext(context.Context) DomainRecordPropertiesRegionPtrOutput
+	ToAPropertiesModePtrOutput() APropertiesModePtrOutput
+	ToAPropertiesModePtrOutputWithContext(context.Context) APropertiesModePtrOutput
 }
 
-type domainRecordPropertiesRegionPtr string
+type apropertiesModePtr string
 
-func DomainRecordPropertiesRegionPtr(v string) DomainRecordPropertiesRegionPtrInput {
-	return (*domainRecordPropertiesRegionPtr)(&v)
+func APropertiesModePtr(v string) APropertiesModePtrInput {
+	return (*apropertiesModePtr)(&v)
 }
 
-func (*domainRecordPropertiesRegionPtr) ElementType() reflect.Type {
-	return domainRecordPropertiesRegionPtrType
+func (*apropertiesModePtr) ElementType() reflect.Type {
+	return apropertiesModePtrType
 }
 
-func (in *domainRecordPropertiesRegionPtr) ToDomainRecordPropertiesRegionPtrOutput() DomainRecordPropertiesRegionPtrOutput {
-	return pulumi.ToOutput(in).(DomainRecordPropertiesRegionPtrOutput)
+func (in *apropertiesModePtr) ToAPropertiesModePtrOutput() APropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(APropertiesModePtrOutput)
 }
 
-func (in *domainRecordPropertiesRegionPtr) ToDomainRecordPropertiesRegionPtrOutputWithContext(ctx context.Context) DomainRecordPropertiesRegionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, in).(DomainRecordPropertiesRegionPtrOutput)
+func (in *apropertiesModePtr) ToAPropertiesModePtrOutputWithContext(ctx context.Context) APropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(APropertiesModePtrOutput)
+}
+
+// The type of record
+type APropertiesType string
+
+const (
+	APropertiesTypeA = APropertiesType("A")
+)
+
+func (APropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*APropertiesType)(nil)).Elem()
+}
+
+func (e APropertiesType) ToAPropertiesTypeOutput() APropertiesTypeOutput {
+	return pulumi.ToOutput(e).(APropertiesTypeOutput)
+}
+
+func (e APropertiesType) ToAPropertiesTypeOutputWithContext(ctx context.Context) APropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(APropertiesTypeOutput)
+}
+
+func (e APropertiesType) ToAPropertiesTypePtrOutput() APropertiesTypePtrOutput {
+	return e.ToAPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e APropertiesType) ToAPropertiesTypePtrOutputWithContext(ctx context.Context) APropertiesTypePtrOutput {
+	return APropertiesType(e).ToAPropertiesTypeOutputWithContext(ctx).ToAPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e APropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e APropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e APropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e APropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type APropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (APropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*APropertiesType)(nil)).Elem()
+}
+
+func (o APropertiesTypeOutput) ToAPropertiesTypeOutput() APropertiesTypeOutput {
+	return o
+}
+
+func (o APropertiesTypeOutput) ToAPropertiesTypeOutputWithContext(ctx context.Context) APropertiesTypeOutput {
+	return o
+}
+
+func (o APropertiesTypeOutput) ToAPropertiesTypePtrOutput() APropertiesTypePtrOutput {
+	return o.ToAPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o APropertiesTypeOutput) ToAPropertiesTypePtrOutputWithContext(ctx context.Context) APropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v APropertiesType) *APropertiesType {
+		return &v
+	}).(APropertiesTypePtrOutput)
+}
+
+func (o APropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o APropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e APropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o APropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o APropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e APropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type APropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (APropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**APropertiesType)(nil)).Elem()
+}
+
+func (o APropertiesTypePtrOutput) ToAPropertiesTypePtrOutput() APropertiesTypePtrOutput {
+	return o
+}
+
+func (o APropertiesTypePtrOutput) ToAPropertiesTypePtrOutputWithContext(ctx context.Context) APropertiesTypePtrOutput {
+	return o
+}
+
+func (o APropertiesTypePtrOutput) Elem() APropertiesTypeOutput {
+	return o.ApplyT(func(v *APropertiesType) APropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret APropertiesType
+		return ret
+	}).(APropertiesTypeOutput)
+}
+
+func (o APropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o APropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *APropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// APropertiesTypeInput is an input type that accepts values of the APropertiesType enum
+// A concrete instance of `APropertiesTypeInput` can be one of the following:
+//
+//	APropertiesTypeA
+type APropertiesTypeInput interface {
+	pulumi.Input
+
+	ToAPropertiesTypeOutput() APropertiesTypeOutput
+	ToAPropertiesTypeOutputWithContext(context.Context) APropertiesTypeOutput
+}
+
+var apropertiesTypePtrType = reflect.TypeOf((**APropertiesType)(nil)).Elem()
+
+type APropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToAPropertiesTypePtrOutput() APropertiesTypePtrOutput
+	ToAPropertiesTypePtrOutputWithContext(context.Context) APropertiesTypePtrOutput
+}
+
+type apropertiesTypePtr string
+
+func APropertiesTypePtr(v string) APropertiesTypePtrInput {
+	return (*apropertiesTypePtr)(&v)
+}
+
+func (*apropertiesTypePtr) ElementType() reflect.Type {
+	return apropertiesTypePtrType
+}
+
+func (in *apropertiesTypePtr) ToAPropertiesTypePtrOutput() APropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(APropertiesTypePtrOutput)
+}
+
+func (in *apropertiesTypePtr) ToAPropertiesTypePtrOutputWithContext(ctx context.Context) APropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(APropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type AaaaPropertiesMode string
+
+const (
+	AaaaPropertiesModeStandard           = AaaaPropertiesMode("standard")
+	AaaaPropertiesModeFailover           = AaaaPropertiesMode("failover")
+	AaaaPropertiesModeRoundrobinFailover = AaaaPropertiesMode("roundrobin-failover")
+	AaaaPropertiesModePools              = AaaaPropertiesMode("pools")
+)
+
+func (AaaaPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*AaaaPropertiesMode)(nil)).Elem()
+}
+
+func (e AaaaPropertiesMode) ToAaaaPropertiesModeOutput() AaaaPropertiesModeOutput {
+	return pulumi.ToOutput(e).(AaaaPropertiesModeOutput)
+}
+
+func (e AaaaPropertiesMode) ToAaaaPropertiesModeOutputWithContext(ctx context.Context) AaaaPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(AaaaPropertiesModeOutput)
+}
+
+func (e AaaaPropertiesMode) ToAaaaPropertiesModePtrOutput() AaaaPropertiesModePtrOutput {
+	return e.ToAaaaPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e AaaaPropertiesMode) ToAaaaPropertiesModePtrOutputWithContext(ctx context.Context) AaaaPropertiesModePtrOutput {
+	return AaaaPropertiesMode(e).ToAaaaPropertiesModeOutputWithContext(ctx).ToAaaaPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e AaaaPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AaaaPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AaaaPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e AaaaPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type AaaaPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (AaaaPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AaaaPropertiesMode)(nil)).Elem()
+}
+
+func (o AaaaPropertiesModeOutput) ToAaaaPropertiesModeOutput() AaaaPropertiesModeOutput {
+	return o
+}
+
+func (o AaaaPropertiesModeOutput) ToAaaaPropertiesModeOutputWithContext(ctx context.Context) AaaaPropertiesModeOutput {
+	return o
+}
+
+func (o AaaaPropertiesModeOutput) ToAaaaPropertiesModePtrOutput() AaaaPropertiesModePtrOutput {
+	return o.ToAaaaPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesModeOutput) ToAaaaPropertiesModePtrOutputWithContext(ctx context.Context) AaaaPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AaaaPropertiesMode) *AaaaPropertiesMode {
+		return &v
+	}).(AaaaPropertiesModePtrOutput)
+}
+
+func (o AaaaPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AaaaPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o AaaaPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AaaaPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type AaaaPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (AaaaPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AaaaPropertiesMode)(nil)).Elem()
+}
+
+func (o AaaaPropertiesModePtrOutput) ToAaaaPropertiesModePtrOutput() AaaaPropertiesModePtrOutput {
+	return o
+}
+
+func (o AaaaPropertiesModePtrOutput) ToAaaaPropertiesModePtrOutputWithContext(ctx context.Context) AaaaPropertiesModePtrOutput {
+	return o
+}
+
+func (o AaaaPropertiesModePtrOutput) Elem() AaaaPropertiesModeOutput {
+	return o.ApplyT(func(v *AaaaPropertiesMode) AaaaPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret AaaaPropertiesMode
+		return ret
+	}).(AaaaPropertiesModeOutput)
+}
+
+func (o AaaaPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *AaaaPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// AaaaPropertiesModeInput is an input type that accepts values of the AaaaPropertiesMode enum
+// A concrete instance of `AaaaPropertiesModeInput` can be one of the following:
+//
+//	AaaaPropertiesModeStandard
+//	AaaaPropertiesModeFailover
+//	AaaaPropertiesModeRoundrobinFailover
+//	AaaaPropertiesModePools
+type AaaaPropertiesModeInput interface {
+	pulumi.Input
+
+	ToAaaaPropertiesModeOutput() AaaaPropertiesModeOutput
+	ToAaaaPropertiesModeOutputWithContext(context.Context) AaaaPropertiesModeOutput
+}
+
+var aaaaPropertiesModePtrType = reflect.TypeOf((**AaaaPropertiesMode)(nil)).Elem()
+
+type AaaaPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToAaaaPropertiesModePtrOutput() AaaaPropertiesModePtrOutput
+	ToAaaaPropertiesModePtrOutputWithContext(context.Context) AaaaPropertiesModePtrOutput
+}
+
+type aaaaPropertiesModePtr string
+
+func AaaaPropertiesModePtr(v string) AaaaPropertiesModePtrInput {
+	return (*aaaaPropertiesModePtr)(&v)
+}
+
+func (*aaaaPropertiesModePtr) ElementType() reflect.Type {
+	return aaaaPropertiesModePtrType
+}
+
+func (in *aaaaPropertiesModePtr) ToAaaaPropertiesModePtrOutput() AaaaPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(AaaaPropertiesModePtrOutput)
+}
+
+func (in *aaaaPropertiesModePtr) ToAaaaPropertiesModePtrOutputWithContext(ctx context.Context) AaaaPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(AaaaPropertiesModePtrOutput)
+}
+
+// The type of record
+type AaaaPropertiesType string
+
+const (
+	AaaaPropertiesTypeAaaa = AaaaPropertiesType("AAAA")
+)
+
+func (AaaaPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*AaaaPropertiesType)(nil)).Elem()
+}
+
+func (e AaaaPropertiesType) ToAaaaPropertiesTypeOutput() AaaaPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(AaaaPropertiesTypeOutput)
+}
+
+func (e AaaaPropertiesType) ToAaaaPropertiesTypeOutputWithContext(ctx context.Context) AaaaPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(AaaaPropertiesTypeOutput)
+}
+
+func (e AaaaPropertiesType) ToAaaaPropertiesTypePtrOutput() AaaaPropertiesTypePtrOutput {
+	return e.ToAaaaPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e AaaaPropertiesType) ToAaaaPropertiesTypePtrOutputWithContext(ctx context.Context) AaaaPropertiesTypePtrOutput {
+	return AaaaPropertiesType(e).ToAaaaPropertiesTypeOutputWithContext(ctx).ToAaaaPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e AaaaPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AaaaPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AaaaPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e AaaaPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type AaaaPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (AaaaPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AaaaPropertiesType)(nil)).Elem()
+}
+
+func (o AaaaPropertiesTypeOutput) ToAaaaPropertiesTypeOutput() AaaaPropertiesTypeOutput {
+	return o
+}
+
+func (o AaaaPropertiesTypeOutput) ToAaaaPropertiesTypeOutputWithContext(ctx context.Context) AaaaPropertiesTypeOutput {
+	return o
+}
+
+func (o AaaaPropertiesTypeOutput) ToAaaaPropertiesTypePtrOutput() AaaaPropertiesTypePtrOutput {
+	return o.ToAaaaPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesTypeOutput) ToAaaaPropertiesTypePtrOutputWithContext(ctx context.Context) AaaaPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AaaaPropertiesType) *AaaaPropertiesType {
+		return &v
+	}).(AaaaPropertiesTypePtrOutput)
+}
+
+func (o AaaaPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AaaaPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o AaaaPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AaaaPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type AaaaPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (AaaaPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AaaaPropertiesType)(nil)).Elem()
+}
+
+func (o AaaaPropertiesTypePtrOutput) ToAaaaPropertiesTypePtrOutput() AaaaPropertiesTypePtrOutput {
+	return o
+}
+
+func (o AaaaPropertiesTypePtrOutput) ToAaaaPropertiesTypePtrOutputWithContext(ctx context.Context) AaaaPropertiesTypePtrOutput {
+	return o
+}
+
+func (o AaaaPropertiesTypePtrOutput) Elem() AaaaPropertiesTypeOutput {
+	return o.ApplyT(func(v *AaaaPropertiesType) AaaaPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret AaaaPropertiesType
+		return ret
+	}).(AaaaPropertiesTypeOutput)
+}
+
+func (o AaaaPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AaaaPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *AaaaPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// AaaaPropertiesTypeInput is an input type that accepts values of the AaaaPropertiesType enum
+// A concrete instance of `AaaaPropertiesTypeInput` can be one of the following:
+//
+//	AaaaPropertiesTypeAaaa
+type AaaaPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToAaaaPropertiesTypeOutput() AaaaPropertiesTypeOutput
+	ToAaaaPropertiesTypeOutputWithContext(context.Context) AaaaPropertiesTypeOutput
+}
+
+var aaaaPropertiesTypePtrType = reflect.TypeOf((**AaaaPropertiesType)(nil)).Elem()
+
+type AaaaPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToAaaaPropertiesTypePtrOutput() AaaaPropertiesTypePtrOutput
+	ToAaaaPropertiesTypePtrOutputWithContext(context.Context) AaaaPropertiesTypePtrOutput
+}
+
+type aaaaPropertiesTypePtr string
+
+func AaaaPropertiesTypePtr(v string) AaaaPropertiesTypePtrInput {
+	return (*aaaaPropertiesTypePtr)(&v)
+}
+
+func (*aaaaPropertiesTypePtr) ElementType() reflect.Type {
+	return aaaaPropertiesTypePtrType
+}
+
+func (in *aaaaPropertiesTypePtr) ToAaaaPropertiesTypePtrOutput() AaaaPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(AaaaPropertiesTypePtrOutput)
+}
+
+func (in *aaaaPropertiesTypePtr) ToAaaaPropertiesTypePtrOutputWithContext(ctx context.Context) AaaaPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(AaaaPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type AnamePropertiesMode string
+
+const (
+	AnamePropertiesModeStandard = AnamePropertiesMode("standard")
+	AnamePropertiesModeFailover = AnamePropertiesMode("failover")
+	AnamePropertiesModePools    = AnamePropertiesMode("pools")
+)
+
+func (AnamePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnamePropertiesMode)(nil)).Elem()
+}
+
+func (e AnamePropertiesMode) ToAnamePropertiesModeOutput() AnamePropertiesModeOutput {
+	return pulumi.ToOutput(e).(AnamePropertiesModeOutput)
+}
+
+func (e AnamePropertiesMode) ToAnamePropertiesModeOutputWithContext(ctx context.Context) AnamePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(AnamePropertiesModeOutput)
+}
+
+func (e AnamePropertiesMode) ToAnamePropertiesModePtrOutput() AnamePropertiesModePtrOutput {
+	return e.ToAnamePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e AnamePropertiesMode) ToAnamePropertiesModePtrOutputWithContext(ctx context.Context) AnamePropertiesModePtrOutput {
+	return AnamePropertiesMode(e).ToAnamePropertiesModeOutputWithContext(ctx).ToAnamePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e AnamePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AnamePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AnamePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e AnamePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type AnamePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (AnamePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnamePropertiesMode)(nil)).Elem()
+}
+
+func (o AnamePropertiesModeOutput) ToAnamePropertiesModeOutput() AnamePropertiesModeOutput {
+	return o
+}
+
+func (o AnamePropertiesModeOutput) ToAnamePropertiesModeOutputWithContext(ctx context.Context) AnamePropertiesModeOutput {
+	return o
+}
+
+func (o AnamePropertiesModeOutput) ToAnamePropertiesModePtrOutput() AnamePropertiesModePtrOutput {
+	return o.ToAnamePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesModeOutput) ToAnamePropertiesModePtrOutputWithContext(ctx context.Context) AnamePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AnamePropertiesMode) *AnamePropertiesMode {
+		return &v
+	}).(AnamePropertiesModePtrOutput)
+}
+
+func (o AnamePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AnamePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o AnamePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AnamePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type AnamePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (AnamePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AnamePropertiesMode)(nil)).Elem()
+}
+
+func (o AnamePropertiesModePtrOutput) ToAnamePropertiesModePtrOutput() AnamePropertiesModePtrOutput {
+	return o
+}
+
+func (o AnamePropertiesModePtrOutput) ToAnamePropertiesModePtrOutputWithContext(ctx context.Context) AnamePropertiesModePtrOutput {
+	return o
+}
+
+func (o AnamePropertiesModePtrOutput) Elem() AnamePropertiesModeOutput {
+	return o.ApplyT(func(v *AnamePropertiesMode) AnamePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret AnamePropertiesMode
+		return ret
+	}).(AnamePropertiesModeOutput)
+}
+
+func (o AnamePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *AnamePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// AnamePropertiesModeInput is an input type that accepts values of the AnamePropertiesMode enum
+// A concrete instance of `AnamePropertiesModeInput` can be one of the following:
+//
+//	AnamePropertiesModeStandard
+//	AnamePropertiesModeFailover
+//	AnamePropertiesModePools
+type AnamePropertiesModeInput interface {
+	pulumi.Input
+
+	ToAnamePropertiesModeOutput() AnamePropertiesModeOutput
+	ToAnamePropertiesModeOutputWithContext(context.Context) AnamePropertiesModeOutput
+}
+
+var anamePropertiesModePtrType = reflect.TypeOf((**AnamePropertiesMode)(nil)).Elem()
+
+type AnamePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToAnamePropertiesModePtrOutput() AnamePropertiesModePtrOutput
+	ToAnamePropertiesModePtrOutputWithContext(context.Context) AnamePropertiesModePtrOutput
+}
+
+type anamePropertiesModePtr string
+
+func AnamePropertiesModePtr(v string) AnamePropertiesModePtrInput {
+	return (*anamePropertiesModePtr)(&v)
+}
+
+func (*anamePropertiesModePtr) ElementType() reflect.Type {
+	return anamePropertiesModePtrType
+}
+
+func (in *anamePropertiesModePtr) ToAnamePropertiesModePtrOutput() AnamePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(AnamePropertiesModePtrOutput)
+}
+
+func (in *anamePropertiesModePtr) ToAnamePropertiesModePtrOutputWithContext(ctx context.Context) AnamePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(AnamePropertiesModePtrOutput)
+}
+
+// The type of record
+type AnamePropertiesType string
+
+const (
+	AnamePropertiesTypeAname = AnamePropertiesType("ANAME")
+)
+
+func (AnamePropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnamePropertiesType)(nil)).Elem()
+}
+
+func (e AnamePropertiesType) ToAnamePropertiesTypeOutput() AnamePropertiesTypeOutput {
+	return pulumi.ToOutput(e).(AnamePropertiesTypeOutput)
+}
+
+func (e AnamePropertiesType) ToAnamePropertiesTypeOutputWithContext(ctx context.Context) AnamePropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(AnamePropertiesTypeOutput)
+}
+
+func (e AnamePropertiesType) ToAnamePropertiesTypePtrOutput() AnamePropertiesTypePtrOutput {
+	return e.ToAnamePropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e AnamePropertiesType) ToAnamePropertiesTypePtrOutputWithContext(ctx context.Context) AnamePropertiesTypePtrOutput {
+	return AnamePropertiesType(e).ToAnamePropertiesTypeOutputWithContext(ctx).ToAnamePropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e AnamePropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AnamePropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e AnamePropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e AnamePropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type AnamePropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (AnamePropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnamePropertiesType)(nil)).Elem()
+}
+
+func (o AnamePropertiesTypeOutput) ToAnamePropertiesTypeOutput() AnamePropertiesTypeOutput {
+	return o
+}
+
+func (o AnamePropertiesTypeOutput) ToAnamePropertiesTypeOutputWithContext(ctx context.Context) AnamePropertiesTypeOutput {
+	return o
+}
+
+func (o AnamePropertiesTypeOutput) ToAnamePropertiesTypePtrOutput() AnamePropertiesTypePtrOutput {
+	return o.ToAnamePropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesTypeOutput) ToAnamePropertiesTypePtrOutputWithContext(ctx context.Context) AnamePropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AnamePropertiesType) *AnamePropertiesType {
+		return &v
+	}).(AnamePropertiesTypePtrOutput)
+}
+
+func (o AnamePropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AnamePropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o AnamePropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e AnamePropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type AnamePropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (AnamePropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AnamePropertiesType)(nil)).Elem()
+}
+
+func (o AnamePropertiesTypePtrOutput) ToAnamePropertiesTypePtrOutput() AnamePropertiesTypePtrOutput {
+	return o
+}
+
+func (o AnamePropertiesTypePtrOutput) ToAnamePropertiesTypePtrOutputWithContext(ctx context.Context) AnamePropertiesTypePtrOutput {
+	return o
+}
+
+func (o AnamePropertiesTypePtrOutput) Elem() AnamePropertiesTypeOutput {
+	return o.ApplyT(func(v *AnamePropertiesType) AnamePropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret AnamePropertiesType
+		return ret
+	}).(AnamePropertiesTypeOutput)
+}
+
+func (o AnamePropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o AnamePropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *AnamePropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// AnamePropertiesTypeInput is an input type that accepts values of the AnamePropertiesType enum
+// A concrete instance of `AnamePropertiesTypeInput` can be one of the following:
+//
+//	AnamePropertiesTypeAname
+type AnamePropertiesTypeInput interface {
+	pulumi.Input
+
+	ToAnamePropertiesTypeOutput() AnamePropertiesTypeOutput
+	ToAnamePropertiesTypeOutputWithContext(context.Context) AnamePropertiesTypeOutput
+}
+
+var anamePropertiesTypePtrType = reflect.TypeOf((**AnamePropertiesType)(nil)).Elem()
+
+type AnamePropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToAnamePropertiesTypePtrOutput() AnamePropertiesTypePtrOutput
+	ToAnamePropertiesTypePtrOutputWithContext(context.Context) AnamePropertiesTypePtrOutput
+}
+
+type anamePropertiesTypePtr string
+
+func AnamePropertiesTypePtr(v string) AnamePropertiesTypePtrInput {
+	return (*anamePropertiesTypePtr)(&v)
+}
+
+func (*anamePropertiesTypePtr) ElementType() reflect.Type {
+	return anamePropertiesTypePtrType
+}
+
+func (in *anamePropertiesTypePtr) ToAnamePropertiesTypePtrOutput() AnamePropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(AnamePropertiesTypePtrOutput)
+}
+
+func (in *anamePropertiesTypePtr) ToAnamePropertiesTypePtrOutputWithContext(ctx context.Context) AnamePropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(AnamePropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type CaaPropertiesMode string
+
+const (
+	CaaPropertiesModeStandard = CaaPropertiesMode("standard")
+)
+
+func (CaaPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*CaaPropertiesMode)(nil)).Elem()
+}
+
+func (e CaaPropertiesMode) ToCaaPropertiesModeOutput() CaaPropertiesModeOutput {
+	return pulumi.ToOutput(e).(CaaPropertiesModeOutput)
+}
+
+func (e CaaPropertiesMode) ToCaaPropertiesModeOutputWithContext(ctx context.Context) CaaPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CaaPropertiesModeOutput)
+}
+
+func (e CaaPropertiesMode) ToCaaPropertiesModePtrOutput() CaaPropertiesModePtrOutput {
+	return e.ToCaaPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e CaaPropertiesMode) ToCaaPropertiesModePtrOutputWithContext(ctx context.Context) CaaPropertiesModePtrOutput {
+	return CaaPropertiesMode(e).ToCaaPropertiesModeOutputWithContext(ctx).ToCaaPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e CaaPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CaaPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CaaPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CaaPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CaaPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (CaaPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CaaPropertiesMode)(nil)).Elem()
+}
+
+func (o CaaPropertiesModeOutput) ToCaaPropertiesModeOutput() CaaPropertiesModeOutput {
+	return o
+}
+
+func (o CaaPropertiesModeOutput) ToCaaPropertiesModeOutputWithContext(ctx context.Context) CaaPropertiesModeOutput {
+	return o
+}
+
+func (o CaaPropertiesModeOutput) ToCaaPropertiesModePtrOutput() CaaPropertiesModePtrOutput {
+	return o.ToCaaPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesModeOutput) ToCaaPropertiesModePtrOutputWithContext(ctx context.Context) CaaPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CaaPropertiesMode) *CaaPropertiesMode {
+		return &v
+	}).(CaaPropertiesModePtrOutput)
+}
+
+func (o CaaPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CaaPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CaaPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CaaPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CaaPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (CaaPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CaaPropertiesMode)(nil)).Elem()
+}
+
+func (o CaaPropertiesModePtrOutput) ToCaaPropertiesModePtrOutput() CaaPropertiesModePtrOutput {
+	return o
+}
+
+func (o CaaPropertiesModePtrOutput) ToCaaPropertiesModePtrOutputWithContext(ctx context.Context) CaaPropertiesModePtrOutput {
+	return o
+}
+
+func (o CaaPropertiesModePtrOutput) Elem() CaaPropertiesModeOutput {
+	return o.ApplyT(func(v *CaaPropertiesMode) CaaPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret CaaPropertiesMode
+		return ret
+	}).(CaaPropertiesModeOutput)
+}
+
+func (o CaaPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CaaPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CaaPropertiesModeInput is an input type that accepts values of the CaaPropertiesMode enum
+// A concrete instance of `CaaPropertiesModeInput` can be one of the following:
+//
+//	CaaPropertiesModeStandard
+type CaaPropertiesModeInput interface {
+	pulumi.Input
+
+	ToCaaPropertiesModeOutput() CaaPropertiesModeOutput
+	ToCaaPropertiesModeOutputWithContext(context.Context) CaaPropertiesModeOutput
+}
+
+var caaPropertiesModePtrType = reflect.TypeOf((**CaaPropertiesMode)(nil)).Elem()
+
+type CaaPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToCaaPropertiesModePtrOutput() CaaPropertiesModePtrOutput
+	ToCaaPropertiesModePtrOutputWithContext(context.Context) CaaPropertiesModePtrOutput
+}
+
+type caaPropertiesModePtr string
+
+func CaaPropertiesModePtr(v string) CaaPropertiesModePtrInput {
+	return (*caaPropertiesModePtr)(&v)
+}
+
+func (*caaPropertiesModePtr) ElementType() reflect.Type {
+	return caaPropertiesModePtrType
+}
+
+func (in *caaPropertiesModePtr) ToCaaPropertiesModePtrOutput() CaaPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(CaaPropertiesModePtrOutput)
+}
+
+func (in *caaPropertiesModePtr) ToCaaPropertiesModePtrOutputWithContext(ctx context.Context) CaaPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CaaPropertiesModePtrOutput)
+}
+
+// The type of record
+type CaaPropertiesType string
+
+const (
+	CaaPropertiesTypeCaa = CaaPropertiesType("CAA")
+)
+
+func (CaaPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*CaaPropertiesType)(nil)).Elem()
+}
+
+func (e CaaPropertiesType) ToCaaPropertiesTypeOutput() CaaPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(CaaPropertiesTypeOutput)
+}
+
+func (e CaaPropertiesType) ToCaaPropertiesTypeOutputWithContext(ctx context.Context) CaaPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CaaPropertiesTypeOutput)
+}
+
+func (e CaaPropertiesType) ToCaaPropertiesTypePtrOutput() CaaPropertiesTypePtrOutput {
+	return e.ToCaaPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e CaaPropertiesType) ToCaaPropertiesTypePtrOutputWithContext(ctx context.Context) CaaPropertiesTypePtrOutput {
+	return CaaPropertiesType(e).ToCaaPropertiesTypeOutputWithContext(ctx).ToCaaPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e CaaPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CaaPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CaaPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CaaPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CaaPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (CaaPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CaaPropertiesType)(nil)).Elem()
+}
+
+func (o CaaPropertiesTypeOutput) ToCaaPropertiesTypeOutput() CaaPropertiesTypeOutput {
+	return o
+}
+
+func (o CaaPropertiesTypeOutput) ToCaaPropertiesTypeOutputWithContext(ctx context.Context) CaaPropertiesTypeOutput {
+	return o
+}
+
+func (o CaaPropertiesTypeOutput) ToCaaPropertiesTypePtrOutput() CaaPropertiesTypePtrOutput {
+	return o.ToCaaPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesTypeOutput) ToCaaPropertiesTypePtrOutputWithContext(ctx context.Context) CaaPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CaaPropertiesType) *CaaPropertiesType {
+		return &v
+	}).(CaaPropertiesTypePtrOutput)
+}
+
+func (o CaaPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CaaPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CaaPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CaaPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CaaPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (CaaPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CaaPropertiesType)(nil)).Elem()
+}
+
+func (o CaaPropertiesTypePtrOutput) ToCaaPropertiesTypePtrOutput() CaaPropertiesTypePtrOutput {
+	return o
+}
+
+func (o CaaPropertiesTypePtrOutput) ToCaaPropertiesTypePtrOutputWithContext(ctx context.Context) CaaPropertiesTypePtrOutput {
+	return o
+}
+
+func (o CaaPropertiesTypePtrOutput) Elem() CaaPropertiesTypeOutput {
+	return o.ApplyT(func(v *CaaPropertiesType) CaaPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret CaaPropertiesType
+		return ret
+	}).(CaaPropertiesTypeOutput)
+}
+
+func (o CaaPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CaaPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CaaPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CaaPropertiesTypeInput is an input type that accepts values of the CaaPropertiesType enum
+// A concrete instance of `CaaPropertiesTypeInput` can be one of the following:
+//
+//	CaaPropertiesTypeCaa
+type CaaPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToCaaPropertiesTypeOutput() CaaPropertiesTypeOutput
+	ToCaaPropertiesTypeOutputWithContext(context.Context) CaaPropertiesTypeOutput
+}
+
+var caaPropertiesTypePtrType = reflect.TypeOf((**CaaPropertiesType)(nil)).Elem()
+
+type CaaPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToCaaPropertiesTypePtrOutput() CaaPropertiesTypePtrOutput
+	ToCaaPropertiesTypePtrOutputWithContext(context.Context) CaaPropertiesTypePtrOutput
+}
+
+type caaPropertiesTypePtr string
+
+func CaaPropertiesTypePtr(v string) CaaPropertiesTypePtrInput {
+	return (*caaPropertiesTypePtr)(&v)
+}
+
+func (*caaPropertiesTypePtr) ElementType() reflect.Type {
+	return caaPropertiesTypePtrType
+}
+
+func (in *caaPropertiesTypePtr) ToCaaPropertiesTypePtrOutput() CaaPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(CaaPropertiesTypePtrOutput)
+}
+
+func (in *caaPropertiesTypePtr) ToCaaPropertiesTypePtrOutputWithContext(ctx context.Context) CaaPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CaaPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type CertPropertiesMode string
+
+const (
+	CertPropertiesModeStandard = CertPropertiesMode("standard")
+)
+
+func (CertPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertPropertiesMode)(nil)).Elem()
+}
+
+func (e CertPropertiesMode) ToCertPropertiesModeOutput() CertPropertiesModeOutput {
+	return pulumi.ToOutput(e).(CertPropertiesModeOutput)
+}
+
+func (e CertPropertiesMode) ToCertPropertiesModeOutputWithContext(ctx context.Context) CertPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CertPropertiesModeOutput)
+}
+
+func (e CertPropertiesMode) ToCertPropertiesModePtrOutput() CertPropertiesModePtrOutput {
+	return e.ToCertPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e CertPropertiesMode) ToCertPropertiesModePtrOutputWithContext(ctx context.Context) CertPropertiesModePtrOutput {
+	return CertPropertiesMode(e).ToCertPropertiesModeOutputWithContext(ctx).ToCertPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e CertPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CertPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CertPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CertPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CertPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (CertPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertPropertiesMode)(nil)).Elem()
+}
+
+func (o CertPropertiesModeOutput) ToCertPropertiesModeOutput() CertPropertiesModeOutput {
+	return o
+}
+
+func (o CertPropertiesModeOutput) ToCertPropertiesModeOutputWithContext(ctx context.Context) CertPropertiesModeOutput {
+	return o
+}
+
+func (o CertPropertiesModeOutput) ToCertPropertiesModePtrOutput() CertPropertiesModePtrOutput {
+	return o.ToCertPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesModeOutput) ToCertPropertiesModePtrOutputWithContext(ctx context.Context) CertPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertPropertiesMode) *CertPropertiesMode {
+		return &v
+	}).(CertPropertiesModePtrOutput)
+}
+
+func (o CertPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CertPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CertPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CertPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CertPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (CertPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertPropertiesMode)(nil)).Elem()
+}
+
+func (o CertPropertiesModePtrOutput) ToCertPropertiesModePtrOutput() CertPropertiesModePtrOutput {
+	return o
+}
+
+func (o CertPropertiesModePtrOutput) ToCertPropertiesModePtrOutputWithContext(ctx context.Context) CertPropertiesModePtrOutput {
+	return o
+}
+
+func (o CertPropertiesModePtrOutput) Elem() CertPropertiesModeOutput {
+	return o.ApplyT(func(v *CertPropertiesMode) CertPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret CertPropertiesMode
+		return ret
+	}).(CertPropertiesModeOutput)
+}
+
+func (o CertPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CertPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CertPropertiesModeInput is an input type that accepts values of the CertPropertiesMode enum
+// A concrete instance of `CertPropertiesModeInput` can be one of the following:
+//
+//	CertPropertiesModeStandard
+type CertPropertiesModeInput interface {
+	pulumi.Input
+
+	ToCertPropertiesModeOutput() CertPropertiesModeOutput
+	ToCertPropertiesModeOutputWithContext(context.Context) CertPropertiesModeOutput
+}
+
+var certPropertiesModePtrType = reflect.TypeOf((**CertPropertiesMode)(nil)).Elem()
+
+type CertPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToCertPropertiesModePtrOutput() CertPropertiesModePtrOutput
+	ToCertPropertiesModePtrOutputWithContext(context.Context) CertPropertiesModePtrOutput
+}
+
+type certPropertiesModePtr string
+
+func CertPropertiesModePtr(v string) CertPropertiesModePtrInput {
+	return (*certPropertiesModePtr)(&v)
+}
+
+func (*certPropertiesModePtr) ElementType() reflect.Type {
+	return certPropertiesModePtrType
+}
+
+func (in *certPropertiesModePtr) ToCertPropertiesModePtrOutput() CertPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(CertPropertiesModePtrOutput)
+}
+
+func (in *certPropertiesModePtr) ToCertPropertiesModePtrOutputWithContext(ctx context.Context) CertPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CertPropertiesModePtrOutput)
+}
+
+// The type of record
+type CertPropertiesType string
+
+const (
+	CertPropertiesTypeCert = CertPropertiesType("CERT")
+)
+
+func (CertPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertPropertiesType)(nil)).Elem()
+}
+
+func (e CertPropertiesType) ToCertPropertiesTypeOutput() CertPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(CertPropertiesTypeOutput)
+}
+
+func (e CertPropertiesType) ToCertPropertiesTypeOutputWithContext(ctx context.Context) CertPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CertPropertiesTypeOutput)
+}
+
+func (e CertPropertiesType) ToCertPropertiesTypePtrOutput() CertPropertiesTypePtrOutput {
+	return e.ToCertPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e CertPropertiesType) ToCertPropertiesTypePtrOutputWithContext(ctx context.Context) CertPropertiesTypePtrOutput {
+	return CertPropertiesType(e).ToCertPropertiesTypeOutputWithContext(ctx).ToCertPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e CertPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CertPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CertPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CertPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CertPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (CertPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertPropertiesType)(nil)).Elem()
+}
+
+func (o CertPropertiesTypeOutput) ToCertPropertiesTypeOutput() CertPropertiesTypeOutput {
+	return o
+}
+
+func (o CertPropertiesTypeOutput) ToCertPropertiesTypeOutputWithContext(ctx context.Context) CertPropertiesTypeOutput {
+	return o
+}
+
+func (o CertPropertiesTypeOutput) ToCertPropertiesTypePtrOutput() CertPropertiesTypePtrOutput {
+	return o.ToCertPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesTypeOutput) ToCertPropertiesTypePtrOutputWithContext(ctx context.Context) CertPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertPropertiesType) *CertPropertiesType {
+		return &v
+	}).(CertPropertiesTypePtrOutput)
+}
+
+func (o CertPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CertPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CertPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CertPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CertPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (CertPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertPropertiesType)(nil)).Elem()
+}
+
+func (o CertPropertiesTypePtrOutput) ToCertPropertiesTypePtrOutput() CertPropertiesTypePtrOutput {
+	return o
+}
+
+func (o CertPropertiesTypePtrOutput) ToCertPropertiesTypePtrOutputWithContext(ctx context.Context) CertPropertiesTypePtrOutput {
+	return o
+}
+
+func (o CertPropertiesTypePtrOutput) Elem() CertPropertiesTypeOutput {
+	return o.ApplyT(func(v *CertPropertiesType) CertPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret CertPropertiesType
+		return ret
+	}).(CertPropertiesTypeOutput)
+}
+
+func (o CertPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CertPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CertPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CertPropertiesTypeInput is an input type that accepts values of the CertPropertiesType enum
+// A concrete instance of `CertPropertiesTypeInput` can be one of the following:
+//
+//	CertPropertiesTypeCert
+type CertPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToCertPropertiesTypeOutput() CertPropertiesTypeOutput
+	ToCertPropertiesTypeOutputWithContext(context.Context) CertPropertiesTypeOutput
+}
+
+var certPropertiesTypePtrType = reflect.TypeOf((**CertPropertiesType)(nil)).Elem()
+
+type CertPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToCertPropertiesTypePtrOutput() CertPropertiesTypePtrOutput
+	ToCertPropertiesTypePtrOutputWithContext(context.Context) CertPropertiesTypePtrOutput
+}
+
+type certPropertiesTypePtr string
+
+func CertPropertiesTypePtr(v string) CertPropertiesTypePtrInput {
+	return (*certPropertiesTypePtr)(&v)
+}
+
+func (*certPropertiesTypePtr) ElementType() reflect.Type {
+	return certPropertiesTypePtrType
+}
+
+func (in *certPropertiesTypePtr) ToCertPropertiesTypePtrOutput() CertPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(CertPropertiesTypePtrOutput)
+}
+
+func (in *certPropertiesTypePtr) ToCertPropertiesTypePtrOutputWithContext(ctx context.Context) CertPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CertPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type CnamePropertiesMode string
+
+const (
+	CnamePropertiesModeStandard = CnamePropertiesMode("standard")
+	CnamePropertiesModeFailover = CnamePropertiesMode("failover")
+	CnamePropertiesModePools    = CnamePropertiesMode("pools")
+)
+
+func (CnamePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*CnamePropertiesMode)(nil)).Elem()
+}
+
+func (e CnamePropertiesMode) ToCnamePropertiesModeOutput() CnamePropertiesModeOutput {
+	return pulumi.ToOutput(e).(CnamePropertiesModeOutput)
+}
+
+func (e CnamePropertiesMode) ToCnamePropertiesModeOutputWithContext(ctx context.Context) CnamePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CnamePropertiesModeOutput)
+}
+
+func (e CnamePropertiesMode) ToCnamePropertiesModePtrOutput() CnamePropertiesModePtrOutput {
+	return e.ToCnamePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e CnamePropertiesMode) ToCnamePropertiesModePtrOutputWithContext(ctx context.Context) CnamePropertiesModePtrOutput {
+	return CnamePropertiesMode(e).ToCnamePropertiesModeOutputWithContext(ctx).ToCnamePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e CnamePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CnamePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CnamePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CnamePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CnamePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (CnamePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CnamePropertiesMode)(nil)).Elem()
+}
+
+func (o CnamePropertiesModeOutput) ToCnamePropertiesModeOutput() CnamePropertiesModeOutput {
+	return o
+}
+
+func (o CnamePropertiesModeOutput) ToCnamePropertiesModeOutputWithContext(ctx context.Context) CnamePropertiesModeOutput {
+	return o
+}
+
+func (o CnamePropertiesModeOutput) ToCnamePropertiesModePtrOutput() CnamePropertiesModePtrOutput {
+	return o.ToCnamePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesModeOutput) ToCnamePropertiesModePtrOutputWithContext(ctx context.Context) CnamePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CnamePropertiesMode) *CnamePropertiesMode {
+		return &v
+	}).(CnamePropertiesModePtrOutput)
+}
+
+func (o CnamePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CnamePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CnamePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CnamePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CnamePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (CnamePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CnamePropertiesMode)(nil)).Elem()
+}
+
+func (o CnamePropertiesModePtrOutput) ToCnamePropertiesModePtrOutput() CnamePropertiesModePtrOutput {
+	return o
+}
+
+func (o CnamePropertiesModePtrOutput) ToCnamePropertiesModePtrOutputWithContext(ctx context.Context) CnamePropertiesModePtrOutput {
+	return o
+}
+
+func (o CnamePropertiesModePtrOutput) Elem() CnamePropertiesModeOutput {
+	return o.ApplyT(func(v *CnamePropertiesMode) CnamePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret CnamePropertiesMode
+		return ret
+	}).(CnamePropertiesModeOutput)
+}
+
+func (o CnamePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CnamePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CnamePropertiesModeInput is an input type that accepts values of the CnamePropertiesMode enum
+// A concrete instance of `CnamePropertiesModeInput` can be one of the following:
+//
+//	CnamePropertiesModeStandard
+//	CnamePropertiesModeFailover
+//	CnamePropertiesModePools
+type CnamePropertiesModeInput interface {
+	pulumi.Input
+
+	ToCnamePropertiesModeOutput() CnamePropertiesModeOutput
+	ToCnamePropertiesModeOutputWithContext(context.Context) CnamePropertiesModeOutput
+}
+
+var cnamePropertiesModePtrType = reflect.TypeOf((**CnamePropertiesMode)(nil)).Elem()
+
+type CnamePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToCnamePropertiesModePtrOutput() CnamePropertiesModePtrOutput
+	ToCnamePropertiesModePtrOutputWithContext(context.Context) CnamePropertiesModePtrOutput
+}
+
+type cnamePropertiesModePtr string
+
+func CnamePropertiesModePtr(v string) CnamePropertiesModePtrInput {
+	return (*cnamePropertiesModePtr)(&v)
+}
+
+func (*cnamePropertiesModePtr) ElementType() reflect.Type {
+	return cnamePropertiesModePtrType
+}
+
+func (in *cnamePropertiesModePtr) ToCnamePropertiesModePtrOutput() CnamePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(CnamePropertiesModePtrOutput)
+}
+
+func (in *cnamePropertiesModePtr) ToCnamePropertiesModePtrOutputWithContext(ctx context.Context) CnamePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CnamePropertiesModePtrOutput)
+}
+
+// The type of record
+type CnamePropertiesType string
+
+const (
+	CnamePropertiesTypeCname = CnamePropertiesType("CNAME")
+)
+
+func (CnamePropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*CnamePropertiesType)(nil)).Elem()
+}
+
+func (e CnamePropertiesType) ToCnamePropertiesTypeOutput() CnamePropertiesTypeOutput {
+	return pulumi.ToOutput(e).(CnamePropertiesTypeOutput)
+}
+
+func (e CnamePropertiesType) ToCnamePropertiesTypeOutputWithContext(ctx context.Context) CnamePropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(CnamePropertiesTypeOutput)
+}
+
+func (e CnamePropertiesType) ToCnamePropertiesTypePtrOutput() CnamePropertiesTypePtrOutput {
+	return e.ToCnamePropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e CnamePropertiesType) ToCnamePropertiesTypePtrOutputWithContext(ctx context.Context) CnamePropertiesTypePtrOutput {
+	return CnamePropertiesType(e).ToCnamePropertiesTypeOutputWithContext(ctx).ToCnamePropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e CnamePropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CnamePropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e CnamePropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e CnamePropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type CnamePropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (CnamePropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CnamePropertiesType)(nil)).Elem()
+}
+
+func (o CnamePropertiesTypeOutput) ToCnamePropertiesTypeOutput() CnamePropertiesTypeOutput {
+	return o
+}
+
+func (o CnamePropertiesTypeOutput) ToCnamePropertiesTypeOutputWithContext(ctx context.Context) CnamePropertiesTypeOutput {
+	return o
+}
+
+func (o CnamePropertiesTypeOutput) ToCnamePropertiesTypePtrOutput() CnamePropertiesTypePtrOutput {
+	return o.ToCnamePropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesTypeOutput) ToCnamePropertiesTypePtrOutputWithContext(ctx context.Context) CnamePropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CnamePropertiesType) *CnamePropertiesType {
+		return &v
+	}).(CnamePropertiesTypePtrOutput)
+}
+
+func (o CnamePropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CnamePropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o CnamePropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e CnamePropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type CnamePropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (CnamePropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CnamePropertiesType)(nil)).Elem()
+}
+
+func (o CnamePropertiesTypePtrOutput) ToCnamePropertiesTypePtrOutput() CnamePropertiesTypePtrOutput {
+	return o
+}
+
+func (o CnamePropertiesTypePtrOutput) ToCnamePropertiesTypePtrOutputWithContext(ctx context.Context) CnamePropertiesTypePtrOutput {
+	return o
+}
+
+func (o CnamePropertiesTypePtrOutput) Elem() CnamePropertiesTypeOutput {
+	return o.ApplyT(func(v *CnamePropertiesType) CnamePropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret CnamePropertiesType
+		return ret
+	}).(CnamePropertiesTypeOutput)
+}
+
+func (o CnamePropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o CnamePropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *CnamePropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// CnamePropertiesTypeInput is an input type that accepts values of the CnamePropertiesType enum
+// A concrete instance of `CnamePropertiesTypeInput` can be one of the following:
+//
+//	CnamePropertiesTypeCname
+type CnamePropertiesTypeInput interface {
+	pulumi.Input
+
+	ToCnamePropertiesTypeOutput() CnamePropertiesTypeOutput
+	ToCnamePropertiesTypeOutputWithContext(context.Context) CnamePropertiesTypeOutput
+}
+
+var cnamePropertiesTypePtrType = reflect.TypeOf((**CnamePropertiesType)(nil)).Elem()
+
+type CnamePropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToCnamePropertiesTypePtrOutput() CnamePropertiesTypePtrOutput
+	ToCnamePropertiesTypePtrOutputWithContext(context.Context) CnamePropertiesTypePtrOutput
+}
+
+type cnamePropertiesTypePtr string
+
+func CnamePropertiesTypePtr(v string) CnamePropertiesTypePtrInput {
+	return (*cnamePropertiesTypePtr)(&v)
+}
+
+func (*cnamePropertiesTypePtr) ElementType() reflect.Type {
+	return cnamePropertiesTypePtrType
+}
+
+func (in *cnamePropertiesTypePtr) ToCnamePropertiesTypePtrOutput() CnamePropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(CnamePropertiesTypePtrOutput)
+}
+
+func (in *cnamePropertiesTypePtr) ToCnamePropertiesTypePtrOutputWithContext(ctx context.Context) CnamePropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(CnamePropertiesTypePtrOutput)
 }
 
 type DomainStatus string
@@ -369,6 +2181,5481 @@ func (o DomainanalyticsQueriesItemPropertiesTypePtrOutput) ToStringPtrOutputWith
 	}).(pulumi.StringPtrOutput)
 }
 
+// The failover mode
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode string
+
+const (
+	GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeNormal = GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("normal")
+	GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOff    = GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("off")
+	GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOneWay = GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way")
+)
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode) *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return &v
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) Elem() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode
+		return ret
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetAAAAPropertiesMode string
+
+const (
+	GetAAAAPropertiesModeStandard           = GetAAAAPropertiesMode("standard")
+	GetAAAAPropertiesModeFailover           = GetAAAAPropertiesMode("failover")
+	GetAAAAPropertiesModePools              = GetAAAAPropertiesMode("pools")
+	GetAAAAPropertiesModeRoundrobinFailover = GetAAAAPropertiesMode("roundrobin-failover")
+)
+
+type GetAAAAPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesModeOutput) ToGetAAAAPropertiesModeOutput() GetAAAAPropertiesModeOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesModeOutput) ToGetAAAAPropertiesModeOutputWithContext(ctx context.Context) GetAAAAPropertiesModeOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesModeOutput) ToGetAAAAPropertiesModePtrOutput() GetAAAAPropertiesModePtrOutput {
+	return o.ToGetAAAAPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesModeOutput) ToGetAAAAPropertiesModePtrOutputWithContext(ctx context.Context) GetAAAAPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAAAAPropertiesMode) *GetAAAAPropertiesMode {
+		return &v
+	}).(GetAAAAPropertiesModePtrOutput)
+}
+
+func (o GetAAAAPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAAAAPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAAAAPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAAAAPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetAAAAPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAAAAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesModePtrOutput) ToGetAAAAPropertiesModePtrOutput() GetAAAAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesModePtrOutput) ToGetAAAAPropertiesModePtrOutputWithContext(ctx context.Context) GetAAAAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesModePtrOutput) Elem() GetAAAAPropertiesModeOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesMode) GetAAAAPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetAAAAPropertiesMode
+		return ret
+	}).(GetAAAAPropertiesModeOutput)
+}
+
+func (o GetAAAAPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAAAAPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetAAAAPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetAAAAPropertiesType string
+
+const (
+	GetAAAAPropertiesTypeAaaa = GetAAAAPropertiesType("AAAA")
+)
+
+// The failover mode
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode string
+
+const (
+	GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeNormal = GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("normal")
+	GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOff    = GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("off")
+	GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOneWay = GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way")
+)
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return &v
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) Elem() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode
+		return ret
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetANAMEPropertiesMode string
+
+const (
+	GetANAMEPropertiesModeStandard = GetANAMEPropertiesMode("standard")
+	GetANAMEPropertiesModeFailover = GetANAMEPropertiesMode("failover")
+	GetANAMEPropertiesModePools    = GetANAMEPropertiesMode("pools")
+)
+
+type GetANAMEPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesMode)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesModeOutput) ToGetANAMEPropertiesModeOutput() GetANAMEPropertiesModeOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesModeOutput) ToGetANAMEPropertiesModeOutputWithContext(ctx context.Context) GetANAMEPropertiesModeOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesModeOutput) ToGetANAMEPropertiesModePtrOutput() GetANAMEPropertiesModePtrOutput {
+	return o.ToGetANAMEPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesModeOutput) ToGetANAMEPropertiesModePtrOutputWithContext(ctx context.Context) GetANAMEPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetANAMEPropertiesMode) *GetANAMEPropertiesMode {
+		return &v
+	}).(GetANAMEPropertiesModePtrOutput)
+}
+
+func (o GetANAMEPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetANAMEPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetANAMEPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetANAMEPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetANAMEPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetANAMEPropertiesMode)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesModePtrOutput) ToGetANAMEPropertiesModePtrOutput() GetANAMEPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesModePtrOutput) ToGetANAMEPropertiesModePtrOutputWithContext(ctx context.Context) GetANAMEPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesModePtrOutput) Elem() GetANAMEPropertiesModeOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesMode) GetANAMEPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetANAMEPropertiesMode
+		return ret
+	}).(GetANAMEPropertiesModeOutput)
+}
+
+func (o GetANAMEPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetANAMEPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetANAMEPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesMode string
+
+const (
+	GetAPropertiesLastValuesPropertiesFailoverPropertiesModeNormal = GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("normal")
+	GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOff    = GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("off")
+	GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOneWay = GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way")
+)
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAPropertiesLastValuesPropertiesFailoverPropertiesMode) *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return &v
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAPropertiesLastValuesPropertiesFailoverPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) Elem() GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode) GetAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetAPropertiesLastValuesPropertiesFailoverPropertiesMode
+		return ret
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetAPropertiesMode string
+
+const (
+	GetAPropertiesModeStandard           = GetAPropertiesMode("standard")
+	GetAPropertiesModeFailover           = GetAPropertiesMode("failover")
+	GetAPropertiesModePools              = GetAPropertiesMode("pools")
+	GetAPropertiesModeRoundRobinFailover = GetAPropertiesMode("roundRobinFailover")
+)
+
+type GetAPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAPropertiesModeOutput) ToGetAPropertiesModeOutput() GetAPropertiesModeOutput {
+	return o
+}
+
+func (o GetAPropertiesModeOutput) ToGetAPropertiesModeOutputWithContext(ctx context.Context) GetAPropertiesModeOutput {
+	return o
+}
+
+func (o GetAPropertiesModeOutput) ToGetAPropertiesModePtrOutput() GetAPropertiesModePtrOutput {
+	return o.ToGetAPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesModeOutput) ToGetAPropertiesModePtrOutputWithContext(ctx context.Context) GetAPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetAPropertiesMode) *GetAPropertiesMode {
+		return &v
+	}).(GetAPropertiesModePtrOutput)
+}
+
+func (o GetAPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetAPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetAPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetAPropertiesModePtrOutput) ToGetAPropertiesModePtrOutput() GetAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAPropertiesModePtrOutput) ToGetAPropertiesModePtrOutputWithContext(ctx context.Context) GetAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetAPropertiesModePtrOutput) Elem() GetAPropertiesModeOutput {
+	return o.ApplyT(func(v *GetAPropertiesMode) GetAPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetAPropertiesMode
+		return ret
+	}).(GetAPropertiesModeOutput)
+}
+
+func (o GetAPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetAPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetAPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetCAAPropertiesMode string
+
+const (
+	GetCAAPropertiesModeStandard = GetCAAPropertiesMode("standard")
+)
+
+type GetCAAPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetCAAPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCAAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCAAPropertiesModeOutput) ToGetCAAPropertiesModeOutput() GetCAAPropertiesModeOutput {
+	return o
+}
+
+func (o GetCAAPropertiesModeOutput) ToGetCAAPropertiesModeOutputWithContext(ctx context.Context) GetCAAPropertiesModeOutput {
+	return o
+}
+
+func (o GetCAAPropertiesModeOutput) ToGetCAAPropertiesModePtrOutput() GetCAAPropertiesModePtrOutput {
+	return o.ToGetCAAPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetCAAPropertiesModeOutput) ToGetCAAPropertiesModePtrOutputWithContext(ctx context.Context) GetCAAPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCAAPropertiesMode) *GetCAAPropertiesMode {
+		return &v
+	}).(GetCAAPropertiesModePtrOutput)
+}
+
+func (o GetCAAPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetCAAPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCAAPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCAAPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCAAPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCAAPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetCAAPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetCAAPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCAAPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCAAPropertiesModePtrOutput) ToGetCAAPropertiesModePtrOutput() GetCAAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCAAPropertiesModePtrOutput) ToGetCAAPropertiesModePtrOutputWithContext(ctx context.Context) GetCAAPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCAAPropertiesModePtrOutput) Elem() GetCAAPropertiesModeOutput {
+	return o.ApplyT(func(v *GetCAAPropertiesMode) GetCAAPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetCAAPropertiesMode
+		return ret
+	}).(GetCAAPropertiesModeOutput)
+}
+
+func (o GetCAAPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCAAPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetCAAPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetCERTPropertiesMode string
+
+const (
+	GetCERTPropertiesModeStandard = GetCERTPropertiesMode("standard")
+)
+
+type GetCERTPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCERTPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesModeOutput) ToGetCERTPropertiesModeOutput() GetCERTPropertiesModeOutput {
+	return o
+}
+
+func (o GetCERTPropertiesModeOutput) ToGetCERTPropertiesModeOutputWithContext(ctx context.Context) GetCERTPropertiesModeOutput {
+	return o
+}
+
+func (o GetCERTPropertiesModeOutput) ToGetCERTPropertiesModePtrOutput() GetCERTPropertiesModePtrOutput {
+	return o.ToGetCERTPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesModeOutput) ToGetCERTPropertiesModePtrOutputWithContext(ctx context.Context) GetCERTPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCERTPropertiesMode) *GetCERTPropertiesMode {
+		return &v
+	}).(GetCERTPropertiesModePtrOutput)
+}
+
+func (o GetCERTPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCERTPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCERTPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCERTPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetCERTPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCERTPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesModePtrOutput) ToGetCERTPropertiesModePtrOutput() GetCERTPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesModePtrOutput) ToGetCERTPropertiesModePtrOutputWithContext(ctx context.Context) GetCERTPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesModePtrOutput) Elem() GetCERTPropertiesModeOutput {
+	return o.ApplyT(func(v *GetCERTPropertiesMode) GetCERTPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetCERTPropertiesMode
+		return ret
+	}).(GetCERTPropertiesModeOutput)
+}
+
+func (o GetCERTPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetCERTPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetCERTPropertiesType string
+
+const (
+	GetCERTPropertiesTypeCaa = GetCERTPropertiesType("CAA")
+)
+
+type GetCERTPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCERTPropertiesType)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesTypeOutput) ToGetCERTPropertiesTypeOutput() GetCERTPropertiesTypeOutput {
+	return o
+}
+
+func (o GetCERTPropertiesTypeOutput) ToGetCERTPropertiesTypeOutputWithContext(ctx context.Context) GetCERTPropertiesTypeOutput {
+	return o
+}
+
+func (o GetCERTPropertiesTypeOutput) ToGetCERTPropertiesTypePtrOutput() GetCERTPropertiesTypePtrOutput {
+	return o.ToGetCERTPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesTypeOutput) ToGetCERTPropertiesTypePtrOutputWithContext(ctx context.Context) GetCERTPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCERTPropertiesType) *GetCERTPropertiesType {
+		return &v
+	}).(GetCERTPropertiesTypePtrOutput)
+}
+
+func (o GetCERTPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCERTPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCERTPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCERTPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetCERTPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCERTPropertiesType)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesTypePtrOutput) ToGetCERTPropertiesTypePtrOutput() GetCERTPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesTypePtrOutput) ToGetCERTPropertiesTypePtrOutputWithContext(ctx context.Context) GetCERTPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesTypePtrOutput) Elem() GetCERTPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetCERTPropertiesType) GetCERTPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetCERTPropertiesType
+		return ret
+	}).(GetCERTPropertiesTypeOutput)
+}
+
+func (o GetCERTPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCERTPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetCERTPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode string
+
+const (
+	GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeNormal = GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("normal")
+	GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOff    = GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("off")
+	GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOneWay = GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way")
+)
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return &v
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) Elem() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode
+		return ret
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetCNAMEPropertiesMode string
+
+const (
+	GetCNAMEPropertiesModeStandard = GetCNAMEPropertiesMode("standard")
+	GetCNAMEPropertiesModeFailover = GetCNAMEPropertiesMode("failover")
+	GetCNAMEPropertiesModePools    = GetCNAMEPropertiesMode("pools")
+)
+
+type GetCNAMEPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToGetCNAMEPropertiesModeOutput() GetCNAMEPropertiesModeOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToGetCNAMEPropertiesModeOutputWithContext(ctx context.Context) GetCNAMEPropertiesModeOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToGetCNAMEPropertiesModePtrOutput() GetCNAMEPropertiesModePtrOutput {
+	return o.ToGetCNAMEPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToGetCNAMEPropertiesModePtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetCNAMEPropertiesMode) *GetCNAMEPropertiesMode {
+		return &v
+	}).(GetCNAMEPropertiesModePtrOutput)
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCNAMEPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetCNAMEPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetCNAMEPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCNAMEPropertiesMode)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesModePtrOutput) ToGetCNAMEPropertiesModePtrOutput() GetCNAMEPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesModePtrOutput) ToGetCNAMEPropertiesModePtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesModePtrOutput) Elem() GetCNAMEPropertiesModeOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesMode) GetCNAMEPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetCNAMEPropertiesMode
+		return ret
+	}).(GetCNAMEPropertiesModeOutput)
+}
+
+func (o GetCNAMEPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetCNAMEPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetCNAMEPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetHINFOPropertiesMode string
+
+const (
+	GetHINFOPropertiesModeStandard = GetHINFOPropertiesMode("standard")
+)
+
+type GetHINFOPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHINFOPropertiesMode)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesModeOutput) ToGetHINFOPropertiesModeOutput() GetHINFOPropertiesModeOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesModeOutput) ToGetHINFOPropertiesModeOutputWithContext(ctx context.Context) GetHINFOPropertiesModeOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesModeOutput) ToGetHINFOPropertiesModePtrOutput() GetHINFOPropertiesModePtrOutput {
+	return o.ToGetHINFOPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesModeOutput) ToGetHINFOPropertiesModePtrOutputWithContext(ctx context.Context) GetHINFOPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetHINFOPropertiesMode) *GetHINFOPropertiesMode {
+		return &v
+	}).(GetHINFOPropertiesModePtrOutput)
+}
+
+func (o GetHINFOPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHINFOPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetHINFOPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHINFOPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetHINFOPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHINFOPropertiesMode)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesModePtrOutput) ToGetHINFOPropertiesModePtrOutput() GetHINFOPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesModePtrOutput) ToGetHINFOPropertiesModePtrOutputWithContext(ctx context.Context) GetHINFOPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesModePtrOutput) Elem() GetHINFOPropertiesModeOutput {
+	return o.ApplyT(func(v *GetHINFOPropertiesMode) GetHINFOPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetHINFOPropertiesMode
+		return ret
+	}).(GetHINFOPropertiesModeOutput)
+}
+
+func (o GetHINFOPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetHINFOPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetHINFOPropertiesType string
+
+const (
+	GetHINFOPropertiesTypeHinfo = GetHINFOPropertiesType("HINFO")
+)
+
+type GetHINFOPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHINFOPropertiesType)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToGetHINFOPropertiesTypeOutput() GetHINFOPropertiesTypeOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToGetHINFOPropertiesTypeOutputWithContext(ctx context.Context) GetHINFOPropertiesTypeOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToGetHINFOPropertiesTypePtrOutput() GetHINFOPropertiesTypePtrOutput {
+	return o.ToGetHINFOPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToGetHINFOPropertiesTypePtrOutputWithContext(ctx context.Context) GetHINFOPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetHINFOPropertiesType) *GetHINFOPropertiesType {
+		return &v
+	}).(GetHINFOPropertiesTypePtrOutput)
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHINFOPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHINFOPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetHINFOPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHINFOPropertiesType)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesTypePtrOutput) ToGetHINFOPropertiesTypePtrOutput() GetHINFOPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesTypePtrOutput) ToGetHINFOPropertiesTypePtrOutputWithContext(ctx context.Context) GetHINFOPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesTypePtrOutput) Elem() GetHINFOPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetHINFOPropertiesType) GetHINFOPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetHINFOPropertiesType
+		return ret
+	}).(GetHINFOPropertiesTypeOutput)
+}
+
+func (o GetHINFOPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHINFOPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetHINFOPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetHttpPropertiesMode string
+
+const (
+	GetHttpPropertiesModeStandard = GetHttpPropertiesMode("standard")
+)
+
+type GetHttpPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHttpPropertiesMode)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesModeOutput) ToGetHttpPropertiesModeOutput() GetHttpPropertiesModeOutput {
+	return o
+}
+
+func (o GetHttpPropertiesModeOutput) ToGetHttpPropertiesModeOutputWithContext(ctx context.Context) GetHttpPropertiesModeOutput {
+	return o
+}
+
+func (o GetHttpPropertiesModeOutput) ToGetHttpPropertiesModePtrOutput() GetHttpPropertiesModePtrOutput {
+	return o.ToGetHttpPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesModeOutput) ToGetHttpPropertiesModePtrOutputWithContext(ctx context.Context) GetHttpPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetHttpPropertiesMode) *GetHttpPropertiesMode {
+		return &v
+	}).(GetHttpPropertiesModePtrOutput)
+}
+
+func (o GetHttpPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHttpPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetHttpPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHttpPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetHttpPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHttpPropertiesMode)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesModePtrOutput) ToGetHttpPropertiesModePtrOutput() GetHttpPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesModePtrOutput) ToGetHttpPropertiesModePtrOutputWithContext(ctx context.Context) GetHttpPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesModePtrOutput) Elem() GetHttpPropertiesModeOutput {
+	return o.ApplyT(func(v *GetHttpPropertiesMode) GetHttpPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetHttpPropertiesMode
+		return ret
+	}).(GetHttpPropertiesModeOutput)
+}
+
+func (o GetHttpPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetHttpPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetHttpPropertiesType string
+
+const (
+	GetHttpPropertiesTypeHttp = GetHttpPropertiesType("HTTP")
+)
+
+type GetHttpPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHttpPropertiesType)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesTypeOutput) ToGetHttpPropertiesTypeOutput() GetHttpPropertiesTypeOutput {
+	return o
+}
+
+func (o GetHttpPropertiesTypeOutput) ToGetHttpPropertiesTypeOutputWithContext(ctx context.Context) GetHttpPropertiesTypeOutput {
+	return o
+}
+
+func (o GetHttpPropertiesTypeOutput) ToGetHttpPropertiesTypePtrOutput() GetHttpPropertiesTypePtrOutput {
+	return o.ToGetHttpPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesTypeOutput) ToGetHttpPropertiesTypePtrOutputWithContext(ctx context.Context) GetHttpPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetHttpPropertiesType) *GetHttpPropertiesType {
+		return &v
+	}).(GetHttpPropertiesTypePtrOutput)
+}
+
+func (o GetHttpPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHttpPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetHttpPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetHttpPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetHttpPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHttpPropertiesType)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesTypePtrOutput) ToGetHttpPropertiesTypePtrOutput() GetHttpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesTypePtrOutput) ToGetHttpPropertiesTypePtrOutputWithContext(ctx context.Context) GetHttpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesTypePtrOutput) Elem() GetHttpPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetHttpPropertiesType) GetHttpPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetHttpPropertiesType
+		return ret
+	}).(GetHttpPropertiesTypeOutput)
+}
+
+func (o GetHttpPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetHttpPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetHttpPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetMXPropertiesMode string
+
+const (
+	GetMXPropertiesModeStandard = GetMXPropertiesMode("standard")
+)
+
+type GetMXPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMXPropertiesMode)(nil)).Elem()
+}
+
+func (o GetMXPropertiesModeOutput) ToGetMXPropertiesModeOutput() GetMXPropertiesModeOutput {
+	return o
+}
+
+func (o GetMXPropertiesModeOutput) ToGetMXPropertiesModeOutputWithContext(ctx context.Context) GetMXPropertiesModeOutput {
+	return o
+}
+
+func (o GetMXPropertiesModeOutput) ToGetMXPropertiesModePtrOutput() GetMXPropertiesModePtrOutput {
+	return o.ToGetMXPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesModeOutput) ToGetMXPropertiesModePtrOutputWithContext(ctx context.Context) GetMXPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetMXPropertiesMode) *GetMXPropertiesMode {
+		return &v
+	}).(GetMXPropertiesModePtrOutput)
+}
+
+func (o GetMXPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetMXPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetMXPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetMXPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetMXPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetMXPropertiesMode)(nil)).Elem()
+}
+
+func (o GetMXPropertiesModePtrOutput) ToGetMXPropertiesModePtrOutput() GetMXPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesModePtrOutput) ToGetMXPropertiesModePtrOutputWithContext(ctx context.Context) GetMXPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesModePtrOutput) Elem() GetMXPropertiesModeOutput {
+	return o.ApplyT(func(v *GetMXPropertiesMode) GetMXPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetMXPropertiesMode
+		return ret
+	}).(GetMXPropertiesModeOutput)
+}
+
+func (o GetMXPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetMXPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetMXPropertiesType string
+
+const (
+	GetMXPropertiesTypeMx = GetMXPropertiesType("MX")
+)
+
+type GetMXPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMXPropertiesType)(nil)).Elem()
+}
+
+func (o GetMXPropertiesTypeOutput) ToGetMXPropertiesTypeOutput() GetMXPropertiesTypeOutput {
+	return o
+}
+
+func (o GetMXPropertiesTypeOutput) ToGetMXPropertiesTypeOutputWithContext(ctx context.Context) GetMXPropertiesTypeOutput {
+	return o
+}
+
+func (o GetMXPropertiesTypeOutput) ToGetMXPropertiesTypePtrOutput() GetMXPropertiesTypePtrOutput {
+	return o.ToGetMXPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesTypeOutput) ToGetMXPropertiesTypePtrOutputWithContext(ctx context.Context) GetMXPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetMXPropertiesType) *GetMXPropertiesType {
+		return &v
+	}).(GetMXPropertiesTypePtrOutput)
+}
+
+func (o GetMXPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetMXPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetMXPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetMXPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetMXPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetMXPropertiesType)(nil)).Elem()
+}
+
+func (o GetMXPropertiesTypePtrOutput) ToGetMXPropertiesTypePtrOutput() GetMXPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesTypePtrOutput) ToGetMXPropertiesTypePtrOutputWithContext(ctx context.Context) GetMXPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesTypePtrOutput) Elem() GetMXPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetMXPropertiesType) GetMXPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetMXPropertiesType
+		return ret
+	}).(GetMXPropertiesTypeOutput)
+}
+
+func (o GetMXPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetMXPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetMXPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetNAPTRPropertiesMode string
+
+const (
+	GetNAPTRPropertiesModeStandard = GetNAPTRPropertiesMode("standard")
+)
+
+type GetNAPTRPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNAPTRPropertiesMode)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToGetNAPTRPropertiesModeOutput() GetNAPTRPropertiesModeOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToGetNAPTRPropertiesModeOutputWithContext(ctx context.Context) GetNAPTRPropertiesModeOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToGetNAPTRPropertiesModePtrOutput() GetNAPTRPropertiesModePtrOutput {
+	return o.ToGetNAPTRPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToGetNAPTRPropertiesModePtrOutputWithContext(ctx context.Context) GetNAPTRPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetNAPTRPropertiesMode) *GetNAPTRPropertiesMode {
+		return &v
+	}).(GetNAPTRPropertiesModePtrOutput)
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNAPTRPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNAPTRPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetNAPTRPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNAPTRPropertiesMode)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesModePtrOutput) ToGetNAPTRPropertiesModePtrOutput() GetNAPTRPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesModePtrOutput) ToGetNAPTRPropertiesModePtrOutputWithContext(ctx context.Context) GetNAPTRPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesModePtrOutput) Elem() GetNAPTRPropertiesModeOutput {
+	return o.ApplyT(func(v *GetNAPTRPropertiesMode) GetNAPTRPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetNAPTRPropertiesMode
+		return ret
+	}).(GetNAPTRPropertiesModeOutput)
+}
+
+func (o GetNAPTRPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetNAPTRPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetNAPTRPropertiesType string
+
+const (
+	GetNAPTRPropertiesTypeNaptr = GetNAPTRPropertiesType("NAPTR")
+)
+
+type GetNAPTRPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNAPTRPropertiesType)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToGetNAPTRPropertiesTypeOutput() GetNAPTRPropertiesTypeOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToGetNAPTRPropertiesTypeOutputWithContext(ctx context.Context) GetNAPTRPropertiesTypeOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToGetNAPTRPropertiesTypePtrOutput() GetNAPTRPropertiesTypePtrOutput {
+	return o.ToGetNAPTRPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToGetNAPTRPropertiesTypePtrOutputWithContext(ctx context.Context) GetNAPTRPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetNAPTRPropertiesType) *GetNAPTRPropertiesType {
+		return &v
+	}).(GetNAPTRPropertiesTypePtrOutput)
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNAPTRPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNAPTRPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetNAPTRPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNAPTRPropertiesType)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesTypePtrOutput) ToGetNAPTRPropertiesTypePtrOutput() GetNAPTRPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesTypePtrOutput) ToGetNAPTRPropertiesTypePtrOutputWithContext(ctx context.Context) GetNAPTRPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesTypePtrOutput) Elem() GetNAPTRPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetNAPTRPropertiesType) GetNAPTRPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetNAPTRPropertiesType
+		return ret
+	}).(GetNAPTRPropertiesTypeOutput)
+}
+
+func (o GetNAPTRPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNAPTRPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetNAPTRPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetNSPropertiesMode string
+
+const (
+	GetNSPropertiesModeStandard = GetNSPropertiesMode("standard")
+)
+
+type GetNSPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNSPropertiesMode)(nil)).Elem()
+}
+
+func (o GetNSPropertiesModeOutput) ToGetNSPropertiesModeOutput() GetNSPropertiesModeOutput {
+	return o
+}
+
+func (o GetNSPropertiesModeOutput) ToGetNSPropertiesModeOutputWithContext(ctx context.Context) GetNSPropertiesModeOutput {
+	return o
+}
+
+func (o GetNSPropertiesModeOutput) ToGetNSPropertiesModePtrOutput() GetNSPropertiesModePtrOutput {
+	return o.ToGetNSPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesModeOutput) ToGetNSPropertiesModePtrOutputWithContext(ctx context.Context) GetNSPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetNSPropertiesMode) *GetNSPropertiesMode {
+		return &v
+	}).(GetNSPropertiesModePtrOutput)
+}
+
+func (o GetNSPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNSPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNSPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNSPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetNSPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNSPropertiesMode)(nil)).Elem()
+}
+
+func (o GetNSPropertiesModePtrOutput) ToGetNSPropertiesModePtrOutput() GetNSPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesModePtrOutput) ToGetNSPropertiesModePtrOutputWithContext(ctx context.Context) GetNSPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesModePtrOutput) Elem() GetNSPropertiesModeOutput {
+	return o.ApplyT(func(v *GetNSPropertiesMode) GetNSPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetNSPropertiesMode
+		return ret
+	}).(GetNSPropertiesModeOutput)
+}
+
+func (o GetNSPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetNSPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetNSPropertiesType string
+
+const (
+	GetNSPropertiesTypeNs = GetNSPropertiesType("NS")
+)
+
+type GetNSPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNSPropertiesType)(nil)).Elem()
+}
+
+func (o GetNSPropertiesTypeOutput) ToGetNSPropertiesTypeOutput() GetNSPropertiesTypeOutput {
+	return o
+}
+
+func (o GetNSPropertiesTypeOutput) ToGetNSPropertiesTypeOutputWithContext(ctx context.Context) GetNSPropertiesTypeOutput {
+	return o
+}
+
+func (o GetNSPropertiesTypeOutput) ToGetNSPropertiesTypePtrOutput() GetNSPropertiesTypePtrOutput {
+	return o.ToGetNSPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesTypeOutput) ToGetNSPropertiesTypePtrOutputWithContext(ctx context.Context) GetNSPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetNSPropertiesType) *GetNSPropertiesType {
+		return &v
+	}).(GetNSPropertiesTypePtrOutput)
+}
+
+func (o GetNSPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNSPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNSPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetNSPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetNSPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNSPropertiesType)(nil)).Elem()
+}
+
+func (o GetNSPropertiesTypePtrOutput) ToGetNSPropertiesTypePtrOutput() GetNSPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesTypePtrOutput) ToGetNSPropertiesTypePtrOutputWithContext(ctx context.Context) GetNSPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesTypePtrOutput) Elem() GetNSPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetNSPropertiesType) GetNSPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetNSPropertiesType
+		return ret
+	}).(GetNSPropertiesTypeOutput)
+}
+
+func (o GetNSPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetNSPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetNSPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetPTRPropertiesMode string
+
+const (
+	GetPTRPropertiesModeStandard = GetPTRPropertiesMode("standard")
+)
+
+type GetPTRPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPTRPropertiesMode)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesModeOutput) ToGetPTRPropertiesModeOutput() GetPTRPropertiesModeOutput {
+	return o
+}
+
+func (o GetPTRPropertiesModeOutput) ToGetPTRPropertiesModeOutputWithContext(ctx context.Context) GetPTRPropertiesModeOutput {
+	return o
+}
+
+func (o GetPTRPropertiesModeOutput) ToGetPTRPropertiesModePtrOutput() GetPTRPropertiesModePtrOutput {
+	return o.ToGetPTRPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesModeOutput) ToGetPTRPropertiesModePtrOutputWithContext(ctx context.Context) GetPTRPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetPTRPropertiesMode) *GetPTRPropertiesMode {
+		return &v
+	}).(GetPTRPropertiesModePtrOutput)
+}
+
+func (o GetPTRPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetPTRPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPTRPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetPTRPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetPTRPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetPTRPropertiesMode)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesModePtrOutput) ToGetPTRPropertiesModePtrOutput() GetPTRPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesModePtrOutput) ToGetPTRPropertiesModePtrOutputWithContext(ctx context.Context) GetPTRPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesModePtrOutput) Elem() GetPTRPropertiesModeOutput {
+	return o.ApplyT(func(v *GetPTRPropertiesMode) GetPTRPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetPTRPropertiesMode
+		return ret
+	}).(GetPTRPropertiesModeOutput)
+}
+
+func (o GetPTRPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetPTRPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetPTRPropertiesType string
+
+const (
+	GetPTRPropertiesTypePtr = GetPTRPropertiesType("PTR")
+)
+
+type GetPTRPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPTRPropertiesType)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesTypeOutput) ToGetPTRPropertiesTypeOutput() GetPTRPropertiesTypeOutput {
+	return o
+}
+
+func (o GetPTRPropertiesTypeOutput) ToGetPTRPropertiesTypeOutputWithContext(ctx context.Context) GetPTRPropertiesTypeOutput {
+	return o
+}
+
+func (o GetPTRPropertiesTypeOutput) ToGetPTRPropertiesTypePtrOutput() GetPTRPropertiesTypePtrOutput {
+	return o.ToGetPTRPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesTypeOutput) ToGetPTRPropertiesTypePtrOutputWithContext(ctx context.Context) GetPTRPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetPTRPropertiesType) *GetPTRPropertiesType {
+		return &v
+	}).(GetPTRPropertiesTypePtrOutput)
+}
+
+func (o GetPTRPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetPTRPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPTRPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetPTRPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetPTRPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetPTRPropertiesType)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesTypePtrOutput) ToGetPTRPropertiesTypePtrOutput() GetPTRPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesTypePtrOutput) ToGetPTRPropertiesTypePtrOutputWithContext(ctx context.Context) GetPTRPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesTypePtrOutput) Elem() GetPTRPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetPTRPropertiesType) GetPTRPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetPTRPropertiesType
+		return ret
+	}).(GetPTRPropertiesTypeOutput)
+}
+
+func (o GetPTRPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetPTRPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetPTRPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetRPPropertiesMode string
+
+const (
+	GetRPPropertiesModeStandard = GetRPPropertiesMode("standard")
+)
+
+type GetRPPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRPPropertiesMode)(nil)).Elem()
+}
+
+func (o GetRPPropertiesModeOutput) ToGetRPPropertiesModeOutput() GetRPPropertiesModeOutput {
+	return o
+}
+
+func (o GetRPPropertiesModeOutput) ToGetRPPropertiesModeOutputWithContext(ctx context.Context) GetRPPropertiesModeOutput {
+	return o
+}
+
+func (o GetRPPropertiesModeOutput) ToGetRPPropertiesModePtrOutput() GetRPPropertiesModePtrOutput {
+	return o.ToGetRPPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesModeOutput) ToGetRPPropertiesModePtrOutputWithContext(ctx context.Context) GetRPPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetRPPropertiesMode) *GetRPPropertiesMode {
+		return &v
+	}).(GetRPPropertiesModePtrOutput)
+}
+
+func (o GetRPPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetRPPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetRPPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetRPPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetRPPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetRPPropertiesMode)(nil)).Elem()
+}
+
+func (o GetRPPropertiesModePtrOutput) ToGetRPPropertiesModePtrOutput() GetRPPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesModePtrOutput) ToGetRPPropertiesModePtrOutputWithContext(ctx context.Context) GetRPPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesModePtrOutput) Elem() GetRPPropertiesModeOutput {
+	return o.ApplyT(func(v *GetRPPropertiesMode) GetRPPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetRPPropertiesMode
+		return ret
+	}).(GetRPPropertiesModeOutput)
+}
+
+func (o GetRPPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetRPPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetRPPropertiesType string
+
+const (
+	GetRPPropertiesTypeRp = GetRPPropertiesType("RP")
+)
+
+type GetRPPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRPPropertiesType)(nil)).Elem()
+}
+
+func (o GetRPPropertiesTypeOutput) ToGetRPPropertiesTypeOutput() GetRPPropertiesTypeOutput {
+	return o
+}
+
+func (o GetRPPropertiesTypeOutput) ToGetRPPropertiesTypeOutputWithContext(ctx context.Context) GetRPPropertiesTypeOutput {
+	return o
+}
+
+func (o GetRPPropertiesTypeOutput) ToGetRPPropertiesTypePtrOutput() GetRPPropertiesTypePtrOutput {
+	return o.ToGetRPPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesTypeOutput) ToGetRPPropertiesTypePtrOutputWithContext(ctx context.Context) GetRPPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetRPPropertiesType) *GetRPPropertiesType {
+		return &v
+	}).(GetRPPropertiesTypePtrOutput)
+}
+
+func (o GetRPPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetRPPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetRPPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetRPPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetRPPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetRPPropertiesType)(nil)).Elem()
+}
+
+func (o GetRPPropertiesTypePtrOutput) ToGetRPPropertiesTypePtrOutput() GetRPPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesTypePtrOutput) ToGetRPPropertiesTypePtrOutputWithContext(ctx context.Context) GetRPPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesTypePtrOutput) Elem() GetRPPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetRPPropertiesType) GetRPPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetRPPropertiesType
+		return ret
+	}).(GetRPPropertiesTypeOutput)
+}
+
+func (o GetRPPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetRPPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetRPPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetSPFPropertiesMode string
+
+const (
+	GetSPFPropertiesModeStandard = GetSPFPropertiesMode("standard")
+)
+
+type GetSPFPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSPFPropertiesMode)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesModeOutput) ToGetSPFPropertiesModeOutput() GetSPFPropertiesModeOutput {
+	return o
+}
+
+func (o GetSPFPropertiesModeOutput) ToGetSPFPropertiesModeOutputWithContext(ctx context.Context) GetSPFPropertiesModeOutput {
+	return o
+}
+
+func (o GetSPFPropertiesModeOutput) ToGetSPFPropertiesModePtrOutput() GetSPFPropertiesModePtrOutput {
+	return o.ToGetSPFPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesModeOutput) ToGetSPFPropertiesModePtrOutputWithContext(ctx context.Context) GetSPFPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetSPFPropertiesMode) *GetSPFPropertiesMode {
+		return &v
+	}).(GetSPFPropertiesModePtrOutput)
+}
+
+func (o GetSPFPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSPFPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSPFPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSPFPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetSPFPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSPFPropertiesMode)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesModePtrOutput) ToGetSPFPropertiesModePtrOutput() GetSPFPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesModePtrOutput) ToGetSPFPropertiesModePtrOutputWithContext(ctx context.Context) GetSPFPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesModePtrOutput) Elem() GetSPFPropertiesModeOutput {
+	return o.ApplyT(func(v *GetSPFPropertiesMode) GetSPFPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetSPFPropertiesMode
+		return ret
+	}).(GetSPFPropertiesModeOutput)
+}
+
+func (o GetSPFPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetSPFPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetSPFPropertiesType string
+
+const (
+	GetSPFPropertiesTypeSpf = GetSPFPropertiesType("SPF")
+)
+
+type GetSPFPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSPFPropertiesType)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesTypeOutput) ToGetSPFPropertiesTypeOutput() GetSPFPropertiesTypeOutput {
+	return o
+}
+
+func (o GetSPFPropertiesTypeOutput) ToGetSPFPropertiesTypeOutputWithContext(ctx context.Context) GetSPFPropertiesTypeOutput {
+	return o
+}
+
+func (o GetSPFPropertiesTypeOutput) ToGetSPFPropertiesTypePtrOutput() GetSPFPropertiesTypePtrOutput {
+	return o.ToGetSPFPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesTypeOutput) ToGetSPFPropertiesTypePtrOutputWithContext(ctx context.Context) GetSPFPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetSPFPropertiesType) *GetSPFPropertiesType {
+		return &v
+	}).(GetSPFPropertiesTypePtrOutput)
+}
+
+func (o GetSPFPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSPFPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSPFPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSPFPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetSPFPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSPFPropertiesType)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesTypePtrOutput) ToGetSPFPropertiesTypePtrOutput() GetSPFPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesTypePtrOutput) ToGetSPFPropertiesTypePtrOutputWithContext(ctx context.Context) GetSPFPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesTypePtrOutput) Elem() GetSPFPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetSPFPropertiesType) GetSPFPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetSPFPropertiesType
+		return ret
+	}).(GetSPFPropertiesTypeOutput)
+}
+
+func (o GetSPFPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSPFPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetSPFPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetSRVPropertiesMode string
+
+const (
+	GetSRVPropertiesModeStandard = GetSRVPropertiesMode("standard")
+)
+
+type GetSRVPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSRVPropertiesMode)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesModeOutput) ToGetSRVPropertiesModeOutput() GetSRVPropertiesModeOutput {
+	return o
+}
+
+func (o GetSRVPropertiesModeOutput) ToGetSRVPropertiesModeOutputWithContext(ctx context.Context) GetSRVPropertiesModeOutput {
+	return o
+}
+
+func (o GetSRVPropertiesModeOutput) ToGetSRVPropertiesModePtrOutput() GetSRVPropertiesModePtrOutput {
+	return o.ToGetSRVPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesModeOutput) ToGetSRVPropertiesModePtrOutputWithContext(ctx context.Context) GetSRVPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetSRVPropertiesMode) *GetSRVPropertiesMode {
+		return &v
+	}).(GetSRVPropertiesModePtrOutput)
+}
+
+func (o GetSRVPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSRVPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSRVPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSRVPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetSRVPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSRVPropertiesMode)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesModePtrOutput) ToGetSRVPropertiesModePtrOutput() GetSRVPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesModePtrOutput) ToGetSRVPropertiesModePtrOutputWithContext(ctx context.Context) GetSRVPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesModePtrOutput) Elem() GetSRVPropertiesModeOutput {
+	return o.ApplyT(func(v *GetSRVPropertiesMode) GetSRVPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetSRVPropertiesMode
+		return ret
+	}).(GetSRVPropertiesModeOutput)
+}
+
+func (o GetSRVPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetSRVPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetSRVPropertiesType string
+
+const (
+	GetSRVPropertiesTypeSrv = GetSRVPropertiesType("SRV")
+)
+
+type GetSRVPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSRVPropertiesType)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesTypeOutput) ToGetSRVPropertiesTypeOutput() GetSRVPropertiesTypeOutput {
+	return o
+}
+
+func (o GetSRVPropertiesTypeOutput) ToGetSRVPropertiesTypeOutputWithContext(ctx context.Context) GetSRVPropertiesTypeOutput {
+	return o
+}
+
+func (o GetSRVPropertiesTypeOutput) ToGetSRVPropertiesTypePtrOutput() GetSRVPropertiesTypePtrOutput {
+	return o.ToGetSRVPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesTypeOutput) ToGetSRVPropertiesTypePtrOutputWithContext(ctx context.Context) GetSRVPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetSRVPropertiesType) *GetSRVPropertiesType {
+		return &v
+	}).(GetSRVPropertiesTypePtrOutput)
+}
+
+func (o GetSRVPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSRVPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSRVPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetSRVPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetSRVPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSRVPropertiesType)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesTypePtrOutput) ToGetSRVPropertiesTypePtrOutput() GetSRVPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesTypePtrOutput) ToGetSRVPropertiesTypePtrOutputWithContext(ctx context.Context) GetSRVPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesTypePtrOutput) Elem() GetSRVPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetSRVPropertiesType) GetSRVPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetSRVPropertiesType
+		return ret
+	}).(GetSRVPropertiesTypeOutput)
+}
+
+func (o GetSRVPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetSRVPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetSRVPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// How the record should work
+type GetTXTPropertiesMode string
+
+const (
+	GetTXTPropertiesModeStandard = GetTXTPropertiesMode("standard")
+)
+
+type GetTXTPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTXTPropertiesMode)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesModeOutput) ToGetTXTPropertiesModeOutput() GetTXTPropertiesModeOutput {
+	return o
+}
+
+func (o GetTXTPropertiesModeOutput) ToGetTXTPropertiesModeOutputWithContext(ctx context.Context) GetTXTPropertiesModeOutput {
+	return o
+}
+
+func (o GetTXTPropertiesModeOutput) ToGetTXTPropertiesModePtrOutput() GetTXTPropertiesModePtrOutput {
+	return o.ToGetTXTPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesModeOutput) ToGetTXTPropertiesModePtrOutputWithContext(ctx context.Context) GetTXTPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetTXTPropertiesMode) *GetTXTPropertiesMode {
+		return &v
+	}).(GetTXTPropertiesModePtrOutput)
+}
+
+func (o GetTXTPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetTXTPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetTXTPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetTXTPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetTXTPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetTXTPropertiesMode)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesModePtrOutput) ToGetTXTPropertiesModePtrOutput() GetTXTPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesModePtrOutput) ToGetTXTPropertiesModePtrOutputWithContext(ctx context.Context) GetTXTPropertiesModePtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesModePtrOutput) Elem() GetTXTPropertiesModeOutput {
+	return o.ApplyT(func(v *GetTXTPropertiesMode) GetTXTPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret GetTXTPropertiesMode
+		return ret
+	}).(GetTXTPropertiesModeOutput)
+}
+
+func (o GetTXTPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetTXTPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of record
+type GetTXTPropertiesType string
+
+const (
+	GetTXTPropertiesTypeTxt = GetTXTPropertiesType("TXT")
+)
+
+type GetTXTPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTXTPropertiesType)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesTypeOutput) ToGetTXTPropertiesTypeOutput() GetTXTPropertiesTypeOutput {
+	return o
+}
+
+func (o GetTXTPropertiesTypeOutput) ToGetTXTPropertiesTypeOutputWithContext(ctx context.Context) GetTXTPropertiesTypeOutput {
+	return o
+}
+
+func (o GetTXTPropertiesTypeOutput) ToGetTXTPropertiesTypePtrOutput() GetTXTPropertiesTypePtrOutput {
+	return o.ToGetTXTPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesTypeOutput) ToGetTXTPropertiesTypePtrOutputWithContext(ctx context.Context) GetTXTPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetTXTPropertiesType) *GetTXTPropertiesType {
+		return &v
+	}).(GetTXTPropertiesTypePtrOutput)
+}
+
+func (o GetTXTPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetTXTPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o GetTXTPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e GetTXTPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetTXTPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetTXTPropertiesType)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesTypePtrOutput) ToGetTXTPropertiesTypePtrOutput() GetTXTPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesTypePtrOutput) ToGetTXTPropertiesTypePtrOutputWithContext(ctx context.Context) GetTXTPropertiesTypePtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesTypePtrOutput) Elem() GetTXTPropertiesTypeOutput {
+	return o.ApplyT(func(v *GetTXTPropertiesType) GetTXTPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret GetTXTPropertiesType
+		return ret
+	}).(GetTXTPropertiesTypeOutput)
+}
+
+func (o GetTXTPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o GetTXTPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *GetTXTPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current mode for this record
+type HinfoPropertiesMode string
+
+const (
+	HinfoPropertiesModeStandard = HinfoPropertiesMode("standard")
+)
+
+func (HinfoPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*HinfoPropertiesMode)(nil)).Elem()
+}
+
+func (e HinfoPropertiesMode) ToHinfoPropertiesModeOutput() HinfoPropertiesModeOutput {
+	return pulumi.ToOutput(e).(HinfoPropertiesModeOutput)
+}
+
+func (e HinfoPropertiesMode) ToHinfoPropertiesModeOutputWithContext(ctx context.Context) HinfoPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(HinfoPropertiesModeOutput)
+}
+
+func (e HinfoPropertiesMode) ToHinfoPropertiesModePtrOutput() HinfoPropertiesModePtrOutput {
+	return e.ToHinfoPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e HinfoPropertiesMode) ToHinfoPropertiesModePtrOutputWithContext(ctx context.Context) HinfoPropertiesModePtrOutput {
+	return HinfoPropertiesMode(e).ToHinfoPropertiesModeOutputWithContext(ctx).ToHinfoPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e HinfoPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HinfoPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HinfoPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e HinfoPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type HinfoPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (HinfoPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HinfoPropertiesMode)(nil)).Elem()
+}
+
+func (o HinfoPropertiesModeOutput) ToHinfoPropertiesModeOutput() HinfoPropertiesModeOutput {
+	return o
+}
+
+func (o HinfoPropertiesModeOutput) ToHinfoPropertiesModeOutputWithContext(ctx context.Context) HinfoPropertiesModeOutput {
+	return o
+}
+
+func (o HinfoPropertiesModeOutput) ToHinfoPropertiesModePtrOutput() HinfoPropertiesModePtrOutput {
+	return o.ToHinfoPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesModeOutput) ToHinfoPropertiesModePtrOutputWithContext(ctx context.Context) HinfoPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HinfoPropertiesMode) *HinfoPropertiesMode {
+		return &v
+	}).(HinfoPropertiesModePtrOutput)
+}
+
+func (o HinfoPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HinfoPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o HinfoPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HinfoPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type HinfoPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (HinfoPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HinfoPropertiesMode)(nil)).Elem()
+}
+
+func (o HinfoPropertiesModePtrOutput) ToHinfoPropertiesModePtrOutput() HinfoPropertiesModePtrOutput {
+	return o
+}
+
+func (o HinfoPropertiesModePtrOutput) ToHinfoPropertiesModePtrOutputWithContext(ctx context.Context) HinfoPropertiesModePtrOutput {
+	return o
+}
+
+func (o HinfoPropertiesModePtrOutput) Elem() HinfoPropertiesModeOutput {
+	return o.ApplyT(func(v *HinfoPropertiesMode) HinfoPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret HinfoPropertiesMode
+		return ret
+	}).(HinfoPropertiesModeOutput)
+}
+
+func (o HinfoPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *HinfoPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// HinfoPropertiesModeInput is an input type that accepts values of the HinfoPropertiesMode enum
+// A concrete instance of `HinfoPropertiesModeInput` can be one of the following:
+//
+//	HinfoPropertiesModeStandard
+type HinfoPropertiesModeInput interface {
+	pulumi.Input
+
+	ToHinfoPropertiesModeOutput() HinfoPropertiesModeOutput
+	ToHinfoPropertiesModeOutputWithContext(context.Context) HinfoPropertiesModeOutput
+}
+
+var hinfoPropertiesModePtrType = reflect.TypeOf((**HinfoPropertiesMode)(nil)).Elem()
+
+type HinfoPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToHinfoPropertiesModePtrOutput() HinfoPropertiesModePtrOutput
+	ToHinfoPropertiesModePtrOutputWithContext(context.Context) HinfoPropertiesModePtrOutput
+}
+
+type hinfoPropertiesModePtr string
+
+func HinfoPropertiesModePtr(v string) HinfoPropertiesModePtrInput {
+	return (*hinfoPropertiesModePtr)(&v)
+}
+
+func (*hinfoPropertiesModePtr) ElementType() reflect.Type {
+	return hinfoPropertiesModePtrType
+}
+
+func (in *hinfoPropertiesModePtr) ToHinfoPropertiesModePtrOutput() HinfoPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(HinfoPropertiesModePtrOutput)
+}
+
+func (in *hinfoPropertiesModePtr) ToHinfoPropertiesModePtrOutputWithContext(ctx context.Context) HinfoPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(HinfoPropertiesModePtrOutput)
+}
+
+// The type of record
+type HinfoPropertiesType string
+
+const (
+	HinfoPropertiesTypeHinfo = HinfoPropertiesType("HINFO")
+)
+
+func (HinfoPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*HinfoPropertiesType)(nil)).Elem()
+}
+
+func (e HinfoPropertiesType) ToHinfoPropertiesTypeOutput() HinfoPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(HinfoPropertiesTypeOutput)
+}
+
+func (e HinfoPropertiesType) ToHinfoPropertiesTypeOutputWithContext(ctx context.Context) HinfoPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(HinfoPropertiesTypeOutput)
+}
+
+func (e HinfoPropertiesType) ToHinfoPropertiesTypePtrOutput() HinfoPropertiesTypePtrOutput {
+	return e.ToHinfoPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e HinfoPropertiesType) ToHinfoPropertiesTypePtrOutputWithContext(ctx context.Context) HinfoPropertiesTypePtrOutput {
+	return HinfoPropertiesType(e).ToHinfoPropertiesTypeOutputWithContext(ctx).ToHinfoPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e HinfoPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HinfoPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HinfoPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e HinfoPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type HinfoPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (HinfoPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HinfoPropertiesType)(nil)).Elem()
+}
+
+func (o HinfoPropertiesTypeOutput) ToHinfoPropertiesTypeOutput() HinfoPropertiesTypeOutput {
+	return o
+}
+
+func (o HinfoPropertiesTypeOutput) ToHinfoPropertiesTypeOutputWithContext(ctx context.Context) HinfoPropertiesTypeOutput {
+	return o
+}
+
+func (o HinfoPropertiesTypeOutput) ToHinfoPropertiesTypePtrOutput() HinfoPropertiesTypePtrOutput {
+	return o.ToHinfoPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesTypeOutput) ToHinfoPropertiesTypePtrOutputWithContext(ctx context.Context) HinfoPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HinfoPropertiesType) *HinfoPropertiesType {
+		return &v
+	}).(HinfoPropertiesTypePtrOutput)
+}
+
+func (o HinfoPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HinfoPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o HinfoPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HinfoPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type HinfoPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (HinfoPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HinfoPropertiesType)(nil)).Elem()
+}
+
+func (o HinfoPropertiesTypePtrOutput) ToHinfoPropertiesTypePtrOutput() HinfoPropertiesTypePtrOutput {
+	return o
+}
+
+func (o HinfoPropertiesTypePtrOutput) ToHinfoPropertiesTypePtrOutputWithContext(ctx context.Context) HinfoPropertiesTypePtrOutput {
+	return o
+}
+
+func (o HinfoPropertiesTypePtrOutput) Elem() HinfoPropertiesTypeOutput {
+	return o.ApplyT(func(v *HinfoPropertiesType) HinfoPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret HinfoPropertiesType
+		return ret
+	}).(HinfoPropertiesTypeOutput)
+}
+
+func (o HinfoPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HinfoPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *HinfoPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// HinfoPropertiesTypeInput is an input type that accepts values of the HinfoPropertiesType enum
+// A concrete instance of `HinfoPropertiesTypeInput` can be one of the following:
+//
+//	HinfoPropertiesTypeHinfo
+type HinfoPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToHinfoPropertiesTypeOutput() HinfoPropertiesTypeOutput
+	ToHinfoPropertiesTypeOutputWithContext(context.Context) HinfoPropertiesTypeOutput
+}
+
+var hinfoPropertiesTypePtrType = reflect.TypeOf((**HinfoPropertiesType)(nil)).Elem()
+
+type HinfoPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToHinfoPropertiesTypePtrOutput() HinfoPropertiesTypePtrOutput
+	ToHinfoPropertiesTypePtrOutputWithContext(context.Context) HinfoPropertiesTypePtrOutput
+}
+
+type hinfoPropertiesTypePtr string
+
+func HinfoPropertiesTypePtr(v string) HinfoPropertiesTypePtrInput {
+	return (*hinfoPropertiesTypePtr)(&v)
+}
+
+func (*hinfoPropertiesTypePtr) ElementType() reflect.Type {
+	return hinfoPropertiesTypePtrType
+}
+
+func (in *hinfoPropertiesTypePtr) ToHinfoPropertiesTypePtrOutput() HinfoPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(HinfoPropertiesTypePtrOutput)
+}
+
+func (in *hinfoPropertiesTypePtr) ToHinfoPropertiesTypePtrOutputWithContext(ctx context.Context) HinfoPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(HinfoPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type HttpPropertiesMode string
+
+const (
+	HttpPropertiesModeStandard = HttpPropertiesMode("standard")
+)
+
+func (HttpPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*HttpPropertiesMode)(nil)).Elem()
+}
+
+func (e HttpPropertiesMode) ToHttpPropertiesModeOutput() HttpPropertiesModeOutput {
+	return pulumi.ToOutput(e).(HttpPropertiesModeOutput)
+}
+
+func (e HttpPropertiesMode) ToHttpPropertiesModeOutputWithContext(ctx context.Context) HttpPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(HttpPropertiesModeOutput)
+}
+
+func (e HttpPropertiesMode) ToHttpPropertiesModePtrOutput() HttpPropertiesModePtrOutput {
+	return e.ToHttpPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e HttpPropertiesMode) ToHttpPropertiesModePtrOutputWithContext(ctx context.Context) HttpPropertiesModePtrOutput {
+	return HttpPropertiesMode(e).ToHttpPropertiesModeOutputWithContext(ctx).ToHttpPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e HttpPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HttpPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HttpPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e HttpPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type HttpPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (HttpPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HttpPropertiesMode)(nil)).Elem()
+}
+
+func (o HttpPropertiesModeOutput) ToHttpPropertiesModeOutput() HttpPropertiesModeOutput {
+	return o
+}
+
+func (o HttpPropertiesModeOutput) ToHttpPropertiesModeOutputWithContext(ctx context.Context) HttpPropertiesModeOutput {
+	return o
+}
+
+func (o HttpPropertiesModeOutput) ToHttpPropertiesModePtrOutput() HttpPropertiesModePtrOutput {
+	return o.ToHttpPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesModeOutput) ToHttpPropertiesModePtrOutputWithContext(ctx context.Context) HttpPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HttpPropertiesMode) *HttpPropertiesMode {
+		return &v
+	}).(HttpPropertiesModePtrOutput)
+}
+
+func (o HttpPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HttpPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o HttpPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HttpPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type HttpPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (HttpPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HttpPropertiesMode)(nil)).Elem()
+}
+
+func (o HttpPropertiesModePtrOutput) ToHttpPropertiesModePtrOutput() HttpPropertiesModePtrOutput {
+	return o
+}
+
+func (o HttpPropertiesModePtrOutput) ToHttpPropertiesModePtrOutputWithContext(ctx context.Context) HttpPropertiesModePtrOutput {
+	return o
+}
+
+func (o HttpPropertiesModePtrOutput) Elem() HttpPropertiesModeOutput {
+	return o.ApplyT(func(v *HttpPropertiesMode) HttpPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret HttpPropertiesMode
+		return ret
+	}).(HttpPropertiesModeOutput)
+}
+
+func (o HttpPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *HttpPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// HttpPropertiesModeInput is an input type that accepts values of the HttpPropertiesMode enum
+// A concrete instance of `HttpPropertiesModeInput` can be one of the following:
+//
+//	HttpPropertiesModeStandard
+type HttpPropertiesModeInput interface {
+	pulumi.Input
+
+	ToHttpPropertiesModeOutput() HttpPropertiesModeOutput
+	ToHttpPropertiesModeOutputWithContext(context.Context) HttpPropertiesModeOutput
+}
+
+var httpPropertiesModePtrType = reflect.TypeOf((**HttpPropertiesMode)(nil)).Elem()
+
+type HttpPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToHttpPropertiesModePtrOutput() HttpPropertiesModePtrOutput
+	ToHttpPropertiesModePtrOutputWithContext(context.Context) HttpPropertiesModePtrOutput
+}
+
+type httpPropertiesModePtr string
+
+func HttpPropertiesModePtr(v string) HttpPropertiesModePtrInput {
+	return (*httpPropertiesModePtr)(&v)
+}
+
+func (*httpPropertiesModePtr) ElementType() reflect.Type {
+	return httpPropertiesModePtrType
+}
+
+func (in *httpPropertiesModePtr) ToHttpPropertiesModePtrOutput() HttpPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(HttpPropertiesModePtrOutput)
+}
+
+func (in *httpPropertiesModePtr) ToHttpPropertiesModePtrOutputWithContext(ctx context.Context) HttpPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(HttpPropertiesModePtrOutput)
+}
+
+// The type of record
+type HttpPropertiesType string
+
+const (
+	HttpPropertiesTypeHttp = HttpPropertiesType("HTTP")
+)
+
+func (HttpPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*HttpPropertiesType)(nil)).Elem()
+}
+
+func (e HttpPropertiesType) ToHttpPropertiesTypeOutput() HttpPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(HttpPropertiesTypeOutput)
+}
+
+func (e HttpPropertiesType) ToHttpPropertiesTypeOutputWithContext(ctx context.Context) HttpPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(HttpPropertiesTypeOutput)
+}
+
+func (e HttpPropertiesType) ToHttpPropertiesTypePtrOutput() HttpPropertiesTypePtrOutput {
+	return e.ToHttpPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e HttpPropertiesType) ToHttpPropertiesTypePtrOutputWithContext(ctx context.Context) HttpPropertiesTypePtrOutput {
+	return HttpPropertiesType(e).ToHttpPropertiesTypeOutputWithContext(ctx).ToHttpPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e HttpPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HttpPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e HttpPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e HttpPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type HttpPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (HttpPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HttpPropertiesType)(nil)).Elem()
+}
+
+func (o HttpPropertiesTypeOutput) ToHttpPropertiesTypeOutput() HttpPropertiesTypeOutput {
+	return o
+}
+
+func (o HttpPropertiesTypeOutput) ToHttpPropertiesTypeOutputWithContext(ctx context.Context) HttpPropertiesTypeOutput {
+	return o
+}
+
+func (o HttpPropertiesTypeOutput) ToHttpPropertiesTypePtrOutput() HttpPropertiesTypePtrOutput {
+	return o.ToHttpPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesTypeOutput) ToHttpPropertiesTypePtrOutputWithContext(ctx context.Context) HttpPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HttpPropertiesType) *HttpPropertiesType {
+		return &v
+	}).(HttpPropertiesTypePtrOutput)
+}
+
+func (o HttpPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HttpPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o HttpPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e HttpPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type HttpPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (HttpPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HttpPropertiesType)(nil)).Elem()
+}
+
+func (o HttpPropertiesTypePtrOutput) ToHttpPropertiesTypePtrOutput() HttpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o HttpPropertiesTypePtrOutput) ToHttpPropertiesTypePtrOutputWithContext(ctx context.Context) HttpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o HttpPropertiesTypePtrOutput) Elem() HttpPropertiesTypeOutput {
+	return o.ApplyT(func(v *HttpPropertiesType) HttpPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret HttpPropertiesType
+		return ret
+	}).(HttpPropertiesTypeOutput)
+}
+
+func (o HttpPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o HttpPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *HttpPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// HttpPropertiesTypeInput is an input type that accepts values of the HttpPropertiesType enum
+// A concrete instance of `HttpPropertiesTypeInput` can be one of the following:
+//
+//	HttpPropertiesTypeHttp
+type HttpPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToHttpPropertiesTypeOutput() HttpPropertiesTypeOutput
+	ToHttpPropertiesTypeOutputWithContext(context.Context) HttpPropertiesTypeOutput
+}
+
+var httpPropertiesTypePtrType = reflect.TypeOf((**HttpPropertiesType)(nil)).Elem()
+
+type HttpPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToHttpPropertiesTypePtrOutput() HttpPropertiesTypePtrOutput
+	ToHttpPropertiesTypePtrOutputWithContext(context.Context) HttpPropertiesTypePtrOutput
+}
+
+type httpPropertiesTypePtr string
+
+func HttpPropertiesTypePtr(v string) HttpPropertiesTypePtrInput {
+	return (*httpPropertiesTypePtr)(&v)
+}
+
+func (*httpPropertiesTypePtr) ElementType() reflect.Type {
+	return httpPropertiesTypePtrType
+}
+
+func (in *httpPropertiesTypePtr) ToHttpPropertiesTypePtrOutput() HttpPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(HttpPropertiesTypePtrOutput)
+}
+
+func (in *httpPropertiesTypePtr) ToHttpPropertiesTypePtrOutputWithContext(ctx context.Context) HttpPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(HttpPropertiesTypePtrOutput)
+}
+
+// Foo
+type ItemsTag string
+
+const (
+	ItemsTagIssue     = ItemsTag("issue")
+	ItemsTagIssuewild = ItemsTag("issuewild")
+	ItemsTagIodef     = ItemsTag("iodef")
+)
+
+type ItemsTagOutput struct{ *pulumi.OutputState }
+
+func (ItemsTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ItemsTag)(nil)).Elem()
+}
+
+func (o ItemsTagOutput) ToItemsTagOutput() ItemsTagOutput {
+	return o
+}
+
+func (o ItemsTagOutput) ToItemsTagOutputWithContext(ctx context.Context) ItemsTagOutput {
+	return o
+}
+
+func (o ItemsTagOutput) ToItemsTagPtrOutput() ItemsTagPtrOutput {
+	return o.ToItemsTagPtrOutputWithContext(context.Background())
+}
+
+func (o ItemsTagOutput) ToItemsTagPtrOutputWithContext(ctx context.Context) ItemsTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ItemsTag) *ItemsTag {
+		return &v
+	}).(ItemsTagPtrOutput)
+}
+
+func (o ItemsTagOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ItemsTagOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ItemsTag) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ItemsTagOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ItemsTagOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ItemsTag) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ItemsTagPtrOutput struct{ *pulumi.OutputState }
+
+func (ItemsTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ItemsTag)(nil)).Elem()
+}
+
+func (o ItemsTagPtrOutput) ToItemsTagPtrOutput() ItemsTagPtrOutput {
+	return o
+}
+
+func (o ItemsTagPtrOutput) ToItemsTagPtrOutputWithContext(ctx context.Context) ItemsTagPtrOutput {
+	return o
+}
+
+func (o ItemsTagPtrOutput) Elem() ItemsTagOutput {
+	return o.ApplyT(func(v *ItemsTag) ItemsTag {
+		if v != nil {
+			return *v
+		}
+		var ret ItemsTag
+		return ret
+	}).(ItemsTagOutput)
+}
+
+func (o ItemsTagPtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ItemsTagPtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ItemsTag) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current mode for this record
+type MxPropertiesMode string
+
+const (
+	MxPropertiesModeStandard = MxPropertiesMode("standard")
+)
+
+func (MxPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*MxPropertiesMode)(nil)).Elem()
+}
+
+func (e MxPropertiesMode) ToMxPropertiesModeOutput() MxPropertiesModeOutput {
+	return pulumi.ToOutput(e).(MxPropertiesModeOutput)
+}
+
+func (e MxPropertiesMode) ToMxPropertiesModeOutputWithContext(ctx context.Context) MxPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(MxPropertiesModeOutput)
+}
+
+func (e MxPropertiesMode) ToMxPropertiesModePtrOutput() MxPropertiesModePtrOutput {
+	return e.ToMxPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e MxPropertiesMode) ToMxPropertiesModePtrOutputWithContext(ctx context.Context) MxPropertiesModePtrOutput {
+	return MxPropertiesMode(e).ToMxPropertiesModeOutputWithContext(ctx).ToMxPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e MxPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e MxPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e MxPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e MxPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type MxPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (MxPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MxPropertiesMode)(nil)).Elem()
+}
+
+func (o MxPropertiesModeOutput) ToMxPropertiesModeOutput() MxPropertiesModeOutput {
+	return o
+}
+
+func (o MxPropertiesModeOutput) ToMxPropertiesModeOutputWithContext(ctx context.Context) MxPropertiesModeOutput {
+	return o
+}
+
+func (o MxPropertiesModeOutput) ToMxPropertiesModePtrOutput() MxPropertiesModePtrOutput {
+	return o.ToMxPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesModeOutput) ToMxPropertiesModePtrOutputWithContext(ctx context.Context) MxPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MxPropertiesMode) *MxPropertiesMode {
+		return &v
+	}).(MxPropertiesModePtrOutput)
+}
+
+func (o MxPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e MxPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o MxPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e MxPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type MxPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (MxPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MxPropertiesMode)(nil)).Elem()
+}
+
+func (o MxPropertiesModePtrOutput) ToMxPropertiesModePtrOutput() MxPropertiesModePtrOutput {
+	return o
+}
+
+func (o MxPropertiesModePtrOutput) ToMxPropertiesModePtrOutputWithContext(ctx context.Context) MxPropertiesModePtrOutput {
+	return o
+}
+
+func (o MxPropertiesModePtrOutput) Elem() MxPropertiesModeOutput {
+	return o.ApplyT(func(v *MxPropertiesMode) MxPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret MxPropertiesMode
+		return ret
+	}).(MxPropertiesModeOutput)
+}
+
+func (o MxPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *MxPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// MxPropertiesModeInput is an input type that accepts values of the MxPropertiesMode enum
+// A concrete instance of `MxPropertiesModeInput` can be one of the following:
+//
+//	MxPropertiesModeStandard
+type MxPropertiesModeInput interface {
+	pulumi.Input
+
+	ToMxPropertiesModeOutput() MxPropertiesModeOutput
+	ToMxPropertiesModeOutputWithContext(context.Context) MxPropertiesModeOutput
+}
+
+var mxPropertiesModePtrType = reflect.TypeOf((**MxPropertiesMode)(nil)).Elem()
+
+type MxPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToMxPropertiesModePtrOutput() MxPropertiesModePtrOutput
+	ToMxPropertiesModePtrOutputWithContext(context.Context) MxPropertiesModePtrOutput
+}
+
+type mxPropertiesModePtr string
+
+func MxPropertiesModePtr(v string) MxPropertiesModePtrInput {
+	return (*mxPropertiesModePtr)(&v)
+}
+
+func (*mxPropertiesModePtr) ElementType() reflect.Type {
+	return mxPropertiesModePtrType
+}
+
+func (in *mxPropertiesModePtr) ToMxPropertiesModePtrOutput() MxPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(MxPropertiesModePtrOutput)
+}
+
+func (in *mxPropertiesModePtr) ToMxPropertiesModePtrOutputWithContext(ctx context.Context) MxPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(MxPropertiesModePtrOutput)
+}
+
+// The type of record
+type MxPropertiesType string
+
+const (
+	MxPropertiesTypeMx = MxPropertiesType("MX")
+)
+
+func (MxPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*MxPropertiesType)(nil)).Elem()
+}
+
+func (e MxPropertiesType) ToMxPropertiesTypeOutput() MxPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(MxPropertiesTypeOutput)
+}
+
+func (e MxPropertiesType) ToMxPropertiesTypeOutputWithContext(ctx context.Context) MxPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(MxPropertiesTypeOutput)
+}
+
+func (e MxPropertiesType) ToMxPropertiesTypePtrOutput() MxPropertiesTypePtrOutput {
+	return e.ToMxPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e MxPropertiesType) ToMxPropertiesTypePtrOutputWithContext(ctx context.Context) MxPropertiesTypePtrOutput {
+	return MxPropertiesType(e).ToMxPropertiesTypeOutputWithContext(ctx).ToMxPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e MxPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e MxPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e MxPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e MxPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type MxPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (MxPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MxPropertiesType)(nil)).Elem()
+}
+
+func (o MxPropertiesTypeOutput) ToMxPropertiesTypeOutput() MxPropertiesTypeOutput {
+	return o
+}
+
+func (o MxPropertiesTypeOutput) ToMxPropertiesTypeOutputWithContext(ctx context.Context) MxPropertiesTypeOutput {
+	return o
+}
+
+func (o MxPropertiesTypeOutput) ToMxPropertiesTypePtrOutput() MxPropertiesTypePtrOutput {
+	return o.ToMxPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesTypeOutput) ToMxPropertiesTypePtrOutputWithContext(ctx context.Context) MxPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MxPropertiesType) *MxPropertiesType {
+		return &v
+	}).(MxPropertiesTypePtrOutput)
+}
+
+func (o MxPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e MxPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o MxPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e MxPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type MxPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (MxPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MxPropertiesType)(nil)).Elem()
+}
+
+func (o MxPropertiesTypePtrOutput) ToMxPropertiesTypePtrOutput() MxPropertiesTypePtrOutput {
+	return o
+}
+
+func (o MxPropertiesTypePtrOutput) ToMxPropertiesTypePtrOutputWithContext(ctx context.Context) MxPropertiesTypePtrOutput {
+	return o
+}
+
+func (o MxPropertiesTypePtrOutput) Elem() MxPropertiesTypeOutput {
+	return o.ApplyT(func(v *MxPropertiesType) MxPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret MxPropertiesType
+		return ret
+	}).(MxPropertiesTypeOutput)
+}
+
+func (o MxPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o MxPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *MxPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// MxPropertiesTypeInput is an input type that accepts values of the MxPropertiesType enum
+// A concrete instance of `MxPropertiesTypeInput` can be one of the following:
+//
+//	MxPropertiesTypeMx
+type MxPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToMxPropertiesTypeOutput() MxPropertiesTypeOutput
+	ToMxPropertiesTypeOutputWithContext(context.Context) MxPropertiesTypeOutput
+}
+
+var mxPropertiesTypePtrType = reflect.TypeOf((**MxPropertiesType)(nil)).Elem()
+
+type MxPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToMxPropertiesTypePtrOutput() MxPropertiesTypePtrOutput
+	ToMxPropertiesTypePtrOutputWithContext(context.Context) MxPropertiesTypePtrOutput
+}
+
+type mxPropertiesTypePtr string
+
+func MxPropertiesTypePtr(v string) MxPropertiesTypePtrInput {
+	return (*mxPropertiesTypePtr)(&v)
+}
+
+func (*mxPropertiesTypePtr) ElementType() reflect.Type {
+	return mxPropertiesTypePtrType
+}
+
+func (in *mxPropertiesTypePtr) ToMxPropertiesTypePtrOutput() MxPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(MxPropertiesTypePtrOutput)
+}
+
+func (in *mxPropertiesTypePtr) ToMxPropertiesTypePtrOutputWithContext(ctx context.Context) MxPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(MxPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type NaptrPropertiesMode string
+
+const (
+	NaptrPropertiesModeStandard = NaptrPropertiesMode("standard")
+)
+
+func (NaptrPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*NaptrPropertiesMode)(nil)).Elem()
+}
+
+func (e NaptrPropertiesMode) ToNaptrPropertiesModeOutput() NaptrPropertiesModeOutput {
+	return pulumi.ToOutput(e).(NaptrPropertiesModeOutput)
+}
+
+func (e NaptrPropertiesMode) ToNaptrPropertiesModeOutputWithContext(ctx context.Context) NaptrPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(NaptrPropertiesModeOutput)
+}
+
+func (e NaptrPropertiesMode) ToNaptrPropertiesModePtrOutput() NaptrPropertiesModePtrOutput {
+	return e.ToNaptrPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e NaptrPropertiesMode) ToNaptrPropertiesModePtrOutputWithContext(ctx context.Context) NaptrPropertiesModePtrOutput {
+	return NaptrPropertiesMode(e).ToNaptrPropertiesModeOutputWithContext(ctx).ToNaptrPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e NaptrPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NaptrPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NaptrPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e NaptrPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type NaptrPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (NaptrPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NaptrPropertiesMode)(nil)).Elem()
+}
+
+func (o NaptrPropertiesModeOutput) ToNaptrPropertiesModeOutput() NaptrPropertiesModeOutput {
+	return o
+}
+
+func (o NaptrPropertiesModeOutput) ToNaptrPropertiesModeOutputWithContext(ctx context.Context) NaptrPropertiesModeOutput {
+	return o
+}
+
+func (o NaptrPropertiesModeOutput) ToNaptrPropertiesModePtrOutput() NaptrPropertiesModePtrOutput {
+	return o.ToNaptrPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesModeOutput) ToNaptrPropertiesModePtrOutputWithContext(ctx context.Context) NaptrPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NaptrPropertiesMode) *NaptrPropertiesMode {
+		return &v
+	}).(NaptrPropertiesModePtrOutput)
+}
+
+func (o NaptrPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NaptrPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o NaptrPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NaptrPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type NaptrPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (NaptrPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NaptrPropertiesMode)(nil)).Elem()
+}
+
+func (o NaptrPropertiesModePtrOutput) ToNaptrPropertiesModePtrOutput() NaptrPropertiesModePtrOutput {
+	return o
+}
+
+func (o NaptrPropertiesModePtrOutput) ToNaptrPropertiesModePtrOutputWithContext(ctx context.Context) NaptrPropertiesModePtrOutput {
+	return o
+}
+
+func (o NaptrPropertiesModePtrOutput) Elem() NaptrPropertiesModeOutput {
+	return o.ApplyT(func(v *NaptrPropertiesMode) NaptrPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret NaptrPropertiesMode
+		return ret
+	}).(NaptrPropertiesModeOutput)
+}
+
+func (o NaptrPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *NaptrPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// NaptrPropertiesModeInput is an input type that accepts values of the NaptrPropertiesMode enum
+// A concrete instance of `NaptrPropertiesModeInput` can be one of the following:
+//
+//	NaptrPropertiesModeStandard
+type NaptrPropertiesModeInput interface {
+	pulumi.Input
+
+	ToNaptrPropertiesModeOutput() NaptrPropertiesModeOutput
+	ToNaptrPropertiesModeOutputWithContext(context.Context) NaptrPropertiesModeOutput
+}
+
+var naptrPropertiesModePtrType = reflect.TypeOf((**NaptrPropertiesMode)(nil)).Elem()
+
+type NaptrPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToNaptrPropertiesModePtrOutput() NaptrPropertiesModePtrOutput
+	ToNaptrPropertiesModePtrOutputWithContext(context.Context) NaptrPropertiesModePtrOutput
+}
+
+type naptrPropertiesModePtr string
+
+func NaptrPropertiesModePtr(v string) NaptrPropertiesModePtrInput {
+	return (*naptrPropertiesModePtr)(&v)
+}
+
+func (*naptrPropertiesModePtr) ElementType() reflect.Type {
+	return naptrPropertiesModePtrType
+}
+
+func (in *naptrPropertiesModePtr) ToNaptrPropertiesModePtrOutput() NaptrPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(NaptrPropertiesModePtrOutput)
+}
+
+func (in *naptrPropertiesModePtr) ToNaptrPropertiesModePtrOutputWithContext(ctx context.Context) NaptrPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(NaptrPropertiesModePtrOutput)
+}
+
+// The type of record
+type NaptrPropertiesType string
+
+const (
+	NaptrPropertiesTypeNaptr = NaptrPropertiesType("NAPTR")
+)
+
+func (NaptrPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*NaptrPropertiesType)(nil)).Elem()
+}
+
+func (e NaptrPropertiesType) ToNaptrPropertiesTypeOutput() NaptrPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(NaptrPropertiesTypeOutput)
+}
+
+func (e NaptrPropertiesType) ToNaptrPropertiesTypeOutputWithContext(ctx context.Context) NaptrPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(NaptrPropertiesTypeOutput)
+}
+
+func (e NaptrPropertiesType) ToNaptrPropertiesTypePtrOutput() NaptrPropertiesTypePtrOutput {
+	return e.ToNaptrPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e NaptrPropertiesType) ToNaptrPropertiesTypePtrOutputWithContext(ctx context.Context) NaptrPropertiesTypePtrOutput {
+	return NaptrPropertiesType(e).ToNaptrPropertiesTypeOutputWithContext(ctx).ToNaptrPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e NaptrPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NaptrPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NaptrPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e NaptrPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type NaptrPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (NaptrPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NaptrPropertiesType)(nil)).Elem()
+}
+
+func (o NaptrPropertiesTypeOutput) ToNaptrPropertiesTypeOutput() NaptrPropertiesTypeOutput {
+	return o
+}
+
+func (o NaptrPropertiesTypeOutput) ToNaptrPropertiesTypeOutputWithContext(ctx context.Context) NaptrPropertiesTypeOutput {
+	return o
+}
+
+func (o NaptrPropertiesTypeOutput) ToNaptrPropertiesTypePtrOutput() NaptrPropertiesTypePtrOutput {
+	return o.ToNaptrPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesTypeOutput) ToNaptrPropertiesTypePtrOutputWithContext(ctx context.Context) NaptrPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NaptrPropertiesType) *NaptrPropertiesType {
+		return &v
+	}).(NaptrPropertiesTypePtrOutput)
+}
+
+func (o NaptrPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NaptrPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o NaptrPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NaptrPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type NaptrPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (NaptrPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NaptrPropertiesType)(nil)).Elem()
+}
+
+func (o NaptrPropertiesTypePtrOutput) ToNaptrPropertiesTypePtrOutput() NaptrPropertiesTypePtrOutput {
+	return o
+}
+
+func (o NaptrPropertiesTypePtrOutput) ToNaptrPropertiesTypePtrOutputWithContext(ctx context.Context) NaptrPropertiesTypePtrOutput {
+	return o
+}
+
+func (o NaptrPropertiesTypePtrOutput) Elem() NaptrPropertiesTypeOutput {
+	return o.ApplyT(func(v *NaptrPropertiesType) NaptrPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret NaptrPropertiesType
+		return ret
+	}).(NaptrPropertiesTypeOutput)
+}
+
+func (o NaptrPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NaptrPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *NaptrPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// NaptrPropertiesTypeInput is an input type that accepts values of the NaptrPropertiesType enum
+// A concrete instance of `NaptrPropertiesTypeInput` can be one of the following:
+//
+//	NaptrPropertiesTypeNaptr
+type NaptrPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToNaptrPropertiesTypeOutput() NaptrPropertiesTypeOutput
+	ToNaptrPropertiesTypeOutputWithContext(context.Context) NaptrPropertiesTypeOutput
+}
+
+var naptrPropertiesTypePtrType = reflect.TypeOf((**NaptrPropertiesType)(nil)).Elem()
+
+type NaptrPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToNaptrPropertiesTypePtrOutput() NaptrPropertiesTypePtrOutput
+	ToNaptrPropertiesTypePtrOutputWithContext(context.Context) NaptrPropertiesTypePtrOutput
+}
+
+type naptrPropertiesTypePtr string
+
+func NaptrPropertiesTypePtr(v string) NaptrPropertiesTypePtrInput {
+	return (*naptrPropertiesTypePtr)(&v)
+}
+
+func (*naptrPropertiesTypePtr) ElementType() reflect.Type {
+	return naptrPropertiesTypePtrType
+}
+
+func (in *naptrPropertiesTypePtr) ToNaptrPropertiesTypePtrOutput() NaptrPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(NaptrPropertiesTypePtrOutput)
+}
+
+func (in *naptrPropertiesTypePtr) ToNaptrPropertiesTypePtrOutputWithContext(ctx context.Context) NaptrPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(NaptrPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type NsPropertiesMode string
+
+const (
+	NsPropertiesModeStandard = NsPropertiesMode("standard")
+)
+
+func (NsPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*NsPropertiesMode)(nil)).Elem()
+}
+
+func (e NsPropertiesMode) ToNsPropertiesModeOutput() NsPropertiesModeOutput {
+	return pulumi.ToOutput(e).(NsPropertiesModeOutput)
+}
+
+func (e NsPropertiesMode) ToNsPropertiesModeOutputWithContext(ctx context.Context) NsPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(NsPropertiesModeOutput)
+}
+
+func (e NsPropertiesMode) ToNsPropertiesModePtrOutput() NsPropertiesModePtrOutput {
+	return e.ToNsPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e NsPropertiesMode) ToNsPropertiesModePtrOutputWithContext(ctx context.Context) NsPropertiesModePtrOutput {
+	return NsPropertiesMode(e).ToNsPropertiesModeOutputWithContext(ctx).ToNsPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e NsPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NsPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NsPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e NsPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type NsPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (NsPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NsPropertiesMode)(nil)).Elem()
+}
+
+func (o NsPropertiesModeOutput) ToNsPropertiesModeOutput() NsPropertiesModeOutput {
+	return o
+}
+
+func (o NsPropertiesModeOutput) ToNsPropertiesModeOutputWithContext(ctx context.Context) NsPropertiesModeOutput {
+	return o
+}
+
+func (o NsPropertiesModeOutput) ToNsPropertiesModePtrOutput() NsPropertiesModePtrOutput {
+	return o.ToNsPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesModeOutput) ToNsPropertiesModePtrOutputWithContext(ctx context.Context) NsPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NsPropertiesMode) *NsPropertiesMode {
+		return &v
+	}).(NsPropertiesModePtrOutput)
+}
+
+func (o NsPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NsPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o NsPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NsPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type NsPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (NsPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NsPropertiesMode)(nil)).Elem()
+}
+
+func (o NsPropertiesModePtrOutput) ToNsPropertiesModePtrOutput() NsPropertiesModePtrOutput {
+	return o
+}
+
+func (o NsPropertiesModePtrOutput) ToNsPropertiesModePtrOutputWithContext(ctx context.Context) NsPropertiesModePtrOutput {
+	return o
+}
+
+func (o NsPropertiesModePtrOutput) Elem() NsPropertiesModeOutput {
+	return o.ApplyT(func(v *NsPropertiesMode) NsPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret NsPropertiesMode
+		return ret
+	}).(NsPropertiesModeOutput)
+}
+
+func (o NsPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *NsPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// NsPropertiesModeInput is an input type that accepts values of the NsPropertiesMode enum
+// A concrete instance of `NsPropertiesModeInput` can be one of the following:
+//
+//	NsPropertiesModeStandard
+type NsPropertiesModeInput interface {
+	pulumi.Input
+
+	ToNsPropertiesModeOutput() NsPropertiesModeOutput
+	ToNsPropertiesModeOutputWithContext(context.Context) NsPropertiesModeOutput
+}
+
+var nsPropertiesModePtrType = reflect.TypeOf((**NsPropertiesMode)(nil)).Elem()
+
+type NsPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToNsPropertiesModePtrOutput() NsPropertiesModePtrOutput
+	ToNsPropertiesModePtrOutputWithContext(context.Context) NsPropertiesModePtrOutput
+}
+
+type nsPropertiesModePtr string
+
+func NsPropertiesModePtr(v string) NsPropertiesModePtrInput {
+	return (*nsPropertiesModePtr)(&v)
+}
+
+func (*nsPropertiesModePtr) ElementType() reflect.Type {
+	return nsPropertiesModePtrType
+}
+
+func (in *nsPropertiesModePtr) ToNsPropertiesModePtrOutput() NsPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(NsPropertiesModePtrOutput)
+}
+
+func (in *nsPropertiesModePtr) ToNsPropertiesModePtrOutputWithContext(ctx context.Context) NsPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(NsPropertiesModePtrOutput)
+}
+
+// The type of record
+type NsPropertiesType string
+
+const (
+	NsPropertiesTypeNs = NsPropertiesType("NS")
+)
+
+func (NsPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*NsPropertiesType)(nil)).Elem()
+}
+
+func (e NsPropertiesType) ToNsPropertiesTypeOutput() NsPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(NsPropertiesTypeOutput)
+}
+
+func (e NsPropertiesType) ToNsPropertiesTypeOutputWithContext(ctx context.Context) NsPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(NsPropertiesTypeOutput)
+}
+
+func (e NsPropertiesType) ToNsPropertiesTypePtrOutput() NsPropertiesTypePtrOutput {
+	return e.ToNsPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e NsPropertiesType) ToNsPropertiesTypePtrOutputWithContext(ctx context.Context) NsPropertiesTypePtrOutput {
+	return NsPropertiesType(e).ToNsPropertiesTypeOutputWithContext(ctx).ToNsPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e NsPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NsPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e NsPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e NsPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type NsPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (NsPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NsPropertiesType)(nil)).Elem()
+}
+
+func (o NsPropertiesTypeOutput) ToNsPropertiesTypeOutput() NsPropertiesTypeOutput {
+	return o
+}
+
+func (o NsPropertiesTypeOutput) ToNsPropertiesTypeOutputWithContext(ctx context.Context) NsPropertiesTypeOutput {
+	return o
+}
+
+func (o NsPropertiesTypeOutput) ToNsPropertiesTypePtrOutput() NsPropertiesTypePtrOutput {
+	return o.ToNsPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesTypeOutput) ToNsPropertiesTypePtrOutputWithContext(ctx context.Context) NsPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NsPropertiesType) *NsPropertiesType {
+		return &v
+	}).(NsPropertiesTypePtrOutput)
+}
+
+func (o NsPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NsPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o NsPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e NsPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type NsPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (NsPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NsPropertiesType)(nil)).Elem()
+}
+
+func (o NsPropertiesTypePtrOutput) ToNsPropertiesTypePtrOutput() NsPropertiesTypePtrOutput {
+	return o
+}
+
+func (o NsPropertiesTypePtrOutput) ToNsPropertiesTypePtrOutputWithContext(ctx context.Context) NsPropertiesTypePtrOutput {
+	return o
+}
+
+func (o NsPropertiesTypePtrOutput) Elem() NsPropertiesTypeOutput {
+	return o.ApplyT(func(v *NsPropertiesType) NsPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret NsPropertiesType
+		return ret
+	}).(NsPropertiesTypeOutput)
+}
+
+func (o NsPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o NsPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *NsPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// NsPropertiesTypeInput is an input type that accepts values of the NsPropertiesType enum
+// A concrete instance of `NsPropertiesTypeInput` can be one of the following:
+//
+//	NsPropertiesTypeNs
+type NsPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToNsPropertiesTypeOutput() NsPropertiesTypeOutput
+	ToNsPropertiesTypeOutputWithContext(context.Context) NsPropertiesTypeOutput
+}
+
+var nsPropertiesTypePtrType = reflect.TypeOf((**NsPropertiesType)(nil)).Elem()
+
+type NsPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToNsPropertiesTypePtrOutput() NsPropertiesTypePtrOutput
+	ToNsPropertiesTypePtrOutputWithContext(context.Context) NsPropertiesTypePtrOutput
+}
+
+type nsPropertiesTypePtr string
+
+func NsPropertiesTypePtr(v string) NsPropertiesTypePtrInput {
+	return (*nsPropertiesTypePtr)(&v)
+}
+
+func (*nsPropertiesTypePtr) ElementType() reflect.Type {
+	return nsPropertiesTypePtrType
+}
+
+func (in *nsPropertiesTypePtr) ToNsPropertiesTypePtrOutput() NsPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(NsPropertiesTypePtrOutput)
+}
+
+func (in *nsPropertiesTypePtr) ToNsPropertiesTypePtrOutputWithContext(ctx context.Context) NsPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(NsPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type PtrPropertiesMode string
+
+const (
+	PtrPropertiesModeStandard = PtrPropertiesMode("standard")
+)
+
+func (PtrPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*PtrPropertiesMode)(nil)).Elem()
+}
+
+func (e PtrPropertiesMode) ToPtrPropertiesModeOutput() PtrPropertiesModeOutput {
+	return pulumi.ToOutput(e).(PtrPropertiesModeOutput)
+}
+
+func (e PtrPropertiesMode) ToPtrPropertiesModeOutputWithContext(ctx context.Context) PtrPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(PtrPropertiesModeOutput)
+}
+
+func (e PtrPropertiesMode) ToPtrPropertiesModePtrOutput() PtrPropertiesModePtrOutput {
+	return e.ToPtrPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e PtrPropertiesMode) ToPtrPropertiesModePtrOutputWithContext(ctx context.Context) PtrPropertiesModePtrOutput {
+	return PtrPropertiesMode(e).ToPtrPropertiesModeOutputWithContext(ctx).ToPtrPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e PtrPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e PtrPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e PtrPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e PtrPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type PtrPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (PtrPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PtrPropertiesMode)(nil)).Elem()
+}
+
+func (o PtrPropertiesModeOutput) ToPtrPropertiesModeOutput() PtrPropertiesModeOutput {
+	return o
+}
+
+func (o PtrPropertiesModeOutput) ToPtrPropertiesModeOutputWithContext(ctx context.Context) PtrPropertiesModeOutput {
+	return o
+}
+
+func (o PtrPropertiesModeOutput) ToPtrPropertiesModePtrOutput() PtrPropertiesModePtrOutput {
+	return o.ToPtrPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesModeOutput) ToPtrPropertiesModePtrOutputWithContext(ctx context.Context) PtrPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PtrPropertiesMode) *PtrPropertiesMode {
+		return &v
+	}).(PtrPropertiesModePtrOutput)
+}
+
+func (o PtrPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e PtrPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o PtrPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e PtrPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type PtrPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (PtrPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PtrPropertiesMode)(nil)).Elem()
+}
+
+func (o PtrPropertiesModePtrOutput) ToPtrPropertiesModePtrOutput() PtrPropertiesModePtrOutput {
+	return o
+}
+
+func (o PtrPropertiesModePtrOutput) ToPtrPropertiesModePtrOutputWithContext(ctx context.Context) PtrPropertiesModePtrOutput {
+	return o
+}
+
+func (o PtrPropertiesModePtrOutput) Elem() PtrPropertiesModeOutput {
+	return o.ApplyT(func(v *PtrPropertiesMode) PtrPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret PtrPropertiesMode
+		return ret
+	}).(PtrPropertiesModeOutput)
+}
+
+func (o PtrPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *PtrPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// PtrPropertiesModeInput is an input type that accepts values of the PtrPropertiesMode enum
+// A concrete instance of `PtrPropertiesModeInput` can be one of the following:
+//
+//	PtrPropertiesModeStandard
+type PtrPropertiesModeInput interface {
+	pulumi.Input
+
+	ToPtrPropertiesModeOutput() PtrPropertiesModeOutput
+	ToPtrPropertiesModeOutputWithContext(context.Context) PtrPropertiesModeOutput
+}
+
+var ptrPropertiesModePtrType = reflect.TypeOf((**PtrPropertiesMode)(nil)).Elem()
+
+type PtrPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToPtrPropertiesModePtrOutput() PtrPropertiesModePtrOutput
+	ToPtrPropertiesModePtrOutputWithContext(context.Context) PtrPropertiesModePtrOutput
+}
+
+type ptrPropertiesModePtr string
+
+func PtrPropertiesModePtr(v string) PtrPropertiesModePtrInput {
+	return (*ptrPropertiesModePtr)(&v)
+}
+
+func (*ptrPropertiesModePtr) ElementType() reflect.Type {
+	return ptrPropertiesModePtrType
+}
+
+func (in *ptrPropertiesModePtr) ToPtrPropertiesModePtrOutput() PtrPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(PtrPropertiesModePtrOutput)
+}
+
+func (in *ptrPropertiesModePtr) ToPtrPropertiesModePtrOutputWithContext(ctx context.Context) PtrPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(PtrPropertiesModePtrOutput)
+}
+
+// The type of record
+type PtrPropertiesType string
+
+const (
+	PtrPropertiesTypePtr = PtrPropertiesType("PTR")
+)
+
+func (PtrPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*PtrPropertiesType)(nil)).Elem()
+}
+
+func (e PtrPropertiesType) ToPtrPropertiesTypeOutput() PtrPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(PtrPropertiesTypeOutput)
+}
+
+func (e PtrPropertiesType) ToPtrPropertiesTypeOutputWithContext(ctx context.Context) PtrPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(PtrPropertiesTypeOutput)
+}
+
+func (e PtrPropertiesType) ToPtrPropertiesTypePtrOutput() PtrPropertiesTypePtrOutput {
+	return e.ToPtrPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e PtrPropertiesType) ToPtrPropertiesTypePtrOutputWithContext(ctx context.Context) PtrPropertiesTypePtrOutput {
+	return PtrPropertiesType(e).ToPtrPropertiesTypeOutputWithContext(ctx).ToPtrPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e PtrPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e PtrPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e PtrPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e PtrPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type PtrPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (PtrPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PtrPropertiesType)(nil)).Elem()
+}
+
+func (o PtrPropertiesTypeOutput) ToPtrPropertiesTypeOutput() PtrPropertiesTypeOutput {
+	return o
+}
+
+func (o PtrPropertiesTypeOutput) ToPtrPropertiesTypeOutputWithContext(ctx context.Context) PtrPropertiesTypeOutput {
+	return o
+}
+
+func (o PtrPropertiesTypeOutput) ToPtrPropertiesTypePtrOutput() PtrPropertiesTypePtrOutput {
+	return o.ToPtrPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesTypeOutput) ToPtrPropertiesTypePtrOutputWithContext(ctx context.Context) PtrPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PtrPropertiesType) *PtrPropertiesType {
+		return &v
+	}).(PtrPropertiesTypePtrOutput)
+}
+
+func (o PtrPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e PtrPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o PtrPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e PtrPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type PtrPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (PtrPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PtrPropertiesType)(nil)).Elem()
+}
+
+func (o PtrPropertiesTypePtrOutput) ToPtrPropertiesTypePtrOutput() PtrPropertiesTypePtrOutput {
+	return o
+}
+
+func (o PtrPropertiesTypePtrOutput) ToPtrPropertiesTypePtrOutputWithContext(ctx context.Context) PtrPropertiesTypePtrOutput {
+	return o
+}
+
+func (o PtrPropertiesTypePtrOutput) Elem() PtrPropertiesTypeOutput {
+	return o.ApplyT(func(v *PtrPropertiesType) PtrPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret PtrPropertiesType
+		return ret
+	}).(PtrPropertiesTypeOutput)
+}
+
+func (o PtrPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o PtrPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *PtrPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// PtrPropertiesTypeInput is an input type that accepts values of the PtrPropertiesType enum
+// A concrete instance of `PtrPropertiesTypeInput` can be one of the following:
+//
+//	PtrPropertiesTypePtr
+type PtrPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToPtrPropertiesTypeOutput() PtrPropertiesTypeOutput
+	ToPtrPropertiesTypeOutputWithContext(context.Context) PtrPropertiesTypeOutput
+}
+
+var ptrPropertiesTypePtrType = reflect.TypeOf((**PtrPropertiesType)(nil)).Elem()
+
+type PtrPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToPtrPropertiesTypePtrOutput() PtrPropertiesTypePtrOutput
+	ToPtrPropertiesTypePtrOutputWithContext(context.Context) PtrPropertiesTypePtrOutput
+}
+
+type ptrPropertiesTypePtr string
+
+func PtrPropertiesTypePtr(v string) PtrPropertiesTypePtrInput {
+	return (*ptrPropertiesTypePtr)(&v)
+}
+
+func (*ptrPropertiesTypePtr) ElementType() reflect.Type {
+	return ptrPropertiesTypePtrType
+}
+
+func (in *ptrPropertiesTypePtr) ToPtrPropertiesTypePtrOutput() PtrPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(PtrPropertiesTypePtrOutput)
+}
+
+func (in *ptrPropertiesTypePtr) ToPtrPropertiesTypePtrOutputWithContext(ctx context.Context) PtrPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(PtrPropertiesTypePtrOutput)
+}
+
+// Optional region for this record. Will default to 'default'.
+type RecordCreateDetailsRegion string
+
+const (
+	RecordCreateDetailsRegionDefault      = RecordCreateDetailsRegion("default")
+	RecordCreateDetailsRegionEurope       = RecordCreateDetailsRegion("europe")
+	RecordCreateDetailsRegionUsEast       = RecordCreateDetailsRegion("us-east")
+	RecordCreateDetailsRegionUsWest       = RecordCreateDetailsRegion("us-west")
+	RecordCreateDetailsRegionAsiaPacific  = RecordCreateDetailsRegion("asia-pacific")
+	RecordCreateDetailsRegionOceania      = RecordCreateDetailsRegion("oceania")
+	RecordCreateDetailsRegionSouthAmerica = RecordCreateDetailsRegion("south-america")
+)
+
+func (RecordCreateDetailsRegion) ElementType() reflect.Type {
+	return reflect.TypeOf((*RecordCreateDetailsRegion)(nil)).Elem()
+}
+
+func (e RecordCreateDetailsRegion) ToRecordCreateDetailsRegionOutput() RecordCreateDetailsRegionOutput {
+	return pulumi.ToOutput(e).(RecordCreateDetailsRegionOutput)
+}
+
+func (e RecordCreateDetailsRegion) ToRecordCreateDetailsRegionOutputWithContext(ctx context.Context) RecordCreateDetailsRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(RecordCreateDetailsRegionOutput)
+}
+
+func (e RecordCreateDetailsRegion) ToRecordCreateDetailsRegionPtrOutput() RecordCreateDetailsRegionPtrOutput {
+	return e.ToRecordCreateDetailsRegionPtrOutputWithContext(context.Background())
+}
+
+func (e RecordCreateDetailsRegion) ToRecordCreateDetailsRegionPtrOutputWithContext(ctx context.Context) RecordCreateDetailsRegionPtrOutput {
+	return RecordCreateDetailsRegion(e).ToRecordCreateDetailsRegionOutputWithContext(ctx).ToRecordCreateDetailsRegionPtrOutputWithContext(ctx)
+}
+
+func (e RecordCreateDetailsRegion) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RecordCreateDetailsRegion) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RecordCreateDetailsRegion) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e RecordCreateDetailsRegion) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type RecordCreateDetailsRegionOutput struct{ *pulumi.OutputState }
+
+func (RecordCreateDetailsRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RecordCreateDetailsRegion)(nil)).Elem()
+}
+
+func (o RecordCreateDetailsRegionOutput) ToRecordCreateDetailsRegionOutput() RecordCreateDetailsRegionOutput {
+	return o
+}
+
+func (o RecordCreateDetailsRegionOutput) ToRecordCreateDetailsRegionOutputWithContext(ctx context.Context) RecordCreateDetailsRegionOutput {
+	return o
+}
+
+func (o RecordCreateDetailsRegionOutput) ToRecordCreateDetailsRegionPtrOutput() RecordCreateDetailsRegionPtrOutput {
+	return o.ToRecordCreateDetailsRegionPtrOutputWithContext(context.Background())
+}
+
+func (o RecordCreateDetailsRegionOutput) ToRecordCreateDetailsRegionPtrOutputWithContext(ctx context.Context) RecordCreateDetailsRegionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RecordCreateDetailsRegion) *RecordCreateDetailsRegion {
+		return &v
+	}).(RecordCreateDetailsRegionPtrOutput)
+}
+
+func (o RecordCreateDetailsRegionOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o RecordCreateDetailsRegionOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RecordCreateDetailsRegion) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o RecordCreateDetailsRegionOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RecordCreateDetailsRegionOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RecordCreateDetailsRegion) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type RecordCreateDetailsRegionPtrOutput struct{ *pulumi.OutputState }
+
+func (RecordCreateDetailsRegionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RecordCreateDetailsRegion)(nil)).Elem()
+}
+
+func (o RecordCreateDetailsRegionPtrOutput) ToRecordCreateDetailsRegionPtrOutput() RecordCreateDetailsRegionPtrOutput {
+	return o
+}
+
+func (o RecordCreateDetailsRegionPtrOutput) ToRecordCreateDetailsRegionPtrOutputWithContext(ctx context.Context) RecordCreateDetailsRegionPtrOutput {
+	return o
+}
+
+func (o RecordCreateDetailsRegionPtrOutput) Elem() RecordCreateDetailsRegionOutput {
+	return o.ApplyT(func(v *RecordCreateDetailsRegion) RecordCreateDetailsRegion {
+		if v != nil {
+			return *v
+		}
+		var ret RecordCreateDetailsRegion
+		return ret
+	}).(RecordCreateDetailsRegionOutput)
+}
+
+func (o RecordCreateDetailsRegionPtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RecordCreateDetailsRegionPtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *RecordCreateDetailsRegion) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// RecordCreateDetailsRegionInput is an input type that accepts values of the RecordCreateDetailsRegion enum
+// A concrete instance of `RecordCreateDetailsRegionInput` can be one of the following:
+//
+//	RecordCreateDetailsRegionDefault
+//	RecordCreateDetailsRegionEurope
+//	RecordCreateDetailsRegionUsEast
+//	RecordCreateDetailsRegionUsWest
+//	RecordCreateDetailsRegionAsiaPacific
+//	RecordCreateDetailsRegionOceania
+//	RecordCreateDetailsRegionSouthAmerica
+type RecordCreateDetailsRegionInput interface {
+	pulumi.Input
+
+	ToRecordCreateDetailsRegionOutput() RecordCreateDetailsRegionOutput
+	ToRecordCreateDetailsRegionOutputWithContext(context.Context) RecordCreateDetailsRegionOutput
+}
+
+var recordCreateDetailsRegionPtrType = reflect.TypeOf((**RecordCreateDetailsRegion)(nil)).Elem()
+
+type RecordCreateDetailsRegionPtrInput interface {
+	pulumi.Input
+
+	ToRecordCreateDetailsRegionPtrOutput() RecordCreateDetailsRegionPtrOutput
+	ToRecordCreateDetailsRegionPtrOutputWithContext(context.Context) RecordCreateDetailsRegionPtrOutput
+}
+
+type recordCreateDetailsRegionPtr string
+
+func RecordCreateDetailsRegionPtr(v string) RecordCreateDetailsRegionPtrInput {
+	return (*recordCreateDetailsRegionPtr)(&v)
+}
+
+func (*recordCreateDetailsRegionPtr) ElementType() reflect.Type {
+	return recordCreateDetailsRegionPtrType
+}
+
+func (in *recordCreateDetailsRegionPtr) ToRecordCreateDetailsRegionPtrOutput() RecordCreateDetailsRegionPtrOutput {
+	return pulumi.ToOutput(in).(RecordCreateDetailsRegionPtrOutput)
+}
+
+func (in *recordCreateDetailsRegionPtr) ToRecordCreateDetailsRegionPtrOutputWithContext(ctx context.Context) RecordCreateDetailsRegionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(RecordCreateDetailsRegionPtrOutput)
+}
+
+// The region for this record
+type RecordRegion string
+
+const (
+	RecordRegionDefault      = RecordRegion("default")
+	RecordRegionEurope       = RecordRegion("europe")
+	RecordRegionUsEast       = RecordRegion("us-east")
+	RecordRegionUsWest       = RecordRegion("us-west")
+	RecordRegionAsiaPacific  = RecordRegion("asia-pacific")
+	RecordRegionOceania      = RecordRegion("oceania")
+	RecordRegionSouthAmerica = RecordRegion("south-america")
+)
+
+type RecordRegionOutput struct{ *pulumi.OutputState }
+
+func (RecordRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RecordRegion)(nil)).Elem()
+}
+
+func (o RecordRegionOutput) ToRecordRegionOutput() RecordRegionOutput {
+	return o
+}
+
+func (o RecordRegionOutput) ToRecordRegionOutputWithContext(ctx context.Context) RecordRegionOutput {
+	return o
+}
+
+func (o RecordRegionOutput) ToRecordRegionPtrOutput() RecordRegionPtrOutput {
+	return o.ToRecordRegionPtrOutputWithContext(context.Background())
+}
+
+func (o RecordRegionOutput) ToRecordRegionPtrOutputWithContext(ctx context.Context) RecordRegionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RecordRegion) *RecordRegion {
+		return &v
+	}).(RecordRegionPtrOutput)
+}
+
+func (o RecordRegionOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o RecordRegionOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RecordRegion) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o RecordRegionOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RecordRegionOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RecordRegion) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type RecordRegionPtrOutput struct{ *pulumi.OutputState }
+
+func (RecordRegionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RecordRegion)(nil)).Elem()
+}
+
+func (o RecordRegionPtrOutput) ToRecordRegionPtrOutput() RecordRegionPtrOutput {
+	return o
+}
+
+func (o RecordRegionPtrOutput) ToRecordRegionPtrOutputWithContext(ctx context.Context) RecordRegionPtrOutput {
+	return o
+}
+
+func (o RecordRegionPtrOutput) Elem() RecordRegionOutput {
+	return o.ApplyT(func(v *RecordRegion) RecordRegion {
+		if v != nil {
+			return *v
+		}
+		var ret RecordRegion
+		return ret
+	}).(RecordRegionOutput)
+}
+
+func (o RecordRegionPtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RecordRegionPtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *RecordRegion) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current mode for this record
+type RpPropertiesMode string
+
+const (
+	RpPropertiesModeStandard = RpPropertiesMode("standard")
+)
+
+func (RpPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*RpPropertiesMode)(nil)).Elem()
+}
+
+func (e RpPropertiesMode) ToRpPropertiesModeOutput() RpPropertiesModeOutput {
+	return pulumi.ToOutput(e).(RpPropertiesModeOutput)
+}
+
+func (e RpPropertiesMode) ToRpPropertiesModeOutputWithContext(ctx context.Context) RpPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(RpPropertiesModeOutput)
+}
+
+func (e RpPropertiesMode) ToRpPropertiesModePtrOutput() RpPropertiesModePtrOutput {
+	return e.ToRpPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e RpPropertiesMode) ToRpPropertiesModePtrOutputWithContext(ctx context.Context) RpPropertiesModePtrOutput {
+	return RpPropertiesMode(e).ToRpPropertiesModeOutputWithContext(ctx).ToRpPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e RpPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RpPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RpPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e RpPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type RpPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (RpPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RpPropertiesMode)(nil)).Elem()
+}
+
+func (o RpPropertiesModeOutput) ToRpPropertiesModeOutput() RpPropertiesModeOutput {
+	return o
+}
+
+func (o RpPropertiesModeOutput) ToRpPropertiesModeOutputWithContext(ctx context.Context) RpPropertiesModeOutput {
+	return o
+}
+
+func (o RpPropertiesModeOutput) ToRpPropertiesModePtrOutput() RpPropertiesModePtrOutput {
+	return o.ToRpPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesModeOutput) ToRpPropertiesModePtrOutputWithContext(ctx context.Context) RpPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RpPropertiesMode) *RpPropertiesMode {
+		return &v
+	}).(RpPropertiesModePtrOutput)
+}
+
+func (o RpPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RpPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o RpPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RpPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type RpPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (RpPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RpPropertiesMode)(nil)).Elem()
+}
+
+func (o RpPropertiesModePtrOutput) ToRpPropertiesModePtrOutput() RpPropertiesModePtrOutput {
+	return o
+}
+
+func (o RpPropertiesModePtrOutput) ToRpPropertiesModePtrOutputWithContext(ctx context.Context) RpPropertiesModePtrOutput {
+	return o
+}
+
+func (o RpPropertiesModePtrOutput) Elem() RpPropertiesModeOutput {
+	return o.ApplyT(func(v *RpPropertiesMode) RpPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret RpPropertiesMode
+		return ret
+	}).(RpPropertiesModeOutput)
+}
+
+func (o RpPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *RpPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// RpPropertiesModeInput is an input type that accepts values of the RpPropertiesMode enum
+// A concrete instance of `RpPropertiesModeInput` can be one of the following:
+//
+//	RpPropertiesModeStandard
+type RpPropertiesModeInput interface {
+	pulumi.Input
+
+	ToRpPropertiesModeOutput() RpPropertiesModeOutput
+	ToRpPropertiesModeOutputWithContext(context.Context) RpPropertiesModeOutput
+}
+
+var rpPropertiesModePtrType = reflect.TypeOf((**RpPropertiesMode)(nil)).Elem()
+
+type RpPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToRpPropertiesModePtrOutput() RpPropertiesModePtrOutput
+	ToRpPropertiesModePtrOutputWithContext(context.Context) RpPropertiesModePtrOutput
+}
+
+type rpPropertiesModePtr string
+
+func RpPropertiesModePtr(v string) RpPropertiesModePtrInput {
+	return (*rpPropertiesModePtr)(&v)
+}
+
+func (*rpPropertiesModePtr) ElementType() reflect.Type {
+	return rpPropertiesModePtrType
+}
+
+func (in *rpPropertiesModePtr) ToRpPropertiesModePtrOutput() RpPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(RpPropertiesModePtrOutput)
+}
+
+func (in *rpPropertiesModePtr) ToRpPropertiesModePtrOutputWithContext(ctx context.Context) RpPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(RpPropertiesModePtrOutput)
+}
+
+// The type of record
+type RpPropertiesType string
+
+const (
+	RpPropertiesTypeRp = RpPropertiesType("RP")
+)
+
+func (RpPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*RpPropertiesType)(nil)).Elem()
+}
+
+func (e RpPropertiesType) ToRpPropertiesTypeOutput() RpPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(RpPropertiesTypeOutput)
+}
+
+func (e RpPropertiesType) ToRpPropertiesTypeOutputWithContext(ctx context.Context) RpPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(RpPropertiesTypeOutput)
+}
+
+func (e RpPropertiesType) ToRpPropertiesTypePtrOutput() RpPropertiesTypePtrOutput {
+	return e.ToRpPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e RpPropertiesType) ToRpPropertiesTypePtrOutputWithContext(ctx context.Context) RpPropertiesTypePtrOutput {
+	return RpPropertiesType(e).ToRpPropertiesTypeOutputWithContext(ctx).ToRpPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e RpPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RpPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e RpPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e RpPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type RpPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (RpPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RpPropertiesType)(nil)).Elem()
+}
+
+func (o RpPropertiesTypeOutput) ToRpPropertiesTypeOutput() RpPropertiesTypeOutput {
+	return o
+}
+
+func (o RpPropertiesTypeOutput) ToRpPropertiesTypeOutputWithContext(ctx context.Context) RpPropertiesTypeOutput {
+	return o
+}
+
+func (o RpPropertiesTypeOutput) ToRpPropertiesTypePtrOutput() RpPropertiesTypePtrOutput {
+	return o.ToRpPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesTypeOutput) ToRpPropertiesTypePtrOutputWithContext(ctx context.Context) RpPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RpPropertiesType) *RpPropertiesType {
+		return &v
+	}).(RpPropertiesTypePtrOutput)
+}
+
+func (o RpPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RpPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o RpPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e RpPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type RpPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (RpPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RpPropertiesType)(nil)).Elem()
+}
+
+func (o RpPropertiesTypePtrOutput) ToRpPropertiesTypePtrOutput() RpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o RpPropertiesTypePtrOutput) ToRpPropertiesTypePtrOutputWithContext(ctx context.Context) RpPropertiesTypePtrOutput {
+	return o
+}
+
+func (o RpPropertiesTypePtrOutput) Elem() RpPropertiesTypeOutput {
+	return o.ApplyT(func(v *RpPropertiesType) RpPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret RpPropertiesType
+		return ret
+	}).(RpPropertiesTypeOutput)
+}
+
+func (o RpPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o RpPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *RpPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// RpPropertiesTypeInput is an input type that accepts values of the RpPropertiesType enum
+// A concrete instance of `RpPropertiesTypeInput` can be one of the following:
+//
+//	RpPropertiesTypeRp
+type RpPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToRpPropertiesTypeOutput() RpPropertiesTypeOutput
+	ToRpPropertiesTypeOutputWithContext(context.Context) RpPropertiesTypeOutput
+}
+
+var rpPropertiesTypePtrType = reflect.TypeOf((**RpPropertiesType)(nil)).Elem()
+
+type RpPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToRpPropertiesTypePtrOutput() RpPropertiesTypePtrOutput
+	ToRpPropertiesTypePtrOutputWithContext(context.Context) RpPropertiesTypePtrOutput
+}
+
+type rpPropertiesTypePtr string
+
+func RpPropertiesTypePtr(v string) RpPropertiesTypePtrInput {
+	return (*rpPropertiesTypePtr)(&v)
+}
+
+func (*rpPropertiesTypePtr) ElementType() reflect.Type {
+	return rpPropertiesTypePtrType
+}
+
+func (in *rpPropertiesTypePtr) ToRpPropertiesTypePtrOutput() RpPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(RpPropertiesTypePtrOutput)
+}
+
+func (in *rpPropertiesTypePtr) ToRpPropertiesTypePtrOutputWithContext(ctx context.Context) RpPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(RpPropertiesTypePtrOutput)
+}
+
 type SimpleDomainStatus string
 
 const (
@@ -460,15 +7747,2797 @@ func (o SimpleDomainStatusPtrOutput) ToStringPtrOutputWithContext(ctx context.Co
 	}).(pulumi.StringPtrOutput)
 }
 
+// The current mode for this record
+type SpfPropertiesMode string
+
+const (
+	SpfPropertiesModeStandard = SpfPropertiesMode("standard")
+)
+
+func (SpfPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*SpfPropertiesMode)(nil)).Elem()
+}
+
+func (e SpfPropertiesMode) ToSpfPropertiesModeOutput() SpfPropertiesModeOutput {
+	return pulumi.ToOutput(e).(SpfPropertiesModeOutput)
+}
+
+func (e SpfPropertiesMode) ToSpfPropertiesModeOutputWithContext(ctx context.Context) SpfPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(SpfPropertiesModeOutput)
+}
+
+func (e SpfPropertiesMode) ToSpfPropertiesModePtrOutput() SpfPropertiesModePtrOutput {
+	return e.ToSpfPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e SpfPropertiesMode) ToSpfPropertiesModePtrOutputWithContext(ctx context.Context) SpfPropertiesModePtrOutput {
+	return SpfPropertiesMode(e).ToSpfPropertiesModeOutputWithContext(ctx).ToSpfPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e SpfPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SpfPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SpfPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e SpfPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type SpfPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (SpfPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SpfPropertiesMode)(nil)).Elem()
+}
+
+func (o SpfPropertiesModeOutput) ToSpfPropertiesModeOutput() SpfPropertiesModeOutput {
+	return o
+}
+
+func (o SpfPropertiesModeOutput) ToSpfPropertiesModeOutputWithContext(ctx context.Context) SpfPropertiesModeOutput {
+	return o
+}
+
+func (o SpfPropertiesModeOutput) ToSpfPropertiesModePtrOutput() SpfPropertiesModePtrOutput {
+	return o.ToSpfPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesModeOutput) ToSpfPropertiesModePtrOutputWithContext(ctx context.Context) SpfPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SpfPropertiesMode) *SpfPropertiesMode {
+		return &v
+	}).(SpfPropertiesModePtrOutput)
+}
+
+func (o SpfPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SpfPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o SpfPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SpfPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type SpfPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (SpfPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SpfPropertiesMode)(nil)).Elem()
+}
+
+func (o SpfPropertiesModePtrOutput) ToSpfPropertiesModePtrOutput() SpfPropertiesModePtrOutput {
+	return o
+}
+
+func (o SpfPropertiesModePtrOutput) ToSpfPropertiesModePtrOutputWithContext(ctx context.Context) SpfPropertiesModePtrOutput {
+	return o
+}
+
+func (o SpfPropertiesModePtrOutput) Elem() SpfPropertiesModeOutput {
+	return o.ApplyT(func(v *SpfPropertiesMode) SpfPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret SpfPropertiesMode
+		return ret
+	}).(SpfPropertiesModeOutput)
+}
+
+func (o SpfPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *SpfPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// SpfPropertiesModeInput is an input type that accepts values of the SpfPropertiesMode enum
+// A concrete instance of `SpfPropertiesModeInput` can be one of the following:
+//
+//	SpfPropertiesModeStandard
+type SpfPropertiesModeInput interface {
+	pulumi.Input
+
+	ToSpfPropertiesModeOutput() SpfPropertiesModeOutput
+	ToSpfPropertiesModeOutputWithContext(context.Context) SpfPropertiesModeOutput
+}
+
+var spfPropertiesModePtrType = reflect.TypeOf((**SpfPropertiesMode)(nil)).Elem()
+
+type SpfPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToSpfPropertiesModePtrOutput() SpfPropertiesModePtrOutput
+	ToSpfPropertiesModePtrOutputWithContext(context.Context) SpfPropertiesModePtrOutput
+}
+
+type spfPropertiesModePtr string
+
+func SpfPropertiesModePtr(v string) SpfPropertiesModePtrInput {
+	return (*spfPropertiesModePtr)(&v)
+}
+
+func (*spfPropertiesModePtr) ElementType() reflect.Type {
+	return spfPropertiesModePtrType
+}
+
+func (in *spfPropertiesModePtr) ToSpfPropertiesModePtrOutput() SpfPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(SpfPropertiesModePtrOutput)
+}
+
+func (in *spfPropertiesModePtr) ToSpfPropertiesModePtrOutputWithContext(ctx context.Context) SpfPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(SpfPropertiesModePtrOutput)
+}
+
+// The type of record
+type SpfPropertiesType string
+
+const (
+	SpfPropertiesTypeSpf = SpfPropertiesType("SPF")
+)
+
+func (SpfPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*SpfPropertiesType)(nil)).Elem()
+}
+
+func (e SpfPropertiesType) ToSpfPropertiesTypeOutput() SpfPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(SpfPropertiesTypeOutput)
+}
+
+func (e SpfPropertiesType) ToSpfPropertiesTypeOutputWithContext(ctx context.Context) SpfPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(SpfPropertiesTypeOutput)
+}
+
+func (e SpfPropertiesType) ToSpfPropertiesTypePtrOutput() SpfPropertiesTypePtrOutput {
+	return e.ToSpfPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e SpfPropertiesType) ToSpfPropertiesTypePtrOutputWithContext(ctx context.Context) SpfPropertiesTypePtrOutput {
+	return SpfPropertiesType(e).ToSpfPropertiesTypeOutputWithContext(ctx).ToSpfPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e SpfPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SpfPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SpfPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e SpfPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type SpfPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (SpfPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SpfPropertiesType)(nil)).Elem()
+}
+
+func (o SpfPropertiesTypeOutput) ToSpfPropertiesTypeOutput() SpfPropertiesTypeOutput {
+	return o
+}
+
+func (o SpfPropertiesTypeOutput) ToSpfPropertiesTypeOutputWithContext(ctx context.Context) SpfPropertiesTypeOutput {
+	return o
+}
+
+func (o SpfPropertiesTypeOutput) ToSpfPropertiesTypePtrOutput() SpfPropertiesTypePtrOutput {
+	return o.ToSpfPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesTypeOutput) ToSpfPropertiesTypePtrOutputWithContext(ctx context.Context) SpfPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SpfPropertiesType) *SpfPropertiesType {
+		return &v
+	}).(SpfPropertiesTypePtrOutput)
+}
+
+func (o SpfPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SpfPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o SpfPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SpfPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type SpfPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (SpfPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SpfPropertiesType)(nil)).Elem()
+}
+
+func (o SpfPropertiesTypePtrOutput) ToSpfPropertiesTypePtrOutput() SpfPropertiesTypePtrOutput {
+	return o
+}
+
+func (o SpfPropertiesTypePtrOutput) ToSpfPropertiesTypePtrOutputWithContext(ctx context.Context) SpfPropertiesTypePtrOutput {
+	return o
+}
+
+func (o SpfPropertiesTypePtrOutput) Elem() SpfPropertiesTypeOutput {
+	return o.ApplyT(func(v *SpfPropertiesType) SpfPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret SpfPropertiesType
+		return ret
+	}).(SpfPropertiesTypeOutput)
+}
+
+func (o SpfPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SpfPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *SpfPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// SpfPropertiesTypeInput is an input type that accepts values of the SpfPropertiesType enum
+// A concrete instance of `SpfPropertiesTypeInput` can be one of the following:
+//
+//	SpfPropertiesTypeSpf
+type SpfPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToSpfPropertiesTypeOutput() SpfPropertiesTypeOutput
+	ToSpfPropertiesTypeOutputWithContext(context.Context) SpfPropertiesTypeOutput
+}
+
+var spfPropertiesTypePtrType = reflect.TypeOf((**SpfPropertiesType)(nil)).Elem()
+
+type SpfPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToSpfPropertiesTypePtrOutput() SpfPropertiesTypePtrOutput
+	ToSpfPropertiesTypePtrOutputWithContext(context.Context) SpfPropertiesTypePtrOutput
+}
+
+type spfPropertiesTypePtr string
+
+func SpfPropertiesTypePtr(v string) SpfPropertiesTypePtrInput {
+	return (*spfPropertiesTypePtr)(&v)
+}
+
+func (*spfPropertiesTypePtr) ElementType() reflect.Type {
+	return spfPropertiesTypePtrType
+}
+
+func (in *spfPropertiesTypePtr) ToSpfPropertiesTypePtrOutput() SpfPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(SpfPropertiesTypePtrOutput)
+}
+
+func (in *spfPropertiesTypePtr) ToSpfPropertiesTypePtrOutputWithContext(ctx context.Context) SpfPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(SpfPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type SrvPropertiesMode string
+
+const (
+	SrvPropertiesModeStandard = SrvPropertiesMode("standard")
+)
+
+func (SrvPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*SrvPropertiesMode)(nil)).Elem()
+}
+
+func (e SrvPropertiesMode) ToSrvPropertiesModeOutput() SrvPropertiesModeOutput {
+	return pulumi.ToOutput(e).(SrvPropertiesModeOutput)
+}
+
+func (e SrvPropertiesMode) ToSrvPropertiesModeOutputWithContext(ctx context.Context) SrvPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(SrvPropertiesModeOutput)
+}
+
+func (e SrvPropertiesMode) ToSrvPropertiesModePtrOutput() SrvPropertiesModePtrOutput {
+	return e.ToSrvPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e SrvPropertiesMode) ToSrvPropertiesModePtrOutputWithContext(ctx context.Context) SrvPropertiesModePtrOutput {
+	return SrvPropertiesMode(e).ToSrvPropertiesModeOutputWithContext(ctx).ToSrvPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e SrvPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SrvPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SrvPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e SrvPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type SrvPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (SrvPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SrvPropertiesMode)(nil)).Elem()
+}
+
+func (o SrvPropertiesModeOutput) ToSrvPropertiesModeOutput() SrvPropertiesModeOutput {
+	return o
+}
+
+func (o SrvPropertiesModeOutput) ToSrvPropertiesModeOutputWithContext(ctx context.Context) SrvPropertiesModeOutput {
+	return o
+}
+
+func (o SrvPropertiesModeOutput) ToSrvPropertiesModePtrOutput() SrvPropertiesModePtrOutput {
+	return o.ToSrvPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesModeOutput) ToSrvPropertiesModePtrOutputWithContext(ctx context.Context) SrvPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SrvPropertiesMode) *SrvPropertiesMode {
+		return &v
+	}).(SrvPropertiesModePtrOutput)
+}
+
+func (o SrvPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SrvPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o SrvPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SrvPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type SrvPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (SrvPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SrvPropertiesMode)(nil)).Elem()
+}
+
+func (o SrvPropertiesModePtrOutput) ToSrvPropertiesModePtrOutput() SrvPropertiesModePtrOutput {
+	return o
+}
+
+func (o SrvPropertiesModePtrOutput) ToSrvPropertiesModePtrOutputWithContext(ctx context.Context) SrvPropertiesModePtrOutput {
+	return o
+}
+
+func (o SrvPropertiesModePtrOutput) Elem() SrvPropertiesModeOutput {
+	return o.ApplyT(func(v *SrvPropertiesMode) SrvPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret SrvPropertiesMode
+		return ret
+	}).(SrvPropertiesModeOutput)
+}
+
+func (o SrvPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *SrvPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// SrvPropertiesModeInput is an input type that accepts values of the SrvPropertiesMode enum
+// A concrete instance of `SrvPropertiesModeInput` can be one of the following:
+//
+//	SrvPropertiesModeStandard
+type SrvPropertiesModeInput interface {
+	pulumi.Input
+
+	ToSrvPropertiesModeOutput() SrvPropertiesModeOutput
+	ToSrvPropertiesModeOutputWithContext(context.Context) SrvPropertiesModeOutput
+}
+
+var srvPropertiesModePtrType = reflect.TypeOf((**SrvPropertiesMode)(nil)).Elem()
+
+type SrvPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToSrvPropertiesModePtrOutput() SrvPropertiesModePtrOutput
+	ToSrvPropertiesModePtrOutputWithContext(context.Context) SrvPropertiesModePtrOutput
+}
+
+type srvPropertiesModePtr string
+
+func SrvPropertiesModePtr(v string) SrvPropertiesModePtrInput {
+	return (*srvPropertiesModePtr)(&v)
+}
+
+func (*srvPropertiesModePtr) ElementType() reflect.Type {
+	return srvPropertiesModePtrType
+}
+
+func (in *srvPropertiesModePtr) ToSrvPropertiesModePtrOutput() SrvPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(SrvPropertiesModePtrOutput)
+}
+
+func (in *srvPropertiesModePtr) ToSrvPropertiesModePtrOutputWithContext(ctx context.Context) SrvPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(SrvPropertiesModePtrOutput)
+}
+
+// The type of record
+type SrvPropertiesType string
+
+const (
+	SrvPropertiesTypeSrv = SrvPropertiesType("SRV")
+)
+
+func (SrvPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*SrvPropertiesType)(nil)).Elem()
+}
+
+func (e SrvPropertiesType) ToSrvPropertiesTypeOutput() SrvPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(SrvPropertiesTypeOutput)
+}
+
+func (e SrvPropertiesType) ToSrvPropertiesTypeOutputWithContext(ctx context.Context) SrvPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(SrvPropertiesTypeOutput)
+}
+
+func (e SrvPropertiesType) ToSrvPropertiesTypePtrOutput() SrvPropertiesTypePtrOutput {
+	return e.ToSrvPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e SrvPropertiesType) ToSrvPropertiesTypePtrOutputWithContext(ctx context.Context) SrvPropertiesTypePtrOutput {
+	return SrvPropertiesType(e).ToSrvPropertiesTypeOutputWithContext(ctx).ToSrvPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e SrvPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SrvPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e SrvPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e SrvPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type SrvPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (SrvPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SrvPropertiesType)(nil)).Elem()
+}
+
+func (o SrvPropertiesTypeOutput) ToSrvPropertiesTypeOutput() SrvPropertiesTypeOutput {
+	return o
+}
+
+func (o SrvPropertiesTypeOutput) ToSrvPropertiesTypeOutputWithContext(ctx context.Context) SrvPropertiesTypeOutput {
+	return o
+}
+
+func (o SrvPropertiesTypeOutput) ToSrvPropertiesTypePtrOutput() SrvPropertiesTypePtrOutput {
+	return o.ToSrvPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesTypeOutput) ToSrvPropertiesTypePtrOutputWithContext(ctx context.Context) SrvPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SrvPropertiesType) *SrvPropertiesType {
+		return &v
+	}).(SrvPropertiesTypePtrOutput)
+}
+
+func (o SrvPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SrvPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o SrvPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e SrvPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type SrvPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (SrvPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SrvPropertiesType)(nil)).Elem()
+}
+
+func (o SrvPropertiesTypePtrOutput) ToSrvPropertiesTypePtrOutput() SrvPropertiesTypePtrOutput {
+	return o
+}
+
+func (o SrvPropertiesTypePtrOutput) ToSrvPropertiesTypePtrOutputWithContext(ctx context.Context) SrvPropertiesTypePtrOutput {
+	return o
+}
+
+func (o SrvPropertiesTypePtrOutput) Elem() SrvPropertiesTypeOutput {
+	return o.ApplyT(func(v *SrvPropertiesType) SrvPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret SrvPropertiesType
+		return ret
+	}).(SrvPropertiesTypeOutput)
+}
+
+func (o SrvPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o SrvPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *SrvPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// SrvPropertiesTypeInput is an input type that accepts values of the SrvPropertiesType enum
+// A concrete instance of `SrvPropertiesTypeInput` can be one of the following:
+//
+//	SrvPropertiesTypeSrv
+type SrvPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToSrvPropertiesTypeOutput() SrvPropertiesTypeOutput
+	ToSrvPropertiesTypeOutputWithContext(context.Context) SrvPropertiesTypeOutput
+}
+
+var srvPropertiesTypePtrType = reflect.TypeOf((**SrvPropertiesType)(nil)).Elem()
+
+type SrvPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToSrvPropertiesTypePtrOutput() SrvPropertiesTypePtrOutput
+	ToSrvPropertiesTypePtrOutputWithContext(context.Context) SrvPropertiesTypePtrOutput
+}
+
+type srvPropertiesTypePtr string
+
+func SrvPropertiesTypePtr(v string) SrvPropertiesTypePtrInput {
+	return (*srvPropertiesTypePtr)(&v)
+}
+
+func (*srvPropertiesTypePtr) ElementType() reflect.Type {
+	return srvPropertiesTypePtrType
+}
+
+func (in *srvPropertiesTypePtr) ToSrvPropertiesTypePtrOutput() SrvPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(SrvPropertiesTypePtrOutput)
+}
+
+func (in *srvPropertiesTypePtr) ToSrvPropertiesTypePtrOutputWithContext(ctx context.Context) SrvPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(SrvPropertiesTypePtrOutput)
+}
+
+// The current mode for this record
+type TxtPropertiesMode string
+
+const (
+	TxtPropertiesModeStandard = TxtPropertiesMode("standard")
+)
+
+func (TxtPropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*TxtPropertiesMode)(nil)).Elem()
+}
+
+func (e TxtPropertiesMode) ToTxtPropertiesModeOutput() TxtPropertiesModeOutput {
+	return pulumi.ToOutput(e).(TxtPropertiesModeOutput)
+}
+
+func (e TxtPropertiesMode) ToTxtPropertiesModeOutputWithContext(ctx context.Context) TxtPropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(TxtPropertiesModeOutput)
+}
+
+func (e TxtPropertiesMode) ToTxtPropertiesModePtrOutput() TxtPropertiesModePtrOutput {
+	return e.ToTxtPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e TxtPropertiesMode) ToTxtPropertiesModePtrOutputWithContext(ctx context.Context) TxtPropertiesModePtrOutput {
+	return TxtPropertiesMode(e).ToTxtPropertiesModeOutputWithContext(ctx).ToTxtPropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e TxtPropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e TxtPropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e TxtPropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e TxtPropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type TxtPropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (TxtPropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TxtPropertiesMode)(nil)).Elem()
+}
+
+func (o TxtPropertiesModeOutput) ToTxtPropertiesModeOutput() TxtPropertiesModeOutput {
+	return o
+}
+
+func (o TxtPropertiesModeOutput) ToTxtPropertiesModeOutputWithContext(ctx context.Context) TxtPropertiesModeOutput {
+	return o
+}
+
+func (o TxtPropertiesModeOutput) ToTxtPropertiesModePtrOutput() TxtPropertiesModePtrOutput {
+	return o.ToTxtPropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesModeOutput) ToTxtPropertiesModePtrOutputWithContext(ctx context.Context) TxtPropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TxtPropertiesMode) *TxtPropertiesMode {
+		return &v
+	}).(TxtPropertiesModePtrOutput)
+}
+
+func (o TxtPropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e TxtPropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o TxtPropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e TxtPropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type TxtPropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (TxtPropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TxtPropertiesMode)(nil)).Elem()
+}
+
+func (o TxtPropertiesModePtrOutput) ToTxtPropertiesModePtrOutput() TxtPropertiesModePtrOutput {
+	return o
+}
+
+func (o TxtPropertiesModePtrOutput) ToTxtPropertiesModePtrOutputWithContext(ctx context.Context) TxtPropertiesModePtrOutput {
+	return o
+}
+
+func (o TxtPropertiesModePtrOutput) Elem() TxtPropertiesModeOutput {
+	return o.ApplyT(func(v *TxtPropertiesMode) TxtPropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret TxtPropertiesMode
+		return ret
+	}).(TxtPropertiesModeOutput)
+}
+
+func (o TxtPropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *TxtPropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// TxtPropertiesModeInput is an input type that accepts values of the TxtPropertiesMode enum
+// A concrete instance of `TxtPropertiesModeInput` can be one of the following:
+//
+//	TxtPropertiesModeStandard
+type TxtPropertiesModeInput interface {
+	pulumi.Input
+
+	ToTxtPropertiesModeOutput() TxtPropertiesModeOutput
+	ToTxtPropertiesModeOutputWithContext(context.Context) TxtPropertiesModeOutput
+}
+
+var txtPropertiesModePtrType = reflect.TypeOf((**TxtPropertiesMode)(nil)).Elem()
+
+type TxtPropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToTxtPropertiesModePtrOutput() TxtPropertiesModePtrOutput
+	ToTxtPropertiesModePtrOutputWithContext(context.Context) TxtPropertiesModePtrOutput
+}
+
+type txtPropertiesModePtr string
+
+func TxtPropertiesModePtr(v string) TxtPropertiesModePtrInput {
+	return (*txtPropertiesModePtr)(&v)
+}
+
+func (*txtPropertiesModePtr) ElementType() reflect.Type {
+	return txtPropertiesModePtrType
+}
+
+func (in *txtPropertiesModePtr) ToTxtPropertiesModePtrOutput() TxtPropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(TxtPropertiesModePtrOutput)
+}
+
+func (in *txtPropertiesModePtr) ToTxtPropertiesModePtrOutputWithContext(ctx context.Context) TxtPropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(TxtPropertiesModePtrOutput)
+}
+
+// The type of record
+type TxtPropertiesType string
+
+const (
+	TxtPropertiesTypeTxt = TxtPropertiesType("TXT")
+)
+
+func (TxtPropertiesType) ElementType() reflect.Type {
+	return reflect.TypeOf((*TxtPropertiesType)(nil)).Elem()
+}
+
+func (e TxtPropertiesType) ToTxtPropertiesTypeOutput() TxtPropertiesTypeOutput {
+	return pulumi.ToOutput(e).(TxtPropertiesTypeOutput)
+}
+
+func (e TxtPropertiesType) ToTxtPropertiesTypeOutputWithContext(ctx context.Context) TxtPropertiesTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(TxtPropertiesTypeOutput)
+}
+
+func (e TxtPropertiesType) ToTxtPropertiesTypePtrOutput() TxtPropertiesTypePtrOutput {
+	return e.ToTxtPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (e TxtPropertiesType) ToTxtPropertiesTypePtrOutputWithContext(ctx context.Context) TxtPropertiesTypePtrOutput {
+	return TxtPropertiesType(e).ToTxtPropertiesTypeOutputWithContext(ctx).ToTxtPropertiesTypePtrOutputWithContext(ctx)
+}
+
+func (e TxtPropertiesType) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e TxtPropertiesType) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e TxtPropertiesType) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e TxtPropertiesType) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type TxtPropertiesTypeOutput struct{ *pulumi.OutputState }
+
+func (TxtPropertiesTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TxtPropertiesType)(nil)).Elem()
+}
+
+func (o TxtPropertiesTypeOutput) ToTxtPropertiesTypeOutput() TxtPropertiesTypeOutput {
+	return o
+}
+
+func (o TxtPropertiesTypeOutput) ToTxtPropertiesTypeOutputWithContext(ctx context.Context) TxtPropertiesTypeOutput {
+	return o
+}
+
+func (o TxtPropertiesTypeOutput) ToTxtPropertiesTypePtrOutput() TxtPropertiesTypePtrOutput {
+	return o.ToTxtPropertiesTypePtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesTypeOutput) ToTxtPropertiesTypePtrOutputWithContext(ctx context.Context) TxtPropertiesTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TxtPropertiesType) *TxtPropertiesType {
+		return &v
+	}).(TxtPropertiesTypePtrOutput)
+}
+
+func (o TxtPropertiesTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e TxtPropertiesType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o TxtPropertiesTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e TxtPropertiesType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type TxtPropertiesTypePtrOutput struct{ *pulumi.OutputState }
+
+func (TxtPropertiesTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TxtPropertiesType)(nil)).Elem()
+}
+
+func (o TxtPropertiesTypePtrOutput) ToTxtPropertiesTypePtrOutput() TxtPropertiesTypePtrOutput {
+	return o
+}
+
+func (o TxtPropertiesTypePtrOutput) ToTxtPropertiesTypePtrOutputWithContext(ctx context.Context) TxtPropertiesTypePtrOutput {
+	return o
+}
+
+func (o TxtPropertiesTypePtrOutput) Elem() TxtPropertiesTypeOutput {
+	return o.ApplyT(func(v *TxtPropertiesType) TxtPropertiesType {
+		if v != nil {
+			return *v
+		}
+		var ret TxtPropertiesType
+		return ret
+	}).(TxtPropertiesTypeOutput)
+}
+
+func (o TxtPropertiesTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o TxtPropertiesTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *TxtPropertiesType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// TxtPropertiesTypeInput is an input type that accepts values of the TxtPropertiesType enum
+// A concrete instance of `TxtPropertiesTypeInput` can be one of the following:
+//
+//	TxtPropertiesTypeTxt
+type TxtPropertiesTypeInput interface {
+	pulumi.Input
+
+	ToTxtPropertiesTypeOutput() TxtPropertiesTypeOutput
+	ToTxtPropertiesTypeOutputWithContext(context.Context) TxtPropertiesTypeOutput
+}
+
+var txtPropertiesTypePtrType = reflect.TypeOf((**TxtPropertiesType)(nil)).Elem()
+
+type TxtPropertiesTypePtrInput interface {
+	pulumi.Input
+
+	ToTxtPropertiesTypePtrOutput() TxtPropertiesTypePtrOutput
+	ToTxtPropertiesTypePtrOutputWithContext(context.Context) TxtPropertiesTypePtrOutput
+}
+
+type txtPropertiesTypePtr string
+
+func TxtPropertiesTypePtr(v string) TxtPropertiesTypePtrInput {
+	return (*txtPropertiesTypePtr)(&v)
+}
+
+func (*txtPropertiesTypePtr) ElementType() reflect.Type {
+	return txtPropertiesTypePtrType
+}
+
+func (in *txtPropertiesTypePtr) ToTxtPropertiesTypePtrOutput() TxtPropertiesTypePtrOutput {
+	return pulumi.ToOutput(in).(TxtPropertiesTypePtrOutput)
+}
+
+func (in *txtPropertiesTypePtr) ToTxtPropertiesTypePtrOutputWithContext(ctx context.Context) TxtPropertiesTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(TxtPropertiesTypePtrOutput)
+}
+
+// The failover mode
+type ValueARequestValuePropertiesMode string
+
+const (
+	ValueARequestValuePropertiesModeNormal = ValueARequestValuePropertiesMode("normal")
+	ValueARequestValuePropertiesModeOff    = ValueARequestValuePropertiesMode("off")
+	ValueARequestValuePropertiesModeOneWay = ValueARequestValuePropertiesMode("one-way")
+)
+
+func (ValueARequestValuePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (e ValueARequestValuePropertiesMode) ToValueARequestValuePropertiesModeOutput() ValueARequestValuePropertiesModeOutput {
+	return pulumi.ToOutput(e).(ValueARequestValuePropertiesModeOutput)
+}
+
+func (e ValueARequestValuePropertiesMode) ToValueARequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(ValueARequestValuePropertiesModeOutput)
+}
+
+func (e ValueARequestValuePropertiesMode) ToValueARequestValuePropertiesModePtrOutput() ValueARequestValuePropertiesModePtrOutput {
+	return e.ToValueARequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e ValueARequestValuePropertiesMode) ToValueARequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModePtrOutput {
+	return ValueARequestValuePropertiesMode(e).ToValueARequestValuePropertiesModeOutputWithContext(ctx).ToValueARequestValuePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e ValueARequestValuePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueARequestValuePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueARequestValuePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e ValueARequestValuePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type ValueARequestValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToValueARequestValuePropertiesModeOutput() ValueARequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToValueARequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToValueARequestValuePropertiesModePtrOutput() ValueARequestValuePropertiesModePtrOutput {
+	return o.ToValueARequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToValueARequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueARequestValuePropertiesMode) *ValueARequestValuePropertiesMode {
+		return &v
+	}).(ValueARequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueARequestValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueARequestValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueARequestValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueARequestValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueARequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesModePtrOutput) ToValueARequestValuePropertiesModePtrOutput() ValueARequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesModePtrOutput) ToValueARequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesModePtrOutput) Elem() ValueARequestValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueARequestValuePropertiesMode) ValueARequestValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueARequestValuePropertiesMode
+		return ret
+	}).(ValueARequestValuePropertiesModeOutput)
+}
+
+func (o ValueARequestValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueARequestValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueARequestValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// ValueARequestValuePropertiesModeInput is an input type that accepts values of the ValueARequestValuePropertiesMode enum
+// A concrete instance of `ValueARequestValuePropertiesModeInput` can be one of the following:
+//
+//	ValueARequestValuePropertiesModeNormal
+//	ValueARequestValuePropertiesModeOff
+//	ValueARequestValuePropertiesModeOneWay
+type ValueARequestValuePropertiesModeInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesModeOutput() ValueARequestValuePropertiesModeOutput
+	ToValueARequestValuePropertiesModeOutputWithContext(context.Context) ValueARequestValuePropertiesModeOutput
+}
+
+var valueARequestValuePropertiesModePtrType = reflect.TypeOf((**ValueARequestValuePropertiesMode)(nil)).Elem()
+
+type ValueARequestValuePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesModePtrOutput() ValueARequestValuePropertiesModePtrOutput
+	ToValueARequestValuePropertiesModePtrOutputWithContext(context.Context) ValueARequestValuePropertiesModePtrOutput
+}
+
+type valueARequestValuePropertiesModePtr string
+
+func ValueARequestValuePropertiesModePtr(v string) ValueARequestValuePropertiesModePtrInput {
+	return (*valueARequestValuePropertiesModePtr)(&v)
+}
+
+func (*valueARequestValuePropertiesModePtr) ElementType() reflect.Type {
+	return valueARequestValuePropertiesModePtrType
+}
+
+func (in *valueARequestValuePropertiesModePtr) ToValueARequestValuePropertiesModePtrOutput() ValueARequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(ValueARequestValuePropertiesModePtrOutput)
+}
+
+func (in *valueARequestValuePropertiesModePtr) ToValueARequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(ValueARequestValuePropertiesModePtrOutput)
+}
+
+// The type of record
+type ValueAType string
+
+const (
+	ValueATypeA = ValueAType("A")
+)
+
+type ValueATypeOutput struct{ *pulumi.OutputState }
+
+func (ValueATypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAType)(nil)).Elem()
+}
+
+func (o ValueATypeOutput) ToValueATypeOutput() ValueATypeOutput {
+	return o
+}
+
+func (o ValueATypeOutput) ToValueATypeOutputWithContext(ctx context.Context) ValueATypeOutput {
+	return o
+}
+
+func (o ValueATypeOutput) ToValueATypePtrOutput() ValueATypePtrOutput {
+	return o.ToValueATypePtrOutputWithContext(context.Background())
+}
+
+func (o ValueATypeOutput) ToValueATypePtrOutputWithContext(ctx context.Context) ValueATypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAType) *ValueAType {
+		return &v
+	}).(ValueATypePtrOutput)
+}
+
+func (o ValueATypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueATypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueATypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueATypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueATypePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueATypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAType)(nil)).Elem()
+}
+
+func (o ValueATypePtrOutput) ToValueATypePtrOutput() ValueATypePtrOutput {
+	return o
+}
+
+func (o ValueATypePtrOutput) ToValueATypePtrOutputWithContext(ctx context.Context) ValueATypePtrOutput {
+	return o
+}
+
+func (o ValueATypePtrOutput) Elem() ValueATypeOutput {
+	return o.ApplyT(func(v *ValueAType) ValueAType {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAType
+		return ret
+	}).(ValueATypeOutput)
+}
+
+func (o ValueATypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueATypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueAValuePropertiesMode string
+
+const (
+	ValueAValuePropertiesModeNormal = ValueAValuePropertiesMode("normal")
+	ValueAValuePropertiesModeOff    = ValueAValuePropertiesMode("off")
+	ValueAValuePropertiesModeOneWay = ValueAValuePropertiesMode("one-way")
+)
+
+type ValueAValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueAValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAValuePropertiesModeOutput) ToValueAValuePropertiesModeOutput() ValueAValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesModeOutput) ToValueAValuePropertiesModeOutputWithContext(ctx context.Context) ValueAValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesModeOutput) ToValueAValuePropertiesModePtrOutput() ValueAValuePropertiesModePtrOutput {
+	return o.ToValueAValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAValuePropertiesModeOutput) ToValueAValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAValuePropertiesMode) *ValueAValuePropertiesMode {
+		return &v
+	}).(ValueAValuePropertiesModePtrOutput)
+}
+
+func (o ValueAValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAValuePropertiesModePtrOutput) ToValueAValuePropertiesModePtrOutput() ValueAValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesModePtrOutput) ToValueAValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesModePtrOutput) Elem() ValueAValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueAValuePropertiesMode) ValueAValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAValuePropertiesMode
+		return ret
+	}).(ValueAValuePropertiesModeOutput)
+}
+
+func (o ValueAValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueAaaaRequestValuePropertiesMode string
+
+const (
+	ValueAaaaRequestValuePropertiesModeNormal = ValueAaaaRequestValuePropertiesMode("normal")
+	ValueAaaaRequestValuePropertiesModeOff    = ValueAaaaRequestValuePropertiesMode("off")
+	ValueAaaaRequestValuePropertiesModeOneWay = ValueAaaaRequestValuePropertiesMode("one-way")
+)
+
+func (ValueAaaaRequestValuePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToValueAaaaRequestValuePropertiesModeOutput() ValueAaaaRequestValuePropertiesModeOutput {
+	return pulumi.ToOutput(e).(ValueAaaaRequestValuePropertiesModeOutput)
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToValueAaaaRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(ValueAaaaRequestValuePropertiesModeOutput)
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToValueAaaaRequestValuePropertiesModePtrOutput() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return e.ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModePtrOutput {
+	return ValueAaaaRequestValuePropertiesMode(e).ToValueAaaaRequestValuePropertiesModeOutputWithContext(ctx).ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e ValueAaaaRequestValuePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type ValueAaaaRequestValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToValueAaaaRequestValuePropertiesModeOutput() ValueAaaaRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToValueAaaaRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToValueAaaaRequestValuePropertiesModePtrOutput() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o.ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAaaaRequestValuePropertiesMode) *ValueAaaaRequestValuePropertiesMode {
+		return &v
+	}).(ValueAaaaRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaRequestValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaRequestValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaRequestValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAaaaRequestValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesModePtrOutput) ToValueAaaaRequestValuePropertiesModePtrOutput() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesModePtrOutput) ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesModePtrOutput) Elem() ValueAaaaRequestValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueAaaaRequestValuePropertiesMode) ValueAaaaRequestValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAaaaRequestValuePropertiesMode
+		return ret
+	}).(ValueAaaaRequestValuePropertiesModeOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaRequestValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAaaaRequestValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// ValueAaaaRequestValuePropertiesModeInput is an input type that accepts values of the ValueAaaaRequestValuePropertiesMode enum
+// A concrete instance of `ValueAaaaRequestValuePropertiesModeInput` can be one of the following:
+//
+//	ValueAaaaRequestValuePropertiesModeNormal
+//	ValueAaaaRequestValuePropertiesModeOff
+//	ValueAaaaRequestValuePropertiesModeOneWay
+type ValueAaaaRequestValuePropertiesModeInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesModeOutput() ValueAaaaRequestValuePropertiesModeOutput
+	ToValueAaaaRequestValuePropertiesModeOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesModeOutput
+}
+
+var valueAaaaRequestValuePropertiesModePtrType = reflect.TypeOf((**ValueAaaaRequestValuePropertiesMode)(nil)).Elem()
+
+type ValueAaaaRequestValuePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesModePtrOutput() ValueAaaaRequestValuePropertiesModePtrOutput
+	ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesModePtrOutput
+}
+
+type valueAaaaRequestValuePropertiesModePtr string
+
+func ValueAaaaRequestValuePropertiesModePtr(v string) ValueAaaaRequestValuePropertiesModePtrInput {
+	return (*valueAaaaRequestValuePropertiesModePtr)(&v)
+}
+
+func (*valueAaaaRequestValuePropertiesModePtr) ElementType() reflect.Type {
+	return valueAaaaRequestValuePropertiesModePtrType
+}
+
+func (in *valueAaaaRequestValuePropertiesModePtr) ToValueAaaaRequestValuePropertiesModePtrOutput() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(ValueAaaaRequestValuePropertiesModePtrOutput)
+}
+
+func (in *valueAaaaRequestValuePropertiesModePtr) ToValueAaaaRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(ValueAaaaRequestValuePropertiesModePtrOutput)
+}
+
+// The type of record
+type ValueAaaaType string
+
+const (
+	ValueAaaaTypeAaaa = ValueAaaaType("AAAA")
+)
+
+type ValueAaaaTypeOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaType)(nil)).Elem()
+}
+
+func (o ValueAaaaTypeOutput) ToValueAaaaTypeOutput() ValueAaaaTypeOutput {
+	return o
+}
+
+func (o ValueAaaaTypeOutput) ToValueAaaaTypeOutputWithContext(ctx context.Context) ValueAaaaTypeOutput {
+	return o
+}
+
+func (o ValueAaaaTypeOutput) ToValueAaaaTypePtrOutput() ValueAaaaTypePtrOutput {
+	return o.ToValueAaaaTypePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaTypeOutput) ToValueAaaaTypePtrOutputWithContext(ctx context.Context) ValueAaaaTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAaaaType) *ValueAaaaType {
+		return &v
+	}).(ValueAaaaTypePtrOutput)
+}
+
+func (o ValueAaaaTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAaaaTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAaaaTypePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaType)(nil)).Elem()
+}
+
+func (o ValueAaaaTypePtrOutput) ToValueAaaaTypePtrOutput() ValueAaaaTypePtrOutput {
+	return o
+}
+
+func (o ValueAaaaTypePtrOutput) ToValueAaaaTypePtrOutputWithContext(ctx context.Context) ValueAaaaTypePtrOutput {
+	return o
+}
+
+func (o ValueAaaaTypePtrOutput) Elem() ValueAaaaTypeOutput {
+	return o.ApplyT(func(v *ValueAaaaType) ValueAaaaType {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAaaaType
+		return ret
+	}).(ValueAaaaTypeOutput)
+}
+
+func (o ValueAaaaTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAaaaType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueAaaaValuePropertiesMode string
+
+const (
+	ValueAaaaValuePropertiesModeNormal = ValueAaaaValuePropertiesMode("normal")
+	ValueAaaaValuePropertiesModeOff    = ValueAaaaValuePropertiesMode("off")
+	ValueAaaaValuePropertiesModeOneWay = ValueAaaaValuePropertiesMode("one-way")
+)
+
+type ValueAaaaValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToValueAaaaValuePropertiesModeOutput() ValueAaaaValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToValueAaaaValuePropertiesModeOutputWithContext(ctx context.Context) ValueAaaaValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToValueAaaaValuePropertiesModePtrOutput() ValueAaaaValuePropertiesModePtrOutput {
+	return o.ToValueAaaaValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToValueAaaaValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAaaaValuePropertiesMode) *ValueAaaaValuePropertiesMode {
+		return &v
+	}).(ValueAaaaValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAaaaValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAaaaValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAaaaValuePropertiesModePtrOutput) ToValueAaaaValuePropertiesModePtrOutput() ValueAaaaValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesModePtrOutput) ToValueAaaaValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAaaaValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesModePtrOutput) Elem() ValueAaaaValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueAaaaValuePropertiesMode) ValueAaaaValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAaaaValuePropertiesMode
+		return ret
+	}).(ValueAaaaValuePropertiesModeOutput)
+}
+
+func (o ValueAaaaValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAaaaValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueAnameRequestValuePropertiesMode string
+
+const (
+	ValueAnameRequestValuePropertiesModeNormal = ValueAnameRequestValuePropertiesMode("normal")
+	ValueAnameRequestValuePropertiesModeOff    = ValueAnameRequestValuePropertiesMode("off")
+	ValueAnameRequestValuePropertiesModeOneWay = ValueAnameRequestValuePropertiesMode("one-way")
+)
+
+func (ValueAnameRequestValuePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToValueAnameRequestValuePropertiesModeOutput() ValueAnameRequestValuePropertiesModeOutput {
+	return pulumi.ToOutput(e).(ValueAnameRequestValuePropertiesModeOutput)
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToValueAnameRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(ValueAnameRequestValuePropertiesModeOutput)
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToValueAnameRequestValuePropertiesModePtrOutput() ValueAnameRequestValuePropertiesModePtrOutput {
+	return e.ToValueAnameRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToValueAnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModePtrOutput {
+	return ValueAnameRequestValuePropertiesMode(e).ToValueAnameRequestValuePropertiesModeOutputWithContext(ctx).ToValueAnameRequestValuePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e ValueAnameRequestValuePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type ValueAnameRequestValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToValueAnameRequestValuePropertiesModeOutput() ValueAnameRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToValueAnameRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToValueAnameRequestValuePropertiesModePtrOutput() ValueAnameRequestValuePropertiesModePtrOutput {
+	return o.ToValueAnameRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToValueAnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAnameRequestValuePropertiesMode) *ValueAnameRequestValuePropertiesMode {
+		return &v
+	}).(ValueAnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameRequestValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameRequestValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameRequestValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameRequestValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesModePtrOutput) ToValueAnameRequestValuePropertiesModePtrOutput() ValueAnameRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesModePtrOutput) ToValueAnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesModePtrOutput) Elem() ValueAnameRequestValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueAnameRequestValuePropertiesMode) ValueAnameRequestValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAnameRequestValuePropertiesMode
+		return ret
+	}).(ValueAnameRequestValuePropertiesModeOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameRequestValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAnameRequestValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// ValueAnameRequestValuePropertiesModeInput is an input type that accepts values of the ValueAnameRequestValuePropertiesMode enum
+// A concrete instance of `ValueAnameRequestValuePropertiesModeInput` can be one of the following:
+//
+//	ValueAnameRequestValuePropertiesModeNormal
+//	ValueAnameRequestValuePropertiesModeOff
+//	ValueAnameRequestValuePropertiesModeOneWay
+type ValueAnameRequestValuePropertiesModeInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesModeOutput() ValueAnameRequestValuePropertiesModeOutput
+	ToValueAnameRequestValuePropertiesModeOutputWithContext(context.Context) ValueAnameRequestValuePropertiesModeOutput
+}
+
+var valueAnameRequestValuePropertiesModePtrType = reflect.TypeOf((**ValueAnameRequestValuePropertiesMode)(nil)).Elem()
+
+type ValueAnameRequestValuePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesModePtrOutput() ValueAnameRequestValuePropertiesModePtrOutput
+	ToValueAnameRequestValuePropertiesModePtrOutputWithContext(context.Context) ValueAnameRequestValuePropertiesModePtrOutput
+}
+
+type valueAnameRequestValuePropertiesModePtr string
+
+func ValueAnameRequestValuePropertiesModePtr(v string) ValueAnameRequestValuePropertiesModePtrInput {
+	return (*valueAnameRequestValuePropertiesModePtr)(&v)
+}
+
+func (*valueAnameRequestValuePropertiesModePtr) ElementType() reflect.Type {
+	return valueAnameRequestValuePropertiesModePtrType
+}
+
+func (in *valueAnameRequestValuePropertiesModePtr) ToValueAnameRequestValuePropertiesModePtrOutput() ValueAnameRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(ValueAnameRequestValuePropertiesModePtrOutput)
+}
+
+func (in *valueAnameRequestValuePropertiesModePtr) ToValueAnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(ValueAnameRequestValuePropertiesModePtrOutput)
+}
+
+// The type of record
+type ValueAnameType string
+
+const (
+	ValueAnameTypeAname = ValueAnameType("ANAME")
+)
+
+type ValueAnameTypeOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameType)(nil)).Elem()
+}
+
+func (o ValueAnameTypeOutput) ToValueAnameTypeOutput() ValueAnameTypeOutput {
+	return o
+}
+
+func (o ValueAnameTypeOutput) ToValueAnameTypeOutputWithContext(ctx context.Context) ValueAnameTypeOutput {
+	return o
+}
+
+func (o ValueAnameTypeOutput) ToValueAnameTypePtrOutput() ValueAnameTypePtrOutput {
+	return o.ToValueAnameTypePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameTypeOutput) ToValueAnameTypePtrOutputWithContext(ctx context.Context) ValueAnameTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAnameType) *ValueAnameType {
+		return &v
+	}).(ValueAnameTypePtrOutput)
+}
+
+func (o ValueAnameTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAnameTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAnameTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameTypePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameType)(nil)).Elem()
+}
+
+func (o ValueAnameTypePtrOutput) ToValueAnameTypePtrOutput() ValueAnameTypePtrOutput {
+	return o
+}
+
+func (o ValueAnameTypePtrOutput) ToValueAnameTypePtrOutputWithContext(ctx context.Context) ValueAnameTypePtrOutput {
+	return o
+}
+
+func (o ValueAnameTypePtrOutput) Elem() ValueAnameTypeOutput {
+	return o.ApplyT(func(v *ValueAnameType) ValueAnameType {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAnameType
+		return ret
+	}).(ValueAnameTypeOutput)
+}
+
+func (o ValueAnameTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAnameType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueAnameValuePropertiesMode string
+
+const (
+	ValueAnameValuePropertiesModeNormal = ValueAnameValuePropertiesMode("normal")
+	ValueAnameValuePropertiesModeOff    = ValueAnameValuePropertiesMode("off")
+	ValueAnameValuePropertiesModeOneWay = ValueAnameValuePropertiesMode("one-way")
+)
+
+type ValueAnameValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToValueAnameValuePropertiesModeOutput() ValueAnameValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToValueAnameValuePropertiesModeOutputWithContext(ctx context.Context) ValueAnameValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToValueAnameValuePropertiesModePtrOutput() ValueAnameValuePropertiesModePtrOutput {
+	return o.ToValueAnameValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToValueAnameValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAnameValuePropertiesMode) *ValueAnameValuePropertiesMode {
+		return &v
+	}).(ValueAnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueAnameValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesModePtrOutput) ToValueAnameValuePropertiesModePtrOutput() ValueAnameValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesModePtrOutput) ToValueAnameValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueAnameValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesModePtrOutput) Elem() ValueAnameValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueAnameValuePropertiesMode) ValueAnameValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAnameValuePropertiesMode
+		return ret
+	}).(ValueAnameValuePropertiesModeOutput)
+}
+
+func (o ValueAnameValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueAnameValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// Foo
+type ValueCaaValueItemPropertiesTag string
+
+const (
+	ValueCaaValueItemPropertiesTagIssue     = ValueCaaValueItemPropertiesTag("issue")
+	ValueCaaValueItemPropertiesTagIssuewild = ValueCaaValueItemPropertiesTag("issuewild")
+	ValueCaaValueItemPropertiesTagIodef     = ValueCaaValueItemPropertiesTag("iodef")
+)
+
+func (ValueCaaValueItemPropertiesTag) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCaaValueItemPropertiesTag)(nil)).Elem()
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToValueCaaValueItemPropertiesTagOutput() ValueCaaValueItemPropertiesTagOutput {
+	return pulumi.ToOutput(e).(ValueCaaValueItemPropertiesTagOutput)
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToValueCaaValueItemPropertiesTagOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(ValueCaaValueItemPropertiesTagOutput)
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToValueCaaValueItemPropertiesTagPtrOutput() ValueCaaValueItemPropertiesTagPtrOutput {
+	return e.ToValueCaaValueItemPropertiesTagPtrOutputWithContext(context.Background())
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToValueCaaValueItemPropertiesTagPtrOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagPtrOutput {
+	return ValueCaaValueItemPropertiesTag(e).ToValueCaaValueItemPropertiesTagOutputWithContext(ctx).ToValueCaaValueItemPropertiesTagPtrOutputWithContext(ctx)
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e ValueCaaValueItemPropertiesTag) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type ValueCaaValueItemPropertiesTagOutput struct{ *pulumi.OutputState }
+
+func (ValueCaaValueItemPropertiesTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCaaValueItemPropertiesTag)(nil)).Elem()
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToValueCaaValueItemPropertiesTagOutput() ValueCaaValueItemPropertiesTagOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToValueCaaValueItemPropertiesTagOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToValueCaaValueItemPropertiesTagPtrOutput() ValueCaaValueItemPropertiesTagPtrOutput {
+	return o.ToValueCaaValueItemPropertiesTagPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToValueCaaValueItemPropertiesTagPtrOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueCaaValueItemPropertiesTag) *ValueCaaValueItemPropertiesTag {
+		return &v
+	}).(ValueCaaValueItemPropertiesTagPtrOutput)
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCaaValueItemPropertiesTag) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCaaValueItemPropertiesTagOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCaaValueItemPropertiesTag) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueCaaValueItemPropertiesTagPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCaaValueItemPropertiesTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCaaValueItemPropertiesTag)(nil)).Elem()
+}
+
+func (o ValueCaaValueItemPropertiesTagPtrOutput) ToValueCaaValueItemPropertiesTagPtrOutput() ValueCaaValueItemPropertiesTagPtrOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesTagPtrOutput) ToValueCaaValueItemPropertiesTagPtrOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagPtrOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesTagPtrOutput) Elem() ValueCaaValueItemPropertiesTagOutput {
+	return o.ApplyT(func(v *ValueCaaValueItemPropertiesTag) ValueCaaValueItemPropertiesTag {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCaaValueItemPropertiesTag
+		return ret
+	}).(ValueCaaValueItemPropertiesTagOutput)
+}
+
+func (o ValueCaaValueItemPropertiesTagPtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCaaValueItemPropertiesTagPtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueCaaValueItemPropertiesTag) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// ValueCaaValueItemPropertiesTagInput is an input type that accepts values of the ValueCaaValueItemPropertiesTag enum
+// A concrete instance of `ValueCaaValueItemPropertiesTagInput` can be one of the following:
+//
+//	ValueCaaValueItemPropertiesTagIssue
+//	ValueCaaValueItemPropertiesTagIssuewild
+//	ValueCaaValueItemPropertiesTagIodef
+type ValueCaaValueItemPropertiesTagInput interface {
+	pulumi.Input
+
+	ToValueCaaValueItemPropertiesTagOutput() ValueCaaValueItemPropertiesTagOutput
+	ToValueCaaValueItemPropertiesTagOutputWithContext(context.Context) ValueCaaValueItemPropertiesTagOutput
+}
+
+var valueCaaValueItemPropertiesTagPtrType = reflect.TypeOf((**ValueCaaValueItemPropertiesTag)(nil)).Elem()
+
+type ValueCaaValueItemPropertiesTagPtrInput interface {
+	pulumi.Input
+
+	ToValueCaaValueItemPropertiesTagPtrOutput() ValueCaaValueItemPropertiesTagPtrOutput
+	ToValueCaaValueItemPropertiesTagPtrOutputWithContext(context.Context) ValueCaaValueItemPropertiesTagPtrOutput
+}
+
+type valueCaaValueItemPropertiesTagPtr string
+
+func ValueCaaValueItemPropertiesTagPtr(v string) ValueCaaValueItemPropertiesTagPtrInput {
+	return (*valueCaaValueItemPropertiesTagPtr)(&v)
+}
+
+func (*valueCaaValueItemPropertiesTagPtr) ElementType() reflect.Type {
+	return valueCaaValueItemPropertiesTagPtrType
+}
+
+func (in *valueCaaValueItemPropertiesTagPtr) ToValueCaaValueItemPropertiesTagPtrOutput() ValueCaaValueItemPropertiesTagPtrOutput {
+	return pulumi.ToOutput(in).(ValueCaaValueItemPropertiesTagPtrOutput)
+}
+
+func (in *valueCaaValueItemPropertiesTagPtr) ToValueCaaValueItemPropertiesTagPtrOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(ValueCaaValueItemPropertiesTagPtrOutput)
+}
+
+// The failover mode
+type ValueCnameRequestValuePropertiesMode string
+
+const (
+	ValueCnameRequestValuePropertiesModeNormal = ValueCnameRequestValuePropertiesMode("normal")
+	ValueCnameRequestValuePropertiesModeOff    = ValueCnameRequestValuePropertiesMode("off")
+	ValueCnameRequestValuePropertiesModeOneWay = ValueCnameRequestValuePropertiesMode("one-way")
+)
+
+func (ValueCnameRequestValuePropertiesMode) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToValueCnameRequestValuePropertiesModeOutput() ValueCnameRequestValuePropertiesModeOutput {
+	return pulumi.ToOutput(e).(ValueCnameRequestValuePropertiesModeOutput)
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToValueCnameRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModeOutput {
+	return pulumi.ToOutputWithContext(ctx, e).(ValueCnameRequestValuePropertiesModeOutput)
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToValueCnameRequestValuePropertiesModePtrOutput() ValueCnameRequestValuePropertiesModePtrOutput {
+	return e.ToValueCnameRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToValueCnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModePtrOutput {
+	return ValueCnameRequestValuePropertiesMode(e).ToValueCnameRequestValuePropertiesModeOutputWithContext(ctx).ToValueCnameRequestValuePropertiesModePtrOutputWithContext(ctx)
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToStringOutput() pulumi.StringOutput {
+	return pulumi.ToOutput(pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return pulumi.ToOutputWithContext(ctx, pulumi.String(e)).(pulumi.StringOutput)
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringPtrOutputWithContext(context.Background())
+}
+
+func (e ValueCnameRequestValuePropertiesMode) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return pulumi.String(e).ToStringOutputWithContext(ctx).ToStringPtrOutputWithContext(ctx)
+}
+
+type ValueCnameRequestValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToValueCnameRequestValuePropertiesModeOutput() ValueCnameRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToValueCnameRequestValuePropertiesModeOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToValueCnameRequestValuePropertiesModePtrOutput() ValueCnameRequestValuePropertiesModePtrOutput {
+	return o.ToValueCnameRequestValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToValueCnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueCnameRequestValuePropertiesMode) *ValueCnameRequestValuePropertiesMode {
+		return &v
+	}).(ValueCnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameRequestValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameRequestValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameRequestValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueCnameRequestValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameRequestValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesModePtrOutput) ToValueCnameRequestValuePropertiesModePtrOutput() ValueCnameRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesModePtrOutput) ToValueCnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesModePtrOutput) Elem() ValueCnameRequestValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueCnameRequestValuePropertiesMode) ValueCnameRequestValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCnameRequestValuePropertiesMode
+		return ret
+	}).(ValueCnameRequestValuePropertiesModeOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameRequestValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueCnameRequestValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// ValueCnameRequestValuePropertiesModeInput is an input type that accepts values of the ValueCnameRequestValuePropertiesMode enum
+// A concrete instance of `ValueCnameRequestValuePropertiesModeInput` can be one of the following:
+//
+//	ValueCnameRequestValuePropertiesModeNormal
+//	ValueCnameRequestValuePropertiesModeOff
+//	ValueCnameRequestValuePropertiesModeOneWay
+type ValueCnameRequestValuePropertiesModeInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesModeOutput() ValueCnameRequestValuePropertiesModeOutput
+	ToValueCnameRequestValuePropertiesModeOutputWithContext(context.Context) ValueCnameRequestValuePropertiesModeOutput
+}
+
+var valueCnameRequestValuePropertiesModePtrType = reflect.TypeOf((**ValueCnameRequestValuePropertiesMode)(nil)).Elem()
+
+type ValueCnameRequestValuePropertiesModePtrInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesModePtrOutput() ValueCnameRequestValuePropertiesModePtrOutput
+	ToValueCnameRequestValuePropertiesModePtrOutputWithContext(context.Context) ValueCnameRequestValuePropertiesModePtrOutput
+}
+
+type valueCnameRequestValuePropertiesModePtr string
+
+func ValueCnameRequestValuePropertiesModePtr(v string) ValueCnameRequestValuePropertiesModePtrInput {
+	return (*valueCnameRequestValuePropertiesModePtr)(&v)
+}
+
+func (*valueCnameRequestValuePropertiesModePtr) ElementType() reflect.Type {
+	return valueCnameRequestValuePropertiesModePtrType
+}
+
+func (in *valueCnameRequestValuePropertiesModePtr) ToValueCnameRequestValuePropertiesModePtrOutput() ValueCnameRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutput(in).(ValueCnameRequestValuePropertiesModePtrOutput)
+}
+
+func (in *valueCnameRequestValuePropertiesModePtr) ToValueCnameRequestValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, in).(ValueCnameRequestValuePropertiesModePtrOutput)
+}
+
+// The type of record
+type ValueCnameType string
+
+const (
+	ValueCnameTypeCname = ValueCnameType("CNAME")
+)
+
+type ValueCnameTypeOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameType)(nil)).Elem()
+}
+
+func (o ValueCnameTypeOutput) ToValueCnameTypeOutput() ValueCnameTypeOutput {
+	return o
+}
+
+func (o ValueCnameTypeOutput) ToValueCnameTypeOutputWithContext(ctx context.Context) ValueCnameTypeOutput {
+	return o
+}
+
+func (o ValueCnameTypeOutput) ToValueCnameTypePtrOutput() ValueCnameTypePtrOutput {
+	return o.ToValueCnameTypePtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameTypeOutput) ToValueCnameTypePtrOutputWithContext(ctx context.Context) ValueCnameTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueCnameType) *ValueCnameType {
+		return &v
+	}).(ValueCnameTypePtrOutput)
+}
+
+func (o ValueCnameTypeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueCnameTypeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameType) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueCnameTypeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameTypeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameType) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueCnameTypePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameType)(nil)).Elem()
+}
+
+func (o ValueCnameTypePtrOutput) ToValueCnameTypePtrOutput() ValueCnameTypePtrOutput {
+	return o
+}
+
+func (o ValueCnameTypePtrOutput) ToValueCnameTypePtrOutputWithContext(ctx context.Context) ValueCnameTypePtrOutput {
+	return o
+}
+
+func (o ValueCnameTypePtrOutput) Elem() ValueCnameTypeOutput {
+	return o.ApplyT(func(v *ValueCnameType) ValueCnameType {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCnameType
+		return ret
+	}).(ValueCnameTypeOutput)
+}
+
+func (o ValueCnameTypePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameTypePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueCnameType) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+// The failover mode
+type ValueCnameValuePropertiesMode string
+
+const (
+	ValueCnameValuePropertiesModeNormal = ValueCnameValuePropertiesMode("normal")
+	ValueCnameValuePropertiesModeOff    = ValueCnameValuePropertiesMode("off")
+	ValueCnameValuePropertiesModeOneWay = ValueCnameValuePropertiesMode("one-way")
+)
+
+type ValueCnameValuePropertiesModeOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValuePropertiesModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToValueCnameValuePropertiesModeOutput() ValueCnameValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToValueCnameValuePropertiesModeOutputWithContext(ctx context.Context) ValueCnameValuePropertiesModeOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToValueCnameValuePropertiesModePtrOutput() ValueCnameValuePropertiesModePtrOutput {
+	return o.ToValueCnameValuePropertiesModePtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToValueCnameValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameValuePropertiesModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueCnameValuePropertiesMode) *ValueCnameValuePropertiesMode {
+		return &v
+	}).(ValueCnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToStringOutput() pulumi.StringOutput {
+	return o.ToStringOutputWithContext(context.Background())
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToStringOutputWithContext(ctx context.Context) pulumi.StringOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameValuePropertiesMode) string {
+		return string(e)
+	}).(pulumi.StringOutput)
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameValuePropertiesModeOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e ValueCnameValuePropertiesMode) *string {
+		v := string(e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueCnameValuePropertiesModePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValuePropertiesModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameValuePropertiesMode)(nil)).Elem()
+}
+
+func (o ValueCnameValuePropertiesModePtrOutput) ToValueCnameValuePropertiesModePtrOutput() ValueCnameValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesModePtrOutput) ToValueCnameValuePropertiesModePtrOutputWithContext(ctx context.Context) ValueCnameValuePropertiesModePtrOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesModePtrOutput) Elem() ValueCnameValuePropertiesModeOutput {
+	return o.ApplyT(func(v *ValueCnameValuePropertiesMode) ValueCnameValuePropertiesMode {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCnameValuePropertiesMode
+		return ret
+	}).(ValueCnameValuePropertiesModeOutput)
+}
+
+func (o ValueCnameValuePropertiesModePtrOutput) ToStringPtrOutput() pulumi.StringPtrOutput {
+	return o.ToStringPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameValuePropertiesModePtrOutput) ToStringPtrOutputWithContext(ctx context.Context) pulumi.StringPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, e *ValueCnameValuePropertiesMode) *string {
+		if e == nil {
+			return nil
+		}
+		v := string(*e)
+		return &v
+	}).(pulumi.StringPtrOutput)
+}
+
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*DomainRecordPropertiesRegionInput)(nil)).Elem(), DomainRecordPropertiesRegion("default"))
-	pulumi.RegisterInputType(reflect.TypeOf((*DomainRecordPropertiesRegionPtrInput)(nil)).Elem(), DomainRecordPropertiesRegion("default"))
-	pulumi.RegisterOutputType(DomainRecordPropertiesRegionOutput{})
-	pulumi.RegisterOutputType(DomainRecordPropertiesRegionPtrOutput{})
+	pulumi.RegisterInputType(reflect.TypeOf((*APropertiesModeInput)(nil)).Elem(), APropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*APropertiesModePtrInput)(nil)).Elem(), APropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*APropertiesTypeInput)(nil)).Elem(), APropertiesType("A"))
+	pulumi.RegisterInputType(reflect.TypeOf((*APropertiesTypePtrInput)(nil)).Elem(), APropertiesType("A"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AaaaPropertiesModeInput)(nil)).Elem(), AaaaPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AaaaPropertiesModePtrInput)(nil)).Elem(), AaaaPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AaaaPropertiesTypeInput)(nil)).Elem(), AaaaPropertiesType("AAAA"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AaaaPropertiesTypePtrInput)(nil)).Elem(), AaaaPropertiesType("AAAA"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AnamePropertiesModeInput)(nil)).Elem(), AnamePropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AnamePropertiesModePtrInput)(nil)).Elem(), AnamePropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AnamePropertiesTypeInput)(nil)).Elem(), AnamePropertiesType("ANAME"))
+	pulumi.RegisterInputType(reflect.TypeOf((*AnamePropertiesTypePtrInput)(nil)).Elem(), AnamePropertiesType("ANAME"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CaaPropertiesModeInput)(nil)).Elem(), CaaPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CaaPropertiesModePtrInput)(nil)).Elem(), CaaPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CaaPropertiesTypeInput)(nil)).Elem(), CaaPropertiesType("CAA"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CaaPropertiesTypePtrInput)(nil)).Elem(), CaaPropertiesType("CAA"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CertPropertiesModeInput)(nil)).Elem(), CertPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CertPropertiesModePtrInput)(nil)).Elem(), CertPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CertPropertiesTypeInput)(nil)).Elem(), CertPropertiesType("CERT"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CertPropertiesTypePtrInput)(nil)).Elem(), CertPropertiesType("CERT"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CnamePropertiesModeInput)(nil)).Elem(), CnamePropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CnamePropertiesModePtrInput)(nil)).Elem(), CnamePropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CnamePropertiesTypeInput)(nil)).Elem(), CnamePropertiesType("CNAME"))
+	pulumi.RegisterInputType(reflect.TypeOf((*CnamePropertiesTypePtrInput)(nil)).Elem(), CnamePropertiesType("CNAME"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HinfoPropertiesModeInput)(nil)).Elem(), HinfoPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HinfoPropertiesModePtrInput)(nil)).Elem(), HinfoPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HinfoPropertiesTypeInput)(nil)).Elem(), HinfoPropertiesType("HINFO"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HinfoPropertiesTypePtrInput)(nil)).Elem(), HinfoPropertiesType("HINFO"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HttpPropertiesModeInput)(nil)).Elem(), HttpPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HttpPropertiesModePtrInput)(nil)).Elem(), HttpPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HttpPropertiesTypeInput)(nil)).Elem(), HttpPropertiesType("HTTP"))
+	pulumi.RegisterInputType(reflect.TypeOf((*HttpPropertiesTypePtrInput)(nil)).Elem(), HttpPropertiesType("HTTP"))
+	pulumi.RegisterInputType(reflect.TypeOf((*MxPropertiesModeInput)(nil)).Elem(), MxPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*MxPropertiesModePtrInput)(nil)).Elem(), MxPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*MxPropertiesTypeInput)(nil)).Elem(), MxPropertiesType("MX"))
+	pulumi.RegisterInputType(reflect.TypeOf((*MxPropertiesTypePtrInput)(nil)).Elem(), MxPropertiesType("MX"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NaptrPropertiesModeInput)(nil)).Elem(), NaptrPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NaptrPropertiesModePtrInput)(nil)).Elem(), NaptrPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NaptrPropertiesTypeInput)(nil)).Elem(), NaptrPropertiesType("NAPTR"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NaptrPropertiesTypePtrInput)(nil)).Elem(), NaptrPropertiesType("NAPTR"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NsPropertiesModeInput)(nil)).Elem(), NsPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NsPropertiesModePtrInput)(nil)).Elem(), NsPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NsPropertiesTypeInput)(nil)).Elem(), NsPropertiesType("NS"))
+	pulumi.RegisterInputType(reflect.TypeOf((*NsPropertiesTypePtrInput)(nil)).Elem(), NsPropertiesType("NS"))
+	pulumi.RegisterInputType(reflect.TypeOf((*PtrPropertiesModeInput)(nil)).Elem(), PtrPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*PtrPropertiesModePtrInput)(nil)).Elem(), PtrPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*PtrPropertiesTypeInput)(nil)).Elem(), PtrPropertiesType("PTR"))
+	pulumi.RegisterInputType(reflect.TypeOf((*PtrPropertiesTypePtrInput)(nil)).Elem(), PtrPropertiesType("PTR"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RecordCreateDetailsRegionInput)(nil)).Elem(), RecordCreateDetailsRegion("default"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RecordCreateDetailsRegionPtrInput)(nil)).Elem(), RecordCreateDetailsRegion("default"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RpPropertiesModeInput)(nil)).Elem(), RpPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RpPropertiesModePtrInput)(nil)).Elem(), RpPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RpPropertiesTypeInput)(nil)).Elem(), RpPropertiesType("RP"))
+	pulumi.RegisterInputType(reflect.TypeOf((*RpPropertiesTypePtrInput)(nil)).Elem(), RpPropertiesType("RP"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SpfPropertiesModeInput)(nil)).Elem(), SpfPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SpfPropertiesModePtrInput)(nil)).Elem(), SpfPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SpfPropertiesTypeInput)(nil)).Elem(), SpfPropertiesType("SPF"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SpfPropertiesTypePtrInput)(nil)).Elem(), SpfPropertiesType("SPF"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SrvPropertiesModeInput)(nil)).Elem(), SrvPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SrvPropertiesModePtrInput)(nil)).Elem(), SrvPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SrvPropertiesTypeInput)(nil)).Elem(), SrvPropertiesType("SRV"))
+	pulumi.RegisterInputType(reflect.TypeOf((*SrvPropertiesTypePtrInput)(nil)).Elem(), SrvPropertiesType("SRV"))
+	pulumi.RegisterInputType(reflect.TypeOf((*TxtPropertiesModeInput)(nil)).Elem(), TxtPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*TxtPropertiesModePtrInput)(nil)).Elem(), TxtPropertiesMode("standard"))
+	pulumi.RegisterInputType(reflect.TypeOf((*TxtPropertiesTypeInput)(nil)).Elem(), TxtPropertiesType("TXT"))
+	pulumi.RegisterInputType(reflect.TypeOf((*TxtPropertiesTypePtrInput)(nil)).Elem(), TxtPropertiesType("TXT"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesModeInput)(nil)).Elem(), ValueARequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesModePtrInput)(nil)).Elem(), ValueARequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesModeInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesModePtrInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesModeInput)(nil)).Elem(), ValueAnameRequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesModePtrInput)(nil)).Elem(), ValueAnameRequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCaaValueItemPropertiesTagInput)(nil)).Elem(), ValueCaaValueItemPropertiesTag("issue"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCaaValueItemPropertiesTagPtrInput)(nil)).Elem(), ValueCaaValueItemPropertiesTag("issue"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesModeInput)(nil)).Elem(), ValueCnameRequestValuePropertiesMode("normal"))
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesModePtrInput)(nil)).Elem(), ValueCnameRequestValuePropertiesMode("normal"))
+	pulumi.RegisterOutputType(APropertiesModeOutput{})
+	pulumi.RegisterOutputType(APropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(APropertiesTypeOutput{})
+	pulumi.RegisterOutputType(APropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(AaaaPropertiesModeOutput{})
+	pulumi.RegisterOutputType(AaaaPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(AaaaPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(AaaaPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(AnamePropertiesModeOutput{})
+	pulumi.RegisterOutputType(AnamePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(AnamePropertiesTypeOutput{})
+	pulumi.RegisterOutputType(AnamePropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(CaaPropertiesModeOutput{})
+	pulumi.RegisterOutputType(CaaPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(CaaPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(CaaPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(CertPropertiesModeOutput{})
+	pulumi.RegisterOutputType(CertPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(CertPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(CertPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(CnamePropertiesModeOutput{})
+	pulumi.RegisterOutputType(CnamePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(CnamePropertiesTypeOutput{})
+	pulumi.RegisterOutputType(CnamePropertiesTypePtrOutput{})
 	pulumi.RegisterOutputType(DomainStatusOutput{})
 	pulumi.RegisterOutputType(DomainStatusPtrOutput{})
 	pulumi.RegisterOutputType(DomainanalyticsQueriesItemPropertiesTypeOutput{})
 	pulumi.RegisterOutputType(DomainanalyticsQueriesItemPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetCAAPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetCAAPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesModeOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(HinfoPropertiesModeOutput{})
+	pulumi.RegisterOutputType(HinfoPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(HinfoPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(HinfoPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(HttpPropertiesModeOutput{})
+	pulumi.RegisterOutputType(HttpPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(HttpPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(HttpPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(ItemsTagOutput{})
+	pulumi.RegisterOutputType(ItemsTagPtrOutput{})
+	pulumi.RegisterOutputType(MxPropertiesModeOutput{})
+	pulumi.RegisterOutputType(MxPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(MxPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(MxPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(NaptrPropertiesModeOutput{})
+	pulumi.RegisterOutputType(NaptrPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(NaptrPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(NaptrPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(NsPropertiesModeOutput{})
+	pulumi.RegisterOutputType(NsPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(NsPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(NsPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(PtrPropertiesModeOutput{})
+	pulumi.RegisterOutputType(PtrPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(PtrPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(PtrPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(RecordCreateDetailsRegionOutput{})
+	pulumi.RegisterOutputType(RecordCreateDetailsRegionPtrOutput{})
+	pulumi.RegisterOutputType(RecordRegionOutput{})
+	pulumi.RegisterOutputType(RecordRegionPtrOutput{})
+	pulumi.RegisterOutputType(RpPropertiesModeOutput{})
+	pulumi.RegisterOutputType(RpPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(RpPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(RpPropertiesTypePtrOutput{})
 	pulumi.RegisterOutputType(SimpleDomainStatusOutput{})
 	pulumi.RegisterOutputType(SimpleDomainStatusPtrOutput{})
+	pulumi.RegisterOutputType(SpfPropertiesModeOutput{})
+	pulumi.RegisterOutputType(SpfPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(SpfPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(SpfPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(SrvPropertiesModeOutput{})
+	pulumi.RegisterOutputType(SrvPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(SrvPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(SrvPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(TxtPropertiesModeOutput{})
+	pulumi.RegisterOutputType(TxtPropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(TxtPropertiesTypeOutput{})
+	pulumi.RegisterOutputType(TxtPropertiesTypePtrOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueATypeOutput{})
+	pulumi.RegisterOutputType(ValueATypePtrOutput{})
+	pulumi.RegisterOutputType(ValueAValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueAValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueAaaaTypeOutput{})
+	pulumi.RegisterOutputType(ValueAaaaTypePtrOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueAnameTypeOutput{})
+	pulumi.RegisterOutputType(ValueAnameTypePtrOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueCaaValueItemPropertiesTagOutput{})
+	pulumi.RegisterOutputType(ValueCaaValueItemPropertiesTagPtrOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesModePtrOutput{})
+	pulumi.RegisterOutputType(ValueCnameTypeOutput{})
+	pulumi.RegisterOutputType(ValueCnameTypePtrOutput{})
+	pulumi.RegisterOutputType(ValueCnameValuePropertiesModeOutput{})
+	pulumi.RegisterOutputType(ValueCnameValuePropertiesModePtrOutput{})
 }

@@ -69,11 +69,26 @@ _utilities.register(
   "mod": "domains",
   "fqn": "pulumi_constellix.domains",
   "classes": {
+   "constellix:domains:A": "A",
+   "constellix:domains:Aaaa": "Aaaa",
+   "constellix:domains:Aname": "Aname",
    "constellix:domains:ApplyDomainHistory": "ApplyDomainHistory",
    "constellix:domains:ApplyDomainSnapshot": "ApplyDomainSnapshot",
+   "constellix:domains:Caa": "Caa",
+   "constellix:domains:Cert": "Cert",
+   "constellix:domains:Cname": "Cname",
    "constellix:domains:Domain": "Domain",
-   "constellix:domains:DomainRecord": "DomainRecord",
-   "constellix:domains:SnapshotDomainHistory": "SnapshotDomainHistory"
+   "constellix:domains:Hinfo": "Hinfo",
+   "constellix:domains:Http": "Http",
+   "constellix:domains:Mx": "Mx",
+   "constellix:domains:Naptr": "Naptr",
+   "constellix:domains:Ns": "Ns",
+   "constellix:domains:Ptr": "Ptr",
+   "constellix:domains:Rp": "Rp",
+   "constellix:domains:SnapshotDomainHistory": "SnapshotDomainHistory",
+   "constellix:domains:Spf": "Spf",
+   "constellix:domains:Srv": "Srv",
+   "constellix:domains:Txt": "Txt"
   }
  },
  {
@@ -113,8 +128,23 @@ _utilities.register(
   "mod": "templates",
   "fqn": "pulumi_constellix.templates",
   "classes": {
+   "constellix:templates:A": "A",
+   "constellix:templates:Aaaa": "Aaaa",
+   "constellix:templates:Aname": "Aname",
+   "constellix:templates:Caa": "Caa",
+   "constellix:templates:Cert": "Cert",
+   "constellix:templates:Cname": "Cname",
+   "constellix:templates:Hinfo": "Hinfo",
+   "constellix:templates:Http": "Http",
+   "constellix:templates:Mx": "Mx",
+   "constellix:templates:Naptr": "Naptr",
+   "constellix:templates:Ns": "Ns",
+   "constellix:templates:Ptr": "Ptr",
+   "constellix:templates:Rp": "Rp",
+   "constellix:templates:Spf": "Spf",
+   "constellix:templates:Srv": "Srv",
    "constellix:templates:Template": "Template",
-   "constellix:templates:TemplateRecord": "TemplateRecord"
+   "constellix:templates:Txt": "Txt"
   }
  },
  {

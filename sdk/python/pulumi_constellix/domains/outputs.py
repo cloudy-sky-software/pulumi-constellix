@@ -29,20 +29,58 @@ __all__ = [
     'DomainanalyticsQueriesItemPropertiesValuesItemProperties',
     'DomainanalyticsStatsProperties',
     'Domainhistory',
-    'DomainrecordPropertiesLinksProperties',
     'Domainsnapshot',
+    'GetAAAAPropertiesLastValuesProperties',
+    'GetAAAAPropertiesLastValuesPropertiesFailoverProperties',
+    'GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem',
+    'GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem',
+    'GetAAAAPropertiesLastValuesPropertiesStandardItemProperties',
+    'GetANAMEPropertiesLastValuesProperties',
+    'GetANAMEPropertiesLastValuesPropertiesFailoverProperties',
+    'GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem',
+    'GetANAMEPropertiesLastValuesPropertiesStandardItemProperties',
+    'GetAPropertiesLastValuesProperties',
+    'GetAPropertiesLastValuesPropertiesFailoverProperties',
+    'GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem',
+    'GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem',
+    'GetAPropertiesLastValuesPropertiesStandardItemProperties',
+    'GetCAAPropertiesLastValuesProperties',
+    'GetCERTPropertiesLastValuesProperties',
+    'GetCNAMEPropertiesLastValuesProperties',
+    'GetCNAMEPropertiesLastValuesPropertiesFailoverProperties',
+    'GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem',
+    'GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties',
     'GetDomainNameserverPropertiesDataProperties',
     'GetDomainNameserverPropertiesDataPropertiesLinksProperties',
+    'GetHINFOPropertiesLastValuesProperties',
+    'GetHttpPropertiesLastValuesProperties',
+    'GetMXPropertiesLastValuesProperties',
+    'GetNAPTRPropertiesLastValuesProperties',
+    'GetNSPropertiesLastValuesProperties',
+    'GetPTRPropertiesLastValuesProperties',
+    'GetRPPropertiesLastValuesProperties',
+    'GetSPFPropertiesLastValuesProperties',
+    'GetSRVPropertiesLastValuesProperties',
+    'GetTXTPropertiesLastValuesProperties',
+    'Items',
     'ListDomainHistoryPropertiesDataItem',
     'ListDomainRecordsPropertiesDataItem',
+    'ListDomainRecordsPropertiesDataItemPropertiesLinksProperties',
     'ListDomainSnapshotsPropertiesDataItem',
     'ListMetadata',
     'ListMetadataLinksProperties',
     'ListMetadataPaginationProperties',
+    'PropertiesValueItems',
     'SimpleContactlist',
     'SimpleContactlistLinksProperties',
     'SimpleDomain',
     'SimpleDomainLinksProperties',
+    'SimpleGeoproximity',
+    'SimpleGeoproximityLinksProperties',
+    'SimpleIpfilter',
+    'SimpleIpfilterLinksProperties',
+    'SimplePool',
+    'SimplePoolLinksProperties',
     'SimpleTemplate',
     'SimpleTemplateLinksProperties',
     'SimpleVanitynameserver',
@@ -51,6 +89,50 @@ __all__ = [
     'SoaProperties',
     'Tag',
     'TagLinksProperties',
+    'TemplaterecordLinksProperties',
+    'Value',
+    'ValueARequestValueItemProperties',
+    'ValueARequestValueProperties',
+    'ValueARequestValuePropertiesValuesItemProperties',
+    'ValueAValue',
+    'ValueAValuePropertiesValuesItem',
+    'ValueAaaaRequestValueItemProperties',
+    'ValueAaaaRequestValueProperties',
+    'ValueAaaaRequestValuePropertiesValuesItemProperties',
+    'ValueAaaaValue',
+    'ValueAaaaValuePropertiesValuesItem',
+    'ValueAnameRequestValueItemProperties',
+    'ValueAnameRequestValueProperties',
+    'ValueAnameRequestValuePropertiesValuesItemProperties',
+    'ValueAnameValueItemProperties',
+    'ValueAnameValueProperties',
+    'ValueAnameValuePropertiesValuesItem',
+    'ValueCaaValueItemProperties',
+    'ValueCertValueItemProperties',
+    'ValueCnameRequestValueItemProperties',
+    'ValueCnameRequestValueProperties',
+    'ValueCnameRequestValuePropertiesValuesItemProperties',
+    'ValueCnameValue',
+    'ValueCnameValuePropertiesValuesItem',
+    'ValueHinfoValueItemProperties',
+    'ValueHttpValueProperties',
+    'ValueItems',
+    'ValueMxPropertiesValueItems',
+    'ValueMxValueItemProperties',
+    'ValueNaptrPropertiesValueItems',
+    'ValueNaptrValueItemProperties',
+    'ValueNsPropertiesValueItems',
+    'ValueNsValueItemProperties',
+    'ValuePtrPropertiesValueItems',
+    'ValuePtrValueItemProperties',
+    'ValueRpPropertiesValueItems',
+    'ValueRpValueItemProperties',
+    'ValueSpfPropertiesValueItems',
+    'ValueSpfValueItemProperties',
+    'ValueSrvPropertiesValueItems',
+    'ValueSrvValueItemProperties',
+    'ValueTxtPropertiesValueItems',
+    'ValueTxtValueItemProperties',
 ]
 
 @pulumi.output_type
@@ -750,25 +832,6 @@ class Domainhistory(dict):
 
 
 @pulumi.output_type
-class DomainrecordPropertiesLinksProperties(dict):
-    """
-    Links for the domain record
-    """
-    def __init__(__self__, *,
-                 self: Optional[str] = None):
-        """
-        Links for the domain record
-        """
-        if self is not None:
-            pulumi.set(__self__, "self", self)
-
-    @property
-    @pulumi.getter
-    def self(self) -> Optional[str]:
-        return pulumi.get(self, "self")
-
-
-@pulumi.output_type
 class Domainsnapshot(dict):
     def __init__(__self__, *,
                  domain: Optional['outputs.SimpleDomain'] = None,
@@ -813,6 +876,1018 @@ class Domainsnapshot(dict):
         The version of the domain resource
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetAAAAPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 failover: Optional['outputs.GetAAAAPropertiesLastValuesPropertiesFailoverProperties'] = None,
+                 pools: Optional[Sequence['outputs.SimplePool']] = None,
+                 round_robin_failover: Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem']] = None,
+                 standard: Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesStandardItemProperties']] = None):
+        """
+        The previous values of the record in the different modes
+        :param 'GetAAAAPropertiesLastValuesPropertiesFailoverProperties' failover: The previous values in failover mode
+        :param Sequence['SimplePool'] pools: The previous values in Pools mode
+        :param Sequence['GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem'] round_robin_failover: The previous values in Round-Robin Failover mode
+        :param Sequence['GetAAAAPropertiesLastValuesPropertiesStandardItemProperties'] standard: The previous values in standard mode
+        """
+        if failover is not None:
+            pulumi.set(__self__, "failover", failover)
+        if pools is not None:
+            pulumi.set(__self__, "pools", pools)
+        if round_robin_failover is not None:
+            pulumi.set(__self__, "round_robin_failover", round_robin_failover)
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def failover(self) -> Optional['outputs.GetAAAAPropertiesLastValuesPropertiesFailoverProperties']:
+        """
+        The previous values in failover mode
+        """
+        return pulumi.get(self, "failover")
+
+    @property
+    @pulumi.getter
+    def pools(self) -> Optional[Sequence['outputs.SimplePool']]:
+        """
+        The previous values in Pools mode
+        """
+        return pulumi.get(self, "pools")
+
+    @property
+    @pulumi.getter(name="roundRobinFailover")
+    def round_robin_failover(self) -> Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem']]:
+        """
+        The previous values in Round-Robin Failover mode
+        """
+        return pulumi.get(self, "round_robin_failover")
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesStandardItemProperties']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetAAAAPropertiesLastValuesPropertiesFailoverProperties(dict):
+    """
+    The previous values in failover mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']] = None):
+        """
+        The previous values in failover mode
+        :param 'GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAAAAPropertiesLastValuesPropertiesStandardItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetANAMEPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 failover: Optional['outputs.GetANAMEPropertiesLastValuesPropertiesFailoverProperties'] = None,
+                 pools: Optional[Sequence['outputs.SimplePool']] = None,
+                 standard: Optional[Sequence['outputs.GetANAMEPropertiesLastValuesPropertiesStandardItemProperties']] = None):
+        """
+        The previous values of the record in the different modes
+        :param 'GetANAMEPropertiesLastValuesPropertiesFailoverProperties' failover: The previous values in failover mode
+        :param Sequence['SimplePool'] pools: The previous values in Pools mode
+        :param Sequence['GetANAMEPropertiesLastValuesPropertiesStandardItemProperties'] standard: The previous values in standard mode
+        """
+        if failover is not None:
+            pulumi.set(__self__, "failover", failover)
+        if pools is not None:
+            pulumi.set(__self__, "pools", pools)
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def failover(self) -> Optional['outputs.GetANAMEPropertiesLastValuesPropertiesFailoverProperties']:
+        """
+        The previous values in failover mode
+        """
+        return pulumi.get(self, "failover")
+
+    @property
+    @pulumi.getter
+    def pools(self) -> Optional[Sequence['outputs.SimplePool']]:
+        """
+        The previous values in Pools mode
+        """
+        return pulumi.get(self, "pools")
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.GetANAMEPropertiesLastValuesPropertiesStandardItemProperties']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetANAMEPropertiesLastValuesPropertiesFailoverProperties(dict):
+    """
+    The previous values in failover mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']] = None):
+        """
+        The previous values in failover mode
+        :param 'GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetANAMEPropertiesLastValuesPropertiesStandardItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 failover: Optional['outputs.GetAPropertiesLastValuesPropertiesFailoverProperties'] = None,
+                 pools: Optional[Sequence['outputs.SimplePool']] = None,
+                 round_robin_failover: Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem']] = None,
+                 standard: Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesStandardItemProperties']] = None):
+        """
+        The previous values of the record in the different modes
+        :param 'GetAPropertiesLastValuesPropertiesFailoverProperties' failover: The previous values in failover mode
+        :param Sequence['SimplePool'] pools: The previous values in Pools mode
+        :param Sequence['GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem'] round_robin_failover: The previous values in Round-Robin Failover mode
+        :param Sequence['GetAPropertiesLastValuesPropertiesStandardItemProperties'] standard: The previous values in standard mode
+        """
+        if failover is not None:
+            pulumi.set(__self__, "failover", failover)
+        if pools is not None:
+            pulumi.set(__self__, "pools", pools)
+        if round_robin_failover is not None:
+            pulumi.set(__self__, "round_robin_failover", round_robin_failover)
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def failover(self) -> Optional['outputs.GetAPropertiesLastValuesPropertiesFailoverProperties']:
+        """
+        The previous values in failover mode
+        """
+        return pulumi.get(self, "failover")
+
+    @property
+    @pulumi.getter
+    def pools(self) -> Optional[Sequence['outputs.SimplePool']]:
+        """
+        The previous values in Pools mode
+        """
+        return pulumi.get(self, "pools")
+
+    @property
+    @pulumi.getter(name="roundRobinFailover")
+    def round_robin_failover(self) -> Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem']]:
+        """
+        The previous values in Round-Robin Failover mode
+        """
+        return pulumi.get(self, "round_robin_failover")
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesStandardItemProperties']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetAPropertiesLastValuesPropertiesFailoverProperties(dict):
+    """
+    The previous values in failover mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['GetAPropertiesLastValuesPropertiesFailoverPropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']] = None):
+        """
+        The previous values in failover mode
+        :param 'GetAPropertiesLastValuesPropertiesFailoverPropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['GetAPropertiesLastValuesPropertiesFailoverPropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAPropertiesLastValuesPropertiesStandardItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCAAPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.Items']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['Items'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.Items']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetCERTPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetCNAMEPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 failover: Optional['outputs.GetCNAMEPropertiesLastValuesPropertiesFailoverProperties'] = None,
+                 pools: Optional[Sequence['outputs.SimplePool']] = None,
+                 standard: Optional[Sequence['outputs.GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties']] = None):
+        """
+        The previous values of the record in the different modes
+        :param 'GetCNAMEPropertiesLastValuesPropertiesFailoverProperties' failover: The previous values in failover mode
+        :param Sequence['SimplePool'] pools: The previous values in Pools mode
+        :param Sequence['GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties'] standard: The previous values in standard mode
+        """
+        if failover is not None:
+            pulumi.set(__self__, "failover", failover)
+        if pools is not None:
+            pulumi.set(__self__, "pools", pools)
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def failover(self) -> Optional['outputs.GetCNAMEPropertiesLastValuesPropertiesFailoverProperties']:
+        """
+        The previous values in failover mode
+        """
+        return pulumi.get(self, "failover")
+
+    @property
+    @pulumi.getter
+    def pools(self) -> Optional[Sequence['outputs.SimplePool']]:
+        """
+        The previous values in Pools mode
+        """
+        return pulumi.get(self, "pools")
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetCNAMEPropertiesLastValuesPropertiesFailoverProperties(dict):
+    """
+    The previous values in failover mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']] = None):
+        """
+        The previous values in failover mode
+        :param 'GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -876,6 +1951,287 @@ class GetDomainNameserverPropertiesDataPropertiesLinksProperties(dict):
 
 
 @pulumi.output_type
+class GetHINFOPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.PropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['PropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.PropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetHttpPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional['outputs.Value'] = None):
+        """
+        The previous values of the record in the different modes
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional['outputs.Value']:
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetMXPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueMxPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueMxPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueMxPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetNAPTRPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueNaptrPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueNaptrPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueNaptrPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetNSPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueNsPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueNsPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueNsPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetPTRPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValuePtrPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValuePtrPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValuePtrPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetRPPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueRpPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueRpPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueRpPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetSPFPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueSpfPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueSpfPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueSpfPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetSRVPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueSrvPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueSrvPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueSrvPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class GetTXTPropertiesLastValuesProperties(dict):
+    """
+    The previous values of the record in the different modes
+    """
+    def __init__(__self__, *,
+                 standard: Optional[Sequence['outputs.ValueTxtPropertiesValueItems']] = None):
+        """
+        The previous values of the record in the different modes
+        :param Sequence['ValueTxtPropertiesValueItems'] standard: The previous values in standard mode
+        """
+        if standard is not None:
+            pulumi.set(__self__, "standard", standard)
+
+    @property
+    @pulumi.getter
+    def standard(self) -> Optional[Sequence['outputs.ValueTxtPropertiesValueItems']]:
+        """
+        The previous values in standard mode
+        """
+        return pulumi.get(self, "standard")
+
+
+@pulumi.output_type
+class Items(dict):
+    def __init__(__self__, *,
+                 data: Optional[str] = None,
+                 enabled: Optional[bool] = None,
+                 flags: Optional[int] = None,
+                 tag: Optional['ItemsTag'] = None):
+        """
+        :param str data: The value for this tag
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int flags: A flag byte for any flags on the record.
+        :param 'ItemsTag' tag: Foo
+        """
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if flags is not None:
+            pulumi.set(__self__, "flags", flags)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional[str]:
+        """
+        The value for this tag
+        """
+        return pulumi.get(self, "data")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def flags(self) -> Optional[int]:
+        """
+        A flag byte for any flags on the record.
+        """
+        return pulumi.get(self, "flags")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional['ItemsTag']:
+        """
+        Foo
+        """
+        return pulumi.get(self, "tag")
+
+
+@pulumi.output_type
 class ListDomainHistoryPropertiesDataItem(dict):
     def __init__(__self__, *,
                  domain: Optional['outputs.SimpleDomain'] = None,
@@ -926,9 +2282,9 @@ class ListDomainHistoryPropertiesDataItem(dict):
 class ListDomainRecordsPropertiesDataItem(dict):
     def __init__(__self__, *,
                  domain: Optional['outputs.SimpleDomain'] = None,
-                 links: Optional['outputs.DomainrecordPropertiesLinksProperties'] = None):
+                 links: Optional['outputs.ListDomainRecordsPropertiesDataItemPropertiesLinksProperties'] = None):
         """
-        :param 'DomainrecordPropertiesLinksProperties' links: Links for the domain record
+        :param 'ListDomainRecordsPropertiesDataItemPropertiesLinksProperties' links: Links for the domain record
         """
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -942,11 +2298,30 @@ class ListDomainRecordsPropertiesDataItem(dict):
 
     @property
     @pulumi.getter
-    def links(self) -> Optional['outputs.DomainrecordPropertiesLinksProperties']:
+    def links(self) -> Optional['outputs.ListDomainRecordsPropertiesDataItemPropertiesLinksProperties']:
         """
         Links for the domain record
         """
         return pulumi.get(self, "links")
+
+
+@pulumi.output_type
+class ListDomainRecordsPropertiesDataItemPropertiesLinksProperties(dict):
+    """
+    Links for the domain record
+    """
+    def __init__(__self__, *,
+                 self: Optional[str] = None):
+        """
+        Links for the domain record
+        """
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
 
 
 @pulumi.output_type
@@ -1151,6 +2526,49 @@ class ListMetadataPaginationProperties(dict):
         The total number of pages
         """
         return pulumi.get(self, "total_pages")
+
+
+@pulumi.output_type
+class PropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 cpu: Optional[str] = None,
+                 enabled: Optional[bool] = None,
+                 os: Optional[str] = None):
+        """
+        :param str cpu: Text representing the CPU
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str os: Text representing the OS
+        """
+        if cpu is not None:
+            pulumi.set(__self__, "cpu", cpu)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if os is not None:
+            pulumi.set(__self__, "os", os)
+
+    @property
+    @pulumi.getter
+    def cpu(self) -> Optional[str]:
+        """
+        Text representing the CPU
+        """
+        return pulumi.get(self, "cpu")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def os(self) -> Optional[str]:
+        """
+        Text representing the OS
+        """
+        return pulumi.get(self, "os")
 
 
 @pulumi.output_type
@@ -1366,6 +2784,180 @@ class SimpleDomainLinksProperties(dict):
     @pulumi.getter
     def records(self) -> Optional[str]:
         return pulumi.get(self, "records")
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
+
+
+@pulumi.output_type
+class SimpleGeoproximity(dict):
+    """
+    Geo Proximity Location
+    """
+    def __init__(__self__, *,
+                 id: Optional[int] = None,
+                 links: Optional['outputs.SimpleGeoproximityLinksProperties'] = None,
+                 name: Optional[str] = None):
+        """
+        Geo Proximity Location
+        :param int id: The unique ID for the Geo Proximity location
+        :param 'SimpleGeoproximityLinksProperties' links: Links for domain objects
+        :param str name: The name of the Geo Proximity location
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if links is not None:
+            pulumi.set(__self__, "links", links)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        """
+        The unique ID for the Geo Proximity location
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def links(self) -> Optional['outputs.SimpleGeoproximityLinksProperties']:
+        """
+        Links for domain objects
+        """
+        return pulumi.get(self, "links")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        The name of the Geo Proximity location
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class SimpleGeoproximityLinksProperties(dict):
+    """
+    Links for domain objects
+    """
+    def __init__(__self__, *,
+                 self: Optional[str] = None):
+        """
+        Links for domain objects
+        """
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
+
+
+@pulumi.output_type
+class SimpleIpfilter(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None,
+                 links: Optional['outputs.SimpleIpfilterLinksProperties'] = None,
+                 name: Optional[str] = None):
+        """
+        :param int id: The unique ID for this IP filter
+        :param 'SimpleIpfilterLinksProperties' links: Links for domain objects
+        :param str name: The name for this IP filter
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if links is not None:
+            pulumi.set(__self__, "links", links)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        """
+        The unique ID for this IP filter
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def links(self) -> Optional['outputs.SimpleIpfilterLinksProperties']:
+        """
+        Links for domain objects
+        """
+        return pulumi.get(self, "links")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        The name for this IP filter
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class SimpleIpfilterLinksProperties(dict):
+    """
+    Links for domain objects
+    """
+    def __init__(__self__, *,
+                 self: Optional[str] = None):
+        """
+        Links for domain objects
+        """
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
+
+
+@pulumi.output_type
+class SimplePool(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None,
+                 links: Optional['outputs.SimplePoolLinksProperties'] = None):
+        """
+        :param 'SimplePoolLinksProperties' links: Links for the pool
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if links is not None:
+            pulumi.set(__self__, "links", links)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def links(self) -> Optional['outputs.SimplePoolLinksProperties']:
+        """
+        Links for the pool
+        """
+        return pulumi.get(self, "links")
+
+
+@pulumi.output_type
+class SimplePoolLinksProperties(dict):
+    """
+    Links for the pool
+    """
+    def __init__(__self__, *,
+                 self: Optional[str] = None):
+        """
+        Links for the pool
+        """
+        if self is not None:
+            pulumi.set(__self__, "self", self)
 
     @property
     @pulumi.getter
@@ -1794,5 +3386,2222 @@ class TagLinksProperties(dict):
     @pulumi.getter
     def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
+
+
+@pulumi.output_type
+class TemplaterecordLinksProperties(dict):
+    """
+    Links for the domain record
+    """
+    def __init__(__self__, *,
+                 self: Optional[str] = None):
+        """
+        Links for the domain record
+        """
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
+
+
+@pulumi.output_type
+class Value(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 hard: Optional[bool] = None,
+                 keywords: Optional[str] = None,
+                 redirect_type: Optional[str] = None,
+                 title: Optional[str] = None,
+                 url: Optional[str] = None):
+        """
+        :param str description: The description to include in meta tags
+        :param bool hard: If this is a frame redirect, don't include the URL entered in the browser
+        :param str keywords: Meta keywords for the page containing the frame
+        :param str redirect_type: The type of redirect, either 301, 302 or frame.
+        :param str title: The title of the page containing the redirect frame
+        :param str url: The URL to redirect to
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hard is not None:
+            pulumi.set(__self__, "hard", hard)
+        if keywords is not None:
+            pulumi.set(__self__, "keywords", keywords)
+        if redirect_type is not None:
+            pulumi.set(__self__, "redirect_type", redirect_type)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        The description to include in meta tags
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def hard(self) -> Optional[bool]:
+        """
+        If this is a frame redirect, don't include the URL entered in the browser
+        """
+        return pulumi.get(self, "hard")
+
+    @property
+    @pulumi.getter
+    def keywords(self) -> Optional[str]:
+        """
+        Meta keywords for the page containing the frame
+        """
+        return pulumi.get(self, "keywords")
+
+    @property
+    @pulumi.getter(name="redirectType")
+    def redirect_type(self) -> Optional[str]:
+        """
+        The type of redirect, either 301, 302 or frame.
+        """
+        return pulumi.get(self, "redirect_type")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        """
+        The title of the page containing the redirect frame
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        """
+        The URL to redirect to
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ValueARequestValueItemProperties(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class ValueARequestValueProperties(dict):
+    """
+    Failover record mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['ValueARequestValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueARequestValuePropertiesValuesItemProperties']] = None):
+        """
+        Failover record mode
+        :param 'ValueARequestValuePropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueARequestValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueARequestValuePropertiesValuesItemProperties']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueARequestValuePropertiesValuesItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sonarCheckId":
+            suggest = "sonar_check_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueARequestValuePropertiesValuesItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueARequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueARequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAValue(dict):
+    def __init__(__self__, *,
+                 mode: Optional['ValueAValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueAValuePropertiesValuesItem']] = None):
+        """
+        :param 'ValueAValuePropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueAValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueAValuePropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueAValuePropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAaaaRequestValueItemProperties(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class ValueAaaaRequestValueProperties(dict):
+    """
+    Failover record mode
+    """
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mode: Optional['ValueAaaaRequestValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueAaaaRequestValuePropertiesValuesItemProperties']] = None):
+        """
+        Failover record mode
+        :param bool enabled: Whether this failover value is enabled or not
+        :param 'ValueAaaaRequestValuePropertiesMode' mode: The failover mode
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether this failover value is enabled or not
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueAaaaRequestValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueAaaaRequestValuePropertiesValuesItemProperties']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueAaaaRequestValuePropertiesValuesItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sonarCheckId":
+            suggest = "sonar_check_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueAaaaRequestValuePropertiesValuesItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueAaaaRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueAaaaRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAaaaValue(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mode: Optional['ValueAaaaValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueAaaaValuePropertiesValuesItem']] = None):
+        """
+        :param bool enabled: Whether this failover value is enabled or not
+        :param 'ValueAaaaValuePropertiesMode' mode: The failover mode
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether this failover value is enabled or not
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueAaaaValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueAaaaValuePropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueAaaaValuePropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAnameRequestValueItemProperties(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class ValueAnameRequestValueProperties(dict):
+    """
+    Failover record mode
+    """
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mode: Optional['ValueAnameRequestValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueAnameRequestValuePropertiesValuesItemProperties']] = None):
+        """
+        Failover record mode
+        :param bool enabled: Whether this failover value is enabled or not
+        :param 'ValueAnameRequestValuePropertiesMode' mode: The failover mode
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether this failover value is enabled or not
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueAnameRequestValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueAnameRequestValuePropertiesValuesItemProperties']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueAnameRequestValuePropertiesValuesItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sonarCheckId":
+            suggest = "sonar_check_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueAnameRequestValuePropertiesValuesItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueAnameRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueAnameRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAnameValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueAnameValueProperties(dict):
+    """
+    Failover record mode
+    """
+    def __init__(__self__, *,
+                 mode: Optional['ValueAnameValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueAnameValuePropertiesValuesItem']] = None):
+        """
+        Failover record mode
+        :param 'ValueAnameValuePropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueAnameValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueAnameValuePropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueAnameValuePropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueCaaValueItemProperties(dict):
+    def __init__(__self__, *,
+                 data: Optional[str] = None,
+                 enabled: Optional[bool] = None,
+                 flags: Optional[int] = None,
+                 tag: Optional['ValueCaaValueItemPropertiesTag'] = None):
+        """
+        :param str data: The value for this tag
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int flags: A flag byte for any flags on the record.
+        :param 'ValueCaaValueItemPropertiesTag' tag: Foo
+        """
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if flags is not None:
+            pulumi.set(__self__, "flags", flags)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional[str]:
+        """
+        The value for this tag
+        """
+        return pulumi.get(self, "data")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def flags(self) -> Optional[int]:
+        """
+        A flag byte for any flags on the record.
+        """
+        return pulumi.get(self, "flags")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional['ValueCaaValueItemPropertiesTag']:
+        """
+        Foo
+        """
+        return pulumi.get(self, "tag")
+
+
+@pulumi.output_type
+class ValueCertValueItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateType":
+            suggest = "certificate_type"
+        elif key == "keyTag":
+            suggest = "key_tag"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueCertValueItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueCertValueItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueCertValueItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[int] = None,
+                 certificate: Optional[str] = None,
+                 certificate_type: Optional[int] = None,
+                 enabled: Optional[bool] = None,
+                 key_tag: Optional[int] = None):
+        """
+        :param int algorithm: An integer representing the algorithm
+        :param str certificate: A base 64 encoded string containing the certificate information
+        :param int certificate_type: An integer representing the type of certificate
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int key_tag: An integer representing the key tag
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if certificate_type is not None:
+            pulumi.set(__self__, "certificate_type", certificate_type)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[int]:
+        """
+        An integer representing the algorithm
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[str]:
+        """
+        A base 64 encoded string containing the certificate information
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> Optional[int]:
+        """
+        An integer representing the type of certificate
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        """
+        An integer representing the key tag
+        """
+        return pulumi.get(self, "key_tag")
+
+
+@pulumi.output_type
+class ValueCnameRequestValueItemProperties(dict):
+    def __init__(__self__, *,
+                 id: Optional[int] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class ValueCnameRequestValueProperties(dict):
+    """
+    Failover record mode
+    """
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mode: Optional['ValueCnameRequestValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueCnameRequestValuePropertiesValuesItemProperties']] = None):
+        """
+        Failover record mode
+        :param bool enabled: Whether this failover value is enabled or not
+        :param 'ValueCnameRequestValuePropertiesMode' mode: The failover mode
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether this failover value is enabled or not
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueCnameRequestValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueCnameRequestValuePropertiesValuesItemProperties']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueCnameRequestValuePropertiesValuesItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sonarCheckId":
+            suggest = "sonar_check_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueCnameRequestValuePropertiesValuesItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueCnameRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueCnameRequestValuePropertiesValuesItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueCnameValue(dict):
+    def __init__(__self__, *,
+                 mode: Optional['ValueCnameValuePropertiesMode'] = None,
+                 values: Optional[Sequence['outputs.ValueCnameValuePropertiesValuesItem']] = None):
+        """
+        :param 'ValueCnameValuePropertiesMode' mode: The failover mode
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def mode(self) -> Optional['ValueCnameValuePropertiesMode']:
+        """
+        The failover mode
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.ValueCnameValuePropertiesValuesItem']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ValueCnameValuePropertiesValuesItem(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 enabled: Optional[bool] = None,
+                 failed: Optional[bool] = None,
+                 order: Optional[int] = None,
+                 sonar_check_id: Optional[int] = None,
+                 status: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool active: Whether this entry is considered active or not
+        :param bool enabled: Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        :param bool failed: Does sonar consider this entry to be failed
+        :param int order: The sort order of the entry. Lower order entries are preferred over higher order entries
+        :param int sonar_check_id: The ID in Sonar to use for checking if the record should be used
+        :param str status: The status of the value in Sonar
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if sonar_check_id is not None:
+            pulumi.set(__self__, "sonar_check_id", sonar_check_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Whether this entry is considered active or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> Optional[bool]:
+        """
+        Does sonar consider this entry to be failed
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The sort order of the entry. Lower order entries are preferred over higher order entries
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter(name="sonarCheckId")
+    def sonar_check_id(self) -> Optional[int]:
+        """
+        The ID in Sonar to use for checking if the record should be used
+        """
+        return pulumi.get(self, "sonar_check_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of the value in Sonar
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueHinfoValueItemProperties(dict):
+    def __init__(__self__, *,
+                 cpu: Optional[str] = None,
+                 enabled: Optional[bool] = None,
+                 os: Optional[str] = None):
+        """
+        :param str cpu: Text representing the CPU
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str os: Text representing the OS
+        """
+        if cpu is not None:
+            pulumi.set(__self__, "cpu", cpu)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if os is not None:
+            pulumi.set(__self__, "os", os)
+
+    @property
+    @pulumi.getter
+    def cpu(self) -> Optional[str]:
+        """
+        Text representing the CPU
+        """
+        return pulumi.get(self, "cpu")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def os(self) -> Optional[str]:
+        """
+        Text representing the OS
+        """
+        return pulumi.get(self, "os")
+
+
+@pulumi.output_type
+class ValueHttpValueProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectType":
+            suggest = "redirect_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueHttpValueProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueHttpValueProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueHttpValueProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 hard: Optional[bool] = None,
+                 keywords: Optional[str] = None,
+                 redirect_type: Optional[str] = None,
+                 title: Optional[str] = None,
+                 url: Optional[str] = None):
+        """
+        :param str description: The description to include in meta tags
+        :param bool hard: If this is a frame redirect, don't include the URL entered in the browser
+        :param str keywords: Meta keywords for the page containing the frame
+        :param str redirect_type: The type of redirect, either 301, 302 or frame.
+        :param str title: The title of the page containing the redirect frame
+        :param str url: The URL to redirect to
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hard is not None:
+            pulumi.set(__self__, "hard", hard)
+        if keywords is not None:
+            pulumi.set(__self__, "keywords", keywords)
+        if redirect_type is not None:
+            pulumi.set(__self__, "redirect_type", redirect_type)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        The description to include in meta tags
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def hard(self) -> Optional[bool]:
+        """
+        If this is a frame redirect, don't include the URL entered in the browser
+        """
+        return pulumi.get(self, "hard")
+
+    @property
+    @pulumi.getter
+    def keywords(self) -> Optional[str]:
+        """
+        Meta keywords for the page containing the frame
+        """
+        return pulumi.get(self, "keywords")
+
+    @property
+    @pulumi.getter(name="redirectType")
+    def redirect_type(self) -> Optional[str]:
+        """
+        The type of redirect, either 301, 302 or frame.
+        """
+        return pulumi.get(self, "redirect_type")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        """
+        The title of the page containing the redirect frame
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        """
+        The URL to redirect to
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ValueItems(dict):
+    def __init__(__self__, *,
+                 algorithm: Optional[int] = None,
+                 certificate: Optional[str] = None,
+                 certificate_type: Optional[int] = None,
+                 enabled: Optional[bool] = None,
+                 key_tag: Optional[int] = None):
+        """
+        :param int algorithm: An integer representing the algorithm
+        :param str certificate: A base 64 encoded string containing the certificate information
+        :param int certificate_type: An integer representing the type of certificate
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int key_tag: An integer representing the key tag
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if certificate_type is not None:
+            pulumi.set(__self__, "certificate_type", certificate_type)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[int]:
+        """
+        An integer representing the algorithm
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[str]:
+        """
+        A base 64 encoded string containing the certificate information
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> Optional[int]:
+        """
+        An integer representing the type of certificate
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        """
+        An integer representing the key tag
+        """
+        return pulumi.get(self, "key_tag")
+
+
+@pulumi.output_type
+class ValueMxPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 priority: Optional[int] = None,
+                 server: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int priority: A number representing the priority of the mail server
+        :param str server: The hostname of the mail server
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if server is not None:
+            pulumi.set(__self__, "server", server)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[int]:
+        """
+        A number representing the priority of the mail server
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter
+    def server(self) -> Optional[str]:
+        """
+        The hostname of the mail server
+        """
+        return pulumi.get(self, "server")
+
+
+@pulumi.output_type
+class ValueMxValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 priority: Optional[int] = None,
+                 server: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param int priority: A number representing the priority of the mail server
+        :param str server: The hostname of the mail server
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if server is not None:
+            pulumi.set(__self__, "server", server)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[int]:
+        """
+        A number representing the priority of the mail server
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter
+    def server(self) -> Optional[str]:
+        """
+        The hostname of the mail server
+        """
+        return pulumi.get(self, "server")
+
+
+@pulumi.output_type
+class ValueNaptrPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 flags: Optional[str] = None,
+                 order: Optional[int] = None,
+                 preference: Optional[int] = None,
+                 regular_expression: Optional[str] = None,
+                 replacement: Optional[str] = None,
+                 service: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str flags: Any flags for this record
+        :param int order: The order of the record
+        :param int preference: The preference for the record
+        :param str regular_expression: A regular expression to use
+        :param str replacement: The replacement for the regular expression
+        :param str service: The service the record is used for
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if flags is not None:
+            pulumi.set(__self__, "flags", flags)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if regular_expression is not None:
+            pulumi.set(__self__, "regular_expression", regular_expression)
+        if replacement is not None:
+            pulumi.set(__self__, "replacement", replacement)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def flags(self) -> Optional[str]:
+        """
+        Any flags for this record
+        """
+        return pulumi.get(self, "flags")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The order of the record
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[int]:
+        """
+        The preference for the record
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="regularExpression")
+    def regular_expression(self) -> Optional[str]:
+        """
+        A regular expression to use
+        """
+        return pulumi.get(self, "regular_expression")
+
+    @property
+    @pulumi.getter
+    def replacement(self) -> Optional[str]:
+        """
+        The replacement for the regular expression
+        """
+        return pulumi.get(self, "replacement")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service the record is used for
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class ValueNaptrValueItemProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "regularExpression":
+            suggest = "regular_expression"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ValueNaptrValueItemProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ValueNaptrValueItemProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ValueNaptrValueItemProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 flags: Optional[str] = None,
+                 order: Optional[int] = None,
+                 preference: Optional[int] = None,
+                 regular_expression: Optional[str] = None,
+                 replacement: Optional[str] = None,
+                 service: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str flags: Any flags for this record
+        :param int order: The order of the record
+        :param int preference: The preference for the record
+        :param str regular_expression: A regular expression to use
+        :param str replacement: The replacement for the regular expression
+        :param str service: The service the record is used for
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if flags is not None:
+            pulumi.set(__self__, "flags", flags)
+        if order is not None:
+            pulumi.set(__self__, "order", order)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if regular_expression is not None:
+            pulumi.set(__self__, "regular_expression", regular_expression)
+        if replacement is not None:
+            pulumi.set(__self__, "replacement", replacement)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def flags(self) -> Optional[str]:
+        """
+        Any flags for this record
+        """
+        return pulumi.get(self, "flags")
+
+    @property
+    @pulumi.getter
+    def order(self) -> Optional[int]:
+        """
+        The order of the record
+        """
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[int]:
+        """
+        The preference for the record
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="regularExpression")
+    def regular_expression(self) -> Optional[str]:
+        """
+        A regular expression to use
+        """
+        return pulumi.get(self, "regular_expression")
+
+    @property
+    @pulumi.getter
+    def replacement(self) -> Optional[str]:
+        """
+        The replacement for the regular expression
+        """
+        return pulumi.get(self, "replacement")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service the record is used for
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class ValueNsPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 host: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str host: The hostname for the nameserver
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        """
+        The hostname for the nameserver
+        """
+        return pulumi.get(self, "host")
+
+
+@pulumi.output_type
+class ValueNsValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 host: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str host: The hostname for the nameserver
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        """
+        The hostname for the nameserver
+        """
+        return pulumi.get(self, "host")
+
+
+@pulumi.output_type
+class ValuePtrPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 system: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str system: The hostname for the IP address
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if system is not None:
+            pulumi.set(__self__, "system", system)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def system(self) -> Optional[str]:
+        """
+        The hostname for the IP address
+        """
+        return pulumi.get(self, "system")
+
+
+@pulumi.output_type
+class ValuePtrValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 system: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str system: The hostname for the IP address
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if system is not None:
+            pulumi.set(__self__, "system", system)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def system(self) -> Optional[str]:
+        """
+        The hostname for the IP address
+        """
+        return pulumi.get(self, "system")
+
+
+@pulumi.output_type
+class ValueRpPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mailbox: Optional[str] = None,
+                 txt: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str mailbox: The email of the person responsible. Replace @ with .
+        :param str txt: The name of a TXT record containing more information
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mailbox is not None:
+            pulumi.set(__self__, "mailbox", mailbox)
+        if txt is not None:
+            pulumi.set(__self__, "txt", txt)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mailbox(self) -> Optional[str]:
+        """
+        The email of the person responsible. Replace @ with .
+        """
+        return pulumi.get(self, "mailbox")
+
+    @property
+    @pulumi.getter
+    def txt(self) -> Optional[str]:
+        """
+        The name of a TXT record containing more information
+        """
+        return pulumi.get(self, "txt")
+
+
+@pulumi.output_type
+class ValueRpValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 mailbox: Optional[str] = None,
+                 txt: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str mailbox: The email of the person responsible. Replace @ with .
+        :param str txt: The name of a TXT record containing more information
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if mailbox is not None:
+            pulumi.set(__self__, "mailbox", mailbox)
+        if txt is not None:
+            pulumi.set(__self__, "txt", txt)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mailbox(self) -> Optional[str]:
+        """
+        The email of the person responsible. Replace @ with .
+        """
+        return pulumi.get(self, "mailbox")
+
+    @property
+    @pulumi.getter
+    def txt(self) -> Optional[str]:
+        """
+        The name of a TXT record containing more information
+        """
+        return pulumi.get(self, "txt")
+
+
+@pulumi.output_type
+class ValueSpfPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str value: The SPF record value
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The SPF record value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueSpfValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str value: The SPF record value
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The SPF record value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueSrvPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 host: Optional[str] = None,
+                 port: Optional[int] = None,
+                 priority: Optional[int] = None,
+                 weight: Optional[int] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str host: The hostname for the service
+        :param int port: The port the service runs on
+        :param int priority: A priority for this record
+        :param int weight: A weight for this record
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        """
+        The hostname for the service
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The port the service runs on
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[int]:
+        """
+        A priority for this record
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[int]:
+        """
+        A weight for this record
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class ValueSrvValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 host: Optional[str] = None,
+                 port: Optional[int] = None,
+                 priority: Optional[int] = None,
+                 weight: Optional[int] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str host: The hostname for the service
+        :param int port: The port the service runs on
+        :param int priority: A priority for this record
+        :param int weight: A weight for this record
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        """
+        The hostname for the service
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The port the service runs on
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[int]:
+        """
+        A priority for this record
+        """
+        return pulumi.get(self, "priority")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[int]:
+        """
+        A weight for this record
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class ValueTxtPropertiesValueItems(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str value: The text record value
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The text record value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ValueTxtValueItemProperties(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[bool] = None,
+                 value: Optional[str] = None):
+        """
+        :param bool enabled: Whether the entry is enabled or not. Disabled entries will not be included in a response
+        :param str value: The text record value
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[bool]:
+        """
+        Whether the entry is enabled or not. Disabled entries will not be included in a response
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The text record value
+        """
+        return pulumi.get(self, "value")
 
 

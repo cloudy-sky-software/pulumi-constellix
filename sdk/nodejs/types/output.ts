@@ -757,13 +757,6 @@ export namespace domains {
         version?: number;
     }
 
-    /**
-     * Links for the domain record
-     */
-    export interface DomainrecordPropertiesLinksProperties {
-        self?: string;
-    }
-
     export interface Domainsnapshot {
         domain?: outputs.domains.SimpleDomain;
         /**
@@ -775,6 +768,754 @@ export namespace domains {
          * The version of the domain resource
          */
         version?: number;
+    }
+
+    export interface GetA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.ValueAType;
+        value?: outputs.domains.ValueAValue;
+    }
+
+    export interface GetAAAA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetAAAAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetAAAAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.ValueAaaaType;
+        value?: outputs.domains.ValueAaaaValue;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetAAAAPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.domains.GetAAAAPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.domains.SimplePool[];
+        /**
+         * The previous values in Round-Robin Failover mode
+         */
+        roundRobinFailover?: outputs.domains.GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.GetAAAAPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetAAAAPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.domains.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    export interface GetANAME {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetANAMEPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetANAMEPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.ValueAnameType;
+        value?: outputs.domains.ValueAnameValueItemProperties[] | outputs.domains.ValueAnameValueProperties | outputs.domains.SimplePool[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetANAMEPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.domains.GetANAMEPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.domains.SimplePool[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.GetANAMEPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetANAMEPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.domains.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetANAMEPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetAPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.domains.GetAPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.domains.SimplePool[];
+        /**
+         * The previous values in Round-Robin Failover mode
+         */
+        roundRobinFailover?: outputs.domains.GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.GetAPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetAPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.GetAPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.domains.GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    export interface GetCAA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetCAAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetCAAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueCaaValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCAAPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.Items[];
+    }
+
+    export interface GetCERT {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetCERTPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetCERTPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetCERTPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueCertValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCERTPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueItems[];
+    }
+
+    export interface GetCNAME {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetCNAMEPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetCNAMEPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.ValueCnameType;
+        value?: outputs.domains.ValueCnameValue;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCNAMEPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.domains.GetCNAMEPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.domains.SimplePool[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetCNAMEPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.domains.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
     }
 
     export interface GetDomainAnalyticProperties {
@@ -813,16 +1554,821 @@ export namespace domains {
         data?: outputs.domains.Domain;
     }
 
-    export interface GetDomainRecord {
+    export interface GetDomainSnapshotProperties {
+        data?: outputs.domains.Domainsnapshot;
+    }
+
+    export interface GetHINFO {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
         domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetHINFOPropertiesLastValuesProperties;
         /**
          * Links for the domain record
          */
-        links?: outputs.domains.DomainrecordPropertiesLinksProperties;
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetHINFOPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetHINFOPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueHinfoValueItemProperties[];
     }
 
-    export interface GetDomainSnapshotProperties {
-        data?: outputs.domains.Domainsnapshot;
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetHINFOPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.PropertiesValueItems[];
+    }
+
+    export interface GetHttp {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetHttpPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetHttpPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetHttpPropertiesType;
+        value?: outputs.domains.ValueHttpValueProperties;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetHttpPropertiesLastValuesProperties {
+        standard?: outputs.domains.Value;
+    }
+
+    export interface GetMX {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetMXPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetMXPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetMXPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueMxValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetMXPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueMxPropertiesValueItems[];
+    }
+
+    export interface GetNAPTR {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetNAPTRPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetNAPTRPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetNAPTRPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueNaptrValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetNAPTRPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueNaptrPropertiesValueItems[];
+    }
+
+    export interface GetNS {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetNSPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetNSPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetNSPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueNsValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetNSPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueNsPropertiesValueItems[];
+    }
+
+    export interface GetPTR {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetPTRPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetPTRPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetPTRPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValuePtrValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetPTRPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValuePtrPropertiesValueItems[];
+    }
+
+    export interface GetRP {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetRPPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetRPPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetRPPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueRpValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetRPPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueRpPropertiesValueItems[];
+    }
+
+    export interface GetSPF {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetSPFPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetSPFPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetSPFPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueSpfValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetSPFPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueSpfPropertiesValueItems[];
+    }
+
+    export interface GetSRV {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetSRVPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetSRVPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetSRVPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueSrvValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetSRVPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueSrvPropertiesValueItems[];
+    }
+
+    export interface GetTXT {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.domains.SimpleContactlist;
+        domain?: outputs.domains.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.domains.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.domains.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.domains.GetTXTPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.domains.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.domains.GetTXTPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.domains.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.domains.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.domains.GetTXTPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.domains.ValueTxtValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetTXTPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.domains.ValueTxtPropertiesValueItems[];
+    }
+
+    export interface Items {
+        /**
+         * The value for this tag
+         */
+        data?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: number;
+        /**
+         * Foo
+         */
+        tag?: enums.domains.ItemsTag;
     }
 
     export interface ListDomainHistoryProperties {
@@ -865,7 +2411,14 @@ export namespace domains {
         /**
          * Links for the domain record
          */
-        links?: outputs.domains.DomainrecordPropertiesLinksProperties;
+        links?: outputs.domains.ListDomainRecordsPropertiesDataItemPropertiesLinksProperties;
+    }
+
+    /**
+     * Links for the domain record
+     */
+    export interface ListDomainRecordsPropertiesDataItemPropertiesLinksProperties {
+        self?: string;
     }
 
     export interface ListDomainSnapshotsProperties {
@@ -954,6 +2507,21 @@ export namespace domains {
         totalPages?: number;
     }
 
+    export interface PropertiesValueItems {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Text representing the OS
+         */
+        os?: string;
+    }
+
     /**
      * A simple version of a contact list when inclued with other resources
      */
@@ -1022,6 +2590,68 @@ export namespace domains {
      */
     export interface SimpleDomainLinksProperties {
         records?: string;
+        self?: string;
+    }
+
+    /**
+     * Geo Proximity Location
+     */
+    export interface SimpleGeoproximity {
+        /**
+         * The unique ID for the Geo Proximity location
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.domains.SimpleGeoproximityLinksProperties;
+        /**
+         * The name of the Geo Proximity location
+         */
+        name?: string;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleGeoproximityLinksProperties {
+        self?: string;
+    }
+
+    export interface SimpleIpfilter {
+        /**
+         * The unique ID for this IP filter
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.domains.SimpleIpfilterLinksProperties;
+        /**
+         * The name for this IP filter
+         */
+        name?: string;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleIpfilterLinksProperties {
+        self?: string;
+    }
+
+    export interface SimplePool {
+        id?: number;
+        /**
+         * Links for the pool
+         */
+        links?: outputs.domains.SimplePoolLinksProperties;
+    }
+
+    /**
+     * Links for the pool
+     */
+    export interface SimplePoolLinksProperties {
         self?: string;
     }
 
@@ -1168,6 +2798,710 @@ export namespace domains {
      */
     export interface TagLinksProperties {
         self?: string;
+    }
+
+    /**
+     * Links for the domain record
+     */
+    export interface TemplaterecordLinksProperties {
+        self?: string;
+    }
+
+    export interface Value {
+        /**
+         * The description to include in meta tags
+         */
+        description?: string;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: boolean;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: string;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: string;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: string;
+        /**
+         * The URL to redirect to
+         */
+        url?: string;
+    }
+
+    export interface ValueARequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueARequestValueProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueARequestValuePropertiesMode;
+        values?: outputs.domains.ValueARequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueARequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAValue {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueAValuePropertiesMode;
+        values?: outputs.domains.ValueAValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueAaaaRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAaaaRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueAaaaRequestValuePropertiesMode;
+        values?: outputs.domains.ValueAaaaRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueAaaaRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAaaaValue {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueAaaaValuePropertiesMode;
+        values?: outputs.domains.ValueAaaaValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAaaaValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueAnameRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueAnameRequestValuePropertiesMode;
+        values?: outputs.domains.ValueAnameRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueAnameRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAnameValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameValueProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueAnameValuePropertiesMode;
+        values?: outputs.domains.ValueAnameValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAnameValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueCaaValueItemProperties {
+        /**
+         * The value for this tag
+         */
+        data?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: number;
+        /**
+         * Foo
+         */
+        tag?: enums.domains.ValueCaaValueItemPropertiesTag;
+    }
+
+    export interface ValueCertValueItemProperties {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: number;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: string;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: number;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: number;
+    }
+
+    export interface ValueCnameRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueCnameRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueCnameRequestValuePropertiesMode;
+        values?: outputs.domains.ValueCnameRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueCnameRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueCnameValue {
+        /**
+         * The failover mode
+         */
+        mode?: enums.domains.ValueCnameValuePropertiesMode;
+        values?: outputs.domains.ValueCnameValuePropertiesValuesItem[];
+    }
+
+    export interface ValueCnameValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueHinfoValueItemProperties {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Text representing the OS
+         */
+        os?: string;
+    }
+
+    export interface ValueHttpValueProperties {
+        /**
+         * The description to include in meta tags
+         */
+        description?: string;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: boolean;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: string;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: string;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: string;
+        /**
+         * The URL to redirect to
+         */
+        url?: string;
+    }
+
+    export interface ValueItems {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: number;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: string;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: number;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: number;
+    }
+
+    export interface ValueMxPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: number;
+        /**
+         * The hostname of the mail server
+         */
+        server?: string;
+    }
+
+    export interface ValueMxValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: number;
+        /**
+         * The hostname of the mail server
+         */
+        server?: string;
+    }
+
+    export interface ValueNaptrPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Any flags for this record
+         */
+        flags?: string;
+        /**
+         * The order of the record
+         */
+        order?: number;
+        /**
+         * The preference for the record
+         */
+        preference?: number;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: string;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: string;
+        /**
+         * The service the record is used for
+         */
+        service?: string;
+    }
+
+    export interface ValueNaptrValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Any flags for this record
+         */
+        flags?: string;
+        /**
+         * The order of the record
+         */
+        order?: number;
+        /**
+         * The preference for the record
+         */
+        preference?: number;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: string;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: string;
+        /**
+         * The service the record is used for
+         */
+        service?: string;
+    }
+
+    export interface ValueNsPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: string;
+    }
+
+    export interface ValueNsValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: string;
+    }
+
+    export interface ValuePtrPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the IP address
+         */
+        system?: string;
+    }
+
+    export interface ValuePtrValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the IP address
+         */
+        system?: string;
+    }
+
+    export interface ValueRpPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: string;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: string;
+    }
+
+    export interface ValueRpValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: string;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: string;
+    }
+
+    export interface ValueSpfPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The SPF record value
+         */
+        value?: string;
+    }
+
+    export interface ValueSpfValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The SPF record value
+         */
+        value?: string;
+    }
+
+    export interface ValueSrvPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the service
+         */
+        host?: string;
+        /**
+         * The port the service runs on
+         */
+        port?: number;
+        /**
+         * A priority for this record
+         */
+        priority?: number;
+        /**
+         * A weight for this record
+         */
+        weight?: number;
+    }
+
+    export interface ValueSrvValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the service
+         */
+        host?: string;
+        /**
+         * The port the service runs on
+         */
+        port?: number;
+        /**
+         * A priority for this record
+         */
+        priority?: number;
+        /**
+         * A weight for this record
+         */
+        weight?: number;
+    }
+
+    export interface ValueTxtPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The text record value
+         */
+        value?: string;
+    }
+
+    export interface ValueTxtValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The text record value
+         */
+        value?: string;
     }
 
 }
@@ -2125,6 +4459,1548 @@ export namespace templates {
         self?: string;
     }
 
+    export interface GetA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.ValueAType;
+        value?: outputs.templates.ValueAValue;
+    }
+
+    export interface GetAAAA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetAAAAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetAAAAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.ValueAaaaType;
+        value?: outputs.templates.ValueAaaaValue;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetAAAAPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.templates.GetAAAAPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.templates.SimplePool[];
+        /**
+         * The previous values in Round-Robin Failover mode
+         */
+        roundRobinFailover?: outputs.templates.GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.GetAAAAPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetAAAAPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.templates.GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAAAAPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    export interface GetANAME {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetANAMEPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetANAMEPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.ValueAnameType;
+        value?: outputs.templates.ValueAnameValueItemProperties[] | outputs.templates.ValueAnameValueProperties | outputs.templates.SimplePool[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetANAMEPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.templates.GetANAMEPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.templates.SimplePool[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.GetANAMEPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetANAMEPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.templates.GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetANAMEPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetAPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.templates.GetAPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.templates.SimplePool[];
+        /**
+         * The previous values in Round-Robin Failover mode
+         */
+        roundRobinFailover?: outputs.templates.GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.GetAPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetAPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.GetAPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.templates.GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetAPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    export interface GetCAA {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetCAAPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetCAAPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueCaaValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCAAPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.Items[];
+    }
+
+    export interface GetCERT {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetCERTPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetCERTPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetCERTPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueCertValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCERTPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueItems[];
+    }
+
+    export interface GetCNAME {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetCNAMEPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetCNAMEPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.ValueCnameType;
+        value?: outputs.templates.ValueCnameValue;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetCNAMEPropertiesLastValuesProperties {
+        /**
+         * The previous values in failover mode
+         */
+        failover?: outputs.templates.GetCNAMEPropertiesLastValuesPropertiesFailoverProperties;
+        /**
+         * The previous values in Pools mode
+         */
+        pools?: outputs.templates.SimplePool[];
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties[];
+    }
+
+    /**
+     * The previous values in failover mode
+     */
+    export interface GetCNAMEPropertiesLastValuesPropertiesFailoverProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode;
+        values?: outputs.templates.GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem[];
+    }
+
+    export interface GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    export interface GetHINFO {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetHINFOPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetHINFOPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetHINFOPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueHinfoValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetHINFOPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.PropertiesValueItems[];
+    }
+
+    export interface GetHttp {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetHttpPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetHttpPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetHttpPropertiesType;
+        value?: outputs.templates.ValueHttpValueProperties;
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetHttpPropertiesLastValuesProperties {
+        standard?: outputs.templates.Value;
+    }
+
+    export interface GetMX {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetMXPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetMXPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetMXPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueMxValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetMXPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueMxPropertiesValueItems[];
+    }
+
+    export interface GetNAPTR {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetNAPTRPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetNAPTRPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetNAPTRPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueNaptrValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetNAPTRPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueNaptrPropertiesValueItems[];
+    }
+
+    export interface GetNS {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetNSPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetNSPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetNSPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueNsValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetNSPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueNsPropertiesValueItems[];
+    }
+
+    export interface GetPTR {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetPTRPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetPTRPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetPTRPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValuePtrValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetPTRPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValuePtrPropertiesValueItems[];
+    }
+
+    export interface GetRP {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetRPPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetRPPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetRPPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueRpValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetRPPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueRpPropertiesValueItems[];
+    }
+
+    export interface GetSPF {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetSPFPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetSPFPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetSPFPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueSpfValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetSPFPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueSpfPropertiesValueItems[];
+    }
+
+    export interface GetSRV {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetSRVPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetSRVPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetSRVPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueSrvValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetSRVPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueSrvPropertiesValueItems[];
+    }
+
+    export interface GetTXT {
+        /**
+         * A simple version of a contact list when inclued with other resources
+         */
+        contacts?: outputs.templates.SimpleContactlist;
+        domain?: outputs.templates.SimpleDomain;
+        /**
+         * Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+         */
+        enabled?: boolean;
+        /**
+         * Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+         */
+        geoFailover?: boolean;
+        /**
+         * Geo Proximity Location
+         */
+        geoproximity?: outputs.templates.SimpleGeoproximity;
+        /**
+         * A unique ID for this domain record
+         */
+        id?: number;
+        ipfilter?: outputs.templates.SimpleIpfilter;
+        /**
+         * If the requesting IP matches the IP filter, don't return a response
+         */
+        ipfilterDrop?: boolean;
+        /**
+         * The previous values of the record in the different modes
+         */
+        lastValues?: outputs.templates.GetTXTPropertiesLastValuesProperties;
+        /**
+         * Links for the domain record
+         */
+        links?: outputs.templates.TemplaterecordLinksProperties;
+        /**
+         * How the record should work
+         */
+        mode?: enums.templates.GetTXTPropertiesMode;
+        /**
+         * The name of the record
+         */
+        name?: string;
+        /**
+         * A note about the record. Max 512 characters.
+         */
+        notes?: string;
+        /**
+         * The region for this record
+         */
+        region?: enums.templates.RecordRegion;
+        /**
+         * Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+         */
+        skipLookup?: boolean;
+        template?: outputs.templates.SimpleTemplate;
+        /**
+         * The time to live in seconds for this record. must be between 0 and 2147483647
+         */
+        ttl?: number;
+        /**
+         * The type of record
+         */
+        type?: enums.templates.GetTXTPropertiesType;
+        /**
+         * Standard record mode
+         */
+        value?: outputs.templates.ValueTxtValueItemProperties[];
+    }
+
+    /**
+     * The previous values of the record in the different modes
+     */
+    export interface GetTXTPropertiesLastValuesProperties {
+        /**
+         * The previous values in standard mode
+         */
+        standard?: outputs.templates.ValueTxtPropertiesValueItems[];
+    }
+
     export interface GetTemplateProperties {
         /**
          * A domain template
@@ -2132,12 +6008,23 @@ export namespace templates {
         data?: outputs.templates.Template;
     }
 
-    export interface GetTemplateRecord {
+    export interface Items {
         /**
-         * Links for the domain record
+         * The value for this tag
          */
-        links?: outputs.templates.TemplaterecordPropertiesLinksProperties;
-        template?: outputs.templates.SimpleTemplate;
+        data?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: number;
+        /**
+         * Foo
+         */
+        tag?: enums.templates.ItemsTag;
     }
 
     /**
@@ -2206,7 +6093,7 @@ export namespace templates {
         /**
          * Links for the domain record
          */
-        links?: outputs.templates.TemplaterecordPropertiesLinksProperties;
+        links?: outputs.templates.TemplaterecordLinksProperties;
         template?: outputs.templates.SimpleTemplate;
     }
 
@@ -2219,6 +6106,154 @@ export namespace templates {
          * Metadata for list responses
          */
         meta?: outputs.templates.ListMetadata;
+    }
+
+    export interface PropertiesValueItems {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Text representing the OS
+         */
+        os?: string;
+    }
+
+    /**
+     * A simple version of a contact list when inclued with other resources
+     */
+    export interface SimpleContactlist {
+        /**
+         * Unique ID for the contact list
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.templates.SimpleContactlistLinksProperties;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleContactlistLinksProperties {
+        self?: string;
+    }
+
+    export interface SimpleDomain {
+        createdAt?: string;
+        /**
+         * Is the domain enabled
+         */
+        enabled?: boolean;
+        /**
+         * Is GeoIP functionality enabled for the domain
+         */
+        geoip?: boolean;
+        /**
+         * Is Global Traffic Director enabled for the domain
+         */
+        gtd?: boolean;
+        /**
+         * A unique numeric ID for this domain
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.templates.SimpleDomainLinksProperties;
+        /**
+         * The name of the domain
+         */
+        name?: string;
+        /**
+         * A note for the domain
+         */
+        note?: string;
+        status?: enums.templates.SimpleDomainStatus;
+        /**
+         * An array of tags for this domain.
+         */
+        tags?: outputs.templates.Tag[];
+        updatedAt?: string;
+        /**
+         * The version of the domain resource
+         */
+        version?: number;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleDomainLinksProperties {
+        records?: string;
+        self?: string;
+    }
+
+    /**
+     * Geo Proximity Location
+     */
+    export interface SimpleGeoproximity {
+        /**
+         * The unique ID for the Geo Proximity location
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.templates.SimpleGeoproximityLinksProperties;
+        /**
+         * The name of the Geo Proximity location
+         */
+        name?: string;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleGeoproximityLinksProperties {
+        self?: string;
+    }
+
+    export interface SimpleIpfilter {
+        /**
+         * The unique ID for this IP filter
+         */
+        id?: number;
+        /**
+         * Links for domain objects
+         */
+        links?: outputs.templates.SimpleIpfilterLinksProperties;
+        /**
+         * The name for this IP filter
+         */
+        name?: string;
+    }
+
+    /**
+     * Links for domain objects
+     */
+    export interface SimpleIpfilterLinksProperties {
+        self?: string;
+    }
+
+    export interface SimplePool {
+        id?: number;
+        /**
+         * Links for the pool
+         */
+        links?: outputs.templates.SimplePoolLinksProperties;
+    }
+
+    /**
+     * Links for the pool
+     */
+    export interface SimplePoolLinksProperties {
+        self?: string;
     }
 
     export interface SimpleTemplate {
@@ -2245,6 +6280,31 @@ export namespace templates {
      */
     export interface SimpleTemplateLinksProperties {
         records?: string;
+        self?: string;
+    }
+
+    /**
+     * A tag is used to group resources together
+     */
+    export interface Tag {
+        /**
+         * Unique ID for the tag
+         */
+        id?: number;
+        /**
+         * Links for tags
+         */
+        links?: outputs.templates.TagLinksProperties;
+        /**
+         * A name for this tag
+         */
+        name?: string;
+    }
+
+    /**
+     * Links for tags
+     */
+    export interface TagLinksProperties {
         self?: string;
     }
 
@@ -2291,8 +6351,705 @@ export namespace templates {
     /**
      * Links for the domain record
      */
-    export interface TemplaterecordPropertiesLinksProperties {
+    export interface TemplaterecordLinksProperties {
         self?: string;
+    }
+
+    export interface Value {
+        /**
+         * The description to include in meta tags
+         */
+        description?: string;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: boolean;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: string;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: string;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: string;
+        /**
+         * The URL to redirect to
+         */
+        url?: string;
+    }
+
+    export interface ValueARequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueARequestValueProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueARequestValuePropertiesMode;
+        values?: outputs.templates.ValueARequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueARequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAValue {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueAValuePropertiesMode;
+        values?: outputs.templates.ValueAValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueAaaaRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAaaaRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueAaaaRequestValuePropertiesMode;
+        values?: outputs.templates.ValueAaaaRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueAaaaRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAaaaValue {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueAaaaValuePropertiesMode;
+        values?: outputs.templates.ValueAaaaValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAaaaValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueAnameRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueAnameRequestValuePropertiesMode;
+        values?: outputs.templates.ValueAnameRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueAnameRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueAnameValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        value?: string;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameValueProperties {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueAnameValuePropertiesMode;
+        values?: outputs.templates.ValueAnameValuePropertiesValuesItem[];
+    }
+
+    export interface ValueAnameValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueCaaValueItemProperties {
+        /**
+         * The value for this tag
+         */
+        data?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: number;
+        /**
+         * Foo
+         */
+        tag?: enums.templates.ValueCaaValueItemPropertiesTag;
+    }
+
+    export interface ValueCertValueItemProperties {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: number;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: string;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: number;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: number;
+    }
+
+    export interface ValueCnameRequestValueItemProperties {
+        id?: number;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueCnameRequestValueProperties {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: boolean;
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueCnameRequestValuePropertiesMode;
+        values?: outputs.templates.ValueCnameRequestValuePropertiesValuesItemProperties[];
+    }
+
+    export interface ValueCnameRequestValuePropertiesValuesItemProperties {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        value?: string;
+    }
+
+    export interface ValueCnameValue {
+        /**
+         * The failover mode
+         */
+        mode?: enums.templates.ValueCnameValuePropertiesMode;
+        values?: outputs.templates.ValueCnameValuePropertiesValuesItem[];
+    }
+
+    export interface ValueCnameValuePropertiesValuesItem {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: boolean;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Does sonar consider this entry to be failed
+         */
+        failed?: boolean;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: number;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: number;
+        /**
+         * The status of the value in Sonar
+         */
+        status?: string;
+        value?: string;
+    }
+
+    export interface ValueHinfoValueItemProperties {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: string;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Text representing the OS
+         */
+        os?: string;
+    }
+
+    export interface ValueHttpValueProperties {
+        /**
+         * The description to include in meta tags
+         */
+        description?: string;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: boolean;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: string;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: string;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: string;
+        /**
+         * The URL to redirect to
+         */
+        url?: string;
+    }
+
+    export interface ValueItems {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: number;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: string;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: number;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: number;
+    }
+
+    export interface ValueMxPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: number;
+        /**
+         * The hostname of the mail server
+         */
+        server?: string;
+    }
+
+    export interface ValueMxValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: number;
+        /**
+         * The hostname of the mail server
+         */
+        server?: string;
+    }
+
+    export interface ValueNaptrPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Any flags for this record
+         */
+        flags?: string;
+        /**
+         * The order of the record
+         */
+        order?: number;
+        /**
+         * The preference for the record
+         */
+        preference?: number;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: string;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: string;
+        /**
+         * The service the record is used for
+         */
+        service?: string;
+    }
+
+    export interface ValueNaptrValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * Any flags for this record
+         */
+        flags?: string;
+        /**
+         * The order of the record
+         */
+        order?: number;
+        /**
+         * The preference for the record
+         */
+        preference?: number;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: string;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: string;
+        /**
+         * The service the record is used for
+         */
+        service?: string;
+    }
+
+    export interface ValueNsPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: string;
+    }
+
+    export interface ValueNsValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: string;
+    }
+
+    export interface ValuePtrPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the IP address
+         */
+        system?: string;
+    }
+
+    export interface ValuePtrValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the IP address
+         */
+        system?: string;
+    }
+
+    export interface ValueRpPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: string;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: string;
+    }
+
+    export interface ValueRpValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: string;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: string;
+    }
+
+    export interface ValueSpfPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The SPF record value
+         */
+        value?: string;
+    }
+
+    export interface ValueSpfValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The SPF record value
+         */
+        value?: string;
+    }
+
+    export interface ValueSrvPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the service
+         */
+        host?: string;
+        /**
+         * The port the service runs on
+         */
+        port?: number;
+        /**
+         * A priority for this record
+         */
+        priority?: number;
+        /**
+         * A weight for this record
+         */
+        weight?: number;
+    }
+
+    export interface ValueSrvValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The hostname for the service
+         */
+        host?: string;
+        /**
+         * The port the service runs on
+         */
+        port?: number;
+        /**
+         * A priority for this record
+         */
+        priority?: number;
+        /**
+         * A weight for this record
+         */
+        weight?: number;
+    }
+
+    export interface ValueTxtPropertiesValueItems {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The text record value
+         */
+        value?: string;
+    }
+
+    export interface ValueTxtValueItemProperties {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: boolean;
+        /**
+         * The text record value
+         */
+        value?: string;
     }
 
 }

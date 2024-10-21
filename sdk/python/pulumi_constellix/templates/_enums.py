@@ -5,11 +5,520 @@
 from enum import Enum
 
 __all__ = [
-    'TemplateRecordPropertiesRegion',
+    'APropertiesMode',
+    'APropertiesType',
+    'AaaaPropertiesMode',
+    'AaaaPropertiesType',
+    'AnamePropertiesMode',
+    'AnamePropertiesType',
+    'CaaPropertiesMode',
+    'CaaPropertiesType',
+    'CertPropertiesMode',
+    'CertPropertiesType',
+    'CnamePropertiesMode',
+    'CnamePropertiesType',
+    'GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode',
+    'GetAAAAPropertiesMode',
+    'GetAAAAPropertiesType',
+    'GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode',
+    'GetANAMEPropertiesMode',
+    'GetAPropertiesLastValuesPropertiesFailoverPropertiesMode',
+    'GetAPropertiesMode',
+    'GetCAAPropertiesMode',
+    'GetCERTPropertiesMode',
+    'GetCERTPropertiesType',
+    'GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode',
+    'GetCNAMEPropertiesMode',
+    'GetHINFOPropertiesMode',
+    'GetHINFOPropertiesType',
+    'GetHttpPropertiesMode',
+    'GetHttpPropertiesType',
+    'GetMXPropertiesMode',
+    'GetMXPropertiesType',
+    'GetNAPTRPropertiesMode',
+    'GetNAPTRPropertiesType',
+    'GetNSPropertiesMode',
+    'GetNSPropertiesType',
+    'GetPTRPropertiesMode',
+    'GetPTRPropertiesType',
+    'GetRPPropertiesMode',
+    'GetRPPropertiesType',
+    'GetSPFPropertiesMode',
+    'GetSPFPropertiesType',
+    'GetSRVPropertiesMode',
+    'GetSRVPropertiesType',
+    'GetTXTPropertiesMode',
+    'GetTXTPropertiesType',
+    'HinfoPropertiesMode',
+    'HinfoPropertiesType',
+    'HttpPropertiesMode',
+    'HttpPropertiesType',
+    'ItemsTag',
+    'MxPropertiesMode',
+    'MxPropertiesType',
+    'NaptrPropertiesMode',
+    'NaptrPropertiesType',
+    'NsPropertiesMode',
+    'NsPropertiesType',
+    'PtrPropertiesMode',
+    'PtrPropertiesType',
+    'RecordCreateDetailsRegion',
+    'RecordRegion',
+    'RpPropertiesMode',
+    'RpPropertiesType',
+    'SimpleDomainStatus',
+    'SpfPropertiesMode',
+    'SpfPropertiesType',
+    'SrvPropertiesMode',
+    'SrvPropertiesType',
+    'TxtPropertiesMode',
+    'TxtPropertiesType',
+    'ValueARequestValuePropertiesMode',
+    'ValueAType',
+    'ValueAValuePropertiesMode',
+    'ValueAaaaRequestValuePropertiesMode',
+    'ValueAaaaType',
+    'ValueAaaaValuePropertiesMode',
+    'ValueAnameRequestValuePropertiesMode',
+    'ValueAnameType',
+    'ValueAnameValuePropertiesMode',
+    'ValueCaaValueItemPropertiesTag',
+    'ValueCnameRequestValuePropertiesMode',
+    'ValueCnameType',
+    'ValueCnameValuePropertiesMode',
 ]
 
 
-class TemplateRecordPropertiesRegion(str, Enum):
+class APropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    ROUNDROBIN_FAILOVER = "roundrobin-failover"
+    POOLS = "pools"
+
+
+class APropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    A = "A"
+
+
+class AaaaPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    ROUNDROBIN_FAILOVER = "roundrobin-failover"
+    POOLS = "pools"
+
+
+class AaaaPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    AAAA = "AAAA"
+
+
+class AnamePropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+
+
+class AnamePropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    ANAME = "ANAME"
+
+
+class CaaPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class CaaPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    CAA = "CAA"
+
+
+class CertPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class CertPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    CERT = "CERT"
+
+
+class CnamePropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+
+
+class CnamePropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    CNAME = "CNAME"
+
+
+class GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class GetAAAAPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+    ROUNDROBIN_FAILOVER = "roundrobin-failover"
+
+
+class GetAAAAPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    AAAA = "AAAA"
+
+
+class GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class GetANAMEPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+
+
+class GetAPropertiesLastValuesPropertiesFailoverPropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class GetAPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+    ROUND_ROBIN_FAILOVER = "roundRobinFailover"
+
+
+class GetCAAPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetCERTPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetCERTPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    CAA = "CAA"
+
+
+class GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class GetCNAMEPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+    FAILOVER = "failover"
+    POOLS = "pools"
+
+
+class GetHINFOPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetHINFOPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    HINFO = "HINFO"
+
+
+class GetHttpPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetHttpPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    HTTP = "HTTP"
+
+
+class GetMXPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetMXPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    MX = "MX"
+
+
+class GetNAPTRPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetNAPTRPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    NAPTR = "NAPTR"
+
+
+class GetNSPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetNSPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    NS = "NS"
+
+
+class GetPTRPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetPTRPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    PTR = "PTR"
+
+
+class GetRPPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetRPPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    RP = "RP"
+
+
+class GetSPFPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetSPFPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    SPF = "SPF"
+
+
+class GetSRVPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetSRVPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    SRV = "SRV"
+
+
+class GetTXTPropertiesMode(str, Enum):
+    """
+    How the record should work
+    """
+    STANDARD = "standard"
+
+
+class GetTXTPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    TXT = "TXT"
+
+
+class HinfoPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class HinfoPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    HINFO = "HINFO"
+
+
+class HttpPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class HttpPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    HTTP = "HTTP"
+
+
+class ItemsTag(str, Enum):
+    """
+    Foo
+    """
+    ISSUE = "issue"
+    ISSUEWILD = "issuewild"
+    IODEF = "iodef"
+
+
+class MxPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class MxPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    MX = "MX"
+
+
+class NaptrPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class NaptrPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    NAPTR = "NAPTR"
+
+
+class NsPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class NsPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    NS = "NS"
+
+
+class PtrPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class PtrPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    PTR = "PTR"
+
+
+class RecordCreateDetailsRegion(str, Enum):
     """
     Optional region for this record. Will default to 'default'.
     """
@@ -20,3 +529,187 @@ class TemplateRecordPropertiesRegion(str, Enum):
     ASIA_PACIFIC = "asia-pacific"
     OCEANIA = "oceania"
     SOUTH_AMERICA = "south-america"
+
+
+class RecordRegion(str, Enum):
+    """
+    The region for this record
+    """
+    DEFAULT = "default"
+    EUROPE = "europe"
+    US_EAST = "us-east"
+    US_WEST = "us-west"
+    ASIA_PACIFIC = "asia-pacific"
+    OCEANIA = "oceania"
+    SOUTH_AMERICA = "south-america"
+
+
+class RpPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class RpPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    RP = "RP"
+
+
+class SimpleDomainStatus(str, Enum):
+    ACTIVE = "ACTIVE"
+    SUSPENDED = "SUSPENDED"
+    TERMINATED = "TERMINATED"
+
+
+class SpfPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class SpfPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    SPF = "SPF"
+
+
+class SrvPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class SrvPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    SRV = "SRV"
+
+
+class TxtPropertiesMode(str, Enum):
+    """
+    The current mode for this record
+    """
+    STANDARD = "standard"
+
+
+class TxtPropertiesType(str, Enum):
+    """
+    The type of record
+    """
+    TXT = "TXT"
+
+
+class ValueARequestValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueAType(str, Enum):
+    """
+    The type of record
+    """
+    A = "A"
+
+
+class ValueAValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueAaaaRequestValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueAaaaType(str, Enum):
+    """
+    The type of record
+    """
+    AAAA = "AAAA"
+
+
+class ValueAaaaValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueAnameRequestValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueAnameType(str, Enum):
+    """
+    The type of record
+    """
+    ANAME = "ANAME"
+
+
+class ValueAnameValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueCaaValueItemPropertiesTag(str, Enum):
+    """
+    Foo
+    """
+    ISSUE = "issue"
+    ISSUEWILD = "issuewild"
+    IODEF = "iodef"
+
+
+class ValueCnameRequestValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"
+
+
+class ValueCnameType(str, Enum):
+    """
+    The type of record
+    """
+    CNAME = "CNAME"
+
+
+class ValueCnameValuePropertiesMode(str, Enum):
+    """
+    The failover mode
+    """
+    NORMAL = "normal"
+    OFF = "off"
+    ONE_WAY = "one-way"

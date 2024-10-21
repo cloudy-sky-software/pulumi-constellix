@@ -21,10 +21,40 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "constellix:templates:A":
+		r = &A{}
+	case "constellix:templates:Aaaa":
+		r = &Aaaa{}
+	case "constellix:templates:Aname":
+		r = &Aname{}
+	case "constellix:templates:Caa":
+		r = &Caa{}
+	case "constellix:templates:Cert":
+		r = &Cert{}
+	case "constellix:templates:Cname":
+		r = &Cname{}
+	case "constellix:templates:Hinfo":
+		r = &Hinfo{}
+	case "constellix:templates:Http":
+		r = &Http{}
+	case "constellix:templates:Mx":
+		r = &Mx{}
+	case "constellix:templates:Naptr":
+		r = &Naptr{}
+	case "constellix:templates:Ns":
+		r = &Ns{}
+	case "constellix:templates:Ptr":
+		r = &Ptr{}
+	case "constellix:templates:Rp":
+		r = &Rp{}
+	case "constellix:templates:Spf":
+		r = &Spf{}
+	case "constellix:templates:Srv":
+		r = &Srv{}
 	case "constellix:templates:Template":
 		r = &Template{}
-	case "constellix:templates:TemplateRecord":
-		r = &TemplateRecord{}
+	case "constellix:templates:Txt":
+		r = &Txt{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}

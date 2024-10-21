@@ -17,12 +17,12 @@ namespace CloudySkySoftware.Pulumi.Constellix.Templates.Outputs
         /// <summary>
         /// Links for the domain record
         /// </summary>
-        public readonly Outputs.TemplaterecordPropertiesLinksProperties? Links;
+        public readonly Outputs.TemplaterecordLinksProperties? Links;
         public readonly Outputs.SimpleTemplate? Template;
 
         [OutputConstructor]
         private ListTemplateRecordsPropertiesDataItem(
-            Outputs.TemplaterecordPropertiesLinksProperties? links,
+            Outputs.TemplaterecordLinksProperties? links,
 
             Outputs.SimpleTemplate? template)
         {

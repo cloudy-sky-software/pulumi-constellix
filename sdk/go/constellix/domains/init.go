@@ -21,16 +21,46 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "constellix:domains:A":
+		r = &A{}
+	case "constellix:domains:Aaaa":
+		r = &Aaaa{}
+	case "constellix:domains:Aname":
+		r = &Aname{}
 	case "constellix:domains:ApplyDomainHistory":
 		r = &ApplyDomainHistory{}
 	case "constellix:domains:ApplyDomainSnapshot":
 		r = &ApplyDomainSnapshot{}
+	case "constellix:domains:Caa":
+		r = &Caa{}
+	case "constellix:domains:Cert":
+		r = &Cert{}
+	case "constellix:domains:Cname":
+		r = &Cname{}
 	case "constellix:domains:Domain":
 		r = &Domain{}
-	case "constellix:domains:DomainRecord":
-		r = &DomainRecord{}
+	case "constellix:domains:Hinfo":
+		r = &Hinfo{}
+	case "constellix:domains:Http":
+		r = &Http{}
+	case "constellix:domains:Mx":
+		r = &Mx{}
+	case "constellix:domains:Naptr":
+		r = &Naptr{}
+	case "constellix:domains:Ns":
+		r = &Ns{}
+	case "constellix:domains:Ptr":
+		r = &Ptr{}
+	case "constellix:domains:Rp":
+		r = &Rp{}
 	case "constellix:domains:SnapshotDomainHistory":
 		r = &SnapshotDomainHistory{}
+	case "constellix:domains:Spf":
+		r = &Spf{}
+	case "constellix:domains:Srv":
+		r = &Srv{}
+	case "constellix:domains:Txt":
+		r = &Txt{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}

@@ -50,6 +50,365 @@ export namespace domains {
         ttl?: pulumi.Input<number>;
     }
 
+    export interface ValueARequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueARequestValuePropertiesArgs {
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.domains.ValueARequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.domains.ValueARequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueARequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueAaaaRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAaaaRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.domains.ValueAaaaRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.domains.ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueAnameRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.domains.ValueAnameRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.domains.ValueAnameRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueAnameRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueCaaValueItemPropertiesArgs {
+        /**
+         * The value for this tag
+         */
+        data?: pulumi.Input<string>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: pulumi.Input<number>;
+        /**
+         * Foo
+         */
+        tag?: pulumi.Input<enums.domains.ValueCaaValueItemPropertiesTag>;
+    }
+
+    export interface ValueCertValueItemPropertiesArgs {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: pulumi.Input<number>;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: pulumi.Input<string>;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: pulumi.Input<number>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: pulumi.Input<number>;
+    }
+
+    export interface ValueCnameRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueCnameRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.domains.ValueCnameRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.domains.ValueCnameRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueCnameRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueHinfoValueItemPropertiesArgs {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: pulumi.Input<string>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * Text representing the OS
+         */
+        os?: pulumi.Input<string>;
+    }
+
+    export interface ValueHttpValuePropertiesArgs {
+        /**
+         * The description to include in meta tags
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: pulumi.Input<boolean>;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: pulumi.Input<string>;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: pulumi.Input<string>;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: pulumi.Input<string>;
+        /**
+         * The URL to redirect to
+         */
+        url?: pulumi.Input<string>;
+    }
+
+    export interface ValueMxValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * The hostname of the mail server
+         */
+        server?: pulumi.Input<string>;
+    }
+
+    export interface ValueNaptrValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * Any flags for this record
+         */
+        flags?: pulumi.Input<string>;
+        /**
+         * The order of the record
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The preference for the record
+         */
+        preference?: pulumi.Input<number>;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: pulumi.Input<string>;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: pulumi.Input<string>;
+        /**
+         * The service the record is used for
+         */
+        service?: pulumi.Input<string>;
+    }
+
+    export interface ValueNsValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: pulumi.Input<string>;
+    }
+
+    export interface ValuePtrValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the IP address
+         */
+        system?: pulumi.Input<string>;
+    }
+
+    export interface ValueRpValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: pulumi.Input<string>;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: pulumi.Input<string>;
+    }
+
+    export interface ValueSpfValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The SPF record value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueSrvValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the service
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * The port the service runs on
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * A priority for this record
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * A weight for this record
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface ValueTxtValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The text record value
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace geoproximities {
@@ -149,6 +508,365 @@ export namespace tags {
 }
 
 export namespace templates {
+    export interface ValueARequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueARequestValuePropertiesArgs {
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.templates.ValueARequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.templates.ValueARequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueARequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueAaaaRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAaaaRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.templates.ValueAaaaRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.templates.ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueAnameRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueAnameRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.templates.ValueAnameRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.templates.ValueAnameRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueAnameRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueCaaValueItemPropertiesArgs {
+        /**
+         * The value for this tag
+         */
+        data?: pulumi.Input<string>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * A flag byte for any flags on the record.
+         */
+        flags?: pulumi.Input<number>;
+        /**
+         * Foo
+         */
+        tag?: pulumi.Input<enums.templates.ValueCaaValueItemPropertiesTag>;
+    }
+
+    export interface ValueCertValueItemPropertiesArgs {
+        /**
+         * An integer representing the algorithm
+         */
+        algorithm?: pulumi.Input<number>;
+        /**
+         * A base 64 encoded string containing the certificate information
+         */
+        certificate?: pulumi.Input<string>;
+        /**
+         * An integer representing the type of certificate
+         */
+        certificateType?: pulumi.Input<number>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * An integer representing the key tag
+         */
+        keyTag?: pulumi.Input<number>;
+    }
+
+    export interface ValueCnameRequestValueItemPropertiesArgs {
+        id?: pulumi.Input<number>;
+    }
+
+    /**
+     * Failover record mode
+     */
+    export interface ValueCnameRequestValuePropertiesArgs {
+        /**
+         * Whether this failover value is enabled or not
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The failover mode
+         */
+        mode?: pulumi.Input<enums.templates.ValueCnameRequestValuePropertiesMode>;
+        values?: pulumi.Input<pulumi.Input<inputs.templates.ValueCnameRequestValuePropertiesValuesItemPropertiesArgs>[]>;
+    }
+
+    export interface ValueCnameRequestValuePropertiesValuesItemPropertiesArgs {
+        /**
+         * Whether this entry is considered active or not
+         */
+        active?: pulumi.Input<boolean>;
+        /**
+         * Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The sort order of the entry. Lower order entries are preferred over higher order entries
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The ID in Sonar to use for checking if the record should be used
+         */
+        sonarCheckId?: pulumi.Input<number>;
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueHinfoValueItemPropertiesArgs {
+        /**
+         * Text representing the CPU
+         */
+        cpu?: pulumi.Input<string>;
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * Text representing the OS
+         */
+        os?: pulumi.Input<string>;
+    }
+
+    export interface ValueHttpValuePropertiesArgs {
+        /**
+         * The description to include in meta tags
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * If this is a frame redirect, don't include the URL entered in the browser
+         */
+        hard?: pulumi.Input<boolean>;
+        /**
+         * Meta keywords for the page containing the frame
+         */
+        keywords?: pulumi.Input<string>;
+        /**
+         * The type of redirect, either 301, 302 or frame.
+         */
+        redirectType?: pulumi.Input<string>;
+        /**
+         * The title of the page containing the redirect frame
+         */
+        title?: pulumi.Input<string>;
+        /**
+         * The URL to redirect to
+         */
+        url?: pulumi.Input<string>;
+    }
+
+    export interface ValueMxValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * A number representing the priority of the mail server
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * The hostname of the mail server
+         */
+        server?: pulumi.Input<string>;
+    }
+
+    export interface ValueNaptrValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * Any flags for this record
+         */
+        flags?: pulumi.Input<string>;
+        /**
+         * The order of the record
+         */
+        order?: pulumi.Input<number>;
+        /**
+         * The preference for the record
+         */
+        preference?: pulumi.Input<number>;
+        /**
+         * A regular expression to use
+         */
+        regularExpression?: pulumi.Input<string>;
+        /**
+         * The replacement for the regular expression
+         */
+        replacement?: pulumi.Input<string>;
+        /**
+         * The service the record is used for
+         */
+        service?: pulumi.Input<string>;
+    }
+
+    export interface ValueNsValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the nameserver
+         */
+        host?: pulumi.Input<string>;
+    }
+
+    export interface ValuePtrValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the IP address
+         */
+        system?: pulumi.Input<string>;
+    }
+
+    export interface ValueRpValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The email of the person responsible. Replace @ with .
+         */
+        mailbox?: pulumi.Input<string>;
+        /**
+         * The name of a TXT record containing more information
+         */
+        txt?: pulumi.Input<string>;
+    }
+
+    export interface ValueSpfValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The SPF record value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ValueSrvValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The hostname for the service
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * The port the service runs on
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * A priority for this record
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * A weight for this record
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface ValueTxtValueItemPropertiesArgs {
+        /**
+         * Whether the entry is enabled or not. Disabled entries will not be included in a response
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * The text record value
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace vanitynameservers {

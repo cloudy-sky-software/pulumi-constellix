@@ -18,13 +18,13 @@ namespace CloudySkySoftware.Pulumi.Constellix.Domains.Outputs
         /// <summary>
         /// Links for the domain record
         /// </summary>
-        public readonly Outputs.DomainrecordPropertiesLinksProperties? Links;
+        public readonly Outputs.ListDomainRecordsPropertiesDataItemPropertiesLinksProperties? Links;
 
         [OutputConstructor]
         private ListDomainRecordsPropertiesDataItem(
             Outputs.SimpleDomain? domain,
 
-            Outputs.DomainrecordPropertiesLinksProperties? links)
+            Outputs.ListDomainRecordsPropertiesDataItemPropertiesLinksProperties? links)
         {
             Domain = domain;
             Links = links;

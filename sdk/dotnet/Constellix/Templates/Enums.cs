@@ -8,34 +8,2487 @@ using Pulumi;
 namespace CloudySkySoftware.Pulumi.Constellix.Templates
 {
     /// <summary>
-    /// Optional region for this record. Will default to 'default'.
+    /// The current mode for this record
     /// </summary>
     [EnumType]
-    public readonly struct TemplateRecordPropertiesRegion : IEquatable<TemplateRecordPropertiesRegion>
+    public readonly struct APropertiesMode : IEquatable<APropertiesMode>
     {
         private readonly string _value;
 
-        private TemplateRecordPropertiesRegion(string value)
+        private APropertiesMode(string value)
         {
             _value = value ?? throw new ArgumentNullException(nameof(value));
         }
 
-        public static TemplateRecordPropertiesRegion Default { get; } = new TemplateRecordPropertiesRegion("default");
-        public static TemplateRecordPropertiesRegion Europe { get; } = new TemplateRecordPropertiesRegion("europe");
-        public static TemplateRecordPropertiesRegion UsEast { get; } = new TemplateRecordPropertiesRegion("us-east");
-        public static TemplateRecordPropertiesRegion UsWest { get; } = new TemplateRecordPropertiesRegion("us-west");
-        public static TemplateRecordPropertiesRegion AsiaPacific { get; } = new TemplateRecordPropertiesRegion("asia-pacific");
-        public static TemplateRecordPropertiesRegion Oceania { get; } = new TemplateRecordPropertiesRegion("oceania");
-        public static TemplateRecordPropertiesRegion SouthAmerica { get; } = new TemplateRecordPropertiesRegion("south-america");
+        public static APropertiesMode Standard { get; } = new APropertiesMode("standard");
+        public static APropertiesMode Failover { get; } = new APropertiesMode("failover");
+        public static APropertiesMode RoundrobinFailover { get; } = new APropertiesMode("roundrobin-failover");
+        public static APropertiesMode Pools { get; } = new APropertiesMode("pools");
 
-        public static bool operator ==(TemplateRecordPropertiesRegion left, TemplateRecordPropertiesRegion right) => left.Equals(right);
-        public static bool operator !=(TemplateRecordPropertiesRegion left, TemplateRecordPropertiesRegion right) => !left.Equals(right);
+        public static bool operator ==(APropertiesMode left, APropertiesMode right) => left.Equals(right);
+        public static bool operator !=(APropertiesMode left, APropertiesMode right) => !left.Equals(right);
 
-        public static explicit operator string(TemplateRecordPropertiesRegion value) => value._value;
+        public static explicit operator string(APropertiesMode value) => value._value;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override bool Equals(object? obj) => obj is TemplateRecordPropertiesRegion other && Equals(other);
-        public bool Equals(TemplateRecordPropertiesRegion other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+        public override bool Equals(object? obj) => obj is APropertiesMode other && Equals(other);
+        public bool Equals(APropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct APropertiesType : IEquatable<APropertiesType>
+    {
+        private readonly string _value;
+
+        private APropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static APropertiesType A { get; } = new APropertiesType("A");
+
+        public static bool operator ==(APropertiesType left, APropertiesType right) => left.Equals(right);
+        public static bool operator !=(APropertiesType left, APropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(APropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is APropertiesType other && Equals(other);
+        public bool Equals(APropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct AaaaPropertiesMode : IEquatable<AaaaPropertiesMode>
+    {
+        private readonly string _value;
+
+        private AaaaPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static AaaaPropertiesMode Standard { get; } = new AaaaPropertiesMode("standard");
+        public static AaaaPropertiesMode Failover { get; } = new AaaaPropertiesMode("failover");
+        public static AaaaPropertiesMode RoundrobinFailover { get; } = new AaaaPropertiesMode("roundrobin-failover");
+        public static AaaaPropertiesMode Pools { get; } = new AaaaPropertiesMode("pools");
+
+        public static bool operator ==(AaaaPropertiesMode left, AaaaPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(AaaaPropertiesMode left, AaaaPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(AaaaPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is AaaaPropertiesMode other && Equals(other);
+        public bool Equals(AaaaPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct AaaaPropertiesType : IEquatable<AaaaPropertiesType>
+    {
+        private readonly string _value;
+
+        private AaaaPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static AaaaPropertiesType Aaaa { get; } = new AaaaPropertiesType("AAAA");
+
+        public static bool operator ==(AaaaPropertiesType left, AaaaPropertiesType right) => left.Equals(right);
+        public static bool operator !=(AaaaPropertiesType left, AaaaPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(AaaaPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is AaaaPropertiesType other && Equals(other);
+        public bool Equals(AaaaPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct AnamePropertiesMode : IEquatable<AnamePropertiesMode>
+    {
+        private readonly string _value;
+
+        private AnamePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static AnamePropertiesMode Standard { get; } = new AnamePropertiesMode("standard");
+        public static AnamePropertiesMode Failover { get; } = new AnamePropertiesMode("failover");
+        public static AnamePropertiesMode Pools { get; } = new AnamePropertiesMode("pools");
+
+        public static bool operator ==(AnamePropertiesMode left, AnamePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(AnamePropertiesMode left, AnamePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(AnamePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is AnamePropertiesMode other && Equals(other);
+        public bool Equals(AnamePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct AnamePropertiesType : IEquatable<AnamePropertiesType>
+    {
+        private readonly string _value;
+
+        private AnamePropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static AnamePropertiesType Aname { get; } = new AnamePropertiesType("ANAME");
+
+        public static bool operator ==(AnamePropertiesType left, AnamePropertiesType right) => left.Equals(right);
+        public static bool operator !=(AnamePropertiesType left, AnamePropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(AnamePropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is AnamePropertiesType other && Equals(other);
+        public bool Equals(AnamePropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct CaaPropertiesMode : IEquatable<CaaPropertiesMode>
+    {
+        private readonly string _value;
+
+        private CaaPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CaaPropertiesMode Standard { get; } = new CaaPropertiesMode("standard");
+
+        public static bool operator ==(CaaPropertiesMode left, CaaPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(CaaPropertiesMode left, CaaPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(CaaPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CaaPropertiesMode other && Equals(other);
+        public bool Equals(CaaPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct CaaPropertiesType : IEquatable<CaaPropertiesType>
+    {
+        private readonly string _value;
+
+        private CaaPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CaaPropertiesType Caa { get; } = new CaaPropertiesType("CAA");
+
+        public static bool operator ==(CaaPropertiesType left, CaaPropertiesType right) => left.Equals(right);
+        public static bool operator !=(CaaPropertiesType left, CaaPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(CaaPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CaaPropertiesType other && Equals(other);
+        public bool Equals(CaaPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct CertPropertiesMode : IEquatable<CertPropertiesMode>
+    {
+        private readonly string _value;
+
+        private CertPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CertPropertiesMode Standard { get; } = new CertPropertiesMode("standard");
+
+        public static bool operator ==(CertPropertiesMode left, CertPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(CertPropertiesMode left, CertPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(CertPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CertPropertiesMode other && Equals(other);
+        public bool Equals(CertPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct CertPropertiesType : IEquatable<CertPropertiesType>
+    {
+        private readonly string _value;
+
+        private CertPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CertPropertiesType Cert { get; } = new CertPropertiesType("CERT");
+
+        public static bool operator ==(CertPropertiesType left, CertPropertiesType right) => left.Equals(right);
+        public static bool operator !=(CertPropertiesType left, CertPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(CertPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CertPropertiesType other && Equals(other);
+        public bool Equals(CertPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct CnamePropertiesMode : IEquatable<CnamePropertiesMode>
+    {
+        private readonly string _value;
+
+        private CnamePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CnamePropertiesMode Standard { get; } = new CnamePropertiesMode("standard");
+        public static CnamePropertiesMode Failover { get; } = new CnamePropertiesMode("failover");
+        public static CnamePropertiesMode Pools { get; } = new CnamePropertiesMode("pools");
+
+        public static bool operator ==(CnamePropertiesMode left, CnamePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(CnamePropertiesMode left, CnamePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(CnamePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CnamePropertiesMode other && Equals(other);
+        public bool Equals(CnamePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct CnamePropertiesType : IEquatable<CnamePropertiesType>
+    {
+        private readonly string _value;
+
+        private CnamePropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static CnamePropertiesType Cname { get; } = new CnamePropertiesType("CNAME");
+
+        public static bool operator ==(CnamePropertiesType left, CnamePropertiesType right) => left.Equals(right);
+        public static bool operator !=(CnamePropertiesType left, CnamePropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(CnamePropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is CnamePropertiesType other && Equals(other);
+        public bool Equals(CnamePropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode : IEquatable<GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode Normal { get; } = new GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("normal");
+        public static GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode Off { get; } = new GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("off");
+        public static GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode OneWay { get; } = new GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way");
+
+        public static bool operator ==(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode other && Equals(other);
+        public bool Equals(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetAAAAPropertiesMode : IEquatable<GetAAAAPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetAAAAPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetAAAAPropertiesMode Standard { get; } = new GetAAAAPropertiesMode("standard");
+        public static GetAAAAPropertiesMode Failover { get; } = new GetAAAAPropertiesMode("failover");
+        public static GetAAAAPropertiesMode Pools { get; } = new GetAAAAPropertiesMode("pools");
+        public static GetAAAAPropertiesMode RoundrobinFailover { get; } = new GetAAAAPropertiesMode("roundrobin-failover");
+
+        public static bool operator ==(GetAAAAPropertiesMode left, GetAAAAPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetAAAAPropertiesMode left, GetAAAAPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetAAAAPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetAAAAPropertiesMode other && Equals(other);
+        public bool Equals(GetAAAAPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetAAAAPropertiesType : IEquatable<GetAAAAPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetAAAAPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetAAAAPropertiesType Aaaa { get; } = new GetAAAAPropertiesType("AAAA");
+
+        public static bool operator ==(GetAAAAPropertiesType left, GetAAAAPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetAAAAPropertiesType left, GetAAAAPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetAAAAPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetAAAAPropertiesType other && Equals(other);
+        public bool Equals(GetAAAAPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode : IEquatable<GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode Normal { get; } = new GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("normal");
+        public static GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode Off { get; } = new GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("off");
+        public static GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode OneWay { get; } = new GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way");
+
+        public static bool operator ==(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode other && Equals(other);
+        public bool Equals(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetANAMEPropertiesMode : IEquatable<GetANAMEPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetANAMEPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetANAMEPropertiesMode Standard { get; } = new GetANAMEPropertiesMode("standard");
+        public static GetANAMEPropertiesMode Failover { get; } = new GetANAMEPropertiesMode("failover");
+        public static GetANAMEPropertiesMode Pools { get; } = new GetANAMEPropertiesMode("pools");
+
+        public static bool operator ==(GetANAMEPropertiesMode left, GetANAMEPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetANAMEPropertiesMode left, GetANAMEPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetANAMEPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetANAMEPropertiesMode other && Equals(other);
+        public bool Equals(GetANAMEPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct GetAPropertiesLastValuesPropertiesFailoverPropertiesMode : IEquatable<GetAPropertiesLastValuesPropertiesFailoverPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetAPropertiesLastValuesPropertiesFailoverPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetAPropertiesLastValuesPropertiesFailoverPropertiesMode Normal { get; } = new GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("normal");
+        public static GetAPropertiesLastValuesPropertiesFailoverPropertiesMode Off { get; } = new GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("off");
+        public static GetAPropertiesLastValuesPropertiesFailoverPropertiesMode OneWay { get; } = new GetAPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way");
+
+        public static bool operator ==(GetAPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetAPropertiesLastValuesPropertiesFailoverPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetAPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetAPropertiesLastValuesPropertiesFailoverPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetAPropertiesLastValuesPropertiesFailoverPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetAPropertiesLastValuesPropertiesFailoverPropertiesMode other && Equals(other);
+        public bool Equals(GetAPropertiesLastValuesPropertiesFailoverPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetAPropertiesMode : IEquatable<GetAPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetAPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetAPropertiesMode Standard { get; } = new GetAPropertiesMode("standard");
+        public static GetAPropertiesMode Failover { get; } = new GetAPropertiesMode("failover");
+        public static GetAPropertiesMode Pools { get; } = new GetAPropertiesMode("pools");
+        public static GetAPropertiesMode RoundRobinFailover { get; } = new GetAPropertiesMode("roundRobinFailover");
+
+        public static bool operator ==(GetAPropertiesMode left, GetAPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetAPropertiesMode left, GetAPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetAPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetAPropertiesMode other && Equals(other);
+        public bool Equals(GetAPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetCAAPropertiesMode : IEquatable<GetCAAPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetCAAPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetCAAPropertiesMode Standard { get; } = new GetCAAPropertiesMode("standard");
+
+        public static bool operator ==(GetCAAPropertiesMode left, GetCAAPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetCAAPropertiesMode left, GetCAAPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetCAAPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetCAAPropertiesMode other && Equals(other);
+        public bool Equals(GetCAAPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetCERTPropertiesMode : IEquatable<GetCERTPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetCERTPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetCERTPropertiesMode Standard { get; } = new GetCERTPropertiesMode("standard");
+
+        public static bool operator ==(GetCERTPropertiesMode left, GetCERTPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetCERTPropertiesMode left, GetCERTPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetCERTPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetCERTPropertiesMode other && Equals(other);
+        public bool Equals(GetCERTPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetCERTPropertiesType : IEquatable<GetCERTPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetCERTPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetCERTPropertiesType Caa { get; } = new GetCERTPropertiesType("CAA");
+
+        public static bool operator ==(GetCERTPropertiesType left, GetCERTPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetCERTPropertiesType left, GetCERTPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetCERTPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetCERTPropertiesType other && Equals(other);
+        public bool Equals(GetCERTPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode : IEquatable<GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode Normal { get; } = new GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("normal");
+        public static GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode Off { get; } = new GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("off");
+        public static GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode OneWay { get; } = new GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode("one-way");
+
+        public static bool operator ==(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode left, GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode other && Equals(other);
+        public bool Equals(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetCNAMEPropertiesMode : IEquatable<GetCNAMEPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetCNAMEPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetCNAMEPropertiesMode Standard { get; } = new GetCNAMEPropertiesMode("standard");
+        public static GetCNAMEPropertiesMode Failover { get; } = new GetCNAMEPropertiesMode("failover");
+        public static GetCNAMEPropertiesMode Pools { get; } = new GetCNAMEPropertiesMode("pools");
+
+        public static bool operator ==(GetCNAMEPropertiesMode left, GetCNAMEPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetCNAMEPropertiesMode left, GetCNAMEPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetCNAMEPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetCNAMEPropertiesMode other && Equals(other);
+        public bool Equals(GetCNAMEPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetHINFOPropertiesMode : IEquatable<GetHINFOPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetHINFOPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetHINFOPropertiesMode Standard { get; } = new GetHINFOPropertiesMode("standard");
+
+        public static bool operator ==(GetHINFOPropertiesMode left, GetHINFOPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetHINFOPropertiesMode left, GetHINFOPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetHINFOPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetHINFOPropertiesMode other && Equals(other);
+        public bool Equals(GetHINFOPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetHINFOPropertiesType : IEquatable<GetHINFOPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetHINFOPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetHINFOPropertiesType Hinfo { get; } = new GetHINFOPropertiesType("HINFO");
+
+        public static bool operator ==(GetHINFOPropertiesType left, GetHINFOPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetHINFOPropertiesType left, GetHINFOPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetHINFOPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetHINFOPropertiesType other && Equals(other);
+        public bool Equals(GetHINFOPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetHttpPropertiesMode : IEquatable<GetHttpPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetHttpPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetHttpPropertiesMode Standard { get; } = new GetHttpPropertiesMode("standard");
+
+        public static bool operator ==(GetHttpPropertiesMode left, GetHttpPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetHttpPropertiesMode left, GetHttpPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetHttpPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetHttpPropertiesMode other && Equals(other);
+        public bool Equals(GetHttpPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetHttpPropertiesType : IEquatable<GetHttpPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetHttpPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetHttpPropertiesType Http { get; } = new GetHttpPropertiesType("HTTP");
+
+        public static bool operator ==(GetHttpPropertiesType left, GetHttpPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetHttpPropertiesType left, GetHttpPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetHttpPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetHttpPropertiesType other && Equals(other);
+        public bool Equals(GetHttpPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetMXPropertiesMode : IEquatable<GetMXPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetMXPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetMXPropertiesMode Standard { get; } = new GetMXPropertiesMode("standard");
+
+        public static bool operator ==(GetMXPropertiesMode left, GetMXPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetMXPropertiesMode left, GetMXPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetMXPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetMXPropertiesMode other && Equals(other);
+        public bool Equals(GetMXPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetMXPropertiesType : IEquatable<GetMXPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetMXPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetMXPropertiesType Mx { get; } = new GetMXPropertiesType("MX");
+
+        public static bool operator ==(GetMXPropertiesType left, GetMXPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetMXPropertiesType left, GetMXPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetMXPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetMXPropertiesType other && Equals(other);
+        public bool Equals(GetMXPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetNAPTRPropertiesMode : IEquatable<GetNAPTRPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetNAPTRPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetNAPTRPropertiesMode Standard { get; } = new GetNAPTRPropertiesMode("standard");
+
+        public static bool operator ==(GetNAPTRPropertiesMode left, GetNAPTRPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetNAPTRPropertiesMode left, GetNAPTRPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetNAPTRPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetNAPTRPropertiesMode other && Equals(other);
+        public bool Equals(GetNAPTRPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetNAPTRPropertiesType : IEquatable<GetNAPTRPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetNAPTRPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetNAPTRPropertiesType Naptr { get; } = new GetNAPTRPropertiesType("NAPTR");
+
+        public static bool operator ==(GetNAPTRPropertiesType left, GetNAPTRPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetNAPTRPropertiesType left, GetNAPTRPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetNAPTRPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetNAPTRPropertiesType other && Equals(other);
+        public bool Equals(GetNAPTRPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetNSPropertiesMode : IEquatable<GetNSPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetNSPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetNSPropertiesMode Standard { get; } = new GetNSPropertiesMode("standard");
+
+        public static bool operator ==(GetNSPropertiesMode left, GetNSPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetNSPropertiesMode left, GetNSPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetNSPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetNSPropertiesMode other && Equals(other);
+        public bool Equals(GetNSPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetNSPropertiesType : IEquatable<GetNSPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetNSPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetNSPropertiesType Ns { get; } = new GetNSPropertiesType("NS");
+
+        public static bool operator ==(GetNSPropertiesType left, GetNSPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetNSPropertiesType left, GetNSPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetNSPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetNSPropertiesType other && Equals(other);
+        public bool Equals(GetNSPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetPTRPropertiesMode : IEquatable<GetPTRPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetPTRPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetPTRPropertiesMode Standard { get; } = new GetPTRPropertiesMode("standard");
+
+        public static bool operator ==(GetPTRPropertiesMode left, GetPTRPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetPTRPropertiesMode left, GetPTRPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetPTRPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetPTRPropertiesMode other && Equals(other);
+        public bool Equals(GetPTRPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetPTRPropertiesType : IEquatable<GetPTRPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetPTRPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetPTRPropertiesType Ptr { get; } = new GetPTRPropertiesType("PTR");
+
+        public static bool operator ==(GetPTRPropertiesType left, GetPTRPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetPTRPropertiesType left, GetPTRPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetPTRPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetPTRPropertiesType other && Equals(other);
+        public bool Equals(GetPTRPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetRPPropertiesMode : IEquatable<GetRPPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetRPPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetRPPropertiesMode Standard { get; } = new GetRPPropertiesMode("standard");
+
+        public static bool operator ==(GetRPPropertiesMode left, GetRPPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetRPPropertiesMode left, GetRPPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetRPPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetRPPropertiesMode other && Equals(other);
+        public bool Equals(GetRPPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetRPPropertiesType : IEquatable<GetRPPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetRPPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetRPPropertiesType Rp { get; } = new GetRPPropertiesType("RP");
+
+        public static bool operator ==(GetRPPropertiesType left, GetRPPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetRPPropertiesType left, GetRPPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetRPPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetRPPropertiesType other && Equals(other);
+        public bool Equals(GetRPPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetSPFPropertiesMode : IEquatable<GetSPFPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetSPFPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetSPFPropertiesMode Standard { get; } = new GetSPFPropertiesMode("standard");
+
+        public static bool operator ==(GetSPFPropertiesMode left, GetSPFPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetSPFPropertiesMode left, GetSPFPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetSPFPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetSPFPropertiesMode other && Equals(other);
+        public bool Equals(GetSPFPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetSPFPropertiesType : IEquatable<GetSPFPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetSPFPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetSPFPropertiesType Spf { get; } = new GetSPFPropertiesType("SPF");
+
+        public static bool operator ==(GetSPFPropertiesType left, GetSPFPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetSPFPropertiesType left, GetSPFPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetSPFPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetSPFPropertiesType other && Equals(other);
+        public bool Equals(GetSPFPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetSRVPropertiesMode : IEquatable<GetSRVPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetSRVPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetSRVPropertiesMode Standard { get; } = new GetSRVPropertiesMode("standard");
+
+        public static bool operator ==(GetSRVPropertiesMode left, GetSRVPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetSRVPropertiesMode left, GetSRVPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetSRVPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetSRVPropertiesMode other && Equals(other);
+        public bool Equals(GetSRVPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetSRVPropertiesType : IEquatable<GetSRVPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetSRVPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetSRVPropertiesType Srv { get; } = new GetSRVPropertiesType("SRV");
+
+        public static bool operator ==(GetSRVPropertiesType left, GetSRVPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetSRVPropertiesType left, GetSRVPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetSRVPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetSRVPropertiesType other && Equals(other);
+        public bool Equals(GetSRVPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// How the record should work
+    /// </summary>
+    [EnumType]
+    public readonly struct GetTXTPropertiesMode : IEquatable<GetTXTPropertiesMode>
+    {
+        private readonly string _value;
+
+        private GetTXTPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetTXTPropertiesMode Standard { get; } = new GetTXTPropertiesMode("standard");
+
+        public static bool operator ==(GetTXTPropertiesMode left, GetTXTPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(GetTXTPropertiesMode left, GetTXTPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(GetTXTPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetTXTPropertiesMode other && Equals(other);
+        public bool Equals(GetTXTPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct GetTXTPropertiesType : IEquatable<GetTXTPropertiesType>
+    {
+        private readonly string _value;
+
+        private GetTXTPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static GetTXTPropertiesType Txt { get; } = new GetTXTPropertiesType("TXT");
+
+        public static bool operator ==(GetTXTPropertiesType left, GetTXTPropertiesType right) => left.Equals(right);
+        public static bool operator !=(GetTXTPropertiesType left, GetTXTPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(GetTXTPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is GetTXTPropertiesType other && Equals(other);
+        public bool Equals(GetTXTPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct HinfoPropertiesMode : IEquatable<HinfoPropertiesMode>
+    {
+        private readonly string _value;
+
+        private HinfoPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static HinfoPropertiesMode Standard { get; } = new HinfoPropertiesMode("standard");
+
+        public static bool operator ==(HinfoPropertiesMode left, HinfoPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(HinfoPropertiesMode left, HinfoPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(HinfoPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is HinfoPropertiesMode other && Equals(other);
+        public bool Equals(HinfoPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct HinfoPropertiesType : IEquatable<HinfoPropertiesType>
+    {
+        private readonly string _value;
+
+        private HinfoPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static HinfoPropertiesType Hinfo { get; } = new HinfoPropertiesType("HINFO");
+
+        public static bool operator ==(HinfoPropertiesType left, HinfoPropertiesType right) => left.Equals(right);
+        public static bool operator !=(HinfoPropertiesType left, HinfoPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(HinfoPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is HinfoPropertiesType other && Equals(other);
+        public bool Equals(HinfoPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct HttpPropertiesMode : IEquatable<HttpPropertiesMode>
+    {
+        private readonly string _value;
+
+        private HttpPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static HttpPropertiesMode Standard { get; } = new HttpPropertiesMode("standard");
+
+        public static bool operator ==(HttpPropertiesMode left, HttpPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(HttpPropertiesMode left, HttpPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(HttpPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is HttpPropertiesMode other && Equals(other);
+        public bool Equals(HttpPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct HttpPropertiesType : IEquatable<HttpPropertiesType>
+    {
+        private readonly string _value;
+
+        private HttpPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static HttpPropertiesType Http { get; } = new HttpPropertiesType("HTTP");
+
+        public static bool operator ==(HttpPropertiesType left, HttpPropertiesType right) => left.Equals(right);
+        public static bool operator !=(HttpPropertiesType left, HttpPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(HttpPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is HttpPropertiesType other && Equals(other);
+        public bool Equals(HttpPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// Foo
+    /// </summary>
+    [EnumType]
+    public readonly struct ItemsTag : IEquatable<ItemsTag>
+    {
+        private readonly string _value;
+
+        private ItemsTag(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ItemsTag Issue { get; } = new ItemsTag("issue");
+        public static ItemsTag Issuewild { get; } = new ItemsTag("issuewild");
+        public static ItemsTag Iodef { get; } = new ItemsTag("iodef");
+
+        public static bool operator ==(ItemsTag left, ItemsTag right) => left.Equals(right);
+        public static bool operator !=(ItemsTag left, ItemsTag right) => !left.Equals(right);
+
+        public static explicit operator string(ItemsTag value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ItemsTag other && Equals(other);
+        public bool Equals(ItemsTag other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct MxPropertiesMode : IEquatable<MxPropertiesMode>
+    {
+        private readonly string _value;
+
+        private MxPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static MxPropertiesMode Standard { get; } = new MxPropertiesMode("standard");
+
+        public static bool operator ==(MxPropertiesMode left, MxPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(MxPropertiesMode left, MxPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(MxPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is MxPropertiesMode other && Equals(other);
+        public bool Equals(MxPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct MxPropertiesType : IEquatable<MxPropertiesType>
+    {
+        private readonly string _value;
+
+        private MxPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static MxPropertiesType Mx { get; } = new MxPropertiesType("MX");
+
+        public static bool operator ==(MxPropertiesType left, MxPropertiesType right) => left.Equals(right);
+        public static bool operator !=(MxPropertiesType left, MxPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(MxPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is MxPropertiesType other && Equals(other);
+        public bool Equals(MxPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct NaptrPropertiesMode : IEquatable<NaptrPropertiesMode>
+    {
+        private readonly string _value;
+
+        private NaptrPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static NaptrPropertiesMode Standard { get; } = new NaptrPropertiesMode("standard");
+
+        public static bool operator ==(NaptrPropertiesMode left, NaptrPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(NaptrPropertiesMode left, NaptrPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(NaptrPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is NaptrPropertiesMode other && Equals(other);
+        public bool Equals(NaptrPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct NaptrPropertiesType : IEquatable<NaptrPropertiesType>
+    {
+        private readonly string _value;
+
+        private NaptrPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static NaptrPropertiesType Naptr { get; } = new NaptrPropertiesType("NAPTR");
+
+        public static bool operator ==(NaptrPropertiesType left, NaptrPropertiesType right) => left.Equals(right);
+        public static bool operator !=(NaptrPropertiesType left, NaptrPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(NaptrPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is NaptrPropertiesType other && Equals(other);
+        public bool Equals(NaptrPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct NsPropertiesMode : IEquatable<NsPropertiesMode>
+    {
+        private readonly string _value;
+
+        private NsPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static NsPropertiesMode Standard { get; } = new NsPropertiesMode("standard");
+
+        public static bool operator ==(NsPropertiesMode left, NsPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(NsPropertiesMode left, NsPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(NsPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is NsPropertiesMode other && Equals(other);
+        public bool Equals(NsPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct NsPropertiesType : IEquatable<NsPropertiesType>
+    {
+        private readonly string _value;
+
+        private NsPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static NsPropertiesType Ns { get; } = new NsPropertiesType("NS");
+
+        public static bool operator ==(NsPropertiesType left, NsPropertiesType right) => left.Equals(right);
+        public static bool operator !=(NsPropertiesType left, NsPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(NsPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is NsPropertiesType other && Equals(other);
+        public bool Equals(NsPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct PtrPropertiesMode : IEquatable<PtrPropertiesMode>
+    {
+        private readonly string _value;
+
+        private PtrPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static PtrPropertiesMode Standard { get; } = new PtrPropertiesMode("standard");
+
+        public static bool operator ==(PtrPropertiesMode left, PtrPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(PtrPropertiesMode left, PtrPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(PtrPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is PtrPropertiesMode other && Equals(other);
+        public bool Equals(PtrPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct PtrPropertiesType : IEquatable<PtrPropertiesType>
+    {
+        private readonly string _value;
+
+        private PtrPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static PtrPropertiesType Ptr { get; } = new PtrPropertiesType("PTR");
+
+        public static bool operator ==(PtrPropertiesType left, PtrPropertiesType right) => left.Equals(right);
+        public static bool operator !=(PtrPropertiesType left, PtrPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(PtrPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is PtrPropertiesType other && Equals(other);
+        public bool Equals(PtrPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// Optional region for this record. Will default to 'default'.
+    /// </summary>
+    [EnumType]
+    public readonly struct RecordCreateDetailsRegion : IEquatable<RecordCreateDetailsRegion>
+    {
+        private readonly string _value;
+
+        private RecordCreateDetailsRegion(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static RecordCreateDetailsRegion Default { get; } = new RecordCreateDetailsRegion("default");
+        public static RecordCreateDetailsRegion Europe { get; } = new RecordCreateDetailsRegion("europe");
+        public static RecordCreateDetailsRegion UsEast { get; } = new RecordCreateDetailsRegion("us-east");
+        public static RecordCreateDetailsRegion UsWest { get; } = new RecordCreateDetailsRegion("us-west");
+        public static RecordCreateDetailsRegion AsiaPacific { get; } = new RecordCreateDetailsRegion("asia-pacific");
+        public static RecordCreateDetailsRegion Oceania { get; } = new RecordCreateDetailsRegion("oceania");
+        public static RecordCreateDetailsRegion SouthAmerica { get; } = new RecordCreateDetailsRegion("south-america");
+
+        public static bool operator ==(RecordCreateDetailsRegion left, RecordCreateDetailsRegion right) => left.Equals(right);
+        public static bool operator !=(RecordCreateDetailsRegion left, RecordCreateDetailsRegion right) => !left.Equals(right);
+
+        public static explicit operator string(RecordCreateDetailsRegion value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is RecordCreateDetailsRegion other && Equals(other);
+        public bool Equals(RecordCreateDetailsRegion other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The region for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct RecordRegion : IEquatable<RecordRegion>
+    {
+        private readonly string _value;
+
+        private RecordRegion(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static RecordRegion Default { get; } = new RecordRegion("default");
+        public static RecordRegion Europe { get; } = new RecordRegion("europe");
+        public static RecordRegion UsEast { get; } = new RecordRegion("us-east");
+        public static RecordRegion UsWest { get; } = new RecordRegion("us-west");
+        public static RecordRegion AsiaPacific { get; } = new RecordRegion("asia-pacific");
+        public static RecordRegion Oceania { get; } = new RecordRegion("oceania");
+        public static RecordRegion SouthAmerica { get; } = new RecordRegion("south-america");
+
+        public static bool operator ==(RecordRegion left, RecordRegion right) => left.Equals(right);
+        public static bool operator !=(RecordRegion left, RecordRegion right) => !left.Equals(right);
+
+        public static explicit operator string(RecordRegion value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is RecordRegion other && Equals(other);
+        public bool Equals(RecordRegion other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct RpPropertiesMode : IEquatable<RpPropertiesMode>
+    {
+        private readonly string _value;
+
+        private RpPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static RpPropertiesMode Standard { get; } = new RpPropertiesMode("standard");
+
+        public static bool operator ==(RpPropertiesMode left, RpPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(RpPropertiesMode left, RpPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(RpPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is RpPropertiesMode other && Equals(other);
+        public bool Equals(RpPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct RpPropertiesType : IEquatable<RpPropertiesType>
+    {
+        private readonly string _value;
+
+        private RpPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static RpPropertiesType Rp { get; } = new RpPropertiesType("RP");
+
+        public static bool operator ==(RpPropertiesType left, RpPropertiesType right) => left.Equals(right);
+        public static bool operator !=(RpPropertiesType left, RpPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(RpPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is RpPropertiesType other && Equals(other);
+        public bool Equals(RpPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    [EnumType]
+    public readonly struct SimpleDomainStatus : IEquatable<SimpleDomainStatus>
+    {
+        private readonly string _value;
+
+        private SimpleDomainStatus(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static SimpleDomainStatus Active { get; } = new SimpleDomainStatus("ACTIVE");
+        public static SimpleDomainStatus Suspended { get; } = new SimpleDomainStatus("SUSPENDED");
+        public static SimpleDomainStatus Terminated { get; } = new SimpleDomainStatus("TERMINATED");
+
+        public static bool operator ==(SimpleDomainStatus left, SimpleDomainStatus right) => left.Equals(right);
+        public static bool operator !=(SimpleDomainStatus left, SimpleDomainStatus right) => !left.Equals(right);
+
+        public static explicit operator string(SimpleDomainStatus value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is SimpleDomainStatus other && Equals(other);
+        public bool Equals(SimpleDomainStatus other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct SpfPropertiesMode : IEquatable<SpfPropertiesMode>
+    {
+        private readonly string _value;
+
+        private SpfPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static SpfPropertiesMode Standard { get; } = new SpfPropertiesMode("standard");
+
+        public static bool operator ==(SpfPropertiesMode left, SpfPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(SpfPropertiesMode left, SpfPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(SpfPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is SpfPropertiesMode other && Equals(other);
+        public bool Equals(SpfPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct SpfPropertiesType : IEquatable<SpfPropertiesType>
+    {
+        private readonly string _value;
+
+        private SpfPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static SpfPropertiesType Spf { get; } = new SpfPropertiesType("SPF");
+
+        public static bool operator ==(SpfPropertiesType left, SpfPropertiesType right) => left.Equals(right);
+        public static bool operator !=(SpfPropertiesType left, SpfPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(SpfPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is SpfPropertiesType other && Equals(other);
+        public bool Equals(SpfPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct SrvPropertiesMode : IEquatable<SrvPropertiesMode>
+    {
+        private readonly string _value;
+
+        private SrvPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static SrvPropertiesMode Standard { get; } = new SrvPropertiesMode("standard");
+
+        public static bool operator ==(SrvPropertiesMode left, SrvPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(SrvPropertiesMode left, SrvPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(SrvPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is SrvPropertiesMode other && Equals(other);
+        public bool Equals(SrvPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct SrvPropertiesType : IEquatable<SrvPropertiesType>
+    {
+        private readonly string _value;
+
+        private SrvPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static SrvPropertiesType Srv { get; } = new SrvPropertiesType("SRV");
+
+        public static bool operator ==(SrvPropertiesType left, SrvPropertiesType right) => left.Equals(right);
+        public static bool operator !=(SrvPropertiesType left, SrvPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(SrvPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is SrvPropertiesType other && Equals(other);
+        public bool Equals(SrvPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The current mode for this record
+    /// </summary>
+    [EnumType]
+    public readonly struct TxtPropertiesMode : IEquatable<TxtPropertiesMode>
+    {
+        private readonly string _value;
+
+        private TxtPropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static TxtPropertiesMode Standard { get; } = new TxtPropertiesMode("standard");
+
+        public static bool operator ==(TxtPropertiesMode left, TxtPropertiesMode right) => left.Equals(right);
+        public static bool operator !=(TxtPropertiesMode left, TxtPropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(TxtPropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is TxtPropertiesMode other && Equals(other);
+        public bool Equals(TxtPropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct TxtPropertiesType : IEquatable<TxtPropertiesType>
+    {
+        private readonly string _value;
+
+        private TxtPropertiesType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static TxtPropertiesType Txt { get; } = new TxtPropertiesType("TXT");
+
+        public static bool operator ==(TxtPropertiesType left, TxtPropertiesType right) => left.Equals(right);
+        public static bool operator !=(TxtPropertiesType left, TxtPropertiesType right) => !left.Equals(right);
+
+        public static explicit operator string(TxtPropertiesType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is TxtPropertiesType other && Equals(other);
+        public bool Equals(TxtPropertiesType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueARequestValuePropertiesMode : IEquatable<ValueARequestValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueARequestValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueARequestValuePropertiesMode Normal { get; } = new ValueARequestValuePropertiesMode("normal");
+        public static ValueARequestValuePropertiesMode Off { get; } = new ValueARequestValuePropertiesMode("off");
+        public static ValueARequestValuePropertiesMode OneWay { get; } = new ValueARequestValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueARequestValuePropertiesMode left, ValueARequestValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueARequestValuePropertiesMode left, ValueARequestValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueARequestValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueARequestValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueARequestValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAType : IEquatable<ValueAType>
+    {
+        private readonly string _value;
+
+        private ValueAType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAType A { get; } = new ValueAType("A");
+
+        public static bool operator ==(ValueAType left, ValueAType right) => left.Equals(right);
+        public static bool operator !=(ValueAType left, ValueAType right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAType other && Equals(other);
+        public bool Equals(ValueAType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAValuePropertiesMode : IEquatable<ValueAValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueAValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAValuePropertiesMode Normal { get; } = new ValueAValuePropertiesMode("normal");
+        public static ValueAValuePropertiesMode Off { get; } = new ValueAValuePropertiesMode("off");
+        public static ValueAValuePropertiesMode OneWay { get; } = new ValueAValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueAValuePropertiesMode left, ValueAValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueAValuePropertiesMode left, ValueAValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueAValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAaaaRequestValuePropertiesMode : IEquatable<ValueAaaaRequestValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueAaaaRequestValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAaaaRequestValuePropertiesMode Normal { get; } = new ValueAaaaRequestValuePropertiesMode("normal");
+        public static ValueAaaaRequestValuePropertiesMode Off { get; } = new ValueAaaaRequestValuePropertiesMode("off");
+        public static ValueAaaaRequestValuePropertiesMode OneWay { get; } = new ValueAaaaRequestValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueAaaaRequestValuePropertiesMode left, ValueAaaaRequestValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueAaaaRequestValuePropertiesMode left, ValueAaaaRequestValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAaaaRequestValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAaaaRequestValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueAaaaRequestValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAaaaType : IEquatable<ValueAaaaType>
+    {
+        private readonly string _value;
+
+        private ValueAaaaType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAaaaType Aaaa { get; } = new ValueAaaaType("AAAA");
+
+        public static bool operator ==(ValueAaaaType left, ValueAaaaType right) => left.Equals(right);
+        public static bool operator !=(ValueAaaaType left, ValueAaaaType right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAaaaType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAaaaType other && Equals(other);
+        public bool Equals(ValueAaaaType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAaaaValuePropertiesMode : IEquatable<ValueAaaaValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueAaaaValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAaaaValuePropertiesMode Normal { get; } = new ValueAaaaValuePropertiesMode("normal");
+        public static ValueAaaaValuePropertiesMode Off { get; } = new ValueAaaaValuePropertiesMode("off");
+        public static ValueAaaaValuePropertiesMode OneWay { get; } = new ValueAaaaValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueAaaaValuePropertiesMode left, ValueAaaaValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueAaaaValuePropertiesMode left, ValueAaaaValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAaaaValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAaaaValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueAaaaValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAnameRequestValuePropertiesMode : IEquatable<ValueAnameRequestValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueAnameRequestValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAnameRequestValuePropertiesMode Normal { get; } = new ValueAnameRequestValuePropertiesMode("normal");
+        public static ValueAnameRequestValuePropertiesMode Off { get; } = new ValueAnameRequestValuePropertiesMode("off");
+        public static ValueAnameRequestValuePropertiesMode OneWay { get; } = new ValueAnameRequestValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueAnameRequestValuePropertiesMode left, ValueAnameRequestValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueAnameRequestValuePropertiesMode left, ValueAnameRequestValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAnameRequestValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAnameRequestValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueAnameRequestValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAnameType : IEquatable<ValueAnameType>
+    {
+        private readonly string _value;
+
+        private ValueAnameType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAnameType Aname { get; } = new ValueAnameType("ANAME");
+
+        public static bool operator ==(ValueAnameType left, ValueAnameType right) => left.Equals(right);
+        public static bool operator !=(ValueAnameType left, ValueAnameType right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAnameType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAnameType other && Equals(other);
+        public bool Equals(ValueAnameType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueAnameValuePropertiesMode : IEquatable<ValueAnameValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueAnameValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueAnameValuePropertiesMode Normal { get; } = new ValueAnameValuePropertiesMode("normal");
+        public static ValueAnameValuePropertiesMode Off { get; } = new ValueAnameValuePropertiesMode("off");
+        public static ValueAnameValuePropertiesMode OneWay { get; } = new ValueAnameValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueAnameValuePropertiesMode left, ValueAnameValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueAnameValuePropertiesMode left, ValueAnameValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueAnameValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueAnameValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueAnameValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// Foo
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueCaaValueItemPropertiesTag : IEquatable<ValueCaaValueItemPropertiesTag>
+    {
+        private readonly string _value;
+
+        private ValueCaaValueItemPropertiesTag(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueCaaValueItemPropertiesTag Issue { get; } = new ValueCaaValueItemPropertiesTag("issue");
+        public static ValueCaaValueItemPropertiesTag Issuewild { get; } = new ValueCaaValueItemPropertiesTag("issuewild");
+        public static ValueCaaValueItemPropertiesTag Iodef { get; } = new ValueCaaValueItemPropertiesTag("iodef");
+
+        public static bool operator ==(ValueCaaValueItemPropertiesTag left, ValueCaaValueItemPropertiesTag right) => left.Equals(right);
+        public static bool operator !=(ValueCaaValueItemPropertiesTag left, ValueCaaValueItemPropertiesTag right) => !left.Equals(right);
+
+        public static explicit operator string(ValueCaaValueItemPropertiesTag value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueCaaValueItemPropertiesTag other && Equals(other);
+        public bool Equals(ValueCaaValueItemPropertiesTag other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueCnameRequestValuePropertiesMode : IEquatable<ValueCnameRequestValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueCnameRequestValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueCnameRequestValuePropertiesMode Normal { get; } = new ValueCnameRequestValuePropertiesMode("normal");
+        public static ValueCnameRequestValuePropertiesMode Off { get; } = new ValueCnameRequestValuePropertiesMode("off");
+        public static ValueCnameRequestValuePropertiesMode OneWay { get; } = new ValueCnameRequestValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueCnameRequestValuePropertiesMode left, ValueCnameRequestValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueCnameRequestValuePropertiesMode left, ValueCnameRequestValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueCnameRequestValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueCnameRequestValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueCnameRequestValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The type of record
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueCnameType : IEquatable<ValueCnameType>
+    {
+        private readonly string _value;
+
+        private ValueCnameType(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueCnameType Cname { get; } = new ValueCnameType("CNAME");
+
+        public static bool operator ==(ValueCnameType left, ValueCnameType right) => left.Equals(right);
+        public static bool operator !=(ValueCnameType left, ValueCnameType right) => !left.Equals(right);
+
+        public static explicit operator string(ValueCnameType value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueCnameType other && Equals(other);
+        public bool Equals(ValueCnameType other) => string.Equals(_value, other._value, StringComparison.Ordinal);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() => _value?.GetHashCode() ?? 0;
+
+        public override string ToString() => _value;
+    }
+
+    /// <summary>
+    /// The failover mode
+    /// </summary>
+    [EnumType]
+    public readonly struct ValueCnameValuePropertiesMode : IEquatable<ValueCnameValuePropertiesMode>
+    {
+        private readonly string _value;
+
+        private ValueCnameValuePropertiesMode(string value)
+        {
+            _value = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public static ValueCnameValuePropertiesMode Normal { get; } = new ValueCnameValuePropertiesMode("normal");
+        public static ValueCnameValuePropertiesMode Off { get; } = new ValueCnameValuePropertiesMode("off");
+        public static ValueCnameValuePropertiesMode OneWay { get; } = new ValueCnameValuePropertiesMode("one-way");
+
+        public static bool operator ==(ValueCnameValuePropertiesMode left, ValueCnameValuePropertiesMode right) => left.Equals(right);
+        public static bool operator !=(ValueCnameValuePropertiesMode left, ValueCnameValuePropertiesMode right) => !left.Equals(right);
+
+        public static explicit operator string(ValueCnameValuePropertiesMode value) => value._value;
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object? obj) => obj is ValueCnameValuePropertiesMode other && Equals(other);
+        public bool Equals(ValueCnameValuePropertiesMode other) => string.Equals(_value, other._value, StringComparison.Ordinal);
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override int GetHashCode() => _value?.GetHashCode() ?? 0;

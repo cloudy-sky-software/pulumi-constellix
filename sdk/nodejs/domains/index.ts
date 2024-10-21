@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AArgs } from "./a";
+export type A = import("./a").A;
+export const A: typeof import("./a").A = null as any;
+utilities.lazyLoad(exports, ["A"], () => require("./a"));
+
+export { AaaaArgs } from "./aaaa";
+export type Aaaa = import("./aaaa").Aaaa;
+export const Aaaa: typeof import("./aaaa").Aaaa = null as any;
+utilities.lazyLoad(exports, ["Aaaa"], () => require("./aaaa"));
+
+export { AnameArgs } from "./aname";
+export type Aname = import("./aname").Aname;
+export const Aname: typeof import("./aname").Aname = null as any;
+utilities.lazyLoad(exports, ["Aname"], () => require("./aname"));
+
 export { ApplyDomainHistoryArgs } from "./applyDomainHistory";
 export type ApplyDomainHistory = import("./applyDomainHistory").ApplyDomainHistory;
 export const ApplyDomainHistory: typeof import("./applyDomainHistory").ApplyDomainHistory = null as any;
@@ -15,15 +30,55 @@ export type ApplyDomainSnapshot = import("./applyDomainSnapshot").ApplyDomainSna
 export const ApplyDomainSnapshot: typeof import("./applyDomainSnapshot").ApplyDomainSnapshot = null as any;
 utilities.lazyLoad(exports, ["ApplyDomainSnapshot"], () => require("./applyDomainSnapshot"));
 
+export { CaaArgs } from "./caa";
+export type Caa = import("./caa").Caa;
+export const Caa: typeof import("./caa").Caa = null as any;
+utilities.lazyLoad(exports, ["Caa"], () => require("./caa"));
+
+export { CertArgs } from "./cert";
+export type Cert = import("./cert").Cert;
+export const Cert: typeof import("./cert").Cert = null as any;
+utilities.lazyLoad(exports, ["Cert"], () => require("./cert"));
+
+export { CnameArgs } from "./cname";
+export type Cname = import("./cname").Cname;
+export const Cname: typeof import("./cname").Cname = null as any;
+utilities.lazyLoad(exports, ["Cname"], () => require("./cname"));
+
 export { DomainArgs } from "./domain";
 export type Domain = import("./domain").Domain;
 export const Domain: typeof import("./domain").Domain = null as any;
 utilities.lazyLoad(exports, ["Domain"], () => require("./domain"));
 
-export { DomainRecordArgs } from "./domainRecord";
-export type DomainRecord = import("./domainRecord").DomainRecord;
-export const DomainRecord: typeof import("./domainRecord").DomainRecord = null as any;
-utilities.lazyLoad(exports, ["DomainRecord"], () => require("./domainRecord"));
+export { GetAArgs, GetAOutputArgs } from "./getA";
+export const getA: typeof import("./getA").getA = null as any;
+export const getAOutput: typeof import("./getA").getAOutput = null as any;
+utilities.lazyLoad(exports, ["getA","getAOutput"], () => require("./getA"));
+
+export { GetAAAAArgs, GetAAAAOutputArgs } from "./getAAAA";
+export const getAAAA: typeof import("./getAAAA").getAAAA = null as any;
+export const getAAAAOutput: typeof import("./getAAAA").getAAAAOutput = null as any;
+utilities.lazyLoad(exports, ["getAAAA","getAAAAOutput"], () => require("./getAAAA"));
+
+export { GetANAMEArgs, GetANAMEOutputArgs } from "./getANAME";
+export const getANAME: typeof import("./getANAME").getANAME = null as any;
+export const getANAMEOutput: typeof import("./getANAME").getANAMEOutput = null as any;
+utilities.lazyLoad(exports, ["getANAME","getANAMEOutput"], () => require("./getANAME"));
+
+export { GetCAAArgs, GetCAAOutputArgs } from "./getCAA";
+export const getCAA: typeof import("./getCAA").getCAA = null as any;
+export const getCAAOutput: typeof import("./getCAA").getCAAOutput = null as any;
+utilities.lazyLoad(exports, ["getCAA","getCAAOutput"], () => require("./getCAA"));
+
+export { GetCERTArgs, GetCERTOutputArgs } from "./getCERT";
+export const getCERT: typeof import("./getCERT").getCERT = null as any;
+export const getCERTOutput: typeof import("./getCERT").getCERTOutput = null as any;
+utilities.lazyLoad(exports, ["getCERT","getCERTOutput"], () => require("./getCERT"));
+
+export { GetCNAMEArgs, GetCNAMEOutputArgs } from "./getCNAME";
+export const getCNAME: typeof import("./getCNAME").getCNAME = null as any;
+export const getCNAMEOutput: typeof import("./getCNAME").getCNAMEOutput = null as any;
+utilities.lazyLoad(exports, ["getCNAME","getCNAMEOutput"], () => require("./getCNAME"));
 
 export { GetDomainArgs, GetDomainOutputArgs } from "./getDomain";
 export const getDomain: typeof import("./getDomain").getDomain = null as any;
@@ -45,15 +100,70 @@ export const getDomainNameserver: typeof import("./getDomainNameserver").getDoma
 export const getDomainNameserverOutput: typeof import("./getDomainNameserver").getDomainNameserverOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainNameserver","getDomainNameserverOutput"], () => require("./getDomainNameserver"));
 
-export { GetDomainRecordArgs, GetDomainRecordOutputArgs } from "./getDomainRecord";
-export const getDomainRecord: typeof import("./getDomainRecord").getDomainRecord = null as any;
-export const getDomainRecordOutput: typeof import("./getDomainRecord").getDomainRecordOutput = null as any;
-utilities.lazyLoad(exports, ["getDomainRecord","getDomainRecordOutput"], () => require("./getDomainRecord"));
-
 export { GetDomainSnapshotArgs, GetDomainSnapshotOutputArgs } from "./getDomainSnapshot";
 export const getDomainSnapshot: typeof import("./getDomainSnapshot").getDomainSnapshot = null as any;
 export const getDomainSnapshotOutput: typeof import("./getDomainSnapshot").getDomainSnapshotOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainSnapshot","getDomainSnapshotOutput"], () => require("./getDomainSnapshot"));
+
+export { GetHINFOArgs, GetHINFOOutputArgs } from "./getHINFO";
+export const getHINFO: typeof import("./getHINFO").getHINFO = null as any;
+export const getHINFOOutput: typeof import("./getHINFO").getHINFOOutput = null as any;
+utilities.lazyLoad(exports, ["getHINFO","getHINFOOutput"], () => require("./getHINFO"));
+
+export { GetHttpArgs, GetHttpOutputArgs } from "./getHttp";
+export const getHttp: typeof import("./getHttp").getHttp = null as any;
+export const getHttpOutput: typeof import("./getHttp").getHttpOutput = null as any;
+utilities.lazyLoad(exports, ["getHttp","getHttpOutput"], () => require("./getHttp"));
+
+export { GetMXArgs, GetMXOutputArgs } from "./getMX";
+export const getMX: typeof import("./getMX").getMX = null as any;
+export const getMXOutput: typeof import("./getMX").getMXOutput = null as any;
+utilities.lazyLoad(exports, ["getMX","getMXOutput"], () => require("./getMX"));
+
+export { GetNAPTRArgs, GetNAPTROutputArgs } from "./getNAPTR";
+export const getNAPTR: typeof import("./getNAPTR").getNAPTR = null as any;
+export const getNAPTROutput: typeof import("./getNAPTR").getNAPTROutput = null as any;
+utilities.lazyLoad(exports, ["getNAPTR","getNAPTROutput"], () => require("./getNAPTR"));
+
+export { GetNSArgs, GetNSOutputArgs } from "./getNS";
+export const getNS: typeof import("./getNS").getNS = null as any;
+export const getNSOutput: typeof import("./getNS").getNSOutput = null as any;
+utilities.lazyLoad(exports, ["getNS","getNSOutput"], () => require("./getNS"));
+
+export { GetPTRArgs, GetPTROutputArgs } from "./getPTR";
+export const getPTR: typeof import("./getPTR").getPTR = null as any;
+export const getPTROutput: typeof import("./getPTR").getPTROutput = null as any;
+utilities.lazyLoad(exports, ["getPTR","getPTROutput"], () => require("./getPTR"));
+
+export { GetRPArgs, GetRPOutputArgs } from "./getRP";
+export const getRP: typeof import("./getRP").getRP = null as any;
+export const getRPOutput: typeof import("./getRP").getRPOutput = null as any;
+utilities.lazyLoad(exports, ["getRP","getRPOutput"], () => require("./getRP"));
+
+export { GetSPFArgs, GetSPFOutputArgs } from "./getSPF";
+export const getSPF: typeof import("./getSPF").getSPF = null as any;
+export const getSPFOutput: typeof import("./getSPF").getSPFOutput = null as any;
+utilities.lazyLoad(exports, ["getSPF","getSPFOutput"], () => require("./getSPF"));
+
+export { GetSRVArgs, GetSRVOutputArgs } from "./getSRV";
+export const getSRV: typeof import("./getSRV").getSRV = null as any;
+export const getSRVOutput: typeof import("./getSRV").getSRVOutput = null as any;
+utilities.lazyLoad(exports, ["getSRV","getSRVOutput"], () => require("./getSRV"));
+
+export { GetTXTArgs, GetTXTOutputArgs } from "./getTXT";
+export const getTXT: typeof import("./getTXT").getTXT = null as any;
+export const getTXTOutput: typeof import("./getTXT").getTXTOutput = null as any;
+utilities.lazyLoad(exports, ["getTXT","getTXTOutput"], () => require("./getTXT"));
+
+export { HinfoArgs } from "./hinfo";
+export type Hinfo = import("./hinfo").Hinfo;
+export const Hinfo: typeof import("./hinfo").Hinfo = null as any;
+utilities.lazyLoad(exports, ["Hinfo"], () => require("./hinfo"));
+
+export { HttpArgs } from "./http";
+export type Http = import("./http").Http;
+export const Http: typeof import("./http").Http = null as any;
+utilities.lazyLoad(exports, ["Http"], () => require("./http"));
 
 export { ListDomainHistoryArgs, ListDomainHistoryOutputArgs } from "./listDomainHistory";
 export const listDomainHistory: typeof import("./listDomainHistory").listDomainHistory = null as any;
@@ -75,10 +185,50 @@ export const listDomains: typeof import("./listDomains").listDomains = null as a
 export const listDomainsOutput: typeof import("./listDomains").listDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["listDomains","listDomainsOutput"], () => require("./listDomains"));
 
+export { MxArgs } from "./mx";
+export type Mx = import("./mx").Mx;
+export const Mx: typeof import("./mx").Mx = null as any;
+utilities.lazyLoad(exports, ["Mx"], () => require("./mx"));
+
+export { NaptrArgs } from "./naptr";
+export type Naptr = import("./naptr").Naptr;
+export const Naptr: typeof import("./naptr").Naptr = null as any;
+utilities.lazyLoad(exports, ["Naptr"], () => require("./naptr"));
+
+export { NsArgs } from "./ns";
+export type Ns = import("./ns").Ns;
+export const Ns: typeof import("./ns").Ns = null as any;
+utilities.lazyLoad(exports, ["Ns"], () => require("./ns"));
+
+export { PtrArgs } from "./ptr";
+export type Ptr = import("./ptr").Ptr;
+export const Ptr: typeof import("./ptr").Ptr = null as any;
+utilities.lazyLoad(exports, ["Ptr"], () => require("./ptr"));
+
+export { RpArgs } from "./rp";
+export type Rp = import("./rp").Rp;
+export const Rp: typeof import("./rp").Rp = null as any;
+utilities.lazyLoad(exports, ["Rp"], () => require("./rp"));
+
 export { SnapshotDomainHistoryArgs } from "./snapshotDomainHistory";
 export type SnapshotDomainHistory = import("./snapshotDomainHistory").SnapshotDomainHistory;
 export const SnapshotDomainHistory: typeof import("./snapshotDomainHistory").SnapshotDomainHistory = null as any;
 utilities.lazyLoad(exports, ["SnapshotDomainHistory"], () => require("./snapshotDomainHistory"));
+
+export { SpfArgs } from "./spf";
+export type Spf = import("./spf").Spf;
+export const Spf: typeof import("./spf").Spf = null as any;
+utilities.lazyLoad(exports, ["Spf"], () => require("./spf"));
+
+export { SrvArgs } from "./srv";
+export type Srv = import("./srv").Srv;
+export const Srv: typeof import("./srv").Srv = null as any;
+utilities.lazyLoad(exports, ["Srv"], () => require("./srv"));
+
+export { TxtArgs } from "./txt";
+export type Txt = import("./txt").Txt;
+export const Txt: typeof import("./txt").Txt = null as any;
+utilities.lazyLoad(exports, ["Txt"], () => require("./txt"));
 
 
 // Export enums:
@@ -88,16 +238,46 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "constellix:domains:A":
+                return new A(name, <any>undefined, { urn })
+            case "constellix:domains:Aaaa":
+                return new Aaaa(name, <any>undefined, { urn })
+            case "constellix:domains:Aname":
+                return new Aname(name, <any>undefined, { urn })
             case "constellix:domains:ApplyDomainHistory":
                 return new ApplyDomainHistory(name, <any>undefined, { urn })
             case "constellix:domains:ApplyDomainSnapshot":
                 return new ApplyDomainSnapshot(name, <any>undefined, { urn })
+            case "constellix:domains:Caa":
+                return new Caa(name, <any>undefined, { urn })
+            case "constellix:domains:Cert":
+                return new Cert(name, <any>undefined, { urn })
+            case "constellix:domains:Cname":
+                return new Cname(name, <any>undefined, { urn })
             case "constellix:domains:Domain":
                 return new Domain(name, <any>undefined, { urn })
-            case "constellix:domains:DomainRecord":
-                return new DomainRecord(name, <any>undefined, { urn })
+            case "constellix:domains:Hinfo":
+                return new Hinfo(name, <any>undefined, { urn })
+            case "constellix:domains:Http":
+                return new Http(name, <any>undefined, { urn })
+            case "constellix:domains:Mx":
+                return new Mx(name, <any>undefined, { urn })
+            case "constellix:domains:Naptr":
+                return new Naptr(name, <any>undefined, { urn })
+            case "constellix:domains:Ns":
+                return new Ns(name, <any>undefined, { urn })
+            case "constellix:domains:Ptr":
+                return new Ptr(name, <any>undefined, { urn })
+            case "constellix:domains:Rp":
+                return new Rp(name, <any>undefined, { urn })
             case "constellix:domains:SnapshotDomainHistory":
                 return new SnapshotDomainHistory(name, <any>undefined, { urn })
+            case "constellix:domains:Spf":
+                return new Spf(name, <any>undefined, { urn })
+            case "constellix:domains:Srv":
+                return new Srv(name, <any>undefined, { urn })
+            case "constellix:domains:Txt":
+                return new Txt(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }

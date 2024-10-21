@@ -2,7 +2,550 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 
-export const TemplateRecordPropertiesRegion = {
+export const APropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    RoundrobinFailover: "roundrobin-failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type APropertiesMode = (typeof APropertiesMode)[keyof typeof APropertiesMode];
+
+export const APropertiesType = {
+    A: "A",
+} as const;
+
+/**
+ * The type of record
+ */
+export type APropertiesType = (typeof APropertiesType)[keyof typeof APropertiesType];
+
+export const AaaaPropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    RoundrobinFailover: "roundrobin-failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type AaaaPropertiesMode = (typeof AaaaPropertiesMode)[keyof typeof AaaaPropertiesMode];
+
+export const AaaaPropertiesType = {
+    Aaaa: "AAAA",
+} as const;
+
+/**
+ * The type of record
+ */
+export type AaaaPropertiesType = (typeof AaaaPropertiesType)[keyof typeof AaaaPropertiesType];
+
+export const AnamePropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type AnamePropertiesMode = (typeof AnamePropertiesMode)[keyof typeof AnamePropertiesMode];
+
+export const AnamePropertiesType = {
+    Aname: "ANAME",
+} as const;
+
+/**
+ * The type of record
+ */
+export type AnamePropertiesType = (typeof AnamePropertiesType)[keyof typeof AnamePropertiesType];
+
+export const CaaPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type CaaPropertiesMode = (typeof CaaPropertiesMode)[keyof typeof CaaPropertiesMode];
+
+export const CaaPropertiesType = {
+    Caa: "CAA",
+} as const;
+
+/**
+ * The type of record
+ */
+export type CaaPropertiesType = (typeof CaaPropertiesType)[keyof typeof CaaPropertiesType];
+
+export const CertPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type CertPropertiesMode = (typeof CertPropertiesMode)[keyof typeof CertPropertiesMode];
+
+export const CertPropertiesType = {
+    Cert: "CERT",
+} as const;
+
+/**
+ * The type of record
+ */
+export type CertPropertiesType = (typeof CertPropertiesType)[keyof typeof CertPropertiesType];
+
+export const CnamePropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type CnamePropertiesMode = (typeof CnamePropertiesMode)[keyof typeof CnamePropertiesMode];
+
+export const CnamePropertiesType = {
+    Cname: "CNAME",
+} as const;
+
+/**
+ * The type of record
+ */
+export type CnamePropertiesType = (typeof CnamePropertiesType)[keyof typeof CnamePropertiesType];
+
+export const GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode = (typeof GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode)[keyof typeof GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode];
+
+export const GetAAAAPropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+    RoundrobinFailover: "roundrobin-failover",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetAAAAPropertiesMode = (typeof GetAAAAPropertiesMode)[keyof typeof GetAAAAPropertiesMode];
+
+export const GetAAAAPropertiesType = {
+    Aaaa: "AAAA",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetAAAAPropertiesType = (typeof GetAAAAPropertiesType)[keyof typeof GetAAAAPropertiesType];
+
+export const GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode = (typeof GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)[keyof typeof GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode];
+
+export const GetANAMEPropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetANAMEPropertiesMode = (typeof GetANAMEPropertiesMode)[keyof typeof GetANAMEPropertiesMode];
+
+export const GetAPropertiesLastValuesPropertiesFailoverPropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type GetAPropertiesLastValuesPropertiesFailoverPropertiesMode = (typeof GetAPropertiesLastValuesPropertiesFailoverPropertiesMode)[keyof typeof GetAPropertiesLastValuesPropertiesFailoverPropertiesMode];
+
+export const GetAPropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+    RoundRobinFailover: "roundRobinFailover",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetAPropertiesMode = (typeof GetAPropertiesMode)[keyof typeof GetAPropertiesMode];
+
+export const GetCAAPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetCAAPropertiesMode = (typeof GetCAAPropertiesMode)[keyof typeof GetCAAPropertiesMode];
+
+export const GetCERTPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetCERTPropertiesMode = (typeof GetCERTPropertiesMode)[keyof typeof GetCERTPropertiesMode];
+
+export const GetCERTPropertiesType = {
+    Caa: "CAA",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetCERTPropertiesType = (typeof GetCERTPropertiesType)[keyof typeof GetCERTPropertiesType];
+
+export const GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode = (typeof GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode)[keyof typeof GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode];
+
+export const GetCNAMEPropertiesMode = {
+    Standard: "standard",
+    Failover: "failover",
+    Pools: "pools",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetCNAMEPropertiesMode = (typeof GetCNAMEPropertiesMode)[keyof typeof GetCNAMEPropertiesMode];
+
+export const GetHINFOPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetHINFOPropertiesMode = (typeof GetHINFOPropertiesMode)[keyof typeof GetHINFOPropertiesMode];
+
+export const GetHINFOPropertiesType = {
+    Hinfo: "HINFO",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetHINFOPropertiesType = (typeof GetHINFOPropertiesType)[keyof typeof GetHINFOPropertiesType];
+
+export const GetHttpPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetHttpPropertiesMode = (typeof GetHttpPropertiesMode)[keyof typeof GetHttpPropertiesMode];
+
+export const GetHttpPropertiesType = {
+    Http: "HTTP",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetHttpPropertiesType = (typeof GetHttpPropertiesType)[keyof typeof GetHttpPropertiesType];
+
+export const GetMXPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetMXPropertiesMode = (typeof GetMXPropertiesMode)[keyof typeof GetMXPropertiesMode];
+
+export const GetMXPropertiesType = {
+    Mx: "MX",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetMXPropertiesType = (typeof GetMXPropertiesType)[keyof typeof GetMXPropertiesType];
+
+export const GetNAPTRPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetNAPTRPropertiesMode = (typeof GetNAPTRPropertiesMode)[keyof typeof GetNAPTRPropertiesMode];
+
+export const GetNAPTRPropertiesType = {
+    Naptr: "NAPTR",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetNAPTRPropertiesType = (typeof GetNAPTRPropertiesType)[keyof typeof GetNAPTRPropertiesType];
+
+export const GetNSPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetNSPropertiesMode = (typeof GetNSPropertiesMode)[keyof typeof GetNSPropertiesMode];
+
+export const GetNSPropertiesType = {
+    Ns: "NS",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetNSPropertiesType = (typeof GetNSPropertiesType)[keyof typeof GetNSPropertiesType];
+
+export const GetPTRPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetPTRPropertiesMode = (typeof GetPTRPropertiesMode)[keyof typeof GetPTRPropertiesMode];
+
+export const GetPTRPropertiesType = {
+    Ptr: "PTR",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetPTRPropertiesType = (typeof GetPTRPropertiesType)[keyof typeof GetPTRPropertiesType];
+
+export const GetRPPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetRPPropertiesMode = (typeof GetRPPropertiesMode)[keyof typeof GetRPPropertiesMode];
+
+export const GetRPPropertiesType = {
+    Rp: "RP",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetRPPropertiesType = (typeof GetRPPropertiesType)[keyof typeof GetRPPropertiesType];
+
+export const GetSPFPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetSPFPropertiesMode = (typeof GetSPFPropertiesMode)[keyof typeof GetSPFPropertiesMode];
+
+export const GetSPFPropertiesType = {
+    Spf: "SPF",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetSPFPropertiesType = (typeof GetSPFPropertiesType)[keyof typeof GetSPFPropertiesType];
+
+export const GetSRVPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetSRVPropertiesMode = (typeof GetSRVPropertiesMode)[keyof typeof GetSRVPropertiesMode];
+
+export const GetSRVPropertiesType = {
+    Srv: "SRV",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetSRVPropertiesType = (typeof GetSRVPropertiesType)[keyof typeof GetSRVPropertiesType];
+
+export const GetTXTPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * How the record should work
+ */
+export type GetTXTPropertiesMode = (typeof GetTXTPropertiesMode)[keyof typeof GetTXTPropertiesMode];
+
+export const GetTXTPropertiesType = {
+    Txt: "TXT",
+} as const;
+
+/**
+ * The type of record
+ */
+export type GetTXTPropertiesType = (typeof GetTXTPropertiesType)[keyof typeof GetTXTPropertiesType];
+
+export const HinfoPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type HinfoPropertiesMode = (typeof HinfoPropertiesMode)[keyof typeof HinfoPropertiesMode];
+
+export const HinfoPropertiesType = {
+    Hinfo: "HINFO",
+} as const;
+
+/**
+ * The type of record
+ */
+export type HinfoPropertiesType = (typeof HinfoPropertiesType)[keyof typeof HinfoPropertiesType];
+
+export const HttpPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type HttpPropertiesMode = (typeof HttpPropertiesMode)[keyof typeof HttpPropertiesMode];
+
+export const HttpPropertiesType = {
+    Http: "HTTP",
+} as const;
+
+/**
+ * The type of record
+ */
+export type HttpPropertiesType = (typeof HttpPropertiesType)[keyof typeof HttpPropertiesType];
+
+export const ItemsTag = {
+    Issue: "issue",
+    Issuewild: "issuewild",
+    Iodef: "iodef",
+} as const;
+
+/**
+ * Foo
+ */
+export type ItemsTag = (typeof ItemsTag)[keyof typeof ItemsTag];
+
+export const MxPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type MxPropertiesMode = (typeof MxPropertiesMode)[keyof typeof MxPropertiesMode];
+
+export const MxPropertiesType = {
+    Mx: "MX",
+} as const;
+
+/**
+ * The type of record
+ */
+export type MxPropertiesType = (typeof MxPropertiesType)[keyof typeof MxPropertiesType];
+
+export const NaptrPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type NaptrPropertiesMode = (typeof NaptrPropertiesMode)[keyof typeof NaptrPropertiesMode];
+
+export const NaptrPropertiesType = {
+    Naptr: "NAPTR",
+} as const;
+
+/**
+ * The type of record
+ */
+export type NaptrPropertiesType = (typeof NaptrPropertiesType)[keyof typeof NaptrPropertiesType];
+
+export const NsPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type NsPropertiesMode = (typeof NsPropertiesMode)[keyof typeof NsPropertiesMode];
+
+export const NsPropertiesType = {
+    Ns: "NS",
+} as const;
+
+/**
+ * The type of record
+ */
+export type NsPropertiesType = (typeof NsPropertiesType)[keyof typeof NsPropertiesType];
+
+export const PtrPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type PtrPropertiesMode = (typeof PtrPropertiesMode)[keyof typeof PtrPropertiesMode];
+
+export const PtrPropertiesType = {
+    Ptr: "PTR",
+} as const;
+
+/**
+ * The type of record
+ */
+export type PtrPropertiesType = (typeof PtrPropertiesType)[keyof typeof PtrPropertiesType];
+
+export const RecordCreateDetailsRegion = {
     Default: "default",
     Europe: "europe",
     UsEast: "us-east",
@@ -15,4 +558,234 @@ export const TemplateRecordPropertiesRegion = {
 /**
  * Optional region for this record. Will default to 'default'.
  */
-export type TemplateRecordPropertiesRegion = (typeof TemplateRecordPropertiesRegion)[keyof typeof TemplateRecordPropertiesRegion];
+export type RecordCreateDetailsRegion = (typeof RecordCreateDetailsRegion)[keyof typeof RecordCreateDetailsRegion];
+
+export const RecordRegion = {
+    Default: "default",
+    Europe: "europe",
+    UsEast: "us-east",
+    UsWest: "us-west",
+    AsiaPacific: "asia-pacific",
+    Oceania: "oceania",
+    SouthAmerica: "south-america",
+} as const;
+
+/**
+ * The region for this record
+ */
+export type RecordRegion = (typeof RecordRegion)[keyof typeof RecordRegion];
+
+export const RpPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type RpPropertiesMode = (typeof RpPropertiesMode)[keyof typeof RpPropertiesMode];
+
+export const RpPropertiesType = {
+    Rp: "RP",
+} as const;
+
+/**
+ * The type of record
+ */
+export type RpPropertiesType = (typeof RpPropertiesType)[keyof typeof RpPropertiesType];
+
+export const SimpleDomainStatus = {
+    Active: "ACTIVE",
+    Suspended: "SUSPENDED",
+    Terminated: "TERMINATED",
+} as const;
+
+export type SimpleDomainStatus = (typeof SimpleDomainStatus)[keyof typeof SimpleDomainStatus];
+
+export const SpfPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type SpfPropertiesMode = (typeof SpfPropertiesMode)[keyof typeof SpfPropertiesMode];
+
+export const SpfPropertiesType = {
+    Spf: "SPF",
+} as const;
+
+/**
+ * The type of record
+ */
+export type SpfPropertiesType = (typeof SpfPropertiesType)[keyof typeof SpfPropertiesType];
+
+export const SrvPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type SrvPropertiesMode = (typeof SrvPropertiesMode)[keyof typeof SrvPropertiesMode];
+
+export const SrvPropertiesType = {
+    Srv: "SRV",
+} as const;
+
+/**
+ * The type of record
+ */
+export type SrvPropertiesType = (typeof SrvPropertiesType)[keyof typeof SrvPropertiesType];
+
+export const TxtPropertiesMode = {
+    Standard: "standard",
+} as const;
+
+/**
+ * The current mode for this record
+ */
+export type TxtPropertiesMode = (typeof TxtPropertiesMode)[keyof typeof TxtPropertiesMode];
+
+export const TxtPropertiesType = {
+    Txt: "TXT",
+} as const;
+
+/**
+ * The type of record
+ */
+export type TxtPropertiesType = (typeof TxtPropertiesType)[keyof typeof TxtPropertiesType];
+
+export const ValueARequestValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueARequestValuePropertiesMode = (typeof ValueARequestValuePropertiesMode)[keyof typeof ValueARequestValuePropertiesMode];
+
+export const ValueAType = {
+    A: "A",
+} as const;
+
+/**
+ * The type of record
+ */
+export type ValueAType = (typeof ValueAType)[keyof typeof ValueAType];
+
+export const ValueAValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueAValuePropertiesMode = (typeof ValueAValuePropertiesMode)[keyof typeof ValueAValuePropertiesMode];
+
+export const ValueAaaaRequestValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueAaaaRequestValuePropertiesMode = (typeof ValueAaaaRequestValuePropertiesMode)[keyof typeof ValueAaaaRequestValuePropertiesMode];
+
+export const ValueAaaaType = {
+    Aaaa: "AAAA",
+} as const;
+
+/**
+ * The type of record
+ */
+export type ValueAaaaType = (typeof ValueAaaaType)[keyof typeof ValueAaaaType];
+
+export const ValueAaaaValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueAaaaValuePropertiesMode = (typeof ValueAaaaValuePropertiesMode)[keyof typeof ValueAaaaValuePropertiesMode];
+
+export const ValueAnameRequestValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueAnameRequestValuePropertiesMode = (typeof ValueAnameRequestValuePropertiesMode)[keyof typeof ValueAnameRequestValuePropertiesMode];
+
+export const ValueAnameType = {
+    Aname: "ANAME",
+} as const;
+
+/**
+ * The type of record
+ */
+export type ValueAnameType = (typeof ValueAnameType)[keyof typeof ValueAnameType];
+
+export const ValueAnameValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueAnameValuePropertiesMode = (typeof ValueAnameValuePropertiesMode)[keyof typeof ValueAnameValuePropertiesMode];
+
+export const ValueCaaValueItemPropertiesTag = {
+    Issue: "issue",
+    Issuewild: "issuewild",
+    Iodef: "iodef",
+} as const;
+
+/**
+ * Foo
+ */
+export type ValueCaaValueItemPropertiesTag = (typeof ValueCaaValueItemPropertiesTag)[keyof typeof ValueCaaValueItemPropertiesTag];
+
+export const ValueCnameRequestValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueCnameRequestValuePropertiesMode = (typeof ValueCnameRequestValuePropertiesMode)[keyof typeof ValueCnameRequestValuePropertiesMode];
+
+export const ValueCnameType = {
+    Cname: "CNAME",
+} as const;
+
+/**
+ * The type of record
+ */
+export type ValueCnameType = (typeof ValueCnameType)[keyof typeof ValueCnameType];
+
+export const ValueCnameValuePropertiesMode = {
+    Normal: "normal",
+    Off: "off",
+    OneWay: "one-way",
+} as const;
+
+/**
+ * The failover mode
+ */
+export type ValueCnameValuePropertiesMode = (typeof ValueCnameValuePropertiesMode)[keyof typeof ValueCnameValuePropertiesMode];

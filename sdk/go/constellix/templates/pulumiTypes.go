@@ -143,6 +143,4457 @@ func (o DataPropertiesLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Links for the domain record
+type DomainrecordLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+type GetAType struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetAPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetAPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type  *ValueAType  `pulumi:"type"`
+	Value *ValueAValue `pulumi:"value"`
+}
+
+type GetATypeOutput struct{ *pulumi.OutputState }
+
+func (GetATypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAType)(nil)).Elem()
+}
+
+func (o GetATypeOutput) ToGetATypeOutput() GetATypeOutput {
+	return o
+}
+
+func (o GetATypeOutput) ToGetATypeOutputWithContext(ctx context.Context) GetATypeOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetATypeOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetAType) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetATypeOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetAType) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetATypeOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAType) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetATypeOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAType) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetATypeOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetAType) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetATypeOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAType) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetATypeOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetAType) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetATypeOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAType) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetATypeOutput) LastValues() GetAPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAType) *GetAPropertiesLastValuesProperties { return v.LastValues }).(GetAPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetATypeOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAType) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetATypeOutput) Mode() GetAPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetAType) *GetAPropertiesMode { return v.Mode }).(GetAPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetATypeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAType) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetATypeOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAType) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetATypeOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetAType) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetATypeOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAType) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetATypeOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetAType) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetATypeOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAType) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetATypeOutput) Type() ValueATypePtrOutput {
+	return o.ApplyT(func(v GetAType) *ValueAType { return v.Type }).(ValueATypePtrOutput)
+}
+
+func (o GetATypeOutput) Value() ValueAValuePtrOutput {
+	return o.ApplyT(func(v GetAType) *ValueAValue { return v.Value }).(ValueAValuePtrOutput)
+}
+
+type GetAAAA struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetAAAAPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetAAAAPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type  *ValueAaaaType  `pulumi:"type"`
+	Value *ValueAaaaValue `pulumi:"value"`
+}
+
+type GetAAAAOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAA)(nil)).Elem()
+}
+
+func (o GetAAAAOutput) ToGetAAAAOutput() GetAAAAOutput {
+	return o
+}
+
+func (o GetAAAAOutput) ToGetAAAAOutputWithContext(ctx context.Context) GetAAAAOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetAAAAOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetAAAAOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetAAAAOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetAAAAOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetAAAAOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetAAAAOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetAAAAOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetAAAAOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetAAAAOutput) LastValues() GetAAAAPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *GetAAAAPropertiesLastValuesProperties { return v.LastValues }).(GetAAAAPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetAAAAOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetAAAAOutput) Mode() GetAAAAPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetAAAA) *GetAAAAPropertiesMode { return v.Mode }).(GetAAAAPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetAAAAOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetAAAAOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetAAAAOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetAAAAOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAAAAOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetAAAA) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetAAAAOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAA) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetAAAAOutput) Type() ValueAaaaTypePtrOutput {
+	return o.ApplyT(func(v GetAAAA) *ValueAaaaType { return v.Type }).(ValueAaaaTypePtrOutput)
+}
+
+func (o GetAAAAOutput) Value() ValueAaaaValuePtrOutput {
+	return o.ApplyT(func(v GetAAAA) *ValueAaaaValue { return v.Value }).(ValueAaaaValuePtrOutput)
+}
+
+// The previous values of the record in the different modes
+type GetAAAAPropertiesLastValuesProperties struct {
+	// The previous values in failover mode
+	Failover *GetAAAAPropertiesLastValuesPropertiesFailoverProperties `pulumi:"failover"`
+	// The previous values in Pools mode
+	Pools []SimplePool `pulumi:"pools"`
+	// The previous values in Round-Robin Failover mode
+	RoundRobinFailover []GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem `pulumi:"roundRobinFailover"`
+	// The previous values in standard mode
+	Standard []GetAAAAPropertiesLastValuesPropertiesStandardItemProperties `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetAAAAPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesOutput() GetAAAAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) Failover() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesProperties) *GetAAAAPropertiesLastValuesPropertiesFailoverProperties {
+		return v.Failover
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesProperties) []SimplePool { return v.Pools }).(SimplePoolArrayOutput)
+}
+
+// The previous values in Round-Robin Failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) RoundRobinFailover() GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesProperties) []GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		return v.RoundRobinFailover
+	}).(GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetAAAAPropertiesLastValuesPropertiesOutput) Standard() GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesProperties) []GetAAAAPropertiesLastValuesPropertiesStandardItemProperties {
+		return v.Standard
+	}).(GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAAAAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) ToGetAAAAPropertiesLastValuesPropertiesPtrOutput() GetAAAAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) ToGetAAAAPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) Elem() GetAAAAPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesProperties) GetAAAAPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetAAAAPropertiesLastValuesProperties
+		return ret
+	}).(GetAAAAPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) Failover() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesProperties) *GetAAAAPropertiesLastValuesPropertiesFailoverProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Failover
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesProperties) []SimplePool {
+		if v == nil {
+			return nil
+		}
+		return v.Pools
+	}).(SimplePoolArrayOutput)
+}
+
+// The previous values in Round-Robin Failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) RoundRobinFailover() GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesProperties) []GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		if v == nil {
+			return nil
+		}
+		return v.RoundRobinFailover
+	}).(GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetAAAAPropertiesLastValuesPropertiesPtrOutput) Standard() GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesProperties) []GetAAAAPropertiesLastValuesPropertiesStandardItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+// The previous values in failover mode
+type GetAAAAPropertiesLastValuesPropertiesFailoverProperties struct {
+	// The failover mode
+	Mode   *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode        `pulumi:"mode"`
+	Values []GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem `pulumi:"values"`
+}
+
+// The previous values in failover mode
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+// The failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput) Mode() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverProperties) *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return v.Mode
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput) Values() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverProperties) []GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return v.Values
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAAAAPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Elem() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesPropertiesFailoverProperties) GetAAAAPropertiesLastValuesPropertiesFailoverProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetAAAAPropertiesLastValuesPropertiesFailoverProperties
+		return ret
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput)
+}
+
+// The failover mode
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Mode() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesPropertiesFailoverProperties) *GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Values() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *GetAAAAPropertiesLastValuesPropertiesFailoverProperties) []GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput() GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return vs[0].([]GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)[vs[1].(int)]
+	}).(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ToGetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput() GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ToGetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput() GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) Index(i pulumi.IntInput) GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		return vs[0].([]GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItem)[vs[1].(int)]
+	}).(GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesStandardItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool   `pulumi:"enabled"`
+	Value   *string `pulumi:"value"`
+}
+
+type GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAAAAPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput() GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesStandardItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAAAAPropertiesLastValuesPropertiesStandardItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAAAAPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput() GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutputWithContext(ctx context.Context) GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) Index(i pulumi.IntInput) GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAAAAPropertiesLastValuesPropertiesStandardItemProperties {
+		return vs[0].([]GetAAAAPropertiesLastValuesPropertiesStandardItemProperties)[vs[1].(int)]
+	}).(GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput)
+}
+
+type GetANAME struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetANAMEPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetANAMEPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type  *ValueAnameType `pulumi:"type"`
+	Value interface{}     `pulumi:"value"`
+}
+
+type GetANAMEOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAME)(nil)).Elem()
+}
+
+func (o GetANAMEOutput) ToGetANAMEOutput() GetANAMEOutput {
+	return o
+}
+
+func (o GetANAMEOutput) ToGetANAMEOutputWithContext(ctx context.Context) GetANAMEOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetANAMEOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetANAME) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetANAMEOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetANAME) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetANAMEOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAME) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetANAMEOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAME) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetANAMEOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetANAME) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetANAMEOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetANAME) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetANAMEOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetANAME) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetANAMEOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAME) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetANAMEOutput) LastValues() GetANAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetANAME) *GetANAMEPropertiesLastValuesProperties { return v.LastValues }).(GetANAMEPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetANAMEOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetANAME) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetANAMEOutput) Mode() GetANAMEPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetANAME) *GetANAMEPropertiesMode { return v.Mode }).(GetANAMEPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetANAMEOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetANAME) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetANAMEOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetANAME) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetANAMEOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetANAME) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetANAMEOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAME) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetANAMEOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetANAME) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetANAMEOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetANAME) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetANAMEOutput) Type() ValueAnameTypePtrOutput {
+	return o.ApplyT(func(v GetANAME) *ValueAnameType { return v.Type }).(ValueAnameTypePtrOutput)
+}
+
+func (o GetANAMEOutput) Value() pulumi.AnyOutput {
+	return o.ApplyT(func(v GetANAME) interface{} { return v.Value }).(pulumi.AnyOutput)
+}
+
+// The previous values of the record in the different modes
+type GetANAMEPropertiesLastValuesProperties struct {
+	// The previous values in failover mode
+	Failover *GetANAMEPropertiesLastValuesPropertiesFailoverProperties `pulumi:"failover"`
+	// The previous values in Pools mode
+	Pools []SimplePool `pulumi:"pools"`
+	// The previous values in standard mode
+	Standard []GetANAMEPropertiesLastValuesPropertiesStandardItemProperties `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetANAMEPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesOutput() GetANAMEPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in failover mode
+func (o GetANAMEPropertiesLastValuesPropertiesOutput) Failover() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesProperties) *GetANAMEPropertiesLastValuesPropertiesFailoverProperties {
+		return v.Failover
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetANAMEPropertiesLastValuesPropertiesOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesProperties) []SimplePool { return v.Pools }).(SimplePoolArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetANAMEPropertiesLastValuesPropertiesOutput) Standard() GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesProperties) []GetANAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		return v.Standard
+	}).(GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetANAMEPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) ToGetANAMEPropertiesLastValuesPropertiesPtrOutput() GetANAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) ToGetANAMEPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) Elem() GetANAMEPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesProperties) GetANAMEPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetANAMEPropertiesLastValuesProperties
+		return ret
+	}).(GetANAMEPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in failover mode
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) Failover() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesProperties) *GetANAMEPropertiesLastValuesPropertiesFailoverProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Failover
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesProperties) []SimplePool {
+		if v == nil {
+			return nil
+		}
+		return v.Pools
+	}).(SimplePoolArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetANAMEPropertiesLastValuesPropertiesPtrOutput) Standard() GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesProperties) []GetANAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+// The previous values in failover mode
+type GetANAMEPropertiesLastValuesPropertiesFailoverProperties struct {
+	// The failover mode
+	Mode   *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode        `pulumi:"mode"`
+	Values []GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem `pulumi:"values"`
+}
+
+// The previous values in failover mode
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+// The failover mode
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) Mode() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverProperties) *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return v.Mode
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) Values() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverProperties) []GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return v.Values
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetANAMEPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Elem() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesPropertiesFailoverProperties) GetANAMEPropertiesLastValuesPropertiesFailoverProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetANAMEPropertiesLastValuesPropertiesFailoverProperties
+		return ret
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput)
+}
+
+// The failover mode
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Mode() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesPropertiesFailoverProperties) *GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Values() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *GetANAMEPropertiesLastValuesPropertiesFailoverProperties) []GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput() GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return vs[0].([]GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)[vs[1].(int)]
+	}).(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesStandardItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool   `pulumi:"enabled"`
+	Value   *string `pulumi:"value"`
+}
+
+type GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetANAMEPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput() GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesStandardItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetANAMEPropertiesLastValuesPropertiesStandardItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetANAMEPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput() GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutputWithContext(ctx context.Context) GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) Index(i pulumi.IntInput) GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetANAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		return vs[0].([]GetANAMEPropertiesLastValuesPropertiesStandardItemProperties)[vs[1].(int)]
+	}).(GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput)
+}
+
+// The previous values of the record in the different modes
+type GetAPropertiesLastValuesProperties struct {
+	// The previous values in failover mode
+	Failover *GetAPropertiesLastValuesPropertiesFailoverProperties `pulumi:"failover"`
+	// The previous values in Pools mode
+	Pools []SimplePool `pulumi:"pools"`
+	// The previous values in Round-Robin Failover mode
+	RoundRobinFailover []GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem `pulumi:"roundRobinFailover"`
+	// The previous values in standard mode
+	Standard []GetAPropertiesLastValuesPropertiesStandardItemProperties `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetAPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesOutput) ToGetAPropertiesLastValuesPropertiesOutput() GetAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesOutput) ToGetAPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in failover mode
+func (o GetAPropertiesLastValuesPropertiesOutput) Failover() GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesProperties) *GetAPropertiesLastValuesPropertiesFailoverProperties {
+		return v.Failover
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetAPropertiesLastValuesPropertiesOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesProperties) []SimplePool { return v.Pools }).(SimplePoolArrayOutput)
+}
+
+// The previous values in Round-Robin Failover mode
+func (o GetAPropertiesLastValuesPropertiesOutput) RoundRobinFailover() GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesProperties) []GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		return v.RoundRobinFailover
+	}).(GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetAPropertiesLastValuesPropertiesOutput) Standard() GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesProperties) []GetAPropertiesLastValuesPropertiesStandardItemProperties {
+		return v.Standard
+	}).(GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) ToGetAPropertiesLastValuesPropertiesPtrOutput() GetAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) ToGetAPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) Elem() GetAPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesProperties) GetAPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetAPropertiesLastValuesProperties
+		return ret
+	}).(GetAPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in failover mode
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) Failover() GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesProperties) *GetAPropertiesLastValuesPropertiesFailoverProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Failover
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesProperties) []SimplePool {
+		if v == nil {
+			return nil
+		}
+		return v.Pools
+	}).(SimplePoolArrayOutput)
+}
+
+// The previous values in Round-Robin Failover mode
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) RoundRobinFailover() GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesProperties) []GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		if v == nil {
+			return nil
+		}
+		return v.RoundRobinFailover
+	}).(GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetAPropertiesLastValuesPropertiesPtrOutput) Standard() GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesProperties) []GetAPropertiesLastValuesPropertiesStandardItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+// The previous values in failover mode
+type GetAPropertiesLastValuesPropertiesFailoverProperties struct {
+	// The failover mode
+	Mode   *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode        `pulumi:"mode"`
+	Values []GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem `pulumi:"values"`
+}
+
+// The previous values in failover mode
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+// The failover mode
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput) Mode() GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverProperties) *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return v.Mode
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput) Values() GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverProperties) []GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return v.Values
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetAPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Elem() GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesPropertiesFailoverProperties) GetAPropertiesLastValuesPropertiesFailoverProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetAPropertiesLastValuesPropertiesFailoverProperties
+		return ret
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput)
+}
+
+// The failover mode
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Mode() GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesPropertiesFailoverProperties) *GetAPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Values() GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *GetAPropertiesLastValuesPropertiesFailoverProperties) []GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput() GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return vs[0].([]GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)[vs[1].(int)]
+	}).(GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ToGetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput() GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) ToGetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ToGetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput() GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) ToGetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput) Index(i pulumi.IntInput) GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem {
+		return vs[0].([]GetAPropertiesLastValuesPropertiesRoundRobinFailoverItem)[vs[1].(int)]
+	}).(GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesStandardItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool   `pulumi:"enabled"`
+	Value   *string `pulumi:"value"`
+}
+
+type GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput() GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetAPropertiesLastValuesPropertiesStandardItemPropertiesOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesStandardItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAPropertiesLastValuesPropertiesStandardItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput() GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutputWithContext(ctx context.Context) GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) Index(i pulumi.IntInput) GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAPropertiesLastValuesPropertiesStandardItemProperties {
+		return vs[0].([]GetAPropertiesLastValuesPropertiesStandardItemProperties)[vs[1].(int)]
+	}).(GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput)
+}
+
+type GetCAA struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetCAAPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetCAAPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// Standard record mode
+	Value []ValueCaaValueItemProperties `pulumi:"value"`
+}
+
+type GetCAAOutput struct{ *pulumi.OutputState }
+
+func (GetCAAOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCAA)(nil)).Elem()
+}
+
+func (o GetCAAOutput) ToGetCAAOutput() GetCAAOutput {
+	return o
+}
+
+func (o GetCAAOutput) ToGetCAAOutputWithContext(ctx context.Context) GetCAAOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetCAAOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetCAA) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetCAAOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetCAA) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetCAAOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCAA) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetCAAOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCAA) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetCAAOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetCAA) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetCAAOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCAA) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCAAOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetCAA) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetCAAOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCAA) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetCAAOutput) LastValues() GetCAAPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCAA) *GetCAAPropertiesLastValuesProperties { return v.LastValues }).(GetCAAPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetCAAOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCAA) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetCAAOutput) Mode() GetCAAPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetCAA) *GetCAAPropertiesMode { return v.Mode }).(GetCAAPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetCAAOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCAA) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetCAAOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCAA) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetCAAOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetCAA) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetCAAOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCAA) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCAAOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetCAA) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetCAAOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCAA) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// Standard record mode
+func (o GetCAAOutput) Value() ValueCaaValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetCAA) []ValueCaaValueItemProperties { return v.Value }).(ValueCaaValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetCAAPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []Items `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetCAAPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetCAAPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCAAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCAAPropertiesLastValuesPropertiesOutput) ToGetCAAPropertiesLastValuesPropertiesOutput() GetCAAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetCAAPropertiesLastValuesPropertiesOutput) ToGetCAAPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetCAAPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetCAAPropertiesLastValuesPropertiesOutput) Standard() ItemsArrayOutput {
+	return o.ApplyT(func(v GetCAAPropertiesLastValuesProperties) []Items { return v.Standard }).(ItemsArrayOutput)
+}
+
+type GetCAAPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetCAAPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCAAPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCAAPropertiesLastValuesPropertiesPtrOutput) ToGetCAAPropertiesLastValuesPropertiesPtrOutput() GetCAAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCAAPropertiesLastValuesPropertiesPtrOutput) ToGetCAAPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetCAAPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCAAPropertiesLastValuesPropertiesPtrOutput) Elem() GetCAAPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetCAAPropertiesLastValuesProperties) GetCAAPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetCAAPropertiesLastValuesProperties
+		return ret
+	}).(GetCAAPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetCAAPropertiesLastValuesPropertiesPtrOutput) Standard() ItemsArrayOutput {
+	return o.ApplyT(func(v *GetCAAPropertiesLastValuesProperties) []Items {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ItemsArrayOutput)
+}
+
+type GetCERT struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetCERTPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetCERTPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetCERTPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueCertValueItemProperties `pulumi:"value"`
+}
+
+type GetCERTOutput struct{ *pulumi.OutputState }
+
+func (GetCERTOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCERT)(nil)).Elem()
+}
+
+func (o GetCERTOutput) ToGetCERTOutput() GetCERTOutput {
+	return o
+}
+
+func (o GetCERTOutput) ToGetCERTOutputWithContext(ctx context.Context) GetCERTOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetCERTOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetCERT) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetCERTOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetCERT) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetCERTOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCERT) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetCERTOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCERT) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetCERTOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetCERT) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetCERTOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCERT) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCERTOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetCERT) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetCERTOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCERT) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetCERTOutput) LastValues() GetCERTPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCERT) *GetCERTPropertiesLastValuesProperties { return v.LastValues }).(GetCERTPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetCERTOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCERT) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetCERTOutput) Mode() GetCERTPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetCERT) *GetCERTPropertiesMode { return v.Mode }).(GetCERTPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetCERTOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCERT) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetCERTOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCERT) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetCERTOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetCERT) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetCERTOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCERT) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCERTOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetCERT) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetCERTOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCERT) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetCERTOutput) Type() GetCERTPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetCERT) *GetCERTPropertiesType { return v.Type }).(GetCERTPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetCERTOutput) Value() ValueCertValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetCERT) []ValueCertValueItemProperties { return v.Value }).(ValueCertValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetCERTPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetCERTPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCERTPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesLastValuesPropertiesOutput) ToGetCERTPropertiesLastValuesPropertiesOutput() GetCERTPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetCERTPropertiesLastValuesPropertiesOutput) ToGetCERTPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetCERTPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetCERTPropertiesLastValuesPropertiesOutput) Standard() ValueItemsArrayOutput {
+	return o.ApplyT(func(v GetCERTPropertiesLastValuesProperties) []ValueItems { return v.Standard }).(ValueItemsArrayOutput)
+}
+
+type GetCERTPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetCERTPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCERTPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCERTPropertiesLastValuesPropertiesPtrOutput) ToGetCERTPropertiesLastValuesPropertiesPtrOutput() GetCERTPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesLastValuesPropertiesPtrOutput) ToGetCERTPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetCERTPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCERTPropertiesLastValuesPropertiesPtrOutput) Elem() GetCERTPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetCERTPropertiesLastValuesProperties) GetCERTPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetCERTPropertiesLastValuesProperties
+		return ret
+	}).(GetCERTPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetCERTPropertiesLastValuesPropertiesPtrOutput) Standard() ValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetCERTPropertiesLastValuesProperties) []ValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueItemsArrayOutput)
+}
+
+type GetCNAME struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetCNAMEPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetCNAMEPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type  *ValueCnameType  `pulumi:"type"`
+	Value *ValueCnameValue `pulumi:"value"`
+}
+
+type GetCNAMEOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAME)(nil)).Elem()
+}
+
+func (o GetCNAMEOutput) ToGetCNAMEOutput() GetCNAMEOutput {
+	return o
+}
+
+func (o GetCNAMEOutput) ToGetCNAMEOutputWithContext(ctx context.Context) GetCNAMEOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetCNAMEOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetCNAMEOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetCNAMEOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetCNAMEOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetCNAMEOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetCNAMEOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetCNAMEOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetCNAMEOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetCNAMEOutput) LastValues() GetCNAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *GetCNAMEPropertiesLastValuesProperties { return v.LastValues }).(GetCNAMEPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetCNAMEOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetCNAMEOutput) Mode() GetCNAMEPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetCNAME) *GetCNAMEPropertiesMode { return v.Mode }).(GetCNAMEPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetCNAMEOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetCNAMEOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetCNAMEOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetCNAMEOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCNAMEOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetCNAME) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetCNAMEOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCNAME) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetCNAMEOutput) Type() ValueCnameTypePtrOutput {
+	return o.ApplyT(func(v GetCNAME) *ValueCnameType { return v.Type }).(ValueCnameTypePtrOutput)
+}
+
+func (o GetCNAMEOutput) Value() ValueCnameValuePtrOutput {
+	return o.ApplyT(func(v GetCNAME) *ValueCnameValue { return v.Value }).(ValueCnameValuePtrOutput)
+}
+
+// The previous values of the record in the different modes
+type GetCNAMEPropertiesLastValuesProperties struct {
+	// The previous values in failover mode
+	Failover *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties `pulumi:"failover"`
+	// The previous values in Pools mode
+	Pools []SimplePool `pulumi:"pools"`
+	// The previous values in standard mode
+	Standard []GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetCNAMEPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesOutput() GetCNAMEPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in failover mode
+func (o GetCNAMEPropertiesLastValuesPropertiesOutput) Failover() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesProperties) *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties {
+		return v.Failover
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetCNAMEPropertiesLastValuesPropertiesOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesProperties) []SimplePool { return v.Pools }).(SimplePoolArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetCNAMEPropertiesLastValuesPropertiesOutput) Standard() GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesProperties) []GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		return v.Standard
+	}).(GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCNAMEPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesPtrOutput() GetCNAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) Elem() GetCNAMEPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesProperties) GetCNAMEPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetCNAMEPropertiesLastValuesProperties
+		return ret
+	}).(GetCNAMEPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in failover mode
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) Failover() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesProperties) *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Failover
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput)
+}
+
+// The previous values in Pools mode
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) Pools() SimplePoolArrayOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesProperties) []SimplePool {
+		if v == nil {
+			return nil
+		}
+		return v.Pools
+	}).(SimplePoolArrayOutput)
+}
+
+// The previous values in standard mode
+func (o GetCNAMEPropertiesLastValuesPropertiesPtrOutput) Standard() GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesProperties) []GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput)
+}
+
+// The previous values in failover mode
+type GetCNAMEPropertiesLastValuesPropertiesFailoverProperties struct {
+	// The failover mode
+	Mode   *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode        `pulumi:"mode"`
+	Values []GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem `pulumi:"values"`
+}
+
+// The previous values in failover mode
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o
+}
+
+// The failover mode
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) Mode() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverProperties) *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		return v.Mode
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput) Values() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverProperties) []GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return v.Values
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetCNAMEPropertiesLastValuesPropertiesFailoverProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Elem() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties) GetCNAMEPropertiesLastValuesPropertiesFailoverProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetCNAMEPropertiesLastValuesPropertiesFailoverProperties
+		return ret
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput)
+}
+
+// The failover mode
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Mode() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties) *GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesModePtrOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput) Values() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *GetCNAMEPropertiesLastValuesPropertiesFailoverProperties) []GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput() GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) ToGetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem {
+		return vs[0].([]GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItem)[vs[1].(int)]
+	}).(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool   `pulumi:"enabled"`
+	Value   *string `pulumi:"value"`
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput() GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) ToGetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties)(nil)).Elem()
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput() GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) ToGetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutputWithContext(ctx context.Context) GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput {
+	return o
+}
+
+func (o GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput) Index(i pulumi.IntInput) GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties {
+		return vs[0].([]GetCNAMEPropertiesLastValuesPropertiesStandardItemProperties)[vs[1].(int)]
+	}).(GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput)
+}
+
+type GetHINFO struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetHINFOPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetHINFOPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetHINFOPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueHinfoValueItemProperties `pulumi:"value"`
+}
+
+type GetHINFOOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHINFO)(nil)).Elem()
+}
+
+func (o GetHINFOOutput) ToGetHINFOOutput() GetHINFOOutput {
+	return o
+}
+
+func (o GetHINFOOutput) ToGetHINFOOutputWithContext(ctx context.Context) GetHINFOOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetHINFOOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetHINFOOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetHINFOOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetHINFOOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetHINFOOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetHINFOOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetHINFOOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetHINFOOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetHINFOOutput) LastValues() GetHINFOPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *GetHINFOPropertiesLastValuesProperties { return v.LastValues }).(GetHINFOPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetHINFOOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetHINFOOutput) Mode() GetHINFOPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetHINFO) *GetHINFOPropertiesMode { return v.Mode }).(GetHINFOPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetHINFOOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetHINFOOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetHINFOOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetHINFOOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetHINFOOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetHINFO) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetHINFOOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHINFO) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetHINFOOutput) Type() GetHINFOPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetHINFO) *GetHINFOPropertiesType { return v.Type }).(GetHINFOPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetHINFOOutput) Value() ValueHinfoValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetHINFO) []ValueHinfoValueItemProperties { return v.Value }).(ValueHinfoValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetHINFOPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []PropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetHINFOPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHINFOPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesLastValuesPropertiesOutput) ToGetHINFOPropertiesLastValuesPropertiesOutput() GetHINFOPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesLastValuesPropertiesOutput) ToGetHINFOPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetHINFOPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetHINFOPropertiesLastValuesPropertiesOutput) Standard() PropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetHINFOPropertiesLastValuesProperties) []PropertiesValueItems { return v.Standard }).(PropertiesValueItemsArrayOutput)
+}
+
+type GetHINFOPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetHINFOPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHINFOPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetHINFOPropertiesLastValuesPropertiesPtrOutput) ToGetHINFOPropertiesLastValuesPropertiesPtrOutput() GetHINFOPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesLastValuesPropertiesPtrOutput) ToGetHINFOPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetHINFOPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetHINFOPropertiesLastValuesPropertiesPtrOutput) Elem() GetHINFOPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetHINFOPropertiesLastValuesProperties) GetHINFOPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetHINFOPropertiesLastValuesProperties
+		return ret
+	}).(GetHINFOPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetHINFOPropertiesLastValuesPropertiesPtrOutput) Standard() PropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetHINFOPropertiesLastValuesProperties) []PropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(PropertiesValueItemsArrayOutput)
+}
+
+type GetHttpType struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetHttpPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetHttpPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type  *GetHttpPropertiesType    `pulumi:"type"`
+	Value *ValueHttpValueProperties `pulumi:"value"`
+}
+
+type GetHttpTypeOutput struct{ *pulumi.OutputState }
+
+func (GetHttpTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHttpType)(nil)).Elem()
+}
+
+func (o GetHttpTypeOutput) ToGetHttpTypeOutput() GetHttpTypeOutput {
+	return o
+}
+
+func (o GetHttpTypeOutput) ToGetHttpTypeOutputWithContext(ctx context.Context) GetHttpTypeOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetHttpTypeOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetHttpTypeOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetHttpTypeOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetHttpTypeOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetHttpTypeOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetHttpTypeOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetHttpTypeOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetHttpTypeOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetHttpTypeOutput) LastValues() GetHttpPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *GetHttpPropertiesLastValuesProperties { return v.LastValues }).(GetHttpPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetHttpTypeOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetHttpTypeOutput) Mode() GetHttpPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetHttpType) *GetHttpPropertiesMode { return v.Mode }).(GetHttpPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetHttpTypeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetHttpTypeOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetHttpTypeOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetHttpTypeOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetHttpTypeOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetHttpType) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetHttpTypeOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetHttpTypeOutput) Type() GetHttpPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetHttpType) *GetHttpPropertiesType { return v.Type }).(GetHttpPropertiesTypePtrOutput)
+}
+
+func (o GetHttpTypeOutput) Value() ValueHttpValuePropertiesPtrOutput {
+	return o.ApplyT(func(v GetHttpType) *ValueHttpValueProperties { return v.Value }).(ValueHttpValuePropertiesPtrOutput)
+}
+
+// The previous values of the record in the different modes
+type GetHttpPropertiesLastValuesProperties struct {
+	Standard *Value `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetHttpPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHttpPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesOutput) ToGetHttpPropertiesLastValuesPropertiesOutput() GetHttpPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesOutput) ToGetHttpPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetHttpPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesOutput) Standard() ValuePtrOutput {
+	return o.ApplyT(func(v GetHttpPropertiesLastValuesProperties) *Value { return v.Standard }).(ValuePtrOutput)
+}
+
+type GetHttpPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetHttpPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetHttpPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesPtrOutput) ToGetHttpPropertiesLastValuesPropertiesPtrOutput() GetHttpPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesPtrOutput) ToGetHttpPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetHttpPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesPtrOutput) Elem() GetHttpPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetHttpPropertiesLastValuesProperties) GetHttpPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetHttpPropertiesLastValuesProperties
+		return ret
+	}).(GetHttpPropertiesLastValuesPropertiesOutput)
+}
+
+func (o GetHttpPropertiesLastValuesPropertiesPtrOutput) Standard() ValuePtrOutput {
+	return o.ApplyT(func(v *GetHttpPropertiesLastValuesProperties) *Value {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValuePtrOutput)
+}
+
+type GetMX struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetMXPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetMXPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetMXPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueMxValueItemProperties `pulumi:"value"`
+}
+
+type GetMXOutput struct{ *pulumi.OutputState }
+
+func (GetMXOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMX)(nil)).Elem()
+}
+
+func (o GetMXOutput) ToGetMXOutput() GetMXOutput {
+	return o
+}
+
+func (o GetMXOutput) ToGetMXOutputWithContext(ctx context.Context) GetMXOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetMXOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetMX) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetMXOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetMX) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetMXOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMX) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetMXOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMX) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetMXOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetMX) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetMXOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMX) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetMXOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetMX) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetMXOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMX) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetMXOutput) LastValues() GetMXPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetMX) *GetMXPropertiesLastValuesProperties { return v.LastValues }).(GetMXPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetMXOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetMX) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetMXOutput) Mode() GetMXPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetMX) *GetMXPropertiesMode { return v.Mode }).(GetMXPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetMXOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMX) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetMXOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMX) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetMXOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetMX) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetMXOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMX) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMXOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetMX) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetMXOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMX) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetMXOutput) Type() GetMXPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetMX) *GetMXPropertiesType { return v.Type }).(GetMXPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetMXOutput) Value() ValueMxValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetMX) []ValueMxValueItemProperties { return v.Value }).(ValueMxValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetMXPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueMxPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetMXPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMXPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetMXPropertiesLastValuesPropertiesOutput) ToGetMXPropertiesLastValuesPropertiesOutput() GetMXPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetMXPropertiesLastValuesPropertiesOutput) ToGetMXPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetMXPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetMXPropertiesLastValuesPropertiesOutput) Standard() ValueMxPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetMXPropertiesLastValuesProperties) []ValueMxPropertiesValueItems { return v.Standard }).(ValueMxPropertiesValueItemsArrayOutput)
+}
+
+type GetMXPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetMXPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetMXPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetMXPropertiesLastValuesPropertiesPtrOutput) ToGetMXPropertiesLastValuesPropertiesPtrOutput() GetMXPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesLastValuesPropertiesPtrOutput) ToGetMXPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetMXPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetMXPropertiesLastValuesPropertiesPtrOutput) Elem() GetMXPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetMXPropertiesLastValuesProperties) GetMXPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetMXPropertiesLastValuesProperties
+		return ret
+	}).(GetMXPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetMXPropertiesLastValuesPropertiesPtrOutput) Standard() ValueMxPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetMXPropertiesLastValuesProperties) []ValueMxPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueMxPropertiesValueItemsArrayOutput)
+}
+
+type GetNAPTR struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetNAPTRPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetNAPTRPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetNAPTRPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueNaptrValueItemProperties `pulumi:"value"`
+}
+
+type GetNAPTROutput struct{ *pulumi.OutputState }
+
+func (GetNAPTROutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNAPTR)(nil)).Elem()
+}
+
+func (o GetNAPTROutput) ToGetNAPTROutput() GetNAPTROutput {
+	return o
+}
+
+func (o GetNAPTROutput) ToGetNAPTROutputWithContext(ctx context.Context) GetNAPTROutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetNAPTROutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetNAPTROutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetNAPTROutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetNAPTROutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetNAPTROutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetNAPTROutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetNAPTROutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetNAPTROutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetNAPTROutput) LastValues() GetNAPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *GetNAPTRPropertiesLastValuesProperties { return v.LastValues }).(GetNAPTRPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetNAPTROutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetNAPTROutput) Mode() GetNAPTRPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *GetNAPTRPropertiesMode { return v.Mode }).(GetNAPTRPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetNAPTROutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetNAPTROutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetNAPTROutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetNAPTROutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNAPTROutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetNAPTROutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetNAPTROutput) Type() GetNAPTRPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetNAPTR) *GetNAPTRPropertiesType { return v.Type }).(GetNAPTRPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetNAPTROutput) Value() ValueNaptrValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetNAPTR) []ValueNaptrValueItemProperties { return v.Value }).(ValueNaptrValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetNAPTRPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueNaptrPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetNAPTRPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNAPTRPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesLastValuesPropertiesOutput) ToGetNAPTRPropertiesLastValuesPropertiesOutput() GetNAPTRPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesLastValuesPropertiesOutput) ToGetNAPTRPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetNAPTRPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetNAPTRPropertiesLastValuesPropertiesOutput) Standard() ValueNaptrPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetNAPTRPropertiesLastValuesProperties) []ValueNaptrPropertiesValueItems { return v.Standard }).(ValueNaptrPropertiesValueItemsArrayOutput)
+}
+
+type GetNAPTRPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetNAPTRPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNAPTRPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetNAPTRPropertiesLastValuesPropertiesPtrOutput) ToGetNAPTRPropertiesLastValuesPropertiesPtrOutput() GetNAPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesLastValuesPropertiesPtrOutput) ToGetNAPTRPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetNAPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetNAPTRPropertiesLastValuesPropertiesPtrOutput) Elem() GetNAPTRPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetNAPTRPropertiesLastValuesProperties) GetNAPTRPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetNAPTRPropertiesLastValuesProperties
+		return ret
+	}).(GetNAPTRPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetNAPTRPropertiesLastValuesPropertiesPtrOutput) Standard() ValueNaptrPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetNAPTRPropertiesLastValuesProperties) []ValueNaptrPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueNaptrPropertiesValueItemsArrayOutput)
+}
+
+type GetNS struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetNSPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetNSPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetNSPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueNsValueItemProperties `pulumi:"value"`
+}
+
+type GetNSOutput struct{ *pulumi.OutputState }
+
+func (GetNSOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNS)(nil)).Elem()
+}
+
+func (o GetNSOutput) ToGetNSOutput() GetNSOutput {
+	return o
+}
+
+func (o GetNSOutput) ToGetNSOutputWithContext(ctx context.Context) GetNSOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetNSOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetNS) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetNSOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetNS) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetNSOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNS) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetNSOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNS) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetNSOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetNS) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetNSOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNS) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetNSOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetNS) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetNSOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNS) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetNSOutput) LastValues() GetNSPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetNS) *GetNSPropertiesLastValuesProperties { return v.LastValues }).(GetNSPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetNSOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetNS) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetNSOutput) Mode() GetNSPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetNS) *GetNSPropertiesMode { return v.Mode }).(GetNSPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetNSOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNS) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetNSOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNS) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetNSOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetNS) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetNSOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNS) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNSOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetNS) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetNSOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNS) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetNSOutput) Type() GetNSPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetNS) *GetNSPropertiesType { return v.Type }).(GetNSPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetNSOutput) Value() ValueNsValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetNS) []ValueNsValueItemProperties { return v.Value }).(ValueNsValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetNSPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueNsPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetNSPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNSPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetNSPropertiesLastValuesPropertiesOutput) ToGetNSPropertiesLastValuesPropertiesOutput() GetNSPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetNSPropertiesLastValuesPropertiesOutput) ToGetNSPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetNSPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetNSPropertiesLastValuesPropertiesOutput) Standard() ValueNsPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetNSPropertiesLastValuesProperties) []ValueNsPropertiesValueItems { return v.Standard }).(ValueNsPropertiesValueItemsArrayOutput)
+}
+
+type GetNSPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetNSPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetNSPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetNSPropertiesLastValuesPropertiesPtrOutput) ToGetNSPropertiesLastValuesPropertiesPtrOutput() GetNSPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesLastValuesPropertiesPtrOutput) ToGetNSPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetNSPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetNSPropertiesLastValuesPropertiesPtrOutput) Elem() GetNSPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetNSPropertiesLastValuesProperties) GetNSPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetNSPropertiesLastValuesProperties
+		return ret
+	}).(GetNSPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetNSPropertiesLastValuesPropertiesPtrOutput) Standard() ValueNsPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetNSPropertiesLastValuesProperties) []ValueNsPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueNsPropertiesValueItemsArrayOutput)
+}
+
+type GetPTR struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetPTRPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetPTRPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetPTRPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValuePtrValueItemProperties `pulumi:"value"`
+}
+
+type GetPTROutput struct{ *pulumi.OutputState }
+
+func (GetPTROutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPTR)(nil)).Elem()
+}
+
+func (o GetPTROutput) ToGetPTROutput() GetPTROutput {
+	return o
+}
+
+func (o GetPTROutput) ToGetPTROutputWithContext(ctx context.Context) GetPTROutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetPTROutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetPTR) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetPTROutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetPTR) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetPTROutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPTR) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetPTROutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPTR) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetPTROutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetPTR) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetPTROutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPTR) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetPTROutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetPTR) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetPTROutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPTR) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetPTROutput) LastValues() GetPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetPTR) *GetPTRPropertiesLastValuesProperties { return v.LastValues }).(GetPTRPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetPTROutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetPTR) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetPTROutput) Mode() GetPTRPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetPTR) *GetPTRPropertiesMode { return v.Mode }).(GetPTRPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetPTROutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPTR) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetPTROutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPTR) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetPTROutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetPTR) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetPTROutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPTR) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPTROutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetPTR) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetPTROutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPTR) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetPTROutput) Type() GetPTRPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetPTR) *GetPTRPropertiesType { return v.Type }).(GetPTRPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetPTROutput) Value() ValuePtrValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetPTR) []ValuePtrValueItemProperties { return v.Value }).(ValuePtrValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetPTRPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValuePtrPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetPTRPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPTRPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesLastValuesPropertiesOutput) ToGetPTRPropertiesLastValuesPropertiesOutput() GetPTRPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetPTRPropertiesLastValuesPropertiesOutput) ToGetPTRPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetPTRPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetPTRPropertiesLastValuesPropertiesOutput) Standard() ValuePtrPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetPTRPropertiesLastValuesProperties) []ValuePtrPropertiesValueItems { return v.Standard }).(ValuePtrPropertiesValueItemsArrayOutput)
+}
+
+type GetPTRPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetPTRPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetPTRPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetPTRPropertiesLastValuesPropertiesPtrOutput) ToGetPTRPropertiesLastValuesPropertiesPtrOutput() GetPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesLastValuesPropertiesPtrOutput) ToGetPTRPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetPTRPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetPTRPropertiesLastValuesPropertiesPtrOutput) Elem() GetPTRPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetPTRPropertiesLastValuesProperties) GetPTRPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetPTRPropertiesLastValuesProperties
+		return ret
+	}).(GetPTRPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetPTRPropertiesLastValuesPropertiesPtrOutput) Standard() ValuePtrPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetPTRPropertiesLastValuesProperties) []ValuePtrPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValuePtrPropertiesValueItemsArrayOutput)
+}
+
+type GetRP struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetRPPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetRPPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetRPPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueRpValueItemProperties `pulumi:"value"`
+}
+
+type GetRPOutput struct{ *pulumi.OutputState }
+
+func (GetRPOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRP)(nil)).Elem()
+}
+
+func (o GetRPOutput) ToGetRPOutput() GetRPOutput {
+	return o
+}
+
+func (o GetRPOutput) ToGetRPOutputWithContext(ctx context.Context) GetRPOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetRPOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetRP) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetRPOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetRP) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetRPOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRP) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetRPOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRP) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetRPOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetRP) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetRPOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRP) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetRPOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetRP) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetRPOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRP) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetRPOutput) LastValues() GetRPPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetRP) *GetRPPropertiesLastValuesProperties { return v.LastValues }).(GetRPPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetRPOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetRP) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetRPOutput) Mode() GetRPPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetRP) *GetRPPropertiesMode { return v.Mode }).(GetRPPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetRPOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRP) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetRPOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRP) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetRPOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetRP) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetRPOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRP) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRPOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetRP) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetRPOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRP) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetRPOutput) Type() GetRPPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetRP) *GetRPPropertiesType { return v.Type }).(GetRPPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetRPOutput) Value() ValueRpValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetRP) []ValueRpValueItemProperties { return v.Value }).(ValueRpValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetRPPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueRpPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetRPPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRPPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetRPPropertiesLastValuesPropertiesOutput) ToGetRPPropertiesLastValuesPropertiesOutput() GetRPPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetRPPropertiesLastValuesPropertiesOutput) ToGetRPPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetRPPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetRPPropertiesLastValuesPropertiesOutput) Standard() ValueRpPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetRPPropertiesLastValuesProperties) []ValueRpPropertiesValueItems { return v.Standard }).(ValueRpPropertiesValueItemsArrayOutput)
+}
+
+type GetRPPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetRPPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetRPPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetRPPropertiesLastValuesPropertiesPtrOutput) ToGetRPPropertiesLastValuesPropertiesPtrOutput() GetRPPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesLastValuesPropertiesPtrOutput) ToGetRPPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetRPPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetRPPropertiesLastValuesPropertiesPtrOutput) Elem() GetRPPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetRPPropertiesLastValuesProperties) GetRPPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetRPPropertiesLastValuesProperties
+		return ret
+	}).(GetRPPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetRPPropertiesLastValuesPropertiesPtrOutput) Standard() ValueRpPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetRPPropertiesLastValuesProperties) []ValueRpPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueRpPropertiesValueItemsArrayOutput)
+}
+
+type GetSPF struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetSPFPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetSPFPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetSPFPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueSpfValueItemProperties `pulumi:"value"`
+}
+
+type GetSPFOutput struct{ *pulumi.OutputState }
+
+func (GetSPFOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSPF)(nil)).Elem()
+}
+
+func (o GetSPFOutput) ToGetSPFOutput() GetSPFOutput {
+	return o
+}
+
+func (o GetSPFOutput) ToGetSPFOutputWithContext(ctx context.Context) GetSPFOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetSPFOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetSPF) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetSPFOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetSPF) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetSPFOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSPF) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetSPFOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSPF) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetSPFOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetSPF) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetSPFOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSPF) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetSPFOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetSPF) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetSPFOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSPF) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetSPFOutput) LastValues() GetSPFPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetSPF) *GetSPFPropertiesLastValuesProperties { return v.LastValues }).(GetSPFPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetSPFOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetSPF) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetSPFOutput) Mode() GetSPFPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetSPF) *GetSPFPropertiesMode { return v.Mode }).(GetSPFPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetSPFOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSPF) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetSPFOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSPF) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetSPFOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetSPF) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetSPFOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSPF) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSPFOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetSPF) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetSPFOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSPF) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetSPFOutput) Type() GetSPFPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetSPF) *GetSPFPropertiesType { return v.Type }).(GetSPFPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetSPFOutput) Value() ValueSpfValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetSPF) []ValueSpfValueItemProperties { return v.Value }).(ValueSpfValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetSPFPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueSpfPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetSPFPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSPFPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesLastValuesPropertiesOutput) ToGetSPFPropertiesLastValuesPropertiesOutput() GetSPFPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetSPFPropertiesLastValuesPropertiesOutput) ToGetSPFPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetSPFPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetSPFPropertiesLastValuesPropertiesOutput) Standard() ValueSpfPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetSPFPropertiesLastValuesProperties) []ValueSpfPropertiesValueItems { return v.Standard }).(ValueSpfPropertiesValueItemsArrayOutput)
+}
+
+type GetSPFPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetSPFPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSPFPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetSPFPropertiesLastValuesPropertiesPtrOutput) ToGetSPFPropertiesLastValuesPropertiesPtrOutput() GetSPFPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesLastValuesPropertiesPtrOutput) ToGetSPFPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetSPFPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetSPFPropertiesLastValuesPropertiesPtrOutput) Elem() GetSPFPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetSPFPropertiesLastValuesProperties) GetSPFPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetSPFPropertiesLastValuesProperties
+		return ret
+	}).(GetSPFPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetSPFPropertiesLastValuesPropertiesPtrOutput) Standard() ValueSpfPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetSPFPropertiesLastValuesProperties) []ValueSpfPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueSpfPropertiesValueItemsArrayOutput)
+}
+
+type GetSRV struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetSRVPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetSRVPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetSRVPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueSrvValueItemProperties `pulumi:"value"`
+}
+
+type GetSRVOutput struct{ *pulumi.OutputState }
+
+func (GetSRVOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSRV)(nil)).Elem()
+}
+
+func (o GetSRVOutput) ToGetSRVOutput() GetSRVOutput {
+	return o
+}
+
+func (o GetSRVOutput) ToGetSRVOutputWithContext(ctx context.Context) GetSRVOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetSRVOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetSRV) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetSRVOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetSRV) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetSRVOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSRV) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetSRVOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSRV) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetSRVOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetSRV) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetSRVOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSRV) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetSRVOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetSRV) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetSRVOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSRV) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetSRVOutput) LastValues() GetSRVPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetSRV) *GetSRVPropertiesLastValuesProperties { return v.LastValues }).(GetSRVPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetSRVOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetSRV) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetSRVOutput) Mode() GetSRVPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetSRV) *GetSRVPropertiesMode { return v.Mode }).(GetSRVPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetSRVOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSRV) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetSRVOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSRV) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetSRVOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetSRV) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetSRVOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSRV) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSRVOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetSRV) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetSRVOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSRV) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetSRVOutput) Type() GetSRVPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetSRV) *GetSRVPropertiesType { return v.Type }).(GetSRVPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetSRVOutput) Value() ValueSrvValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetSRV) []ValueSrvValueItemProperties { return v.Value }).(ValueSrvValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetSRVPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueSrvPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetSRVPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSRVPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesLastValuesPropertiesOutput) ToGetSRVPropertiesLastValuesPropertiesOutput() GetSRVPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetSRVPropertiesLastValuesPropertiesOutput) ToGetSRVPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetSRVPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetSRVPropertiesLastValuesPropertiesOutput) Standard() ValueSrvPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetSRVPropertiesLastValuesProperties) []ValueSrvPropertiesValueItems { return v.Standard }).(ValueSrvPropertiesValueItemsArrayOutput)
+}
+
+type GetSRVPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetSRVPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetSRVPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetSRVPropertiesLastValuesPropertiesPtrOutput) ToGetSRVPropertiesLastValuesPropertiesPtrOutput() GetSRVPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesLastValuesPropertiesPtrOutput) ToGetSRVPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetSRVPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetSRVPropertiesLastValuesPropertiesPtrOutput) Elem() GetSRVPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetSRVPropertiesLastValuesProperties) GetSRVPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetSRVPropertiesLastValuesProperties
+		return ret
+	}).(GetSRVPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetSRVPropertiesLastValuesPropertiesPtrOutput) Standard() ValueSrvPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetSRVPropertiesLastValuesProperties) []ValueSrvPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueSrvPropertiesValueItemsArrayOutput)
+}
+
+type GetTXT struct {
+	// A simple version of a contact list when inclued with other resources
+	Contacts *SimpleContactlist `pulumi:"contacts"`
+	Domain   *SimpleDomain      `pulumi:"domain"`
+	// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+	Enabled *bool `pulumi:"enabled"`
+	// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+	GeoFailover *bool `pulumi:"geoFailover"`
+	// Geo Proximity Location
+	Geoproximity *SimpleGeoproximity `pulumi:"geoproximity"`
+	// A unique ID for this domain record
+	Id       *int            `pulumi:"id"`
+	Ipfilter *SimpleIpfilter `pulumi:"ipfilter"`
+	// If the requesting IP matches the IP filter, don't return a response
+	IpfilterDrop *bool `pulumi:"ipfilterDrop"`
+	// The previous values of the record in the different modes
+	LastValues *GetTXTPropertiesLastValuesProperties `pulumi:"lastValues"`
+	// Links for the domain record
+	Links *TemplaterecordLinksProperties `pulumi:"links"`
+	// How the record should work
+	Mode *GetTXTPropertiesMode `pulumi:"mode"`
+	// The name of the record
+	Name *string `pulumi:"name"`
+	// A note about the record. Max 512 characters.
+	Notes *string `pulumi:"notes"`
+	// The region for this record
+	Region *RecordRegion `pulumi:"region"`
+	// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+	SkipLookup *bool           `pulumi:"skipLookup"`
+	Template   *SimpleTemplate `pulumi:"template"`
+	// The time to live in seconds for this record. must be between 0 and 2147483647
+	Ttl *int `pulumi:"ttl"`
+	// The type of record
+	Type *GetTXTPropertiesType `pulumi:"type"`
+	// Standard record mode
+	Value []ValueTxtValueItemProperties `pulumi:"value"`
+}
+
+type GetTXTOutput struct{ *pulumi.OutputState }
+
+func (GetTXTOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTXT)(nil)).Elem()
+}
+
+func (o GetTXTOutput) ToGetTXTOutput() GetTXTOutput {
+	return o
+}
+
+func (o GetTXTOutput) ToGetTXTOutputWithContext(ctx context.Context) GetTXTOutput {
+	return o
+}
+
+// A simple version of a contact list when inclued with other resources
+func (o GetTXTOutput) Contacts() SimpleContactlistPtrOutput {
+	return o.ApplyT(func(v GetTXT) *SimpleContactlist { return v.Contacts }).(SimpleContactlistPtrOutput)
+}
+
+func (o GetTXTOutput) Domain() SimpleDomainPtrOutput {
+	return o.ApplyT(func(v GetTXT) *SimpleDomain { return v.Domain }).(SimpleDomainPtrOutput)
+}
+
+// Whether the record is enabled or not. A disabled record will return an NXDOMAIN response.
+func (o GetTXTOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTXT) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Disable the record if all hosts fail. If all hosts fail, another matching IP Filter, nearest Proximity or World (Default) record will be used instead.
+func (o GetTXTOutput) GeoFailover() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTXT) *bool { return v.GeoFailover }).(pulumi.BoolPtrOutput)
+}
+
+// Geo Proximity Location
+func (o GetTXTOutput) Geoproximity() SimpleGeoproximityPtrOutput {
+	return o.ApplyT(func(v GetTXT) *SimpleGeoproximity { return v.Geoproximity }).(SimpleGeoproximityPtrOutput)
+}
+
+// A unique ID for this domain record
+func (o GetTXTOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTXT) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+func (o GetTXTOutput) Ipfilter() SimpleIpfilterPtrOutput {
+	return o.ApplyT(func(v GetTXT) *SimpleIpfilter { return v.Ipfilter }).(SimpleIpfilterPtrOutput)
+}
+
+// If the requesting IP matches the IP filter, don't return a response
+func (o GetTXTOutput) IpfilterDrop() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTXT) *bool { return v.IpfilterDrop }).(pulumi.BoolPtrOutput)
+}
+
+// The previous values of the record in the different modes
+func (o GetTXTOutput) LastValues() GetTXTPropertiesLastValuesPropertiesPtrOutput {
+	return o.ApplyT(func(v GetTXT) *GetTXTPropertiesLastValuesProperties { return v.LastValues }).(GetTXTPropertiesLastValuesPropertiesPtrOutput)
+}
+
+// Links for the domain record
+func (o GetTXTOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v GetTXT) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
+}
+
+// How the record should work
+func (o GetTXTOutput) Mode() GetTXTPropertiesModePtrOutput {
+	return o.ApplyT(func(v GetTXT) *GetTXTPropertiesMode { return v.Mode }).(GetTXTPropertiesModePtrOutput)
+}
+
+// The name of the record
+func (o GetTXTOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTXT) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note about the record. Max 512 characters.
+func (o GetTXTOutput) Notes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTXT) *string { return v.Notes }).(pulumi.StringPtrOutput)
+}
+
+// The region for this record
+func (o GetTXTOutput) Region() RecordRegionPtrOutput {
+	return o.ApplyT(func(v GetTXT) *RecordRegion { return v.Region }).(RecordRegionPtrOutput)
+}
+
+// Only used on POST or PATCH requests for ANAME records, used to specify whether the hostname should be looked up immediately. Will be null otherwise.
+func (o GetTXTOutput) SkipLookup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTXT) *bool { return v.SkipLookup }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTXTOutput) Template() SimpleTemplatePtrOutput {
+	return o.ApplyT(func(v GetTXT) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+}
+
+// The time to live in seconds for this record. must be between 0 and 2147483647
+func (o GetTXTOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTXT) *int { return v.Ttl }).(pulumi.IntPtrOutput)
+}
+
+// The type of record
+func (o GetTXTOutput) Type() GetTXTPropertiesTypePtrOutput {
+	return o.ApplyT(func(v GetTXT) *GetTXTPropertiesType { return v.Type }).(GetTXTPropertiesTypePtrOutput)
+}
+
+// Standard record mode
+func (o GetTXTOutput) Value() ValueTxtValueItemPropertiesArrayOutput {
+	return o.ApplyT(func(v GetTXT) []ValueTxtValueItemProperties { return v.Value }).(ValueTxtValueItemPropertiesArrayOutput)
+}
+
+// The previous values of the record in the different modes
+type GetTXTPropertiesLastValuesProperties struct {
+	// The previous values in standard mode
+	Standard []ValueTxtPropertiesValueItems `pulumi:"standard"`
+}
+
+// The previous values of the record in the different modes
+type GetTXTPropertiesLastValuesPropertiesOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesLastValuesPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTXTPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesLastValuesPropertiesOutput) ToGetTXTPropertiesLastValuesPropertiesOutput() GetTXTPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+func (o GetTXTPropertiesLastValuesPropertiesOutput) ToGetTXTPropertiesLastValuesPropertiesOutputWithContext(ctx context.Context) GetTXTPropertiesLastValuesPropertiesOutput {
+	return o
+}
+
+// The previous values in standard mode
+func (o GetTXTPropertiesLastValuesPropertiesOutput) Standard() ValueTxtPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v GetTXTPropertiesLastValuesProperties) []ValueTxtPropertiesValueItems { return v.Standard }).(ValueTxtPropertiesValueItemsArrayOutput)
+}
+
+type GetTXTPropertiesLastValuesPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (GetTXTPropertiesLastValuesPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetTXTPropertiesLastValuesProperties)(nil)).Elem()
+}
+
+func (o GetTXTPropertiesLastValuesPropertiesPtrOutput) ToGetTXTPropertiesLastValuesPropertiesPtrOutput() GetTXTPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesLastValuesPropertiesPtrOutput) ToGetTXTPropertiesLastValuesPropertiesPtrOutputWithContext(ctx context.Context) GetTXTPropertiesLastValuesPropertiesPtrOutput {
+	return o
+}
+
+func (o GetTXTPropertiesLastValuesPropertiesPtrOutput) Elem() GetTXTPropertiesLastValuesPropertiesOutput {
+	return o.ApplyT(func(v *GetTXTPropertiesLastValuesProperties) GetTXTPropertiesLastValuesProperties {
+		if v != nil {
+			return *v
+		}
+		var ret GetTXTPropertiesLastValuesProperties
+		return ret
+	}).(GetTXTPropertiesLastValuesPropertiesOutput)
+}
+
+// The previous values in standard mode
+func (o GetTXTPropertiesLastValuesPropertiesPtrOutput) Standard() ValueTxtPropertiesValueItemsArrayOutput {
+	return o.ApplyT(func(v *GetTXTPropertiesLastValuesProperties) []ValueTxtPropertiesValueItems {
+		if v == nil {
+			return nil
+		}
+		return v.Standard
+	}).(ValueTxtPropertiesValueItemsArrayOutput)
+}
+
 type GetTemplateProperties struct {
 	// A domain template
 	Data *TemplateType `pulumi:"data"`
@@ -167,33 +4618,69 @@ func (o GetTemplatePropertiesOutput) Data() TemplateTypePtrOutput {
 	return o.ApplyT(func(v GetTemplateProperties) *TemplateType { return v.Data }).(TemplateTypePtrOutput)
 }
 
-type GetTemplateRecordType struct {
-	// Links for the domain record
-	Links    *TemplaterecordPropertiesLinksProperties `pulumi:"links"`
-	Template *SimpleTemplate                          `pulumi:"template"`
+type Items struct {
+	// The value for this tag
+	Data *string `pulumi:"data"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// A flag byte for any flags on the record.
+	Flags *int `pulumi:"flags"`
+	// Foo
+	Tag *ItemsTag `pulumi:"tag"`
 }
 
-type GetTemplateRecordTypeOutput struct{ *pulumi.OutputState }
+type ItemsOutput struct{ *pulumi.OutputState }
 
-func (GetTemplateRecordTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTemplateRecordType)(nil)).Elem()
+func (ItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Items)(nil)).Elem()
 }
 
-func (o GetTemplateRecordTypeOutput) ToGetTemplateRecordTypeOutput() GetTemplateRecordTypeOutput {
+func (o ItemsOutput) ToItemsOutput() ItemsOutput {
 	return o
 }
 
-func (o GetTemplateRecordTypeOutput) ToGetTemplateRecordTypeOutputWithContext(ctx context.Context) GetTemplateRecordTypeOutput {
+func (o ItemsOutput) ToItemsOutputWithContext(ctx context.Context) ItemsOutput {
 	return o
 }
 
-// Links for the domain record
-func (o GetTemplateRecordTypeOutput) Links() TemplaterecordPropertiesLinksPropertiesPtrOutput {
-	return o.ApplyT(func(v GetTemplateRecordType) *TemplaterecordPropertiesLinksProperties { return v.Links }).(TemplaterecordPropertiesLinksPropertiesPtrOutput)
+// The value for this tag
+func (o ItemsOutput) Data() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Items) *string { return v.Data }).(pulumi.StringPtrOutput)
 }
 
-func (o GetTemplateRecordTypeOutput) Template() SimpleTemplatePtrOutput {
-	return o.ApplyT(func(v GetTemplateRecordType) *SimpleTemplate { return v.Template }).(SimpleTemplatePtrOutput)
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v Items) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// A flag byte for any flags on the record.
+func (o ItemsOutput) Flags() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v Items) *int { return v.Flags }).(pulumi.IntPtrOutput)
+}
+
+// Foo
+func (o ItemsOutput) Tag() ItemsTagPtrOutput {
+	return o.ApplyT(func(v Items) *ItemsTag { return v.Tag }).(ItemsTagPtrOutput)
+}
+
+type ItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Items)(nil)).Elem()
+}
+
+func (o ItemsArrayOutput) ToItemsArrayOutput() ItemsArrayOutput {
+	return o
+}
+
+func (o ItemsArrayOutput) ToItemsArrayOutputWithContext(ctx context.Context) ItemsArrayOutput {
+	return o
+}
+
+func (o ItemsArrayOutput) Index(i pulumi.IntInput) ItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Items {
+		return vs[0].([]Items)[vs[1].(int)]
+	}).(ItemsOutput)
 }
 
 // Metadata for list responses
@@ -547,8 +5034,8 @@ func (o ListTemplateRecordsPropertiesOutput) Meta() ListMetadataPtrOutput {
 
 type ListTemplateRecordsPropertiesDataItem struct {
 	// Links for the domain record
-	Links    *TemplaterecordPropertiesLinksProperties `pulumi:"links"`
-	Template *SimpleTemplate                          `pulumi:"template"`
+	Links    *TemplaterecordLinksProperties `pulumi:"links"`
+	Template *SimpleTemplate                `pulumi:"template"`
 }
 
 type ListTemplateRecordsPropertiesDataItemOutput struct{ *pulumi.OutputState }
@@ -566,8 +5053,8 @@ func (o ListTemplateRecordsPropertiesDataItemOutput) ToListTemplateRecordsProper
 }
 
 // Links for the domain record
-func (o ListTemplateRecordsPropertiesDataItemOutput) Links() TemplaterecordPropertiesLinksPropertiesPtrOutput {
-	return o.ApplyT(func(v ListTemplateRecordsPropertiesDataItem) *TemplaterecordPropertiesLinksProperties { return v.Links }).(TemplaterecordPropertiesLinksPropertiesPtrOutput)
+func (o ListTemplateRecordsPropertiesDataItemOutput) Links() TemplaterecordLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v ListTemplateRecordsPropertiesDataItem) *TemplaterecordLinksProperties { return v.Links }).(TemplaterecordLinksPropertiesPtrOutput)
 }
 
 func (o ListTemplateRecordsPropertiesDataItemOutput) Template() SimpleTemplatePtrOutput {
@@ -623,6 +5110,911 @@ func (o ListTemplatesPropertiesOutput) Data() TemplateTypeArrayOutput {
 // Metadata for list responses
 func (o ListTemplatesPropertiesOutput) Meta() ListMetadataPtrOutput {
 	return o.ApplyT(func(v ListTemplatesProperties) *ListMetadata { return v.Meta }).(ListMetadataPtrOutput)
+}
+
+type PropertiesValueItems struct {
+	// Text representing the CPU
+	Cpu *string `pulumi:"cpu"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Text representing the OS
+	Os *string `pulumi:"os"`
+}
+
+type PropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (PropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertiesValueItems)(nil)).Elem()
+}
+
+func (o PropertiesValueItemsOutput) ToPropertiesValueItemsOutput() PropertiesValueItemsOutput {
+	return o
+}
+
+func (o PropertiesValueItemsOutput) ToPropertiesValueItemsOutputWithContext(ctx context.Context) PropertiesValueItemsOutput {
+	return o
+}
+
+// Text representing the CPU
+func (o PropertiesValueItemsOutput) Cpu() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertiesValueItems) *string { return v.Cpu }).(pulumi.StringPtrOutput)
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o PropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Text representing the OS
+func (o PropertiesValueItemsOutput) Os() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertiesValueItems) *string { return v.Os }).(pulumi.StringPtrOutput)
+}
+
+type PropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (PropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PropertiesValueItems)(nil)).Elem()
+}
+
+func (o PropertiesValueItemsArrayOutput) ToPropertiesValueItemsArrayOutput() PropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o PropertiesValueItemsArrayOutput) ToPropertiesValueItemsArrayOutputWithContext(ctx context.Context) PropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o PropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) PropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertiesValueItems {
+		return vs[0].([]PropertiesValueItems)[vs[1].(int)]
+	}).(PropertiesValueItemsOutput)
+}
+
+// A simple version of a contact list when inclued with other resources
+type SimpleContactlist struct {
+	// Unique ID for the contact list
+	Id *int `pulumi:"id"`
+	// Links for domain objects
+	Links *SimpleContactlistLinksProperties `pulumi:"links"`
+}
+
+// A simple version of a contact list when inclued with other resources
+type SimpleContactlistOutput struct{ *pulumi.OutputState }
+
+func (SimpleContactlistOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleContactlist)(nil)).Elem()
+}
+
+func (o SimpleContactlistOutput) ToSimpleContactlistOutput() SimpleContactlistOutput {
+	return o
+}
+
+func (o SimpleContactlistOutput) ToSimpleContactlistOutputWithContext(ctx context.Context) SimpleContactlistOutput {
+	return o
+}
+
+// Unique ID for the contact list
+func (o SimpleContactlistOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimpleContactlist) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleContactlistOutput) Links() SimpleContactlistLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v SimpleContactlist) *SimpleContactlistLinksProperties { return v.Links }).(SimpleContactlistLinksPropertiesPtrOutput)
+}
+
+type SimpleContactlistPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleContactlistPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleContactlist)(nil)).Elem()
+}
+
+func (o SimpleContactlistPtrOutput) ToSimpleContactlistPtrOutput() SimpleContactlistPtrOutput {
+	return o
+}
+
+func (o SimpleContactlistPtrOutput) ToSimpleContactlistPtrOutputWithContext(ctx context.Context) SimpleContactlistPtrOutput {
+	return o
+}
+
+func (o SimpleContactlistPtrOutput) Elem() SimpleContactlistOutput {
+	return o.ApplyT(func(v *SimpleContactlist) SimpleContactlist {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleContactlist
+		return ret
+	}).(SimpleContactlistOutput)
+}
+
+// Unique ID for the contact list
+func (o SimpleContactlistPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SimpleContactlist) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleContactlistPtrOutput) Links() SimpleContactlistLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v *SimpleContactlist) *SimpleContactlistLinksProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Links
+	}).(SimpleContactlistLinksPropertiesPtrOutput)
+}
+
+// Links for domain objects
+type SimpleContactlistLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+// Links for domain objects
+type SimpleContactlistLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (SimpleContactlistLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleContactlistLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleContactlistLinksPropertiesOutput) ToSimpleContactlistLinksPropertiesOutput() SimpleContactlistLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleContactlistLinksPropertiesOutput) ToSimpleContactlistLinksPropertiesOutputWithContext(ctx context.Context) SimpleContactlistLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleContactlistLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleContactlistLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type SimpleContactlistLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleContactlistLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleContactlistLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleContactlistLinksPropertiesPtrOutput) ToSimpleContactlistLinksPropertiesPtrOutput() SimpleContactlistLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleContactlistLinksPropertiesPtrOutput) ToSimpleContactlistLinksPropertiesPtrOutputWithContext(ctx context.Context) SimpleContactlistLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleContactlistLinksPropertiesPtrOutput) Elem() SimpleContactlistLinksPropertiesOutput {
+	return o.ApplyT(func(v *SimpleContactlistLinksProperties) SimpleContactlistLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleContactlistLinksProperties
+		return ret
+	}).(SimpleContactlistLinksPropertiesOutput)
+}
+
+func (o SimpleContactlistLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleContactlistLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
+}
+
+type SimpleDomain struct {
+	CreatedAt *string `pulumi:"createdAt"`
+	// Is the domain enabled
+	Enabled *bool `pulumi:"enabled"`
+	// Is GeoIP functionality enabled for the domain
+	Geoip *bool `pulumi:"geoip"`
+	// Is Global Traffic Director enabled for the domain
+	Gtd *bool `pulumi:"gtd"`
+	// A unique numeric ID for this domain
+	Id *int `pulumi:"id"`
+	// Links for domain objects
+	Links *SimpleDomainLinksProperties `pulumi:"links"`
+	// The name of the domain
+	Name *string `pulumi:"name"`
+	// A note for the domain
+	Note   *string             `pulumi:"note"`
+	Status *SimpleDomainStatus `pulumi:"status"`
+	// An array of tags for this domain.
+	Tags      []Tag   `pulumi:"tags"`
+	UpdatedAt *string `pulumi:"updatedAt"`
+	// The version of the domain resource
+	Version *int `pulumi:"version"`
+}
+
+type SimpleDomainOutput struct{ *pulumi.OutputState }
+
+func (SimpleDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleDomain)(nil)).Elem()
+}
+
+func (o SimpleDomainOutput) ToSimpleDomainOutput() SimpleDomainOutput {
+	return o
+}
+
+func (o SimpleDomainOutput) ToSimpleDomainOutputWithContext(ctx context.Context) SimpleDomainOutput {
+	return o
+}
+
+func (o SimpleDomainOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *string { return v.CreatedAt }).(pulumi.StringPtrOutput)
+}
+
+// Is the domain enabled
+func (o SimpleDomainOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Is GeoIP functionality enabled for the domain
+func (o SimpleDomainOutput) Geoip() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *bool { return v.Geoip }).(pulumi.BoolPtrOutput)
+}
+
+// Is Global Traffic Director enabled for the domain
+func (o SimpleDomainOutput) Gtd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *bool { return v.Gtd }).(pulumi.BoolPtrOutput)
+}
+
+// A unique numeric ID for this domain
+func (o SimpleDomainOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleDomainOutput) Links() SimpleDomainLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *SimpleDomainLinksProperties { return v.Links }).(SimpleDomainLinksPropertiesPtrOutput)
+}
+
+// The name of the domain
+func (o SimpleDomainOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// A note for the domain
+func (o SimpleDomainOutput) Note() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *string { return v.Note }).(pulumi.StringPtrOutput)
+}
+
+func (o SimpleDomainOutput) Status() SimpleDomainStatusPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *SimpleDomainStatus { return v.Status }).(SimpleDomainStatusPtrOutput)
+}
+
+// An array of tags for this domain.
+func (o SimpleDomainOutput) Tags() TagArrayOutput {
+	return o.ApplyT(func(v SimpleDomain) []Tag { return v.Tags }).(TagArrayOutput)
+}
+
+func (o SimpleDomainOutput) UpdatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *string { return v.UpdatedAt }).(pulumi.StringPtrOutput)
+}
+
+// The version of the domain resource
+func (o SimpleDomainOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimpleDomain) *int { return v.Version }).(pulumi.IntPtrOutput)
+}
+
+type SimpleDomainPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleDomainPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleDomain)(nil)).Elem()
+}
+
+func (o SimpleDomainPtrOutput) ToSimpleDomainPtrOutput() SimpleDomainPtrOutput {
+	return o
+}
+
+func (o SimpleDomainPtrOutput) ToSimpleDomainPtrOutputWithContext(ctx context.Context) SimpleDomainPtrOutput {
+	return o
+}
+
+func (o SimpleDomainPtrOutput) Elem() SimpleDomainOutput {
+	return o.ApplyT(func(v *SimpleDomain) SimpleDomain {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleDomain
+		return ret
+	}).(SimpleDomainOutput)
+}
+
+func (o SimpleDomainPtrOutput) CreatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreatedAt
+	}).(pulumi.StringPtrOutput)
+}
+
+// Is the domain enabled
+func (o SimpleDomainPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Is GeoIP functionality enabled for the domain
+func (o SimpleDomainPtrOutput) Geoip() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Geoip
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Is Global Traffic Director enabled for the domain
+func (o SimpleDomainPtrOutput) Gtd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Gtd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// A unique numeric ID for this domain
+func (o SimpleDomainPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleDomainPtrOutput) Links() SimpleDomainLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *SimpleDomainLinksProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Links
+	}).(SimpleDomainLinksPropertiesPtrOutput)
+}
+
+// The name of the domain
+func (o SimpleDomainPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// A note for the domain
+func (o SimpleDomainPtrOutput) Note() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Note
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o SimpleDomainPtrOutput) Status() SimpleDomainStatusPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *SimpleDomainStatus {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(SimpleDomainStatusPtrOutput)
+}
+
+// An array of tags for this domain.
+func (o SimpleDomainPtrOutput) Tags() TagArrayOutput {
+	return o.ApplyT(func(v *SimpleDomain) []Tag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(TagArrayOutput)
+}
+
+func (o SimpleDomainPtrOutput) UpdatedAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UpdatedAt
+	}).(pulumi.StringPtrOutput)
+}
+
+// The version of the domain resource
+func (o SimpleDomainPtrOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SimpleDomain) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Version
+	}).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+type SimpleDomainLinksProperties struct {
+	Records *string `pulumi:"records"`
+	Self    *string `pulumi:"self"`
+}
+
+// Links for domain objects
+type SimpleDomainLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (SimpleDomainLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleDomainLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleDomainLinksPropertiesOutput) ToSimpleDomainLinksPropertiesOutput() SimpleDomainLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleDomainLinksPropertiesOutput) ToSimpleDomainLinksPropertiesOutputWithContext(ctx context.Context) SimpleDomainLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleDomainLinksPropertiesOutput) Records() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomainLinksProperties) *string { return v.Records }).(pulumi.StringPtrOutput)
+}
+
+func (o SimpleDomainLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleDomainLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type SimpleDomainLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleDomainLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleDomainLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleDomainLinksPropertiesPtrOutput) ToSimpleDomainLinksPropertiesPtrOutput() SimpleDomainLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleDomainLinksPropertiesPtrOutput) ToSimpleDomainLinksPropertiesPtrOutputWithContext(ctx context.Context) SimpleDomainLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleDomainLinksPropertiesPtrOutput) Elem() SimpleDomainLinksPropertiesOutput {
+	return o.ApplyT(func(v *SimpleDomainLinksProperties) SimpleDomainLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleDomainLinksProperties
+		return ret
+	}).(SimpleDomainLinksPropertiesOutput)
+}
+
+func (o SimpleDomainLinksPropertiesPtrOutput) Records() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomainLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Records
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o SimpleDomainLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleDomainLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
+}
+
+// Geo Proximity Location
+type SimpleGeoproximity struct {
+	// The unique ID for the Geo Proximity location
+	Id *int `pulumi:"id"`
+	// Links for domain objects
+	Links *SimpleGeoproximityLinksProperties `pulumi:"links"`
+	// The name of the Geo Proximity location
+	Name *string `pulumi:"name"`
+}
+
+// Geo Proximity Location
+type SimpleGeoproximityOutput struct{ *pulumi.OutputState }
+
+func (SimpleGeoproximityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleGeoproximity)(nil)).Elem()
+}
+
+func (o SimpleGeoproximityOutput) ToSimpleGeoproximityOutput() SimpleGeoproximityOutput {
+	return o
+}
+
+func (o SimpleGeoproximityOutput) ToSimpleGeoproximityOutputWithContext(ctx context.Context) SimpleGeoproximityOutput {
+	return o
+}
+
+// The unique ID for the Geo Proximity location
+func (o SimpleGeoproximityOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimpleGeoproximity) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleGeoproximityOutput) Links() SimpleGeoproximityLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v SimpleGeoproximity) *SimpleGeoproximityLinksProperties { return v.Links }).(SimpleGeoproximityLinksPropertiesPtrOutput)
+}
+
+// The name of the Geo Proximity location
+func (o SimpleGeoproximityOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleGeoproximity) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type SimpleGeoproximityPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleGeoproximityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleGeoproximity)(nil)).Elem()
+}
+
+func (o SimpleGeoproximityPtrOutput) ToSimpleGeoproximityPtrOutput() SimpleGeoproximityPtrOutput {
+	return o
+}
+
+func (o SimpleGeoproximityPtrOutput) ToSimpleGeoproximityPtrOutputWithContext(ctx context.Context) SimpleGeoproximityPtrOutput {
+	return o
+}
+
+func (o SimpleGeoproximityPtrOutput) Elem() SimpleGeoproximityOutput {
+	return o.ApplyT(func(v *SimpleGeoproximity) SimpleGeoproximity {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleGeoproximity
+		return ret
+	}).(SimpleGeoproximityOutput)
+}
+
+// The unique ID for the Geo Proximity location
+func (o SimpleGeoproximityPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SimpleGeoproximity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleGeoproximityPtrOutput) Links() SimpleGeoproximityLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v *SimpleGeoproximity) *SimpleGeoproximityLinksProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Links
+	}).(SimpleGeoproximityLinksPropertiesPtrOutput)
+}
+
+// The name of the Geo Proximity location
+func (o SimpleGeoproximityPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleGeoproximity) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// Links for domain objects
+type SimpleGeoproximityLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+// Links for domain objects
+type SimpleGeoproximityLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (SimpleGeoproximityLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleGeoproximityLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleGeoproximityLinksPropertiesOutput) ToSimpleGeoproximityLinksPropertiesOutput() SimpleGeoproximityLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleGeoproximityLinksPropertiesOutput) ToSimpleGeoproximityLinksPropertiesOutputWithContext(ctx context.Context) SimpleGeoproximityLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleGeoproximityLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleGeoproximityLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type SimpleGeoproximityLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleGeoproximityLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleGeoproximityLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleGeoproximityLinksPropertiesPtrOutput) ToSimpleGeoproximityLinksPropertiesPtrOutput() SimpleGeoproximityLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleGeoproximityLinksPropertiesPtrOutput) ToSimpleGeoproximityLinksPropertiesPtrOutputWithContext(ctx context.Context) SimpleGeoproximityLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleGeoproximityLinksPropertiesPtrOutput) Elem() SimpleGeoproximityLinksPropertiesOutput {
+	return o.ApplyT(func(v *SimpleGeoproximityLinksProperties) SimpleGeoproximityLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleGeoproximityLinksProperties
+		return ret
+	}).(SimpleGeoproximityLinksPropertiesOutput)
+}
+
+func (o SimpleGeoproximityLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleGeoproximityLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
+}
+
+type SimpleIpfilter struct {
+	// The unique ID for this IP filter
+	Id *int `pulumi:"id"`
+	// Links for domain objects
+	Links *SimpleIpfilterLinksProperties `pulumi:"links"`
+	// The name for this IP filter
+	Name *string `pulumi:"name"`
+}
+
+type SimpleIpfilterOutput struct{ *pulumi.OutputState }
+
+func (SimpleIpfilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleIpfilter)(nil)).Elem()
+}
+
+func (o SimpleIpfilterOutput) ToSimpleIpfilterOutput() SimpleIpfilterOutput {
+	return o
+}
+
+func (o SimpleIpfilterOutput) ToSimpleIpfilterOutputWithContext(ctx context.Context) SimpleIpfilterOutput {
+	return o
+}
+
+// The unique ID for this IP filter
+func (o SimpleIpfilterOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimpleIpfilter) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleIpfilterOutput) Links() SimpleIpfilterLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v SimpleIpfilter) *SimpleIpfilterLinksProperties { return v.Links }).(SimpleIpfilterLinksPropertiesPtrOutput)
+}
+
+// The name for this IP filter
+func (o SimpleIpfilterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleIpfilter) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type SimpleIpfilterPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleIpfilterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleIpfilter)(nil)).Elem()
+}
+
+func (o SimpleIpfilterPtrOutput) ToSimpleIpfilterPtrOutput() SimpleIpfilterPtrOutput {
+	return o
+}
+
+func (o SimpleIpfilterPtrOutput) ToSimpleIpfilterPtrOutputWithContext(ctx context.Context) SimpleIpfilterPtrOutput {
+	return o
+}
+
+func (o SimpleIpfilterPtrOutput) Elem() SimpleIpfilterOutput {
+	return o.ApplyT(func(v *SimpleIpfilter) SimpleIpfilter {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleIpfilter
+		return ret
+	}).(SimpleIpfilterOutput)
+}
+
+// The unique ID for this IP filter
+func (o SimpleIpfilterPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SimpleIpfilter) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Links for domain objects
+func (o SimpleIpfilterPtrOutput) Links() SimpleIpfilterLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v *SimpleIpfilter) *SimpleIpfilterLinksProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Links
+	}).(SimpleIpfilterLinksPropertiesPtrOutput)
+}
+
+// The name for this IP filter
+func (o SimpleIpfilterPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleIpfilter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// Links for domain objects
+type SimpleIpfilterLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+// Links for domain objects
+type SimpleIpfilterLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (SimpleIpfilterLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimpleIpfilterLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleIpfilterLinksPropertiesOutput) ToSimpleIpfilterLinksPropertiesOutput() SimpleIpfilterLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleIpfilterLinksPropertiesOutput) ToSimpleIpfilterLinksPropertiesOutputWithContext(ctx context.Context) SimpleIpfilterLinksPropertiesOutput {
+	return o
+}
+
+func (o SimpleIpfilterLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimpleIpfilterLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type SimpleIpfilterLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (SimpleIpfilterLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimpleIpfilterLinksProperties)(nil)).Elem()
+}
+
+func (o SimpleIpfilterLinksPropertiesPtrOutput) ToSimpleIpfilterLinksPropertiesPtrOutput() SimpleIpfilterLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleIpfilterLinksPropertiesPtrOutput) ToSimpleIpfilterLinksPropertiesPtrOutputWithContext(ctx context.Context) SimpleIpfilterLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimpleIpfilterLinksPropertiesPtrOutput) Elem() SimpleIpfilterLinksPropertiesOutput {
+	return o.ApplyT(func(v *SimpleIpfilterLinksProperties) SimpleIpfilterLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret SimpleIpfilterLinksProperties
+		return ret
+	}).(SimpleIpfilterLinksPropertiesOutput)
+}
+
+func (o SimpleIpfilterLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimpleIpfilterLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
+}
+
+type SimplePool struct {
+	Id *int `pulumi:"id"`
+	// Links for the pool
+	Links *SimplePoolLinksProperties `pulumi:"links"`
+}
+
+type SimplePoolOutput struct{ *pulumi.OutputState }
+
+func (SimplePoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimplePool)(nil)).Elem()
+}
+
+func (o SimplePoolOutput) ToSimplePoolOutput() SimplePoolOutput {
+	return o
+}
+
+func (o SimplePoolOutput) ToSimplePoolOutputWithContext(ctx context.Context) SimplePoolOutput {
+	return o
+}
+
+func (o SimplePoolOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SimplePool) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for the pool
+func (o SimplePoolOutput) Links() SimplePoolLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v SimplePool) *SimplePoolLinksProperties { return v.Links }).(SimplePoolLinksPropertiesPtrOutput)
+}
+
+type SimplePoolArrayOutput struct{ *pulumi.OutputState }
+
+func (SimplePoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SimplePool)(nil)).Elem()
+}
+
+func (o SimplePoolArrayOutput) ToSimplePoolArrayOutput() SimplePoolArrayOutput {
+	return o
+}
+
+func (o SimplePoolArrayOutput) ToSimplePoolArrayOutputWithContext(ctx context.Context) SimplePoolArrayOutput {
+	return o
+}
+
+func (o SimplePoolArrayOutput) Index(i pulumi.IntInput) SimplePoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SimplePool {
+		return vs[0].([]SimplePool)[vs[1].(int)]
+	}).(SimplePoolOutput)
+}
+
+// Links for the pool
+type SimplePoolLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+// Links for the pool
+type SimplePoolLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (SimplePoolLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SimplePoolLinksProperties)(nil)).Elem()
+}
+
+func (o SimplePoolLinksPropertiesOutput) ToSimplePoolLinksPropertiesOutput() SimplePoolLinksPropertiesOutput {
+	return o
+}
+
+func (o SimplePoolLinksPropertiesOutput) ToSimplePoolLinksPropertiesOutputWithContext(ctx context.Context) SimplePoolLinksPropertiesOutput {
+	return o
+}
+
+func (o SimplePoolLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SimplePoolLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type SimplePoolLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (SimplePoolLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SimplePoolLinksProperties)(nil)).Elem()
+}
+
+func (o SimplePoolLinksPropertiesPtrOutput) ToSimplePoolLinksPropertiesPtrOutput() SimplePoolLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimplePoolLinksPropertiesPtrOutput) ToSimplePoolLinksPropertiesPtrOutputWithContext(ctx context.Context) SimplePoolLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o SimplePoolLinksPropertiesPtrOutput) Elem() SimplePoolLinksPropertiesOutput {
+	return o.ApplyT(func(v *SimplePoolLinksProperties) SimplePoolLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret SimplePoolLinksProperties
+		return ret
+	}).(SimplePoolLinksPropertiesOutput)
+}
+
+func (o SimplePoolLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SimplePoolLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
 }
 
 type SimpleTemplate struct {
@@ -798,6 +6190,123 @@ func (o SimpleTemplateLinksPropertiesPtrOutput) Records() pulumi.StringPtrOutput
 
 func (o SimpleTemplateLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SimpleTemplateLinksProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Self
+	}).(pulumi.StringPtrOutput)
+}
+
+// A tag is used to group resources together
+type Tag struct {
+	// Unique ID for the tag
+	Id *int `pulumi:"id"`
+	// Links for tags
+	Links *TagLinksProperties `pulumi:"links"`
+	// A name for this tag
+	Name *string `pulumi:"name"`
+}
+
+// A tag is used to group resources together
+type TagOutput struct{ *pulumi.OutputState }
+
+func (TagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Tag)(nil)).Elem()
+}
+
+func (o TagOutput) ToTagOutput() TagOutput {
+	return o
+}
+
+func (o TagOutput) ToTagOutputWithContext(ctx context.Context) TagOutput {
+	return o
+}
+
+// Unique ID for the tag
+func (o TagOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v Tag) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Links for tags
+func (o TagOutput) Links() TagLinksPropertiesPtrOutput {
+	return o.ApplyT(func(v Tag) *TagLinksProperties { return v.Links }).(TagLinksPropertiesPtrOutput)
+}
+
+// A name for this tag
+func (o TagOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Tag) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type TagArrayOutput struct{ *pulumi.OutputState }
+
+func (TagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Tag)(nil)).Elem()
+}
+
+func (o TagArrayOutput) ToTagArrayOutput() TagArrayOutput {
+	return o
+}
+
+func (o TagArrayOutput) ToTagArrayOutputWithContext(ctx context.Context) TagArrayOutput {
+	return o
+}
+
+func (o TagArrayOutput) Index(i pulumi.IntInput) TagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Tag {
+		return vs[0].([]Tag)[vs[1].(int)]
+	}).(TagOutput)
+}
+
+// Links for tags
+type TagLinksProperties struct {
+	Self *string `pulumi:"self"`
+}
+
+// Links for tags
+type TagLinksPropertiesOutput struct{ *pulumi.OutputState }
+
+func (TagLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TagLinksProperties)(nil)).Elem()
+}
+
+func (o TagLinksPropertiesOutput) ToTagLinksPropertiesOutput() TagLinksPropertiesOutput {
+	return o
+}
+
+func (o TagLinksPropertiesOutput) ToTagLinksPropertiesOutputWithContext(ctx context.Context) TagLinksPropertiesOutput {
+	return o
+}
+
+func (o TagLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TagLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+}
+
+type TagLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (TagLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TagLinksProperties)(nil)).Elem()
+}
+
+func (o TagLinksPropertiesPtrOutput) ToTagLinksPropertiesPtrOutput() TagLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o TagLinksPropertiesPtrOutput) ToTagLinksPropertiesPtrOutputWithContext(ctx context.Context) TagLinksPropertiesPtrOutput {
+	return o
+}
+
+func (o TagLinksPropertiesPtrOutput) Elem() TagLinksPropertiesOutput {
+	return o.ApplyT(func(v *TagLinksProperties) TagLinksProperties {
+		if v != nil {
+			return *v
+		}
+		var ret TagLinksProperties
+		return ret
+	}).(TagLinksPropertiesOutput)
+}
+
+func (o TagLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagLinksProperties) *string {
 		if v == nil {
 			return nil
 		}
@@ -1070,55 +6579,55 @@ func (o TemplateLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
 }
 
 // Links for the domain record
-type TemplaterecordPropertiesLinksProperties struct {
+type TemplaterecordLinksProperties struct {
 	Self *string `pulumi:"self"`
 }
 
 // Links for the domain record
-type TemplaterecordPropertiesLinksPropertiesOutput struct{ *pulumi.OutputState }
+type TemplaterecordLinksPropertiesOutput struct{ *pulumi.OutputState }
 
-func (TemplaterecordPropertiesLinksPropertiesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*TemplaterecordPropertiesLinksProperties)(nil)).Elem()
+func (TemplaterecordLinksPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TemplaterecordLinksProperties)(nil)).Elem()
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesOutput) ToTemplaterecordPropertiesLinksPropertiesOutput() TemplaterecordPropertiesLinksPropertiesOutput {
+func (o TemplaterecordLinksPropertiesOutput) ToTemplaterecordLinksPropertiesOutput() TemplaterecordLinksPropertiesOutput {
 	return o
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesOutput) ToTemplaterecordPropertiesLinksPropertiesOutputWithContext(ctx context.Context) TemplaterecordPropertiesLinksPropertiesOutput {
+func (o TemplaterecordLinksPropertiesOutput) ToTemplaterecordLinksPropertiesOutputWithContext(ctx context.Context) TemplaterecordLinksPropertiesOutput {
 	return o
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v TemplaterecordPropertiesLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
+func (o TemplaterecordLinksPropertiesOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TemplaterecordLinksProperties) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
-type TemplaterecordPropertiesLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
+type TemplaterecordLinksPropertiesPtrOutput struct{ *pulumi.OutputState }
 
-func (TemplaterecordPropertiesLinksPropertiesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**TemplaterecordPropertiesLinksProperties)(nil)).Elem()
+func (TemplaterecordLinksPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TemplaterecordLinksProperties)(nil)).Elem()
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesPtrOutput) ToTemplaterecordPropertiesLinksPropertiesPtrOutput() TemplaterecordPropertiesLinksPropertiesPtrOutput {
+func (o TemplaterecordLinksPropertiesPtrOutput) ToTemplaterecordLinksPropertiesPtrOutput() TemplaterecordLinksPropertiesPtrOutput {
 	return o
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesPtrOutput) ToTemplaterecordPropertiesLinksPropertiesPtrOutputWithContext(ctx context.Context) TemplaterecordPropertiesLinksPropertiesPtrOutput {
+func (o TemplaterecordLinksPropertiesPtrOutput) ToTemplaterecordLinksPropertiesPtrOutputWithContext(ctx context.Context) TemplaterecordLinksPropertiesPtrOutput {
 	return o
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesPtrOutput) Elem() TemplaterecordPropertiesLinksPropertiesOutput {
-	return o.ApplyT(func(v *TemplaterecordPropertiesLinksProperties) TemplaterecordPropertiesLinksProperties {
+func (o TemplaterecordLinksPropertiesPtrOutput) Elem() TemplaterecordLinksPropertiesOutput {
+	return o.ApplyT(func(v *TemplaterecordLinksProperties) TemplaterecordLinksProperties {
 		if v != nil {
 			return *v
 		}
-		var ret TemplaterecordPropertiesLinksProperties
+		var ret TemplaterecordLinksProperties
 		return ret
-	}).(TemplaterecordPropertiesLinksPropertiesOutput)
+	}).(TemplaterecordLinksPropertiesOutput)
 }
 
-func (o TemplaterecordPropertiesLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *TemplaterecordPropertiesLinksProperties) *string {
+func (o TemplaterecordLinksPropertiesPtrOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TemplaterecordLinksProperties) *string {
 		if v == nil {
 			return nil
 		}
@@ -1126,13 +6635,4637 @@ func (o TemplaterecordPropertiesLinksPropertiesPtrOutput) Self() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
+type Value struct {
+	// The description to include in meta tags
+	Description *string `pulumi:"description"`
+	// If this is a frame redirect, don't include the URL entered in the browser
+	Hard *bool `pulumi:"hard"`
+	// Meta keywords for the page containing the frame
+	Keywords *string `pulumi:"keywords"`
+	// The type of redirect, either 301, 302 or frame.
+	RedirectType *string `pulumi:"redirectType"`
+	// The title of the page containing the redirect frame
+	Title *string `pulumi:"title"`
+	// The URL to redirect to
+	Url *string `pulumi:"url"`
+}
+
+type ValueOutput struct{ *pulumi.OutputState }
+
+func (ValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Value)(nil)).Elem()
+}
+
+func (o ValueOutput) ToValueOutput() ValueOutput {
+	return o
+}
+
+func (o ValueOutput) ToValueOutputWithContext(ctx context.Context) ValueOutput {
+	return o
+}
+
+// The description to include in meta tags
+func (o ValueOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Value) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// If this is a frame redirect, don't include the URL entered in the browser
+func (o ValueOutput) Hard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v Value) *bool { return v.Hard }).(pulumi.BoolPtrOutput)
+}
+
+// Meta keywords for the page containing the frame
+func (o ValueOutput) Keywords() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Value) *string { return v.Keywords }).(pulumi.StringPtrOutput)
+}
+
+// The type of redirect, either 301, 302 or frame.
+func (o ValueOutput) RedirectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Value) *string { return v.RedirectType }).(pulumi.StringPtrOutput)
+}
+
+// The title of the page containing the redirect frame
+func (o ValueOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Value) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+// The URL to redirect to
+func (o ValueOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Value) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**Value)(nil)).Elem()
+}
+
+func (o ValuePtrOutput) ToValuePtrOutput() ValuePtrOutput {
+	return o
+}
+
+func (o ValuePtrOutput) ToValuePtrOutputWithContext(ctx context.Context) ValuePtrOutput {
+	return o
+}
+
+func (o ValuePtrOutput) Elem() ValueOutput {
+	return o.ApplyT(func(v *Value) Value {
+		if v != nil {
+			return *v
+		}
+		var ret Value
+		return ret
+	}).(ValueOutput)
+}
+
+// The description to include in meta tags
+func (o ValuePtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Value) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// If this is a frame redirect, don't include the URL entered in the browser
+func (o ValuePtrOutput) Hard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Value) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Hard
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Meta keywords for the page containing the frame
+func (o ValuePtrOutput) Keywords() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Value) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Keywords
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of redirect, either 301, 302 or frame.
+func (o ValuePtrOutput) RedirectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Value) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title of the page containing the redirect frame
+func (o ValuePtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Value) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+// The URL to redirect to
+func (o ValuePtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Value) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueARequestValueItemProperties struct {
+	Id *int `pulumi:"id"`
+}
+
+// ValueARequestValueItemPropertiesInput is an input type that accepts ValueARequestValueItemPropertiesArgs and ValueARequestValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueARequestValueItemPropertiesInput` via:
+//
+//	ValueARequestValueItemPropertiesArgs{...}
+type ValueARequestValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueARequestValueItemPropertiesOutput() ValueARequestValueItemPropertiesOutput
+	ToValueARequestValueItemPropertiesOutputWithContext(context.Context) ValueARequestValueItemPropertiesOutput
+}
+
+type ValueARequestValueItemPropertiesArgs struct {
+	Id pulumi.IntPtrInput `pulumi:"id"`
+}
+
+func (ValueARequestValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueARequestValueItemPropertiesArgs) ToValueARequestValueItemPropertiesOutput() ValueARequestValueItemPropertiesOutput {
+	return i.ToValueARequestValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValueItemPropertiesArgs) ToValueARequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueARequestValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValueItemPropertiesOutput)
+}
+
+// ValueARequestValueItemPropertiesArrayInput is an input type that accepts ValueARequestValueItemPropertiesArray and ValueARequestValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueARequestValueItemPropertiesArrayInput` via:
+//
+//	ValueARequestValueItemPropertiesArray{ ValueARequestValueItemPropertiesArgs{...} }
+type ValueARequestValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueARequestValueItemPropertiesArrayOutput() ValueARequestValueItemPropertiesArrayOutput
+	ToValueARequestValueItemPropertiesArrayOutputWithContext(context.Context) ValueARequestValueItemPropertiesArrayOutput
+}
+
+type ValueARequestValueItemPropertiesArray []ValueARequestValueItemPropertiesInput
+
+func (ValueARequestValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueARequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueARequestValueItemPropertiesArray) ToValueARequestValueItemPropertiesArrayOutput() ValueARequestValueItemPropertiesArrayOutput {
+	return i.ToValueARequestValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValueItemPropertiesArray) ToValueARequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueARequestValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValueItemPropertiesArrayOutput)
+}
+
+type ValueARequestValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValueItemPropertiesOutput) ToValueARequestValueItemPropertiesOutput() ValueARequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueARequestValueItemPropertiesOutput) ToValueARequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueARequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueARequestValueItemPropertiesOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueARequestValueItemProperties) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+type ValueARequestValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueARequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValueItemPropertiesArrayOutput) ToValueARequestValueItemPropertiesArrayOutput() ValueARequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueARequestValueItemPropertiesArrayOutput) ToValueARequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueARequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueARequestValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueARequestValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueARequestValueItemProperties {
+		return vs[0].([]ValueARequestValueItemProperties)[vs[1].(int)]
+	}).(ValueARequestValueItemPropertiesOutput)
+}
+
+// Failover record mode
+type ValueARequestValueProperties struct {
+	// The failover mode
+	Mode   *ValueARequestValuePropertiesMode                  `pulumi:"mode"`
+	Values []ValueARequestValuePropertiesValuesItemProperties `pulumi:"values"`
+}
+
+// ValueARequestValuePropertiesInput is an input type that accepts ValueARequestValuePropertiesArgs and ValueARequestValuePropertiesOutput values.
+// You can construct a concrete instance of `ValueARequestValuePropertiesInput` via:
+//
+//	ValueARequestValuePropertiesArgs{...}
+type ValueARequestValuePropertiesInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesOutput() ValueARequestValuePropertiesOutput
+	ToValueARequestValuePropertiesOutputWithContext(context.Context) ValueARequestValuePropertiesOutput
+}
+
+// Failover record mode
+type ValueARequestValuePropertiesArgs struct {
+	// The failover mode
+	Mode   ValueARequestValuePropertiesModePtrInput                   `pulumi:"mode"`
+	Values ValueARequestValuePropertiesValuesItemPropertiesArrayInput `pulumi:"values"`
+}
+
+func (ValueARequestValuePropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValueProperties)(nil)).Elem()
+}
+
+func (i ValueARequestValuePropertiesArgs) ToValueARequestValuePropertiesOutput() ValueARequestValuePropertiesOutput {
+	return i.ToValueARequestValuePropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValuePropertiesArgs) ToValueARequestValuePropertiesOutputWithContext(ctx context.Context) ValueARequestValuePropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValuePropertiesOutput)
+}
+
+func (i ValueARequestValuePropertiesArgs) ToValueARequestValuePropertiesPtrOutput() ValueARequestValuePropertiesPtrOutput {
+	return i.ToValueARequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValuePropertiesArgs) ToValueARequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValuePropertiesOutput).ToValueARequestValuePropertiesPtrOutputWithContext(ctx)
+}
+
+// ValueARequestValuePropertiesPtrInput is an input type that accepts ValueARequestValuePropertiesArgs, ValueARequestValuePropertiesPtr and ValueARequestValuePropertiesPtrOutput values.
+// You can construct a concrete instance of `ValueARequestValuePropertiesPtrInput` via:
+//
+//	        ValueARequestValuePropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ValueARequestValuePropertiesPtrInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesPtrOutput() ValueARequestValuePropertiesPtrOutput
+	ToValueARequestValuePropertiesPtrOutputWithContext(context.Context) ValueARequestValuePropertiesPtrOutput
+}
+
+type valueARequestValuePropertiesPtrType ValueARequestValuePropertiesArgs
+
+func ValueARequestValuePropertiesPtr(v *ValueARequestValuePropertiesArgs) ValueARequestValuePropertiesPtrInput {
+	return (*valueARequestValuePropertiesPtrType)(v)
+}
+
+func (*valueARequestValuePropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueARequestValueProperties)(nil)).Elem()
+}
+
+func (i *valueARequestValuePropertiesPtrType) ToValueARequestValuePropertiesPtrOutput() ValueARequestValuePropertiesPtrOutput {
+	return i.ToValueARequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *valueARequestValuePropertiesPtrType) ToValueARequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValuePropertiesPtrOutput)
+}
+
+// Failover record mode
+type ValueARequestValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesOutput) ToValueARequestValuePropertiesOutput() ValueARequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesOutput) ToValueARequestValuePropertiesOutputWithContext(ctx context.Context) ValueARequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesOutput) ToValueARequestValuePropertiesPtrOutput() ValueARequestValuePropertiesPtrOutput {
+	return o.ToValueARequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ValueARequestValuePropertiesOutput) ToValueARequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueARequestValueProperties) *ValueARequestValueProperties {
+		return &v
+	}).(ValueARequestValuePropertiesPtrOutput)
+}
+
+// The failover mode
+func (o ValueARequestValuePropertiesOutput) Mode() ValueARequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueARequestValueProperties) *ValueARequestValuePropertiesMode { return v.Mode }).(ValueARequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueARequestValuePropertiesOutput) Values() ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v ValueARequestValueProperties) []ValueARequestValuePropertiesValuesItemProperties {
+		return v.Values
+	}).(ValueARequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueARequestValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueARequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesPtrOutput) ToValueARequestValuePropertiesPtrOutput() ValueARequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesPtrOutput) ToValueARequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueARequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesPtrOutput) Elem() ValueARequestValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueARequestValueProperties) ValueARequestValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueARequestValueProperties
+		return ret
+	}).(ValueARequestValuePropertiesOutput)
+}
+
+// The failover mode
+func (o ValueARequestValuePropertiesPtrOutput) Mode() ValueARequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueARequestValueProperties) *ValueARequestValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueARequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueARequestValuePropertiesPtrOutput) Values() ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *ValueARequestValueProperties) []ValueARequestValuePropertiesValuesItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueARequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueARequestValuePropertiesValuesItemProperties struct {
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int    `pulumi:"sonarCheckId"`
+	Value        *string `pulumi:"value"`
+}
+
+// ValueARequestValuePropertiesValuesItemPropertiesInput is an input type that accepts ValueARequestValuePropertiesValuesItemPropertiesArgs and ValueARequestValuePropertiesValuesItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueARequestValuePropertiesValuesItemPropertiesInput` via:
+//
+//	ValueARequestValuePropertiesValuesItemPropertiesArgs{...}
+type ValueARequestValuePropertiesValuesItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesValuesItemPropertiesOutput() ValueARequestValuePropertiesValuesItemPropertiesOutput
+	ToValueARequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Context) ValueARequestValuePropertiesValuesItemPropertiesOutput
+}
+
+type ValueARequestValuePropertiesValuesItemPropertiesArgs struct {
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order pulumi.IntPtrInput `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId pulumi.IntPtrInput    `pulumi:"sonarCheckId"`
+	Value        pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueARequestValuePropertiesValuesItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueARequestValuePropertiesValuesItemPropertiesArgs) ToValueARequestValuePropertiesValuesItemPropertiesOutput() ValueARequestValuePropertiesValuesItemPropertiesOutput {
+	return i.ToValueARequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValuePropertiesValuesItemPropertiesArgs) ToValueARequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueARequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+// ValueARequestValuePropertiesValuesItemPropertiesArrayInput is an input type that accepts ValueARequestValuePropertiesValuesItemPropertiesArray and ValueARequestValuePropertiesValuesItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueARequestValuePropertiesValuesItemPropertiesArrayInput` via:
+//
+//	ValueARequestValuePropertiesValuesItemPropertiesArray{ ValueARequestValuePropertiesValuesItemPropertiesArgs{...} }
+type ValueARequestValuePropertiesValuesItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueARequestValuePropertiesValuesItemPropertiesArrayOutput() ValueARequestValuePropertiesValuesItemPropertiesArrayOutput
+	ToValueARequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Context) ValueARequestValuePropertiesValuesItemPropertiesArrayOutput
+}
+
+type ValueARequestValuePropertiesValuesItemPropertiesArray []ValueARequestValuePropertiesValuesItemPropertiesInput
+
+func (ValueARequestValuePropertiesValuesItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueARequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueARequestValuePropertiesValuesItemPropertiesArray) ToValueARequestValuePropertiesValuesItemPropertiesArrayOutput() ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return i.ToValueARequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueARequestValuePropertiesValuesItemPropertiesArray) ToValueARequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueARequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueARequestValuePropertiesValuesItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesValuesItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueARequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) ToValueARequestValuePropertiesValuesItemPropertiesOutput() ValueARequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) ToValueARequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueARequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueARequestValuePropertiesValuesItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueARequestValuePropertiesValuesItemProperties) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueARequestValuePropertiesValuesItemProperties) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueARequestValuePropertiesValuesItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueARequestValuePropertiesValuesItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueARequestValuePropertiesValuesItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueARequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueARequestValuePropertiesValuesItemPropertiesArrayOutput() ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueARequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueARequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueARequestValuePropertiesValuesItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueARequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueARequestValuePropertiesValuesItemProperties {
+		return vs[0].([]ValueARequestValuePropertiesValuesItemProperties)[vs[1].(int)]
+	}).(ValueARequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+type ValueAValue struct {
+	// The failover mode
+	Mode   *ValueAValuePropertiesMode        `pulumi:"mode"`
+	Values []ValueAValuePropertiesValuesItem `pulumi:"values"`
+}
+
+type ValueAValueOutput struct{ *pulumi.OutputState }
+
+func (ValueAValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAValue)(nil)).Elem()
+}
+
+func (o ValueAValueOutput) ToValueAValueOutput() ValueAValueOutput {
+	return o
+}
+
+func (o ValueAValueOutput) ToValueAValueOutputWithContext(ctx context.Context) ValueAValueOutput {
+	return o
+}
+
+// The failover mode
+func (o ValueAValueOutput) Mode() ValueAValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueAValue) *ValueAValuePropertiesMode { return v.Mode }).(ValueAValuePropertiesModePtrOutput)
+}
+
+func (o ValueAValueOutput) Values() ValueAValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v ValueAValue) []ValueAValuePropertiesValuesItem { return v.Values }).(ValueAValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAValue)(nil)).Elem()
+}
+
+func (o ValueAValuePtrOutput) ToValueAValuePtrOutput() ValueAValuePtrOutput {
+	return o
+}
+
+func (o ValueAValuePtrOutput) ToValueAValuePtrOutputWithContext(ctx context.Context) ValueAValuePtrOutput {
+	return o
+}
+
+func (o ValueAValuePtrOutput) Elem() ValueAValueOutput {
+	return o.ApplyT(func(v *ValueAValue) ValueAValue {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAValue
+		return ret
+	}).(ValueAValueOutput)
+}
+
+// The failover mode
+func (o ValueAValuePtrOutput) Mode() ValueAValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueAValue) *ValueAValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueAValuePropertiesModePtrOutput)
+}
+
+func (o ValueAValuePtrOutput) Values() ValueAValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *ValueAValue) []ValueAValuePropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueAValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAValuePropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type ValueAValuePropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (ValueAValuePropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAValuePropertiesValuesItemOutput) ToValueAValuePropertiesValuesItemOutput() ValueAValuePropertiesValuesItemOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesValuesItemOutput) ToValueAValuePropertiesValuesItemOutputWithContext(ctx context.Context) ValueAValuePropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueAValuePropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAValuePropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o ValueAValuePropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueAValuePropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueAValuePropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o ValueAValuePropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o ValueAValuePropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAValuePropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAValuePropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAValuePropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAValuePropertiesValuesItemArrayOutput) ToValueAValuePropertiesValuesItemArrayOutput() ValueAValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesValuesItemArrayOutput) ToValueAValuePropertiesValuesItemArrayOutputWithContext(ctx context.Context) ValueAValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAValuePropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) ValueAValuePropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAValuePropertiesValuesItem {
+		return vs[0].([]ValueAValuePropertiesValuesItem)[vs[1].(int)]
+	}).(ValueAValuePropertiesValuesItemOutput)
+}
+
+type ValueAaaaRequestValueItemProperties struct {
+	Id *int `pulumi:"id"`
+}
+
+// ValueAaaaRequestValueItemPropertiesInput is an input type that accepts ValueAaaaRequestValueItemPropertiesArgs and ValueAaaaRequestValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValueItemPropertiesInput` via:
+//
+//	ValueAaaaRequestValueItemPropertiesArgs{...}
+type ValueAaaaRequestValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValueItemPropertiesOutput() ValueAaaaRequestValueItemPropertiesOutput
+	ToValueAaaaRequestValueItemPropertiesOutputWithContext(context.Context) ValueAaaaRequestValueItemPropertiesOutput
+}
+
+type ValueAaaaRequestValueItemPropertiesArgs struct {
+	Id pulumi.IntPtrInput `pulumi:"id"`
+}
+
+func (ValueAaaaRequestValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueAaaaRequestValueItemPropertiesArgs) ToValueAaaaRequestValueItemPropertiesOutput() ValueAaaaRequestValueItemPropertiesOutput {
+	return i.ToValueAaaaRequestValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValueItemPropertiesArgs) ToValueAaaaRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValueItemPropertiesOutput)
+}
+
+// ValueAaaaRequestValueItemPropertiesArrayInput is an input type that accepts ValueAaaaRequestValueItemPropertiesArray and ValueAaaaRequestValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValueItemPropertiesArrayInput` via:
+//
+//	ValueAaaaRequestValueItemPropertiesArray{ ValueAaaaRequestValueItemPropertiesArgs{...} }
+type ValueAaaaRequestValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValueItemPropertiesArrayOutput() ValueAaaaRequestValueItemPropertiesArrayOutput
+	ToValueAaaaRequestValueItemPropertiesArrayOutputWithContext(context.Context) ValueAaaaRequestValueItemPropertiesArrayOutput
+}
+
+type ValueAaaaRequestValueItemPropertiesArray []ValueAaaaRequestValueItemPropertiesInput
+
+func (ValueAaaaRequestValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAaaaRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueAaaaRequestValueItemPropertiesArray) ToValueAaaaRequestValueItemPropertiesArrayOutput() ValueAaaaRequestValueItemPropertiesArrayOutput {
+	return i.ToValueAaaaRequestValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValueItemPropertiesArray) ToValueAaaaRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAaaaRequestValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValueItemPropertiesArrayOutput)
+}
+
+type ValueAaaaRequestValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValueItemPropertiesOutput) ToValueAaaaRequestValueItemPropertiesOutput() ValueAaaaRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValueItemPropertiesOutput) ToValueAaaaRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValueItemPropertiesOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValueItemProperties) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+type ValueAaaaRequestValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAaaaRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValueItemPropertiesArrayOutput) ToValueAaaaRequestValueItemPropertiesArrayOutput() ValueAaaaRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValueItemPropertiesArrayOutput) ToValueAaaaRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAaaaRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueAaaaRequestValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAaaaRequestValueItemProperties {
+		return vs[0].([]ValueAaaaRequestValueItemProperties)[vs[1].(int)]
+	}).(ValueAaaaRequestValueItemPropertiesOutput)
+}
+
+// Failover record mode
+type ValueAaaaRequestValueProperties struct {
+	// Whether this failover value is enabled or not
+	Enabled *bool `pulumi:"enabled"`
+	// The failover mode
+	Mode   *ValueAaaaRequestValuePropertiesMode                  `pulumi:"mode"`
+	Values []ValueAaaaRequestValuePropertiesValuesItemProperties `pulumi:"values"`
+}
+
+// ValueAaaaRequestValuePropertiesInput is an input type that accepts ValueAaaaRequestValuePropertiesArgs and ValueAaaaRequestValuePropertiesOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValuePropertiesInput` via:
+//
+//	ValueAaaaRequestValuePropertiesArgs{...}
+type ValueAaaaRequestValuePropertiesInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesOutput() ValueAaaaRequestValuePropertiesOutput
+	ToValueAaaaRequestValuePropertiesOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesOutput
+}
+
+// Failover record mode
+type ValueAaaaRequestValuePropertiesArgs struct {
+	// Whether this failover value is enabled or not
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The failover mode
+	Mode   ValueAaaaRequestValuePropertiesModePtrInput                   `pulumi:"mode"`
+	Values ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayInput `pulumi:"values"`
+}
+
+func (ValueAaaaRequestValuePropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValueProperties)(nil)).Elem()
+}
+
+func (i ValueAaaaRequestValuePropertiesArgs) ToValueAaaaRequestValuePropertiesOutput() ValueAaaaRequestValuePropertiesOutput {
+	return i.ToValueAaaaRequestValuePropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValuePropertiesArgs) ToValueAaaaRequestValuePropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValuePropertiesOutput)
+}
+
+func (i ValueAaaaRequestValuePropertiesArgs) ToValueAaaaRequestValuePropertiesPtrOutput() ValueAaaaRequestValuePropertiesPtrOutput {
+	return i.ToValueAaaaRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValuePropertiesArgs) ToValueAaaaRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValuePropertiesOutput).ToValueAaaaRequestValuePropertiesPtrOutputWithContext(ctx)
+}
+
+// ValueAaaaRequestValuePropertiesPtrInput is an input type that accepts ValueAaaaRequestValuePropertiesArgs, ValueAaaaRequestValuePropertiesPtr and ValueAaaaRequestValuePropertiesPtrOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValuePropertiesPtrInput` via:
+//
+//	        ValueAaaaRequestValuePropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ValueAaaaRequestValuePropertiesPtrInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesPtrOutput() ValueAaaaRequestValuePropertiesPtrOutput
+	ToValueAaaaRequestValuePropertiesPtrOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesPtrOutput
+}
+
+type valueAaaaRequestValuePropertiesPtrType ValueAaaaRequestValuePropertiesArgs
+
+func ValueAaaaRequestValuePropertiesPtr(v *ValueAaaaRequestValuePropertiesArgs) ValueAaaaRequestValuePropertiesPtrInput {
+	return (*valueAaaaRequestValuePropertiesPtrType)(v)
+}
+
+func (*valueAaaaRequestValuePropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaRequestValueProperties)(nil)).Elem()
+}
+
+func (i *valueAaaaRequestValuePropertiesPtrType) ToValueAaaaRequestValuePropertiesPtrOutput() ValueAaaaRequestValuePropertiesPtrOutput {
+	return i.ToValueAaaaRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *valueAaaaRequestValuePropertiesPtrType) ToValueAaaaRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValuePropertiesPtrOutput)
+}
+
+// Failover record mode
+type ValueAaaaRequestValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesOutput) ToValueAaaaRequestValuePropertiesOutput() ValueAaaaRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesOutput) ToValueAaaaRequestValuePropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesOutput) ToValueAaaaRequestValuePropertiesPtrOutput() ValueAaaaRequestValuePropertiesPtrOutput {
+	return o.ToValueAaaaRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAaaaRequestValuePropertiesOutput) ToValueAaaaRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAaaaRequestValueProperties) *ValueAaaaRequestValueProperties {
+		return &v
+	}).(ValueAaaaRequestValuePropertiesPtrOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAaaaRequestValuePropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValueProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAaaaRequestValuePropertiesOutput) Mode() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValueProperties) *ValueAaaaRequestValuePropertiesMode { return v.Mode }).(ValueAaaaRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesOutput) Values() ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValueProperties) []ValueAaaaRequestValuePropertiesValuesItemProperties {
+		return v.Values
+	}).(ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAaaaRequestValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesPtrOutput) ToValueAaaaRequestValuePropertiesPtrOutput() ValueAaaaRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesPtrOutput) ToValueAaaaRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesPtrOutput) Elem() ValueAaaaRequestValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueAaaaRequestValueProperties) ValueAaaaRequestValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAaaaRequestValueProperties
+		return ret
+	}).(ValueAaaaRequestValuePropertiesOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAaaaRequestValuePropertiesPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ValueAaaaRequestValueProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAaaaRequestValuePropertiesPtrOutput) Mode() ValueAaaaRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueAaaaRequestValueProperties) *ValueAaaaRequestValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueAaaaRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesPtrOutput) Values() ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *ValueAaaaRequestValueProperties) []ValueAaaaRequestValuePropertiesValuesItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAaaaRequestValuePropertiesValuesItemProperties struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int    `pulumi:"sonarCheckId"`
+	Value        *string `pulumi:"value"`
+}
+
+// ValueAaaaRequestValuePropertiesValuesItemPropertiesInput is an input type that accepts ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs and ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValuePropertiesValuesItemPropertiesInput` via:
+//
+//	ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs{...}
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput
+	ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput
+}
+
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs struct {
+	// Whether this entry is considered active or not
+	Active pulumi.BoolPtrInput `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order pulumi.IntPtrInput `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId pulumi.IntPtrInput    `pulumi:"sonarCheckId"`
+	Value        pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs) ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput {
+	return i.ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs) ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+// ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayInput is an input type that accepts ValueAaaaRequestValuePropertiesValuesItemPropertiesArray and ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayInput` via:
+//
+//	ValueAaaaRequestValuePropertiesValuesItemPropertiesArray{ ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs{...} }
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput
+	ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput
+}
+
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesArray []ValueAaaaRequestValuePropertiesValuesItemPropertiesInput
+
+func (ValueAaaaRequestValuePropertiesValuesItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAaaaRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueAaaaRequestValuePropertiesValuesItemPropertiesArray) ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return i.ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueAaaaRequestValuePropertiesValuesItemPropertiesArray) ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) ToValueAaaaRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValuePropertiesValuesItemProperties) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValuePropertiesValuesItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValuePropertiesValuesItemProperties) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValuePropertiesValuesItemProperties) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAaaaRequestValuePropertiesValuesItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAaaaRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAaaaRequestValuePropertiesValuesItemProperties {
+		return vs[0].([]ValueAaaaRequestValuePropertiesValuesItemProperties)[vs[1].(int)]
+	}).(ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+type ValueAaaaValue struct {
+	// Whether this failover value is enabled or not
+	Enabled *bool `pulumi:"enabled"`
+	// The failover mode
+	Mode   *ValueAaaaValuePropertiesMode        `pulumi:"mode"`
+	Values []ValueAaaaValuePropertiesValuesItem `pulumi:"values"`
+}
+
+type ValueAaaaValueOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaValue)(nil)).Elem()
+}
+
+func (o ValueAaaaValueOutput) ToValueAaaaValueOutput() ValueAaaaValueOutput {
+	return o
+}
+
+func (o ValueAaaaValueOutput) ToValueAaaaValueOutputWithContext(ctx context.Context) ValueAaaaValueOutput {
+	return o
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAaaaValueOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValue) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAaaaValueOutput) Mode() ValueAaaaValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueAaaaValue) *ValueAaaaValuePropertiesMode { return v.Mode }).(ValueAaaaValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaValueOutput) Values() ValueAaaaValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v ValueAaaaValue) []ValueAaaaValuePropertiesValuesItem { return v.Values }).(ValueAaaaValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAaaaValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAaaaValue)(nil)).Elem()
+}
+
+func (o ValueAaaaValuePtrOutput) ToValueAaaaValuePtrOutput() ValueAaaaValuePtrOutput {
+	return o
+}
+
+func (o ValueAaaaValuePtrOutput) ToValueAaaaValuePtrOutputWithContext(ctx context.Context) ValueAaaaValuePtrOutput {
+	return o
+}
+
+func (o ValueAaaaValuePtrOutput) Elem() ValueAaaaValueOutput {
+	return o.ApplyT(func(v *ValueAaaaValue) ValueAaaaValue {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAaaaValue
+		return ret
+	}).(ValueAaaaValueOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAaaaValuePtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ValueAaaaValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAaaaValuePtrOutput) Mode() ValueAaaaValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueAaaaValue) *ValueAaaaValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueAaaaValuePropertiesModePtrOutput)
+}
+
+func (o ValueAaaaValuePtrOutput) Values() ValueAaaaValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *ValueAaaaValue) []ValueAaaaValuePropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueAaaaValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAaaaValuePropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type ValueAaaaValuePropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValuePropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAaaaValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAaaaValuePropertiesValuesItemOutput) ToValueAaaaValuePropertiesValuesItemOutput() ValueAaaaValuePropertiesValuesItemOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesValuesItemOutput) ToValueAaaaValuePropertiesValuesItemOutputWithContext(ctx context.Context) ValueAaaaValuePropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueAaaaValuePropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAaaaValuePropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o ValueAaaaValuePropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueAaaaValuePropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueAaaaValuePropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o ValueAaaaValuePropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o ValueAaaaValuePropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAaaaValuePropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAaaaValuePropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAaaaValuePropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAaaaValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAaaaValuePropertiesValuesItemArrayOutput) ToValueAaaaValuePropertiesValuesItemArrayOutput() ValueAaaaValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesValuesItemArrayOutput) ToValueAaaaValuePropertiesValuesItemArrayOutputWithContext(ctx context.Context) ValueAaaaValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAaaaValuePropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) ValueAaaaValuePropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAaaaValuePropertiesValuesItem {
+		return vs[0].([]ValueAaaaValuePropertiesValuesItem)[vs[1].(int)]
+	}).(ValueAaaaValuePropertiesValuesItemOutput)
+}
+
+type ValueAnameRequestValueItemProperties struct {
+	Id *int `pulumi:"id"`
+}
+
+// ValueAnameRequestValueItemPropertiesInput is an input type that accepts ValueAnameRequestValueItemPropertiesArgs and ValueAnameRequestValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValueItemPropertiesInput` via:
+//
+//	ValueAnameRequestValueItemPropertiesArgs{...}
+type ValueAnameRequestValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValueItemPropertiesOutput() ValueAnameRequestValueItemPropertiesOutput
+	ToValueAnameRequestValueItemPropertiesOutputWithContext(context.Context) ValueAnameRequestValueItemPropertiesOutput
+}
+
+type ValueAnameRequestValueItemPropertiesArgs struct {
+	Id pulumi.IntPtrInput `pulumi:"id"`
+}
+
+func (ValueAnameRequestValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueAnameRequestValueItemPropertiesArgs) ToValueAnameRequestValueItemPropertiesOutput() ValueAnameRequestValueItemPropertiesOutput {
+	return i.ToValueAnameRequestValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValueItemPropertiesArgs) ToValueAnameRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValueItemPropertiesOutput)
+}
+
+// ValueAnameRequestValueItemPropertiesArrayInput is an input type that accepts ValueAnameRequestValueItemPropertiesArray and ValueAnameRequestValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValueItemPropertiesArrayInput` via:
+//
+//	ValueAnameRequestValueItemPropertiesArray{ ValueAnameRequestValueItemPropertiesArgs{...} }
+type ValueAnameRequestValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValueItemPropertiesArrayOutput() ValueAnameRequestValueItemPropertiesArrayOutput
+	ToValueAnameRequestValueItemPropertiesArrayOutputWithContext(context.Context) ValueAnameRequestValueItemPropertiesArrayOutput
+}
+
+type ValueAnameRequestValueItemPropertiesArray []ValueAnameRequestValueItemPropertiesInput
+
+func (ValueAnameRequestValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueAnameRequestValueItemPropertiesArray) ToValueAnameRequestValueItemPropertiesArrayOutput() ValueAnameRequestValueItemPropertiesArrayOutput {
+	return i.ToValueAnameRequestValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValueItemPropertiesArray) ToValueAnameRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAnameRequestValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValueItemPropertiesArrayOutput)
+}
+
+type ValueAnameRequestValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValueItemPropertiesOutput) ToValueAnameRequestValueItemPropertiesOutput() ValueAnameRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAnameRequestValueItemPropertiesOutput) ToValueAnameRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAnameRequestValueItemPropertiesOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValueItemProperties) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+type ValueAnameRequestValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValueItemPropertiesArrayOutput) ToValueAnameRequestValueItemPropertiesArrayOutput() ValueAnameRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameRequestValueItemPropertiesArrayOutput) ToValueAnameRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAnameRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameRequestValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueAnameRequestValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAnameRequestValueItemProperties {
+		return vs[0].([]ValueAnameRequestValueItemProperties)[vs[1].(int)]
+	}).(ValueAnameRequestValueItemPropertiesOutput)
+}
+
+// Failover record mode
+type ValueAnameRequestValueProperties struct {
+	// Whether this failover value is enabled or not
+	Enabled *bool `pulumi:"enabled"`
+	// The failover mode
+	Mode   *ValueAnameRequestValuePropertiesMode                  `pulumi:"mode"`
+	Values []ValueAnameRequestValuePropertiesValuesItemProperties `pulumi:"values"`
+}
+
+// ValueAnameRequestValuePropertiesInput is an input type that accepts ValueAnameRequestValuePropertiesArgs and ValueAnameRequestValuePropertiesOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValuePropertiesInput` via:
+//
+//	ValueAnameRequestValuePropertiesArgs{...}
+type ValueAnameRequestValuePropertiesInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesOutput() ValueAnameRequestValuePropertiesOutput
+	ToValueAnameRequestValuePropertiesOutputWithContext(context.Context) ValueAnameRequestValuePropertiesOutput
+}
+
+// Failover record mode
+type ValueAnameRequestValuePropertiesArgs struct {
+	// Whether this failover value is enabled or not
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The failover mode
+	Mode   ValueAnameRequestValuePropertiesModePtrInput                   `pulumi:"mode"`
+	Values ValueAnameRequestValuePropertiesValuesItemPropertiesArrayInput `pulumi:"values"`
+}
+
+func (ValueAnameRequestValuePropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValueProperties)(nil)).Elem()
+}
+
+func (i ValueAnameRequestValuePropertiesArgs) ToValueAnameRequestValuePropertiesOutput() ValueAnameRequestValuePropertiesOutput {
+	return i.ToValueAnameRequestValuePropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValuePropertiesArgs) ToValueAnameRequestValuePropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValuePropertiesOutput)
+}
+
+func (i ValueAnameRequestValuePropertiesArgs) ToValueAnameRequestValuePropertiesPtrOutput() ValueAnameRequestValuePropertiesPtrOutput {
+	return i.ToValueAnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValuePropertiesArgs) ToValueAnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValuePropertiesOutput).ToValueAnameRequestValuePropertiesPtrOutputWithContext(ctx)
+}
+
+// ValueAnameRequestValuePropertiesPtrInput is an input type that accepts ValueAnameRequestValuePropertiesArgs, ValueAnameRequestValuePropertiesPtr and ValueAnameRequestValuePropertiesPtrOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValuePropertiesPtrInput` via:
+//
+//	        ValueAnameRequestValuePropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ValueAnameRequestValuePropertiesPtrInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesPtrOutput() ValueAnameRequestValuePropertiesPtrOutput
+	ToValueAnameRequestValuePropertiesPtrOutputWithContext(context.Context) ValueAnameRequestValuePropertiesPtrOutput
+}
+
+type valueAnameRequestValuePropertiesPtrType ValueAnameRequestValuePropertiesArgs
+
+func ValueAnameRequestValuePropertiesPtr(v *ValueAnameRequestValuePropertiesArgs) ValueAnameRequestValuePropertiesPtrInput {
+	return (*valueAnameRequestValuePropertiesPtrType)(v)
+}
+
+func (*valueAnameRequestValuePropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameRequestValueProperties)(nil)).Elem()
+}
+
+func (i *valueAnameRequestValuePropertiesPtrType) ToValueAnameRequestValuePropertiesPtrOutput() ValueAnameRequestValuePropertiesPtrOutput {
+	return i.ToValueAnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *valueAnameRequestValuePropertiesPtrType) ToValueAnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValuePropertiesPtrOutput)
+}
+
+// Failover record mode
+type ValueAnameRequestValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesOutput) ToValueAnameRequestValuePropertiesOutput() ValueAnameRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesOutput) ToValueAnameRequestValuePropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesOutput) ToValueAnameRequestValuePropertiesPtrOutput() ValueAnameRequestValuePropertiesPtrOutput {
+	return o.ToValueAnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ValueAnameRequestValuePropertiesOutput) ToValueAnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueAnameRequestValueProperties) *ValueAnameRequestValueProperties {
+		return &v
+	}).(ValueAnameRequestValuePropertiesPtrOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAnameRequestValuePropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValueProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAnameRequestValuePropertiesOutput) Mode() ValueAnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValueProperties) *ValueAnameRequestValuePropertiesMode { return v.Mode }).(ValueAnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesOutput) Values() ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v ValueAnameRequestValueProperties) []ValueAnameRequestValuePropertiesValuesItemProperties {
+		return v.Values
+	}).(ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAnameRequestValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesPtrOutput) ToValueAnameRequestValuePropertiesPtrOutput() ValueAnameRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesPtrOutput) ToValueAnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesPtrOutput) Elem() ValueAnameRequestValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueAnameRequestValueProperties) ValueAnameRequestValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAnameRequestValueProperties
+		return ret
+	}).(ValueAnameRequestValuePropertiesOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueAnameRequestValuePropertiesPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ValueAnameRequestValueProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueAnameRequestValuePropertiesPtrOutput) Mode() ValueAnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueAnameRequestValueProperties) *ValueAnameRequestValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueAnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesPtrOutput) Values() ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *ValueAnameRequestValueProperties) []ValueAnameRequestValuePropertiesValuesItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAnameRequestValuePropertiesValuesItemProperties struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int    `pulumi:"sonarCheckId"`
+	Value        *string `pulumi:"value"`
+}
+
+// ValueAnameRequestValuePropertiesValuesItemPropertiesInput is an input type that accepts ValueAnameRequestValuePropertiesValuesItemPropertiesArgs and ValueAnameRequestValuePropertiesValuesItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValuePropertiesValuesItemPropertiesInput` via:
+//
+//	ValueAnameRequestValuePropertiesValuesItemPropertiesArgs{...}
+type ValueAnameRequestValuePropertiesValuesItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesValuesItemPropertiesOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesOutput
+	ToValueAnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesOutput
+}
+
+type ValueAnameRequestValuePropertiesValuesItemPropertiesArgs struct {
+	// Whether this entry is considered active or not
+	Active pulumi.BoolPtrInput `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order pulumi.IntPtrInput `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId pulumi.IntPtrInput    `pulumi:"sonarCheckId"`
+	Value        pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueAnameRequestValuePropertiesValuesItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueAnameRequestValuePropertiesValuesItemPropertiesArgs) ToValueAnameRequestValuePropertiesValuesItemPropertiesOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return i.ToValueAnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValuePropertiesValuesItemPropertiesArgs) ToValueAnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+// ValueAnameRequestValuePropertiesValuesItemPropertiesArrayInput is an input type that accepts ValueAnameRequestValuePropertiesValuesItemPropertiesArray and ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueAnameRequestValuePropertiesValuesItemPropertiesArrayInput` via:
+//
+//	ValueAnameRequestValuePropertiesValuesItemPropertiesArray{ ValueAnameRequestValuePropertiesValuesItemPropertiesArgs{...} }
+type ValueAnameRequestValuePropertiesValuesItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput
+	ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput
+}
+
+type ValueAnameRequestValuePropertiesValuesItemPropertiesArray []ValueAnameRequestValuePropertiesValuesItemPropertiesInput
+
+func (ValueAnameRequestValuePropertiesValuesItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueAnameRequestValuePropertiesValuesItemPropertiesArray) ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return i.ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueAnameRequestValuePropertiesValuesItemPropertiesArray) ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueAnameRequestValuePropertiesValuesItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) ToValueAnameRequestValuePropertiesValuesItemPropertiesOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) ToValueAnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValuePropertiesValuesItemProperties) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValuePropertiesValuesItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValuePropertiesValuesItemProperties) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValuePropertiesValuesItemProperties) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAnameRequestValuePropertiesValuesItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueAnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAnameRequestValuePropertiesValuesItemProperties {
+		return vs[0].([]ValueAnameRequestValuePropertiesValuesItemProperties)[vs[1].(int)]
+	}).(ValueAnameRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+type ValueAnameValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool   `pulumi:"enabled"`
+	Value   *string `pulumi:"value"`
+}
+
+type ValueAnameValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameValueItemPropertiesOutput) ToValueAnameValueItemPropertiesOutput() ValueAnameValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueAnameValueItemPropertiesOutput) ToValueAnameValueItemPropertiesOutputWithContext(ctx context.Context) ValueAnameValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAnameValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o ValueAnameValueItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAnameValueItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueAnameValueItemPropertiesArrayOutput) ToValueAnameValueItemPropertiesArrayOutput() ValueAnameValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameValueItemPropertiesArrayOutput) ToValueAnameValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueAnameValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueAnameValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueAnameValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAnameValueItemProperties {
+		return vs[0].([]ValueAnameValueItemProperties)[vs[1].(int)]
+	}).(ValueAnameValueItemPropertiesOutput)
+}
+
+// Failover record mode
+type ValueAnameValueProperties struct {
+	// The failover mode
+	Mode   *ValueAnameValuePropertiesMode        `pulumi:"mode"`
+	Values []ValueAnameValuePropertiesValuesItem `pulumi:"values"`
+}
+
+// Failover record mode
+type ValueAnameValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameValueProperties)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesOutput) ToValueAnameValuePropertiesOutput() ValueAnameValuePropertiesOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesOutput) ToValueAnameValuePropertiesOutputWithContext(ctx context.Context) ValueAnameValuePropertiesOutput {
+	return o
+}
+
+// The failover mode
+func (o ValueAnameValuePropertiesOutput) Mode() ValueAnameValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueAnameValueProperties) *ValueAnameValuePropertiesMode { return v.Mode }).(ValueAnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameValuePropertiesOutput) Values() ValueAnameValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v ValueAnameValueProperties) []ValueAnameValuePropertiesValuesItem { return v.Values }).(ValueAnameValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAnameValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueAnameValueProperties)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesPtrOutput) ToValueAnameValuePropertiesPtrOutput() ValueAnameValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesPtrOutput) ToValueAnameValuePropertiesPtrOutputWithContext(ctx context.Context) ValueAnameValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesPtrOutput) Elem() ValueAnameValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueAnameValueProperties) ValueAnameValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueAnameValueProperties
+		return ret
+	}).(ValueAnameValuePropertiesOutput)
+}
+
+// The failover mode
+func (o ValueAnameValuePropertiesPtrOutput) Mode() ValueAnameValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueAnameValueProperties) *ValueAnameValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueAnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueAnameValuePropertiesPtrOutput) Values() ValueAnameValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *ValueAnameValueProperties) []ValueAnameValuePropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueAnameValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueAnameValuePropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type ValueAnameValuePropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueAnameValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesValuesItemOutput) ToValueAnameValuePropertiesValuesItemOutput() ValueAnameValuePropertiesValuesItemOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesValuesItemOutput) ToValueAnameValuePropertiesValuesItemOutputWithContext(ctx context.Context) ValueAnameValuePropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueAnameValuePropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueAnameValuePropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o ValueAnameValuePropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueAnameValuePropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueAnameValuePropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o ValueAnameValuePropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o ValueAnameValuePropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueAnameValuePropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueAnameValuePropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueAnameValuePropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueAnameValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueAnameValuePropertiesValuesItemArrayOutput) ToValueAnameValuePropertiesValuesItemArrayOutput() ValueAnameValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesValuesItemArrayOutput) ToValueAnameValuePropertiesValuesItemArrayOutputWithContext(ctx context.Context) ValueAnameValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueAnameValuePropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) ValueAnameValuePropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueAnameValuePropertiesValuesItem {
+		return vs[0].([]ValueAnameValuePropertiesValuesItem)[vs[1].(int)]
+	}).(ValueAnameValuePropertiesValuesItemOutput)
+}
+
+type ValueCaaValueItemProperties struct {
+	// The value for this tag
+	Data *string `pulumi:"data"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// A flag byte for any flags on the record.
+	Flags *int `pulumi:"flags"`
+	// Foo
+	Tag *ValueCaaValueItemPropertiesTag `pulumi:"tag"`
+}
+
+// ValueCaaValueItemPropertiesInput is an input type that accepts ValueCaaValueItemPropertiesArgs and ValueCaaValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueCaaValueItemPropertiesInput` via:
+//
+//	ValueCaaValueItemPropertiesArgs{...}
+type ValueCaaValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueCaaValueItemPropertiesOutput() ValueCaaValueItemPropertiesOutput
+	ToValueCaaValueItemPropertiesOutputWithContext(context.Context) ValueCaaValueItemPropertiesOutput
+}
+
+type ValueCaaValueItemPropertiesArgs struct {
+	// The value for this tag
+	Data pulumi.StringPtrInput `pulumi:"data"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// A flag byte for any flags on the record.
+	Flags pulumi.IntPtrInput `pulumi:"flags"`
+	// Foo
+	Tag ValueCaaValueItemPropertiesTagPtrInput `pulumi:"tag"`
+}
+
+func (ValueCaaValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCaaValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCaaValueItemPropertiesArgs) ToValueCaaValueItemPropertiesOutput() ValueCaaValueItemPropertiesOutput {
+	return i.ToValueCaaValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueCaaValueItemPropertiesArgs) ToValueCaaValueItemPropertiesOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCaaValueItemPropertiesOutput)
+}
+
+// ValueCaaValueItemPropertiesArrayInput is an input type that accepts ValueCaaValueItemPropertiesArray and ValueCaaValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueCaaValueItemPropertiesArrayInput` via:
+//
+//	ValueCaaValueItemPropertiesArray{ ValueCaaValueItemPropertiesArgs{...} }
+type ValueCaaValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueCaaValueItemPropertiesArrayOutput() ValueCaaValueItemPropertiesArrayOutput
+	ToValueCaaValueItemPropertiesArrayOutputWithContext(context.Context) ValueCaaValueItemPropertiesArrayOutput
+}
+
+type ValueCaaValueItemPropertiesArray []ValueCaaValueItemPropertiesInput
+
+func (ValueCaaValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCaaValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCaaValueItemPropertiesArray) ToValueCaaValueItemPropertiesArrayOutput() ValueCaaValueItemPropertiesArrayOutput {
+	return i.ToValueCaaValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueCaaValueItemPropertiesArray) ToValueCaaValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCaaValueItemPropertiesArrayOutput)
+}
+
+type ValueCaaValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueCaaValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCaaValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCaaValueItemPropertiesOutput) ToValueCaaValueItemPropertiesOutput() ValueCaaValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesOutput) ToValueCaaValueItemPropertiesOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesOutput {
+	return o
+}
+
+// The value for this tag
+func (o ValueCaaValueItemPropertiesOutput) Data() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueCaaValueItemProperties) *string { return v.Data }).(pulumi.StringPtrOutput)
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueCaaValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCaaValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// A flag byte for any flags on the record.
+func (o ValueCaaValueItemPropertiesOutput) Flags() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCaaValueItemProperties) *int { return v.Flags }).(pulumi.IntPtrOutput)
+}
+
+// Foo
+func (o ValueCaaValueItemPropertiesOutput) Tag() ValueCaaValueItemPropertiesTagPtrOutput {
+	return o.ApplyT(func(v ValueCaaValueItemProperties) *ValueCaaValueItemPropertiesTag { return v.Tag }).(ValueCaaValueItemPropertiesTagPtrOutput)
+}
+
+type ValueCaaValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueCaaValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCaaValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCaaValueItemPropertiesArrayOutput) ToValueCaaValueItemPropertiesArrayOutput() ValueCaaValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesArrayOutput) ToValueCaaValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCaaValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCaaValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueCaaValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueCaaValueItemProperties {
+		return vs[0].([]ValueCaaValueItemProperties)[vs[1].(int)]
+	}).(ValueCaaValueItemPropertiesOutput)
+}
+
+type ValueCertValueItemProperties struct {
+	// An integer representing the algorithm
+	Algorithm *int `pulumi:"algorithm"`
+	// A base 64 encoded string containing the certificate information
+	Certificate *string `pulumi:"certificate"`
+	// An integer representing the type of certificate
+	CertificateType *int `pulumi:"certificateType"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// An integer representing the key tag
+	KeyTag *int `pulumi:"keyTag"`
+}
+
+// ValueCertValueItemPropertiesInput is an input type that accepts ValueCertValueItemPropertiesArgs and ValueCertValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueCertValueItemPropertiesInput` via:
+//
+//	ValueCertValueItemPropertiesArgs{...}
+type ValueCertValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueCertValueItemPropertiesOutput() ValueCertValueItemPropertiesOutput
+	ToValueCertValueItemPropertiesOutputWithContext(context.Context) ValueCertValueItemPropertiesOutput
+}
+
+type ValueCertValueItemPropertiesArgs struct {
+	// An integer representing the algorithm
+	Algorithm pulumi.IntPtrInput `pulumi:"algorithm"`
+	// A base 64 encoded string containing the certificate information
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// An integer representing the type of certificate
+	CertificateType pulumi.IntPtrInput `pulumi:"certificateType"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// An integer representing the key tag
+	KeyTag pulumi.IntPtrInput `pulumi:"keyTag"`
+}
+
+func (ValueCertValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCertValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCertValueItemPropertiesArgs) ToValueCertValueItemPropertiesOutput() ValueCertValueItemPropertiesOutput {
+	return i.ToValueCertValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueCertValueItemPropertiesArgs) ToValueCertValueItemPropertiesOutputWithContext(ctx context.Context) ValueCertValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCertValueItemPropertiesOutput)
+}
+
+// ValueCertValueItemPropertiesArrayInput is an input type that accepts ValueCertValueItemPropertiesArray and ValueCertValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueCertValueItemPropertiesArrayInput` via:
+//
+//	ValueCertValueItemPropertiesArray{ ValueCertValueItemPropertiesArgs{...} }
+type ValueCertValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueCertValueItemPropertiesArrayOutput() ValueCertValueItemPropertiesArrayOutput
+	ToValueCertValueItemPropertiesArrayOutputWithContext(context.Context) ValueCertValueItemPropertiesArrayOutput
+}
+
+type ValueCertValueItemPropertiesArray []ValueCertValueItemPropertiesInput
+
+func (ValueCertValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCertValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCertValueItemPropertiesArray) ToValueCertValueItemPropertiesArrayOutput() ValueCertValueItemPropertiesArrayOutput {
+	return i.ToValueCertValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueCertValueItemPropertiesArray) ToValueCertValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCertValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCertValueItemPropertiesArrayOutput)
+}
+
+type ValueCertValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueCertValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCertValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCertValueItemPropertiesOutput) ToValueCertValueItemPropertiesOutput() ValueCertValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueCertValueItemPropertiesOutput) ToValueCertValueItemPropertiesOutputWithContext(ctx context.Context) ValueCertValueItemPropertiesOutput {
+	return o
+}
+
+// An integer representing the algorithm
+func (o ValueCertValueItemPropertiesOutput) Algorithm() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCertValueItemProperties) *int { return v.Algorithm }).(pulumi.IntPtrOutput)
+}
+
+// A base 64 encoded string containing the certificate information
+func (o ValueCertValueItemPropertiesOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueCertValueItemProperties) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// An integer representing the type of certificate
+func (o ValueCertValueItemPropertiesOutput) CertificateType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCertValueItemProperties) *int { return v.CertificateType }).(pulumi.IntPtrOutput)
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueCertValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCertValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// An integer representing the key tag
+func (o ValueCertValueItemPropertiesOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCertValueItemProperties) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+type ValueCertValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueCertValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCertValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCertValueItemPropertiesArrayOutput) ToValueCertValueItemPropertiesArrayOutput() ValueCertValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCertValueItemPropertiesArrayOutput) ToValueCertValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCertValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCertValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueCertValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueCertValueItemProperties {
+		return vs[0].([]ValueCertValueItemProperties)[vs[1].(int)]
+	}).(ValueCertValueItemPropertiesOutput)
+}
+
+type ValueCnameRequestValueItemProperties struct {
+	Id *int `pulumi:"id"`
+}
+
+// ValueCnameRequestValueItemPropertiesInput is an input type that accepts ValueCnameRequestValueItemPropertiesArgs and ValueCnameRequestValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValueItemPropertiesInput` via:
+//
+//	ValueCnameRequestValueItemPropertiesArgs{...}
+type ValueCnameRequestValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValueItemPropertiesOutput() ValueCnameRequestValueItemPropertiesOutput
+	ToValueCnameRequestValueItemPropertiesOutputWithContext(context.Context) ValueCnameRequestValueItemPropertiesOutput
+}
+
+type ValueCnameRequestValueItemPropertiesArgs struct {
+	Id pulumi.IntPtrInput `pulumi:"id"`
+}
+
+func (ValueCnameRequestValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCnameRequestValueItemPropertiesArgs) ToValueCnameRequestValueItemPropertiesOutput() ValueCnameRequestValueItemPropertiesOutput {
+	return i.ToValueCnameRequestValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValueItemPropertiesArgs) ToValueCnameRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValueItemPropertiesOutput)
+}
+
+// ValueCnameRequestValueItemPropertiesArrayInput is an input type that accepts ValueCnameRequestValueItemPropertiesArray and ValueCnameRequestValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValueItemPropertiesArrayInput` via:
+//
+//	ValueCnameRequestValueItemPropertiesArray{ ValueCnameRequestValueItemPropertiesArgs{...} }
+type ValueCnameRequestValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValueItemPropertiesArrayOutput() ValueCnameRequestValueItemPropertiesArrayOutput
+	ToValueCnameRequestValueItemPropertiesArrayOutputWithContext(context.Context) ValueCnameRequestValueItemPropertiesArrayOutput
+}
+
+type ValueCnameRequestValueItemPropertiesArray []ValueCnameRequestValueItemPropertiesInput
+
+func (ValueCnameRequestValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueCnameRequestValueItemPropertiesArray) ToValueCnameRequestValueItemPropertiesArrayOutput() ValueCnameRequestValueItemPropertiesArrayOutput {
+	return i.ToValueCnameRequestValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValueItemPropertiesArray) ToValueCnameRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCnameRequestValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValueItemPropertiesArrayOutput)
+}
+
+type ValueCnameRequestValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValueItemPropertiesOutput) ToValueCnameRequestValueItemPropertiesOutput() ValueCnameRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueCnameRequestValueItemPropertiesOutput) ToValueCnameRequestValueItemPropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueCnameRequestValueItemPropertiesOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValueItemProperties) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+type ValueCnameRequestValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCnameRequestValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValueItemPropertiesArrayOutput) ToValueCnameRequestValueItemPropertiesArrayOutput() ValueCnameRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCnameRequestValueItemPropertiesArrayOutput) ToValueCnameRequestValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCnameRequestValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCnameRequestValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueCnameRequestValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueCnameRequestValueItemProperties {
+		return vs[0].([]ValueCnameRequestValueItemProperties)[vs[1].(int)]
+	}).(ValueCnameRequestValueItemPropertiesOutput)
+}
+
+// Failover record mode
+type ValueCnameRequestValueProperties struct {
+	// Whether this failover value is enabled or not
+	Enabled *bool `pulumi:"enabled"`
+	// The failover mode
+	Mode   *ValueCnameRequestValuePropertiesMode                  `pulumi:"mode"`
+	Values []ValueCnameRequestValuePropertiesValuesItemProperties `pulumi:"values"`
+}
+
+// ValueCnameRequestValuePropertiesInput is an input type that accepts ValueCnameRequestValuePropertiesArgs and ValueCnameRequestValuePropertiesOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValuePropertiesInput` via:
+//
+//	ValueCnameRequestValuePropertiesArgs{...}
+type ValueCnameRequestValuePropertiesInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesOutput() ValueCnameRequestValuePropertiesOutput
+	ToValueCnameRequestValuePropertiesOutputWithContext(context.Context) ValueCnameRequestValuePropertiesOutput
+}
+
+// Failover record mode
+type ValueCnameRequestValuePropertiesArgs struct {
+	// Whether this failover value is enabled or not
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The failover mode
+	Mode   ValueCnameRequestValuePropertiesModePtrInput                   `pulumi:"mode"`
+	Values ValueCnameRequestValuePropertiesValuesItemPropertiesArrayInput `pulumi:"values"`
+}
+
+func (ValueCnameRequestValuePropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValueProperties)(nil)).Elem()
+}
+
+func (i ValueCnameRequestValuePropertiesArgs) ToValueCnameRequestValuePropertiesOutput() ValueCnameRequestValuePropertiesOutput {
+	return i.ToValueCnameRequestValuePropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValuePropertiesArgs) ToValueCnameRequestValuePropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValuePropertiesOutput)
+}
+
+func (i ValueCnameRequestValuePropertiesArgs) ToValueCnameRequestValuePropertiesPtrOutput() ValueCnameRequestValuePropertiesPtrOutput {
+	return i.ToValueCnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValuePropertiesArgs) ToValueCnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValuePropertiesOutput).ToValueCnameRequestValuePropertiesPtrOutputWithContext(ctx)
+}
+
+// ValueCnameRequestValuePropertiesPtrInput is an input type that accepts ValueCnameRequestValuePropertiesArgs, ValueCnameRequestValuePropertiesPtr and ValueCnameRequestValuePropertiesPtrOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValuePropertiesPtrInput` via:
+//
+//	        ValueCnameRequestValuePropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ValueCnameRequestValuePropertiesPtrInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesPtrOutput() ValueCnameRequestValuePropertiesPtrOutput
+	ToValueCnameRequestValuePropertiesPtrOutputWithContext(context.Context) ValueCnameRequestValuePropertiesPtrOutput
+}
+
+type valueCnameRequestValuePropertiesPtrType ValueCnameRequestValuePropertiesArgs
+
+func ValueCnameRequestValuePropertiesPtr(v *ValueCnameRequestValuePropertiesArgs) ValueCnameRequestValuePropertiesPtrInput {
+	return (*valueCnameRequestValuePropertiesPtrType)(v)
+}
+
+func (*valueCnameRequestValuePropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameRequestValueProperties)(nil)).Elem()
+}
+
+func (i *valueCnameRequestValuePropertiesPtrType) ToValueCnameRequestValuePropertiesPtrOutput() ValueCnameRequestValuePropertiesPtrOutput {
+	return i.ToValueCnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *valueCnameRequestValuePropertiesPtrType) ToValueCnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValuePropertiesPtrOutput)
+}
+
+// Failover record mode
+type ValueCnameRequestValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesOutput) ToValueCnameRequestValuePropertiesOutput() ValueCnameRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesOutput) ToValueCnameRequestValuePropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesOutput) ToValueCnameRequestValuePropertiesPtrOutput() ValueCnameRequestValuePropertiesPtrOutput {
+	return o.ToValueCnameRequestValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ValueCnameRequestValuePropertiesOutput) ToValueCnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueCnameRequestValueProperties) *ValueCnameRequestValueProperties {
+		return &v
+	}).(ValueCnameRequestValuePropertiesPtrOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueCnameRequestValuePropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValueProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueCnameRequestValuePropertiesOutput) Mode() ValueCnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValueProperties) *ValueCnameRequestValuePropertiesMode { return v.Mode }).(ValueCnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesOutput) Values() ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v ValueCnameRequestValueProperties) []ValueCnameRequestValuePropertiesValuesItemProperties {
+		return v.Values
+	}).(ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueCnameRequestValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameRequestValueProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesPtrOutput) ToValueCnameRequestValuePropertiesPtrOutput() ValueCnameRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesPtrOutput) ToValueCnameRequestValuePropertiesPtrOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesPtrOutput) Elem() ValueCnameRequestValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueCnameRequestValueProperties) ValueCnameRequestValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCnameRequestValueProperties
+		return ret
+	}).(ValueCnameRequestValuePropertiesOutput)
+}
+
+// Whether this failover value is enabled or not
+func (o ValueCnameRequestValuePropertiesPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ValueCnameRequestValueProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The failover mode
+func (o ValueCnameRequestValuePropertiesPtrOutput) Mode() ValueCnameRequestValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueCnameRequestValueProperties) *ValueCnameRequestValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueCnameRequestValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesPtrOutput) Values() ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o.ApplyT(func(v *ValueCnameRequestValueProperties) []ValueCnameRequestValuePropertiesValuesItemProperties {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueCnameRequestValuePropertiesValuesItemProperties struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int    `pulumi:"sonarCheckId"`
+	Value        *string `pulumi:"value"`
+}
+
+// ValueCnameRequestValuePropertiesValuesItemPropertiesInput is an input type that accepts ValueCnameRequestValuePropertiesValuesItemPropertiesArgs and ValueCnameRequestValuePropertiesValuesItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValuePropertiesValuesItemPropertiesInput` via:
+//
+//	ValueCnameRequestValuePropertiesValuesItemPropertiesArgs{...}
+type ValueCnameRequestValuePropertiesValuesItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesValuesItemPropertiesOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesOutput
+	ToValueCnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesOutput
+}
+
+type ValueCnameRequestValuePropertiesValuesItemPropertiesArgs struct {
+	// Whether this entry is considered active or not
+	Active pulumi.BoolPtrInput `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order pulumi.IntPtrInput `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId pulumi.IntPtrInput    `pulumi:"sonarCheckId"`
+	Value        pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueCnameRequestValuePropertiesValuesItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueCnameRequestValuePropertiesValuesItemPropertiesArgs) ToValueCnameRequestValuePropertiesValuesItemPropertiesOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return i.ToValueCnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValuePropertiesValuesItemPropertiesArgs) ToValueCnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+// ValueCnameRequestValuePropertiesValuesItemPropertiesArrayInput is an input type that accepts ValueCnameRequestValuePropertiesValuesItemPropertiesArray and ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueCnameRequestValuePropertiesValuesItemPropertiesArrayInput` via:
+//
+//	ValueCnameRequestValuePropertiesValuesItemPropertiesArray{ ValueCnameRequestValuePropertiesValuesItemPropertiesArgs{...} }
+type ValueCnameRequestValuePropertiesValuesItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput
+	ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput
+}
+
+type ValueCnameRequestValuePropertiesValuesItemPropertiesArray []ValueCnameRequestValuePropertiesValuesItemPropertiesInput
+
+func (ValueCnameRequestValuePropertiesValuesItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (i ValueCnameRequestValuePropertiesValuesItemPropertiesArray) ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return i.ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueCnameRequestValuePropertiesValuesItemPropertiesArray) ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput)
+}
+
+type ValueCnameRequestValuePropertiesValuesItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) ToValueCnameRequestValuePropertiesValuesItemPropertiesOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) ToValueCnameRequestValuePropertiesValuesItemPropertiesOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValuePropertiesValuesItemProperties) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValuePropertiesValuesItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValuePropertiesValuesItemProperties) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValuePropertiesValuesItemProperties) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueCnameRequestValuePropertiesValuesItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCnameRequestValuePropertiesValuesItemProperties)(nil)).Elem()
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput() ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput) ToValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutputWithContext(ctx context.Context) ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueCnameRequestValuePropertiesValuesItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueCnameRequestValuePropertiesValuesItemProperties {
+		return vs[0].([]ValueCnameRequestValuePropertiesValuesItemProperties)[vs[1].(int)]
+	}).(ValueCnameRequestValuePropertiesValuesItemPropertiesOutput)
+}
+
+type ValueCnameValue struct {
+	// The failover mode
+	Mode   *ValueCnameValuePropertiesMode        `pulumi:"mode"`
+	Values []ValueCnameValuePropertiesValuesItem `pulumi:"values"`
+}
+
+type ValueCnameValueOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameValue)(nil)).Elem()
+}
+
+func (o ValueCnameValueOutput) ToValueCnameValueOutput() ValueCnameValueOutput {
+	return o
+}
+
+func (o ValueCnameValueOutput) ToValueCnameValueOutputWithContext(ctx context.Context) ValueCnameValueOutput {
+	return o
+}
+
+// The failover mode
+func (o ValueCnameValueOutput) Mode() ValueCnameValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v ValueCnameValue) *ValueCnameValuePropertiesMode { return v.Mode }).(ValueCnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameValueOutput) Values() ValueCnameValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v ValueCnameValue) []ValueCnameValuePropertiesValuesItem { return v.Values }).(ValueCnameValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueCnameValuePtrOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueCnameValue)(nil)).Elem()
+}
+
+func (o ValueCnameValuePtrOutput) ToValueCnameValuePtrOutput() ValueCnameValuePtrOutput {
+	return o
+}
+
+func (o ValueCnameValuePtrOutput) ToValueCnameValuePtrOutputWithContext(ctx context.Context) ValueCnameValuePtrOutput {
+	return o
+}
+
+func (o ValueCnameValuePtrOutput) Elem() ValueCnameValueOutput {
+	return o.ApplyT(func(v *ValueCnameValue) ValueCnameValue {
+		if v != nil {
+			return *v
+		}
+		var ret ValueCnameValue
+		return ret
+	}).(ValueCnameValueOutput)
+}
+
+// The failover mode
+func (o ValueCnameValuePtrOutput) Mode() ValueCnameValuePropertiesModePtrOutput {
+	return o.ApplyT(func(v *ValueCnameValue) *ValueCnameValuePropertiesMode {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(ValueCnameValuePropertiesModePtrOutput)
+}
+
+func (o ValueCnameValuePtrOutput) Values() ValueCnameValuePropertiesValuesItemArrayOutput {
+	return o.ApplyT(func(v *ValueCnameValue) []ValueCnameValuePropertiesValuesItem {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(ValueCnameValuePropertiesValuesItemArrayOutput)
+}
+
+type ValueCnameValuePropertiesValuesItem struct {
+	// Whether this entry is considered active or not
+	Active *bool `pulumi:"active"`
+	// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Does sonar consider this entry to be failed
+	Failed *bool `pulumi:"failed"`
+	// The sort order of the entry. Lower order entries are preferred over higher order entries
+	Order *int `pulumi:"order"`
+	// The ID in Sonar to use for checking if the record should be used
+	SonarCheckId *int `pulumi:"sonarCheckId"`
+	// The status of the value in Sonar
+	Status *string `pulumi:"status"`
+	Value  *string `pulumi:"value"`
+}
+
+type ValueCnameValuePropertiesValuesItemOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValuePropertiesValuesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueCnameValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueCnameValuePropertiesValuesItemOutput) ToValueCnameValuePropertiesValuesItemOutput() ValueCnameValuePropertiesValuesItemOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesValuesItemOutput) ToValueCnameValuePropertiesValuesItemOutputWithContext(ctx context.Context) ValueCnameValuePropertiesValuesItemOutput {
+	return o
+}
+
+// Whether this entry is considered active or not
+func (o ValueCnameValuePropertiesValuesItemOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *bool { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Whether the failover entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueCnameValuePropertiesValuesItemOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Does sonar consider this entry to be failed
+func (o ValueCnameValuePropertiesValuesItemOutput) Failed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *bool { return v.Failed }).(pulumi.BoolPtrOutput)
+}
+
+// The sort order of the entry. Lower order entries are preferred over higher order entries
+func (o ValueCnameValuePropertiesValuesItemOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The ID in Sonar to use for checking if the record should be used
+func (o ValueCnameValuePropertiesValuesItemOutput) SonarCheckId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *int { return v.SonarCheckId }).(pulumi.IntPtrOutput)
+}
+
+// The status of the value in Sonar
+func (o ValueCnameValuePropertiesValuesItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o ValueCnameValuePropertiesValuesItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueCnameValuePropertiesValuesItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueCnameValuePropertiesValuesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueCnameValuePropertiesValuesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueCnameValuePropertiesValuesItem)(nil)).Elem()
+}
+
+func (o ValueCnameValuePropertiesValuesItemArrayOutput) ToValueCnameValuePropertiesValuesItemArrayOutput() ValueCnameValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesValuesItemArrayOutput) ToValueCnameValuePropertiesValuesItemArrayOutputWithContext(ctx context.Context) ValueCnameValuePropertiesValuesItemArrayOutput {
+	return o
+}
+
+func (o ValueCnameValuePropertiesValuesItemArrayOutput) Index(i pulumi.IntInput) ValueCnameValuePropertiesValuesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueCnameValuePropertiesValuesItem {
+		return vs[0].([]ValueCnameValuePropertiesValuesItem)[vs[1].(int)]
+	}).(ValueCnameValuePropertiesValuesItemOutput)
+}
+
+type ValueHinfoValueItemProperties struct {
+	// Text representing the CPU
+	Cpu *string `pulumi:"cpu"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Text representing the OS
+	Os *string `pulumi:"os"`
+}
+
+// ValueHinfoValueItemPropertiesInput is an input type that accepts ValueHinfoValueItemPropertiesArgs and ValueHinfoValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueHinfoValueItemPropertiesInput` via:
+//
+//	ValueHinfoValueItemPropertiesArgs{...}
+type ValueHinfoValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueHinfoValueItemPropertiesOutput() ValueHinfoValueItemPropertiesOutput
+	ToValueHinfoValueItemPropertiesOutputWithContext(context.Context) ValueHinfoValueItemPropertiesOutput
+}
+
+type ValueHinfoValueItemPropertiesArgs struct {
+	// Text representing the CPU
+	Cpu pulumi.StringPtrInput `pulumi:"cpu"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Text representing the OS
+	Os pulumi.StringPtrInput `pulumi:"os"`
+}
+
+func (ValueHinfoValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueHinfoValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueHinfoValueItemPropertiesArgs) ToValueHinfoValueItemPropertiesOutput() ValueHinfoValueItemPropertiesOutput {
+	return i.ToValueHinfoValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueHinfoValueItemPropertiesArgs) ToValueHinfoValueItemPropertiesOutputWithContext(ctx context.Context) ValueHinfoValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueHinfoValueItemPropertiesOutput)
+}
+
+// ValueHinfoValueItemPropertiesArrayInput is an input type that accepts ValueHinfoValueItemPropertiesArray and ValueHinfoValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueHinfoValueItemPropertiesArrayInput` via:
+//
+//	ValueHinfoValueItemPropertiesArray{ ValueHinfoValueItemPropertiesArgs{...} }
+type ValueHinfoValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueHinfoValueItemPropertiesArrayOutput() ValueHinfoValueItemPropertiesArrayOutput
+	ToValueHinfoValueItemPropertiesArrayOutputWithContext(context.Context) ValueHinfoValueItemPropertiesArrayOutput
+}
+
+type ValueHinfoValueItemPropertiesArray []ValueHinfoValueItemPropertiesInput
+
+func (ValueHinfoValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueHinfoValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueHinfoValueItemPropertiesArray) ToValueHinfoValueItemPropertiesArrayOutput() ValueHinfoValueItemPropertiesArrayOutput {
+	return i.ToValueHinfoValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueHinfoValueItemPropertiesArray) ToValueHinfoValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueHinfoValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueHinfoValueItemPropertiesArrayOutput)
+}
+
+type ValueHinfoValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueHinfoValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueHinfoValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueHinfoValueItemPropertiesOutput) ToValueHinfoValueItemPropertiesOutput() ValueHinfoValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueHinfoValueItemPropertiesOutput) ToValueHinfoValueItemPropertiesOutputWithContext(ctx context.Context) ValueHinfoValueItemPropertiesOutput {
+	return o
+}
+
+// Text representing the CPU
+func (o ValueHinfoValueItemPropertiesOutput) Cpu() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHinfoValueItemProperties) *string { return v.Cpu }).(pulumi.StringPtrOutput)
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueHinfoValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueHinfoValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Text representing the OS
+func (o ValueHinfoValueItemPropertiesOutput) Os() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHinfoValueItemProperties) *string { return v.Os }).(pulumi.StringPtrOutput)
+}
+
+type ValueHinfoValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueHinfoValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueHinfoValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueHinfoValueItemPropertiesArrayOutput) ToValueHinfoValueItemPropertiesArrayOutput() ValueHinfoValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueHinfoValueItemPropertiesArrayOutput) ToValueHinfoValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueHinfoValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueHinfoValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueHinfoValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueHinfoValueItemProperties {
+		return vs[0].([]ValueHinfoValueItemProperties)[vs[1].(int)]
+	}).(ValueHinfoValueItemPropertiesOutput)
+}
+
+type ValueHttpValueProperties struct {
+	// The description to include in meta tags
+	Description *string `pulumi:"description"`
+	// If this is a frame redirect, don't include the URL entered in the browser
+	Hard *bool `pulumi:"hard"`
+	// Meta keywords for the page containing the frame
+	Keywords *string `pulumi:"keywords"`
+	// The type of redirect, either 301, 302 or frame.
+	RedirectType *string `pulumi:"redirectType"`
+	// The title of the page containing the redirect frame
+	Title *string `pulumi:"title"`
+	// The URL to redirect to
+	Url *string `pulumi:"url"`
+}
+
+// ValueHttpValuePropertiesInput is an input type that accepts ValueHttpValuePropertiesArgs and ValueHttpValuePropertiesOutput values.
+// You can construct a concrete instance of `ValueHttpValuePropertiesInput` via:
+//
+//	ValueHttpValuePropertiesArgs{...}
+type ValueHttpValuePropertiesInput interface {
+	pulumi.Input
+
+	ToValueHttpValuePropertiesOutput() ValueHttpValuePropertiesOutput
+	ToValueHttpValuePropertiesOutputWithContext(context.Context) ValueHttpValuePropertiesOutput
+}
+
+type ValueHttpValuePropertiesArgs struct {
+	// The description to include in meta tags
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// If this is a frame redirect, don't include the URL entered in the browser
+	Hard pulumi.BoolPtrInput `pulumi:"hard"`
+	// Meta keywords for the page containing the frame
+	Keywords pulumi.StringPtrInput `pulumi:"keywords"`
+	// The type of redirect, either 301, 302 or frame.
+	RedirectType pulumi.StringPtrInput `pulumi:"redirectType"`
+	// The title of the page containing the redirect frame
+	Title pulumi.StringPtrInput `pulumi:"title"`
+	// The URL to redirect to
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (ValueHttpValuePropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueHttpValueProperties)(nil)).Elem()
+}
+
+func (i ValueHttpValuePropertiesArgs) ToValueHttpValuePropertiesOutput() ValueHttpValuePropertiesOutput {
+	return i.ToValueHttpValuePropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueHttpValuePropertiesArgs) ToValueHttpValuePropertiesOutputWithContext(ctx context.Context) ValueHttpValuePropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueHttpValuePropertiesOutput)
+}
+
+func (i ValueHttpValuePropertiesArgs) ToValueHttpValuePropertiesPtrOutput() ValueHttpValuePropertiesPtrOutput {
+	return i.ToValueHttpValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ValueHttpValuePropertiesArgs) ToValueHttpValuePropertiesPtrOutputWithContext(ctx context.Context) ValueHttpValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueHttpValuePropertiesOutput).ToValueHttpValuePropertiesPtrOutputWithContext(ctx)
+}
+
+// ValueHttpValuePropertiesPtrInput is an input type that accepts ValueHttpValuePropertiesArgs, ValueHttpValuePropertiesPtr and ValueHttpValuePropertiesPtrOutput values.
+// You can construct a concrete instance of `ValueHttpValuePropertiesPtrInput` via:
+//
+//	        ValueHttpValuePropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ValueHttpValuePropertiesPtrInput interface {
+	pulumi.Input
+
+	ToValueHttpValuePropertiesPtrOutput() ValueHttpValuePropertiesPtrOutput
+	ToValueHttpValuePropertiesPtrOutputWithContext(context.Context) ValueHttpValuePropertiesPtrOutput
+}
+
+type valueHttpValuePropertiesPtrType ValueHttpValuePropertiesArgs
+
+func ValueHttpValuePropertiesPtr(v *ValueHttpValuePropertiesArgs) ValueHttpValuePropertiesPtrInput {
+	return (*valueHttpValuePropertiesPtrType)(v)
+}
+
+func (*valueHttpValuePropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueHttpValueProperties)(nil)).Elem()
+}
+
+func (i *valueHttpValuePropertiesPtrType) ToValueHttpValuePropertiesPtrOutput() ValueHttpValuePropertiesPtrOutput {
+	return i.ToValueHttpValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *valueHttpValuePropertiesPtrType) ToValueHttpValuePropertiesPtrOutputWithContext(ctx context.Context) ValueHttpValuePropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueHttpValuePropertiesPtrOutput)
+}
+
+type ValueHttpValuePropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueHttpValuePropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueHttpValueProperties)(nil)).Elem()
+}
+
+func (o ValueHttpValuePropertiesOutput) ToValueHttpValuePropertiesOutput() ValueHttpValuePropertiesOutput {
+	return o
+}
+
+func (o ValueHttpValuePropertiesOutput) ToValueHttpValuePropertiesOutputWithContext(ctx context.Context) ValueHttpValuePropertiesOutput {
+	return o
+}
+
+func (o ValueHttpValuePropertiesOutput) ToValueHttpValuePropertiesPtrOutput() ValueHttpValuePropertiesPtrOutput {
+	return o.ToValueHttpValuePropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ValueHttpValuePropertiesOutput) ToValueHttpValuePropertiesPtrOutputWithContext(ctx context.Context) ValueHttpValuePropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ValueHttpValueProperties) *ValueHttpValueProperties {
+		return &v
+	}).(ValueHttpValuePropertiesPtrOutput)
+}
+
+// The description to include in meta tags
+func (o ValueHttpValuePropertiesOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// If this is a frame redirect, don't include the URL entered in the browser
+func (o ValueHttpValuePropertiesOutput) Hard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *bool { return v.Hard }).(pulumi.BoolPtrOutput)
+}
+
+// Meta keywords for the page containing the frame
+func (o ValueHttpValuePropertiesOutput) Keywords() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *string { return v.Keywords }).(pulumi.StringPtrOutput)
+}
+
+// The type of redirect, either 301, 302 or frame.
+func (o ValueHttpValuePropertiesOutput) RedirectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *string { return v.RedirectType }).(pulumi.StringPtrOutput)
+}
+
+// The title of the page containing the redirect frame
+func (o ValueHttpValuePropertiesOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+// The URL to redirect to
+func (o ValueHttpValuePropertiesOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueHttpValueProperties) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ValueHttpValuePropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ValueHttpValuePropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ValueHttpValueProperties)(nil)).Elem()
+}
+
+func (o ValueHttpValuePropertiesPtrOutput) ToValueHttpValuePropertiesPtrOutput() ValueHttpValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueHttpValuePropertiesPtrOutput) ToValueHttpValuePropertiesPtrOutputWithContext(ctx context.Context) ValueHttpValuePropertiesPtrOutput {
+	return o
+}
+
+func (o ValueHttpValuePropertiesPtrOutput) Elem() ValueHttpValuePropertiesOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) ValueHttpValueProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ValueHttpValueProperties
+		return ret
+	}).(ValueHttpValuePropertiesOutput)
+}
+
+// The description to include in meta tags
+func (o ValueHttpValuePropertiesPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// If this is a frame redirect, don't include the URL entered in the browser
+func (o ValueHttpValuePropertiesPtrOutput) Hard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Hard
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Meta keywords for the page containing the frame
+func (o ValueHttpValuePropertiesPtrOutput) Keywords() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Keywords
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of redirect, either 301, 302 or frame.
+func (o ValueHttpValuePropertiesPtrOutput) RedirectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title of the page containing the redirect frame
+func (o ValueHttpValuePropertiesPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+// The URL to redirect to
+func (o ValueHttpValuePropertiesPtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ValueHttpValueProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type ValueItems struct {
+	// An integer representing the algorithm
+	Algorithm *int `pulumi:"algorithm"`
+	// A base 64 encoded string containing the certificate information
+	Certificate *string `pulumi:"certificate"`
+	// An integer representing the type of certificate
+	CertificateType *int `pulumi:"certificateType"`
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// An integer representing the key tag
+	KeyTag *int `pulumi:"keyTag"`
+}
+
+type ValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueItems)(nil)).Elem()
+}
+
+func (o ValueItemsOutput) ToValueItemsOutput() ValueItemsOutput {
+	return o
+}
+
+func (o ValueItemsOutput) ToValueItemsOutputWithContext(ctx context.Context) ValueItemsOutput {
+	return o
+}
+
+// An integer representing the algorithm
+func (o ValueItemsOutput) Algorithm() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueItems) *int { return v.Algorithm }).(pulumi.IntPtrOutput)
+}
+
+// A base 64 encoded string containing the certificate information
+func (o ValueItemsOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueItems) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// An integer representing the type of certificate
+func (o ValueItemsOutput) CertificateType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueItems) *int { return v.CertificateType }).(pulumi.IntPtrOutput)
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// An integer representing the key tag
+func (o ValueItemsOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueItems) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+type ValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueItems)(nil)).Elem()
+}
+
+func (o ValueItemsArrayOutput) ToValueItemsArrayOutput() ValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueItemsArrayOutput) ToValueItemsArrayOutputWithContext(ctx context.Context) ValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueItemsArrayOutput) Index(i pulumi.IntInput) ValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueItems {
+		return vs[0].([]ValueItems)[vs[1].(int)]
+	}).(ValueItemsOutput)
+}
+
+type ValueMxPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// A number representing the priority of the mail server
+	Priority *int `pulumi:"priority"`
+	// The hostname of the mail server
+	Server *string `pulumi:"server"`
+}
+
+type ValueMxPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueMxPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueMxPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueMxPropertiesValueItemsOutput) ToValueMxPropertiesValueItemsOutput() ValueMxPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueMxPropertiesValueItemsOutput) ToValueMxPropertiesValueItemsOutputWithContext(ctx context.Context) ValueMxPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueMxPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueMxPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// A number representing the priority of the mail server
+func (o ValueMxPropertiesValueItemsOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueMxPropertiesValueItems) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// The hostname of the mail server
+func (o ValueMxPropertiesValueItemsOutput) Server() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueMxPropertiesValueItems) *string { return v.Server }).(pulumi.StringPtrOutput)
+}
+
+type ValueMxPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueMxPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueMxPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueMxPropertiesValueItemsArrayOutput) ToValueMxPropertiesValueItemsArrayOutput() ValueMxPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueMxPropertiesValueItemsArrayOutput) ToValueMxPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueMxPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueMxPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueMxPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueMxPropertiesValueItems {
+		return vs[0].([]ValueMxPropertiesValueItems)[vs[1].(int)]
+	}).(ValueMxPropertiesValueItemsOutput)
+}
+
+type ValueMxValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// A number representing the priority of the mail server
+	Priority *int `pulumi:"priority"`
+	// The hostname of the mail server
+	Server *string `pulumi:"server"`
+}
+
+// ValueMxValueItemPropertiesInput is an input type that accepts ValueMxValueItemPropertiesArgs and ValueMxValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueMxValueItemPropertiesInput` via:
+//
+//	ValueMxValueItemPropertiesArgs{...}
+type ValueMxValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueMxValueItemPropertiesOutput() ValueMxValueItemPropertiesOutput
+	ToValueMxValueItemPropertiesOutputWithContext(context.Context) ValueMxValueItemPropertiesOutput
+}
+
+type ValueMxValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// A number representing the priority of the mail server
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
+	// The hostname of the mail server
+	Server pulumi.StringPtrInput `pulumi:"server"`
+}
+
+func (ValueMxValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueMxValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueMxValueItemPropertiesArgs) ToValueMxValueItemPropertiesOutput() ValueMxValueItemPropertiesOutput {
+	return i.ToValueMxValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueMxValueItemPropertiesArgs) ToValueMxValueItemPropertiesOutputWithContext(ctx context.Context) ValueMxValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueMxValueItemPropertiesOutput)
+}
+
+// ValueMxValueItemPropertiesArrayInput is an input type that accepts ValueMxValueItemPropertiesArray and ValueMxValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueMxValueItemPropertiesArrayInput` via:
+//
+//	ValueMxValueItemPropertiesArray{ ValueMxValueItemPropertiesArgs{...} }
+type ValueMxValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueMxValueItemPropertiesArrayOutput() ValueMxValueItemPropertiesArrayOutput
+	ToValueMxValueItemPropertiesArrayOutputWithContext(context.Context) ValueMxValueItemPropertiesArrayOutput
+}
+
+type ValueMxValueItemPropertiesArray []ValueMxValueItemPropertiesInput
+
+func (ValueMxValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueMxValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueMxValueItemPropertiesArray) ToValueMxValueItemPropertiesArrayOutput() ValueMxValueItemPropertiesArrayOutput {
+	return i.ToValueMxValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueMxValueItemPropertiesArray) ToValueMxValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueMxValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueMxValueItemPropertiesArrayOutput)
+}
+
+type ValueMxValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueMxValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueMxValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueMxValueItemPropertiesOutput) ToValueMxValueItemPropertiesOutput() ValueMxValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueMxValueItemPropertiesOutput) ToValueMxValueItemPropertiesOutputWithContext(ctx context.Context) ValueMxValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueMxValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueMxValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// A number representing the priority of the mail server
+func (o ValueMxValueItemPropertiesOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueMxValueItemProperties) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// The hostname of the mail server
+func (o ValueMxValueItemPropertiesOutput) Server() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueMxValueItemProperties) *string { return v.Server }).(pulumi.StringPtrOutput)
+}
+
+type ValueMxValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueMxValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueMxValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueMxValueItemPropertiesArrayOutput) ToValueMxValueItemPropertiesArrayOutput() ValueMxValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueMxValueItemPropertiesArrayOutput) ToValueMxValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueMxValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueMxValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueMxValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueMxValueItemProperties {
+		return vs[0].([]ValueMxValueItemProperties)[vs[1].(int)]
+	}).(ValueMxValueItemPropertiesOutput)
+}
+
+type ValueNaptrPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Any flags for this record
+	Flags *string `pulumi:"flags"`
+	// The order of the record
+	Order *int `pulumi:"order"`
+	// The preference for the record
+	Preference *int `pulumi:"preference"`
+	// A regular expression to use
+	RegularExpression *string `pulumi:"regularExpression"`
+	// The replacement for the regular expression
+	Replacement *string `pulumi:"replacement"`
+	// The service the record is used for
+	Service *string `pulumi:"service"`
+}
+
+type ValueNaptrPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueNaptrPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNaptrPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueNaptrPropertiesValueItemsOutput) ToValueNaptrPropertiesValueItemsOutput() ValueNaptrPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueNaptrPropertiesValueItemsOutput) ToValueNaptrPropertiesValueItemsOutputWithContext(ctx context.Context) ValueNaptrPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueNaptrPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Any flags for this record
+func (o ValueNaptrPropertiesValueItemsOutput) Flags() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *string { return v.Flags }).(pulumi.StringPtrOutput)
+}
+
+// The order of the record
+func (o ValueNaptrPropertiesValueItemsOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The preference for the record
+func (o ValueNaptrPropertiesValueItemsOutput) Preference() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *int { return v.Preference }).(pulumi.IntPtrOutput)
+}
+
+// A regular expression to use
+func (o ValueNaptrPropertiesValueItemsOutput) RegularExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
+}
+
+// The replacement for the regular expression
+func (o ValueNaptrPropertiesValueItemsOutput) Replacement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *string { return v.Replacement }).(pulumi.StringPtrOutput)
+}
+
+// The service the record is used for
+func (o ValueNaptrPropertiesValueItemsOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrPropertiesValueItems) *string { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+type ValueNaptrPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueNaptrPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNaptrPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueNaptrPropertiesValueItemsArrayOutput) ToValueNaptrPropertiesValueItemsArrayOutput() ValueNaptrPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueNaptrPropertiesValueItemsArrayOutput) ToValueNaptrPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueNaptrPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueNaptrPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueNaptrPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueNaptrPropertiesValueItems {
+		return vs[0].([]ValueNaptrPropertiesValueItems)[vs[1].(int)]
+	}).(ValueNaptrPropertiesValueItemsOutput)
+}
+
+type ValueNaptrValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// Any flags for this record
+	Flags *string `pulumi:"flags"`
+	// The order of the record
+	Order *int `pulumi:"order"`
+	// The preference for the record
+	Preference *int `pulumi:"preference"`
+	// A regular expression to use
+	RegularExpression *string `pulumi:"regularExpression"`
+	// The replacement for the regular expression
+	Replacement *string `pulumi:"replacement"`
+	// The service the record is used for
+	Service *string `pulumi:"service"`
+}
+
+// ValueNaptrValueItemPropertiesInput is an input type that accepts ValueNaptrValueItemPropertiesArgs and ValueNaptrValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueNaptrValueItemPropertiesInput` via:
+//
+//	ValueNaptrValueItemPropertiesArgs{...}
+type ValueNaptrValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueNaptrValueItemPropertiesOutput() ValueNaptrValueItemPropertiesOutput
+	ToValueNaptrValueItemPropertiesOutputWithContext(context.Context) ValueNaptrValueItemPropertiesOutput
+}
+
+type ValueNaptrValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// Any flags for this record
+	Flags pulumi.StringPtrInput `pulumi:"flags"`
+	// The order of the record
+	Order pulumi.IntPtrInput `pulumi:"order"`
+	// The preference for the record
+	Preference pulumi.IntPtrInput `pulumi:"preference"`
+	// A regular expression to use
+	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
+	// The replacement for the regular expression
+	Replacement pulumi.StringPtrInput `pulumi:"replacement"`
+	// The service the record is used for
+	Service pulumi.StringPtrInput `pulumi:"service"`
+}
+
+func (ValueNaptrValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNaptrValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueNaptrValueItemPropertiesArgs) ToValueNaptrValueItemPropertiesOutput() ValueNaptrValueItemPropertiesOutput {
+	return i.ToValueNaptrValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueNaptrValueItemPropertiesArgs) ToValueNaptrValueItemPropertiesOutputWithContext(ctx context.Context) ValueNaptrValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueNaptrValueItemPropertiesOutput)
+}
+
+// ValueNaptrValueItemPropertiesArrayInput is an input type that accepts ValueNaptrValueItemPropertiesArray and ValueNaptrValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueNaptrValueItemPropertiesArrayInput` via:
+//
+//	ValueNaptrValueItemPropertiesArray{ ValueNaptrValueItemPropertiesArgs{...} }
+type ValueNaptrValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueNaptrValueItemPropertiesArrayOutput() ValueNaptrValueItemPropertiesArrayOutput
+	ToValueNaptrValueItemPropertiesArrayOutputWithContext(context.Context) ValueNaptrValueItemPropertiesArrayOutput
+}
+
+type ValueNaptrValueItemPropertiesArray []ValueNaptrValueItemPropertiesInput
+
+func (ValueNaptrValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNaptrValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueNaptrValueItemPropertiesArray) ToValueNaptrValueItemPropertiesArrayOutput() ValueNaptrValueItemPropertiesArrayOutput {
+	return i.ToValueNaptrValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueNaptrValueItemPropertiesArray) ToValueNaptrValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueNaptrValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueNaptrValueItemPropertiesArrayOutput)
+}
+
+type ValueNaptrValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueNaptrValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNaptrValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueNaptrValueItemPropertiesOutput) ToValueNaptrValueItemPropertiesOutput() ValueNaptrValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueNaptrValueItemPropertiesOutput) ToValueNaptrValueItemPropertiesOutputWithContext(ctx context.Context) ValueNaptrValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueNaptrValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Any flags for this record
+func (o ValueNaptrValueItemPropertiesOutput) Flags() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *string { return v.Flags }).(pulumi.StringPtrOutput)
+}
+
+// The order of the record
+func (o ValueNaptrValueItemPropertiesOutput) Order() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *int { return v.Order }).(pulumi.IntPtrOutput)
+}
+
+// The preference for the record
+func (o ValueNaptrValueItemPropertiesOutput) Preference() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *int { return v.Preference }).(pulumi.IntPtrOutput)
+}
+
+// A regular expression to use
+func (o ValueNaptrValueItemPropertiesOutput) RegularExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
+}
+
+// The replacement for the regular expression
+func (o ValueNaptrValueItemPropertiesOutput) Replacement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *string { return v.Replacement }).(pulumi.StringPtrOutput)
+}
+
+// The service the record is used for
+func (o ValueNaptrValueItemPropertiesOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNaptrValueItemProperties) *string { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+type ValueNaptrValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueNaptrValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNaptrValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueNaptrValueItemPropertiesArrayOutput) ToValueNaptrValueItemPropertiesArrayOutput() ValueNaptrValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueNaptrValueItemPropertiesArrayOutput) ToValueNaptrValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueNaptrValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueNaptrValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueNaptrValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueNaptrValueItemProperties {
+		return vs[0].([]ValueNaptrValueItemProperties)[vs[1].(int)]
+	}).(ValueNaptrValueItemPropertiesOutput)
+}
+
+type ValueNsPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the nameserver
+	Host *string `pulumi:"host"`
+}
+
+type ValueNsPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueNsPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNsPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueNsPropertiesValueItemsOutput) ToValueNsPropertiesValueItemsOutput() ValueNsPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueNsPropertiesValueItemsOutput) ToValueNsPropertiesValueItemsOutputWithContext(ctx context.Context) ValueNsPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueNsPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueNsPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the nameserver
+func (o ValueNsPropertiesValueItemsOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNsPropertiesValueItems) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+type ValueNsPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueNsPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNsPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueNsPropertiesValueItemsArrayOutput) ToValueNsPropertiesValueItemsArrayOutput() ValueNsPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueNsPropertiesValueItemsArrayOutput) ToValueNsPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueNsPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueNsPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueNsPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueNsPropertiesValueItems {
+		return vs[0].([]ValueNsPropertiesValueItems)[vs[1].(int)]
+	}).(ValueNsPropertiesValueItemsOutput)
+}
+
+type ValueNsValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the nameserver
+	Host *string `pulumi:"host"`
+}
+
+// ValueNsValueItemPropertiesInput is an input type that accepts ValueNsValueItemPropertiesArgs and ValueNsValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueNsValueItemPropertiesInput` via:
+//
+//	ValueNsValueItemPropertiesArgs{...}
+type ValueNsValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueNsValueItemPropertiesOutput() ValueNsValueItemPropertiesOutput
+	ToValueNsValueItemPropertiesOutputWithContext(context.Context) ValueNsValueItemPropertiesOutput
+}
+
+type ValueNsValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The hostname for the nameserver
+	Host pulumi.StringPtrInput `pulumi:"host"`
+}
+
+func (ValueNsValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNsValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueNsValueItemPropertiesArgs) ToValueNsValueItemPropertiesOutput() ValueNsValueItemPropertiesOutput {
+	return i.ToValueNsValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueNsValueItemPropertiesArgs) ToValueNsValueItemPropertiesOutputWithContext(ctx context.Context) ValueNsValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueNsValueItemPropertiesOutput)
+}
+
+// ValueNsValueItemPropertiesArrayInput is an input type that accepts ValueNsValueItemPropertiesArray and ValueNsValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueNsValueItemPropertiesArrayInput` via:
+//
+//	ValueNsValueItemPropertiesArray{ ValueNsValueItemPropertiesArgs{...} }
+type ValueNsValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueNsValueItemPropertiesArrayOutput() ValueNsValueItemPropertiesArrayOutput
+	ToValueNsValueItemPropertiesArrayOutputWithContext(context.Context) ValueNsValueItemPropertiesArrayOutput
+}
+
+type ValueNsValueItemPropertiesArray []ValueNsValueItemPropertiesInput
+
+func (ValueNsValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNsValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueNsValueItemPropertiesArray) ToValueNsValueItemPropertiesArrayOutput() ValueNsValueItemPropertiesArrayOutput {
+	return i.ToValueNsValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueNsValueItemPropertiesArray) ToValueNsValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueNsValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueNsValueItemPropertiesArrayOutput)
+}
+
+type ValueNsValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueNsValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueNsValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueNsValueItemPropertiesOutput) ToValueNsValueItemPropertiesOutput() ValueNsValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueNsValueItemPropertiesOutput) ToValueNsValueItemPropertiesOutputWithContext(ctx context.Context) ValueNsValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueNsValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueNsValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the nameserver
+func (o ValueNsValueItemPropertiesOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueNsValueItemProperties) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+type ValueNsValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueNsValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueNsValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueNsValueItemPropertiesArrayOutput) ToValueNsValueItemPropertiesArrayOutput() ValueNsValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueNsValueItemPropertiesArrayOutput) ToValueNsValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueNsValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueNsValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueNsValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueNsValueItemProperties {
+		return vs[0].([]ValueNsValueItemProperties)[vs[1].(int)]
+	}).(ValueNsValueItemPropertiesOutput)
+}
+
+type ValuePtrPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the IP address
+	System *string `pulumi:"system"`
+}
+
+type ValuePtrPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValuePtrPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValuePtrPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValuePtrPropertiesValueItemsOutput) ToValuePtrPropertiesValueItemsOutput() ValuePtrPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValuePtrPropertiesValueItemsOutput) ToValuePtrPropertiesValueItemsOutputWithContext(ctx context.Context) ValuePtrPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValuePtrPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValuePtrPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the IP address
+func (o ValuePtrPropertiesValueItemsOutput) System() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValuePtrPropertiesValueItems) *string { return v.System }).(pulumi.StringPtrOutput)
+}
+
+type ValuePtrPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValuePtrPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValuePtrPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValuePtrPropertiesValueItemsArrayOutput) ToValuePtrPropertiesValueItemsArrayOutput() ValuePtrPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValuePtrPropertiesValueItemsArrayOutput) ToValuePtrPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValuePtrPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValuePtrPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValuePtrPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValuePtrPropertiesValueItems {
+		return vs[0].([]ValuePtrPropertiesValueItems)[vs[1].(int)]
+	}).(ValuePtrPropertiesValueItemsOutput)
+}
+
+type ValuePtrValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the IP address
+	System *string `pulumi:"system"`
+}
+
+// ValuePtrValueItemPropertiesInput is an input type that accepts ValuePtrValueItemPropertiesArgs and ValuePtrValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValuePtrValueItemPropertiesInput` via:
+//
+//	ValuePtrValueItemPropertiesArgs{...}
+type ValuePtrValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValuePtrValueItemPropertiesOutput() ValuePtrValueItemPropertiesOutput
+	ToValuePtrValueItemPropertiesOutputWithContext(context.Context) ValuePtrValueItemPropertiesOutput
+}
+
+type ValuePtrValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The hostname for the IP address
+	System pulumi.StringPtrInput `pulumi:"system"`
+}
+
+func (ValuePtrValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValuePtrValueItemProperties)(nil)).Elem()
+}
+
+func (i ValuePtrValueItemPropertiesArgs) ToValuePtrValueItemPropertiesOutput() ValuePtrValueItemPropertiesOutput {
+	return i.ToValuePtrValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValuePtrValueItemPropertiesArgs) ToValuePtrValueItemPropertiesOutputWithContext(ctx context.Context) ValuePtrValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValuePtrValueItemPropertiesOutput)
+}
+
+// ValuePtrValueItemPropertiesArrayInput is an input type that accepts ValuePtrValueItemPropertiesArray and ValuePtrValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValuePtrValueItemPropertiesArrayInput` via:
+//
+//	ValuePtrValueItemPropertiesArray{ ValuePtrValueItemPropertiesArgs{...} }
+type ValuePtrValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValuePtrValueItemPropertiesArrayOutput() ValuePtrValueItemPropertiesArrayOutput
+	ToValuePtrValueItemPropertiesArrayOutputWithContext(context.Context) ValuePtrValueItemPropertiesArrayOutput
+}
+
+type ValuePtrValueItemPropertiesArray []ValuePtrValueItemPropertiesInput
+
+func (ValuePtrValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValuePtrValueItemProperties)(nil)).Elem()
+}
+
+func (i ValuePtrValueItemPropertiesArray) ToValuePtrValueItemPropertiesArrayOutput() ValuePtrValueItemPropertiesArrayOutput {
+	return i.ToValuePtrValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValuePtrValueItemPropertiesArray) ToValuePtrValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValuePtrValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValuePtrValueItemPropertiesArrayOutput)
+}
+
+type ValuePtrValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValuePtrValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValuePtrValueItemProperties)(nil)).Elem()
+}
+
+func (o ValuePtrValueItemPropertiesOutput) ToValuePtrValueItemPropertiesOutput() ValuePtrValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValuePtrValueItemPropertiesOutput) ToValuePtrValueItemPropertiesOutputWithContext(ctx context.Context) ValuePtrValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValuePtrValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValuePtrValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the IP address
+func (o ValuePtrValueItemPropertiesOutput) System() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValuePtrValueItemProperties) *string { return v.System }).(pulumi.StringPtrOutput)
+}
+
+type ValuePtrValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValuePtrValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValuePtrValueItemProperties)(nil)).Elem()
+}
+
+func (o ValuePtrValueItemPropertiesArrayOutput) ToValuePtrValueItemPropertiesArrayOutput() ValuePtrValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValuePtrValueItemPropertiesArrayOutput) ToValuePtrValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValuePtrValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValuePtrValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValuePtrValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValuePtrValueItemProperties {
+		return vs[0].([]ValuePtrValueItemProperties)[vs[1].(int)]
+	}).(ValuePtrValueItemPropertiesOutput)
+}
+
+type ValueRpPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The email of the person responsible. Replace @ with .
+	Mailbox *string `pulumi:"mailbox"`
+	// The name of a TXT record containing more information
+	Txt *string `pulumi:"txt"`
+}
+
+type ValueRpPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueRpPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueRpPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueRpPropertiesValueItemsOutput) ToValueRpPropertiesValueItemsOutput() ValueRpPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueRpPropertiesValueItemsOutput) ToValueRpPropertiesValueItemsOutputWithContext(ctx context.Context) ValueRpPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueRpPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueRpPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The email of the person responsible. Replace @ with .
+func (o ValueRpPropertiesValueItemsOutput) Mailbox() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueRpPropertiesValueItems) *string { return v.Mailbox }).(pulumi.StringPtrOutput)
+}
+
+// The name of a TXT record containing more information
+func (o ValueRpPropertiesValueItemsOutput) Txt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueRpPropertiesValueItems) *string { return v.Txt }).(pulumi.StringPtrOutput)
+}
+
+type ValueRpPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueRpPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueRpPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueRpPropertiesValueItemsArrayOutput) ToValueRpPropertiesValueItemsArrayOutput() ValueRpPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueRpPropertiesValueItemsArrayOutput) ToValueRpPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueRpPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueRpPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueRpPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueRpPropertiesValueItems {
+		return vs[0].([]ValueRpPropertiesValueItems)[vs[1].(int)]
+	}).(ValueRpPropertiesValueItemsOutput)
+}
+
+type ValueRpValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The email of the person responsible. Replace @ with .
+	Mailbox *string `pulumi:"mailbox"`
+	// The name of a TXT record containing more information
+	Txt *string `pulumi:"txt"`
+}
+
+// ValueRpValueItemPropertiesInput is an input type that accepts ValueRpValueItemPropertiesArgs and ValueRpValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueRpValueItemPropertiesInput` via:
+//
+//	ValueRpValueItemPropertiesArgs{...}
+type ValueRpValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueRpValueItemPropertiesOutput() ValueRpValueItemPropertiesOutput
+	ToValueRpValueItemPropertiesOutputWithContext(context.Context) ValueRpValueItemPropertiesOutput
+}
+
+type ValueRpValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The email of the person responsible. Replace @ with .
+	Mailbox pulumi.StringPtrInput `pulumi:"mailbox"`
+	// The name of a TXT record containing more information
+	Txt pulumi.StringPtrInput `pulumi:"txt"`
+}
+
+func (ValueRpValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueRpValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueRpValueItemPropertiesArgs) ToValueRpValueItemPropertiesOutput() ValueRpValueItemPropertiesOutput {
+	return i.ToValueRpValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueRpValueItemPropertiesArgs) ToValueRpValueItemPropertiesOutputWithContext(ctx context.Context) ValueRpValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueRpValueItemPropertiesOutput)
+}
+
+// ValueRpValueItemPropertiesArrayInput is an input type that accepts ValueRpValueItemPropertiesArray and ValueRpValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueRpValueItemPropertiesArrayInput` via:
+//
+//	ValueRpValueItemPropertiesArray{ ValueRpValueItemPropertiesArgs{...} }
+type ValueRpValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueRpValueItemPropertiesArrayOutput() ValueRpValueItemPropertiesArrayOutput
+	ToValueRpValueItemPropertiesArrayOutputWithContext(context.Context) ValueRpValueItemPropertiesArrayOutput
+}
+
+type ValueRpValueItemPropertiesArray []ValueRpValueItemPropertiesInput
+
+func (ValueRpValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueRpValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueRpValueItemPropertiesArray) ToValueRpValueItemPropertiesArrayOutput() ValueRpValueItemPropertiesArrayOutput {
+	return i.ToValueRpValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueRpValueItemPropertiesArray) ToValueRpValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueRpValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueRpValueItemPropertiesArrayOutput)
+}
+
+type ValueRpValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueRpValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueRpValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueRpValueItemPropertiesOutput) ToValueRpValueItemPropertiesOutput() ValueRpValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueRpValueItemPropertiesOutput) ToValueRpValueItemPropertiesOutputWithContext(ctx context.Context) ValueRpValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueRpValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueRpValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The email of the person responsible. Replace @ with .
+func (o ValueRpValueItemPropertiesOutput) Mailbox() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueRpValueItemProperties) *string { return v.Mailbox }).(pulumi.StringPtrOutput)
+}
+
+// The name of a TXT record containing more information
+func (o ValueRpValueItemPropertiesOutput) Txt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueRpValueItemProperties) *string { return v.Txt }).(pulumi.StringPtrOutput)
+}
+
+type ValueRpValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueRpValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueRpValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueRpValueItemPropertiesArrayOutput) ToValueRpValueItemPropertiesArrayOutput() ValueRpValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueRpValueItemPropertiesArrayOutput) ToValueRpValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueRpValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueRpValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueRpValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueRpValueItemProperties {
+		return vs[0].([]ValueRpValueItemProperties)[vs[1].(int)]
+	}).(ValueRpValueItemPropertiesOutput)
+}
+
+type ValueSpfPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The SPF record value
+	Value *string `pulumi:"value"`
+}
+
+type ValueSpfPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueSpfPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSpfPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueSpfPropertiesValueItemsOutput) ToValueSpfPropertiesValueItemsOutput() ValueSpfPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueSpfPropertiesValueItemsOutput) ToValueSpfPropertiesValueItemsOutputWithContext(ctx context.Context) ValueSpfPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueSpfPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueSpfPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The SPF record value
+func (o ValueSpfPropertiesValueItemsOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueSpfPropertiesValueItems) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueSpfPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueSpfPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSpfPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueSpfPropertiesValueItemsArrayOutput) ToValueSpfPropertiesValueItemsArrayOutput() ValueSpfPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueSpfPropertiesValueItemsArrayOutput) ToValueSpfPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueSpfPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueSpfPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueSpfPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueSpfPropertiesValueItems {
+		return vs[0].([]ValueSpfPropertiesValueItems)[vs[1].(int)]
+	}).(ValueSpfPropertiesValueItemsOutput)
+}
+
+type ValueSpfValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The SPF record value
+	Value *string `pulumi:"value"`
+}
+
+// ValueSpfValueItemPropertiesInput is an input type that accepts ValueSpfValueItemPropertiesArgs and ValueSpfValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueSpfValueItemPropertiesInput` via:
+//
+//	ValueSpfValueItemPropertiesArgs{...}
+type ValueSpfValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueSpfValueItemPropertiesOutput() ValueSpfValueItemPropertiesOutput
+	ToValueSpfValueItemPropertiesOutputWithContext(context.Context) ValueSpfValueItemPropertiesOutput
+}
+
+type ValueSpfValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The SPF record value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueSpfValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSpfValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueSpfValueItemPropertiesArgs) ToValueSpfValueItemPropertiesOutput() ValueSpfValueItemPropertiesOutput {
+	return i.ToValueSpfValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueSpfValueItemPropertiesArgs) ToValueSpfValueItemPropertiesOutputWithContext(ctx context.Context) ValueSpfValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueSpfValueItemPropertiesOutput)
+}
+
+// ValueSpfValueItemPropertiesArrayInput is an input type that accepts ValueSpfValueItemPropertiesArray and ValueSpfValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueSpfValueItemPropertiesArrayInput` via:
+//
+//	ValueSpfValueItemPropertiesArray{ ValueSpfValueItemPropertiesArgs{...} }
+type ValueSpfValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueSpfValueItemPropertiesArrayOutput() ValueSpfValueItemPropertiesArrayOutput
+	ToValueSpfValueItemPropertiesArrayOutputWithContext(context.Context) ValueSpfValueItemPropertiesArrayOutput
+}
+
+type ValueSpfValueItemPropertiesArray []ValueSpfValueItemPropertiesInput
+
+func (ValueSpfValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSpfValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueSpfValueItemPropertiesArray) ToValueSpfValueItemPropertiesArrayOutput() ValueSpfValueItemPropertiesArrayOutput {
+	return i.ToValueSpfValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueSpfValueItemPropertiesArray) ToValueSpfValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueSpfValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueSpfValueItemPropertiesArrayOutput)
+}
+
+type ValueSpfValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueSpfValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSpfValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueSpfValueItemPropertiesOutput) ToValueSpfValueItemPropertiesOutput() ValueSpfValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueSpfValueItemPropertiesOutput) ToValueSpfValueItemPropertiesOutputWithContext(ctx context.Context) ValueSpfValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueSpfValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueSpfValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The SPF record value
+func (o ValueSpfValueItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueSpfValueItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueSpfValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueSpfValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSpfValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueSpfValueItemPropertiesArrayOutput) ToValueSpfValueItemPropertiesArrayOutput() ValueSpfValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueSpfValueItemPropertiesArrayOutput) ToValueSpfValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueSpfValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueSpfValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueSpfValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueSpfValueItemProperties {
+		return vs[0].([]ValueSpfValueItemProperties)[vs[1].(int)]
+	}).(ValueSpfValueItemPropertiesOutput)
+}
+
+type ValueSrvPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the service
+	Host *string `pulumi:"host"`
+	// The port the service runs on
+	Port *int `pulumi:"port"`
+	// A priority for this record
+	Priority *int `pulumi:"priority"`
+	// A weight for this record
+	Weight *int `pulumi:"weight"`
+}
+
+type ValueSrvPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueSrvPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSrvPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueSrvPropertiesValueItemsOutput) ToValueSrvPropertiesValueItemsOutput() ValueSrvPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueSrvPropertiesValueItemsOutput) ToValueSrvPropertiesValueItemsOutputWithContext(ctx context.Context) ValueSrvPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueSrvPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueSrvPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the service
+func (o ValueSrvPropertiesValueItemsOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueSrvPropertiesValueItems) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// The port the service runs on
+func (o ValueSrvPropertiesValueItemsOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvPropertiesValueItems) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// A priority for this record
+func (o ValueSrvPropertiesValueItemsOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvPropertiesValueItems) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// A weight for this record
+func (o ValueSrvPropertiesValueItemsOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvPropertiesValueItems) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type ValueSrvPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueSrvPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSrvPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueSrvPropertiesValueItemsArrayOutput) ToValueSrvPropertiesValueItemsArrayOutput() ValueSrvPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueSrvPropertiesValueItemsArrayOutput) ToValueSrvPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueSrvPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueSrvPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueSrvPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueSrvPropertiesValueItems {
+		return vs[0].([]ValueSrvPropertiesValueItems)[vs[1].(int)]
+	}).(ValueSrvPropertiesValueItemsOutput)
+}
+
+type ValueSrvValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The hostname for the service
+	Host *string `pulumi:"host"`
+	// The port the service runs on
+	Port *int `pulumi:"port"`
+	// A priority for this record
+	Priority *int `pulumi:"priority"`
+	// A weight for this record
+	Weight *int `pulumi:"weight"`
+}
+
+// ValueSrvValueItemPropertiesInput is an input type that accepts ValueSrvValueItemPropertiesArgs and ValueSrvValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueSrvValueItemPropertiesInput` via:
+//
+//	ValueSrvValueItemPropertiesArgs{...}
+type ValueSrvValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueSrvValueItemPropertiesOutput() ValueSrvValueItemPropertiesOutput
+	ToValueSrvValueItemPropertiesOutputWithContext(context.Context) ValueSrvValueItemPropertiesOutput
+}
+
+type ValueSrvValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The hostname for the service
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// The port the service runs on
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// A priority for this record
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
+	// A weight for this record
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (ValueSrvValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSrvValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueSrvValueItemPropertiesArgs) ToValueSrvValueItemPropertiesOutput() ValueSrvValueItemPropertiesOutput {
+	return i.ToValueSrvValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueSrvValueItemPropertiesArgs) ToValueSrvValueItemPropertiesOutputWithContext(ctx context.Context) ValueSrvValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueSrvValueItemPropertiesOutput)
+}
+
+// ValueSrvValueItemPropertiesArrayInput is an input type that accepts ValueSrvValueItemPropertiesArray and ValueSrvValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueSrvValueItemPropertiesArrayInput` via:
+//
+//	ValueSrvValueItemPropertiesArray{ ValueSrvValueItemPropertiesArgs{...} }
+type ValueSrvValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueSrvValueItemPropertiesArrayOutput() ValueSrvValueItemPropertiesArrayOutput
+	ToValueSrvValueItemPropertiesArrayOutputWithContext(context.Context) ValueSrvValueItemPropertiesArrayOutput
+}
+
+type ValueSrvValueItemPropertiesArray []ValueSrvValueItemPropertiesInput
+
+func (ValueSrvValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSrvValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueSrvValueItemPropertiesArray) ToValueSrvValueItemPropertiesArrayOutput() ValueSrvValueItemPropertiesArrayOutput {
+	return i.ToValueSrvValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueSrvValueItemPropertiesArray) ToValueSrvValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueSrvValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueSrvValueItemPropertiesArrayOutput)
+}
+
+type ValueSrvValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueSrvValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueSrvValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueSrvValueItemPropertiesOutput) ToValueSrvValueItemPropertiesOutput() ValueSrvValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueSrvValueItemPropertiesOutput) ToValueSrvValueItemPropertiesOutputWithContext(ctx context.Context) ValueSrvValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueSrvValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueSrvValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname for the service
+func (o ValueSrvValueItemPropertiesOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueSrvValueItemProperties) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// The port the service runs on
+func (o ValueSrvValueItemPropertiesOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvValueItemProperties) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// A priority for this record
+func (o ValueSrvValueItemPropertiesOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvValueItemProperties) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// A weight for this record
+func (o ValueSrvValueItemPropertiesOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ValueSrvValueItemProperties) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type ValueSrvValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueSrvValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueSrvValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueSrvValueItemPropertiesArrayOutput) ToValueSrvValueItemPropertiesArrayOutput() ValueSrvValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueSrvValueItemPropertiesArrayOutput) ToValueSrvValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueSrvValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueSrvValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueSrvValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueSrvValueItemProperties {
+		return vs[0].([]ValueSrvValueItemProperties)[vs[1].(int)]
+	}).(ValueSrvValueItemPropertiesOutput)
+}
+
+type ValueTxtPropertiesValueItems struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The text record value
+	Value *string `pulumi:"value"`
+}
+
+type ValueTxtPropertiesValueItemsOutput struct{ *pulumi.OutputState }
+
+func (ValueTxtPropertiesValueItemsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueTxtPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueTxtPropertiesValueItemsOutput) ToValueTxtPropertiesValueItemsOutput() ValueTxtPropertiesValueItemsOutput {
+	return o
+}
+
+func (o ValueTxtPropertiesValueItemsOutput) ToValueTxtPropertiesValueItemsOutputWithContext(ctx context.Context) ValueTxtPropertiesValueItemsOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueTxtPropertiesValueItemsOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueTxtPropertiesValueItems) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The text record value
+func (o ValueTxtPropertiesValueItemsOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueTxtPropertiesValueItems) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueTxtPropertiesValueItemsArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueTxtPropertiesValueItemsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueTxtPropertiesValueItems)(nil)).Elem()
+}
+
+func (o ValueTxtPropertiesValueItemsArrayOutput) ToValueTxtPropertiesValueItemsArrayOutput() ValueTxtPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueTxtPropertiesValueItemsArrayOutput) ToValueTxtPropertiesValueItemsArrayOutputWithContext(ctx context.Context) ValueTxtPropertiesValueItemsArrayOutput {
+	return o
+}
+
+func (o ValueTxtPropertiesValueItemsArrayOutput) Index(i pulumi.IntInput) ValueTxtPropertiesValueItemsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueTxtPropertiesValueItems {
+		return vs[0].([]ValueTxtPropertiesValueItems)[vs[1].(int)]
+	}).(ValueTxtPropertiesValueItemsOutput)
+}
+
+type ValueTxtValueItemProperties struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled *bool `pulumi:"enabled"`
+	// The text record value
+	Value *string `pulumi:"value"`
+}
+
+// ValueTxtValueItemPropertiesInput is an input type that accepts ValueTxtValueItemPropertiesArgs and ValueTxtValueItemPropertiesOutput values.
+// You can construct a concrete instance of `ValueTxtValueItemPropertiesInput` via:
+//
+//	ValueTxtValueItemPropertiesArgs{...}
+type ValueTxtValueItemPropertiesInput interface {
+	pulumi.Input
+
+	ToValueTxtValueItemPropertiesOutput() ValueTxtValueItemPropertiesOutput
+	ToValueTxtValueItemPropertiesOutputWithContext(context.Context) ValueTxtValueItemPropertiesOutput
+}
+
+type ValueTxtValueItemPropertiesArgs struct {
+	// Whether the entry is enabled or not. Disabled entries will not be included in a response
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// The text record value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ValueTxtValueItemPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueTxtValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueTxtValueItemPropertiesArgs) ToValueTxtValueItemPropertiesOutput() ValueTxtValueItemPropertiesOutput {
+	return i.ToValueTxtValueItemPropertiesOutputWithContext(context.Background())
+}
+
+func (i ValueTxtValueItemPropertiesArgs) ToValueTxtValueItemPropertiesOutputWithContext(ctx context.Context) ValueTxtValueItemPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueTxtValueItemPropertiesOutput)
+}
+
+// ValueTxtValueItemPropertiesArrayInput is an input type that accepts ValueTxtValueItemPropertiesArray and ValueTxtValueItemPropertiesArrayOutput values.
+// You can construct a concrete instance of `ValueTxtValueItemPropertiesArrayInput` via:
+//
+//	ValueTxtValueItemPropertiesArray{ ValueTxtValueItemPropertiesArgs{...} }
+type ValueTxtValueItemPropertiesArrayInput interface {
+	pulumi.Input
+
+	ToValueTxtValueItemPropertiesArrayOutput() ValueTxtValueItemPropertiesArrayOutput
+	ToValueTxtValueItemPropertiesArrayOutputWithContext(context.Context) ValueTxtValueItemPropertiesArrayOutput
+}
+
+type ValueTxtValueItemPropertiesArray []ValueTxtValueItemPropertiesInput
+
+func (ValueTxtValueItemPropertiesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueTxtValueItemProperties)(nil)).Elem()
+}
+
+func (i ValueTxtValueItemPropertiesArray) ToValueTxtValueItemPropertiesArrayOutput() ValueTxtValueItemPropertiesArrayOutput {
+	return i.ToValueTxtValueItemPropertiesArrayOutputWithContext(context.Background())
+}
+
+func (i ValueTxtValueItemPropertiesArray) ToValueTxtValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueTxtValueItemPropertiesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ValueTxtValueItemPropertiesArrayOutput)
+}
+
+type ValueTxtValueItemPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ValueTxtValueItemPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ValueTxtValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueTxtValueItemPropertiesOutput) ToValueTxtValueItemPropertiesOutput() ValueTxtValueItemPropertiesOutput {
+	return o
+}
+
+func (o ValueTxtValueItemPropertiesOutput) ToValueTxtValueItemPropertiesOutputWithContext(ctx context.Context) ValueTxtValueItemPropertiesOutput {
+	return o
+}
+
+// Whether the entry is enabled or not. Disabled entries will not be included in a response
+func (o ValueTxtValueItemPropertiesOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ValueTxtValueItemProperties) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// The text record value
+func (o ValueTxtValueItemPropertiesOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ValueTxtValueItemProperties) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ValueTxtValueItemPropertiesArrayOutput struct{ *pulumi.OutputState }
+
+func (ValueTxtValueItemPropertiesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ValueTxtValueItemProperties)(nil)).Elem()
+}
+
+func (o ValueTxtValueItemPropertiesArrayOutput) ToValueTxtValueItemPropertiesArrayOutput() ValueTxtValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueTxtValueItemPropertiesArrayOutput) ToValueTxtValueItemPropertiesArrayOutputWithContext(ctx context.Context) ValueTxtValueItemPropertiesArrayOutput {
+	return o
+}
+
+func (o ValueTxtValueItemPropertiesArrayOutput) Index(i pulumi.IntInput) ValueTxtValueItemPropertiesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ValueTxtValueItemProperties {
+		return vs[0].([]ValueTxtValueItemProperties)[vs[1].(int)]
+	}).(ValueTxtValueItemPropertiesOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValueItemPropertiesInput)(nil)).Elem(), ValueARequestValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValueItemPropertiesArrayInput)(nil)).Elem(), ValueARequestValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesInput)(nil)).Elem(), ValueARequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesPtrInput)(nil)).Elem(), ValueARequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesValuesItemPropertiesInput)(nil)).Elem(), ValueARequestValuePropertiesValuesItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueARequestValuePropertiesValuesItemPropertiesArrayInput)(nil)).Elem(), ValueARequestValuePropertiesValuesItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValueItemPropertiesInput)(nil)).Elem(), ValueAaaaRequestValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValueItemPropertiesArrayInput)(nil)).Elem(), ValueAaaaRequestValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesPtrInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesValuesItemPropertiesInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesValuesItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayInput)(nil)).Elem(), ValueAaaaRequestValuePropertiesValuesItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValueItemPropertiesInput)(nil)).Elem(), ValueAnameRequestValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValueItemPropertiesArrayInput)(nil)).Elem(), ValueAnameRequestValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesInput)(nil)).Elem(), ValueAnameRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesPtrInput)(nil)).Elem(), ValueAnameRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesValuesItemPropertiesInput)(nil)).Elem(), ValueAnameRequestValuePropertiesValuesItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueAnameRequestValuePropertiesValuesItemPropertiesArrayInput)(nil)).Elem(), ValueAnameRequestValuePropertiesValuesItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCaaValueItemPropertiesInput)(nil)).Elem(), ValueCaaValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCaaValueItemPropertiesArrayInput)(nil)).Elem(), ValueCaaValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCertValueItemPropertiesInput)(nil)).Elem(), ValueCertValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCertValueItemPropertiesArrayInput)(nil)).Elem(), ValueCertValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValueItemPropertiesInput)(nil)).Elem(), ValueCnameRequestValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValueItemPropertiesArrayInput)(nil)).Elem(), ValueCnameRequestValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesInput)(nil)).Elem(), ValueCnameRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesPtrInput)(nil)).Elem(), ValueCnameRequestValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesValuesItemPropertiesInput)(nil)).Elem(), ValueCnameRequestValuePropertiesValuesItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueCnameRequestValuePropertiesValuesItemPropertiesArrayInput)(nil)).Elem(), ValueCnameRequestValuePropertiesValuesItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueHinfoValueItemPropertiesInput)(nil)).Elem(), ValueHinfoValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueHinfoValueItemPropertiesArrayInput)(nil)).Elem(), ValueHinfoValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueHttpValuePropertiesInput)(nil)).Elem(), ValueHttpValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueHttpValuePropertiesPtrInput)(nil)).Elem(), ValueHttpValuePropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueMxValueItemPropertiesInput)(nil)).Elem(), ValueMxValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueMxValueItemPropertiesArrayInput)(nil)).Elem(), ValueMxValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueNaptrValueItemPropertiesInput)(nil)).Elem(), ValueNaptrValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueNaptrValueItemPropertiesArrayInput)(nil)).Elem(), ValueNaptrValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueNsValueItemPropertiesInput)(nil)).Elem(), ValueNsValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueNsValueItemPropertiesArrayInput)(nil)).Elem(), ValueNsValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValuePtrValueItemPropertiesInput)(nil)).Elem(), ValuePtrValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValuePtrValueItemPropertiesArrayInput)(nil)).Elem(), ValuePtrValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueRpValueItemPropertiesInput)(nil)).Elem(), ValueRpValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueRpValueItemPropertiesArrayInput)(nil)).Elem(), ValueRpValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueSpfValueItemPropertiesInput)(nil)).Elem(), ValueSpfValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueSpfValueItemPropertiesArrayInput)(nil)).Elem(), ValueSpfValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueSrvValueItemPropertiesInput)(nil)).Elem(), ValueSrvValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueSrvValueItemPropertiesArrayInput)(nil)).Elem(), ValueSrvValueItemPropertiesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueTxtValueItemPropertiesInput)(nil)).Elem(), ValueTxtValueItemPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ValueTxtValueItemPropertiesArrayInput)(nil)).Elem(), ValueTxtValueItemPropertiesArray{})
 	pulumi.RegisterOutputType(DataPropertiesOutput{})
 	pulumi.RegisterOutputType(DataPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(DataPropertiesLinksPropertiesOutput{})
 	pulumi.RegisterOutputType(DataPropertiesLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetATypeOutput{})
+	pulumi.RegisterOutputType(GetAAAAOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAAAAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(GetANAMEOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput{})
+	pulumi.RegisterOutputType(GetANAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesRoundRobinFailoverItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesStandardItemPropertiesOutput{})
+	pulumi.RegisterOutputType(GetAPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(GetCAAOutput{})
+	pulumi.RegisterOutputType(GetCAAPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetCAAPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetCERTOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetCERTPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetCNAMEOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesFailoverPropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesOutput{})
+	pulumi.RegisterOutputType(GetCNAMEPropertiesLastValuesPropertiesStandardItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(GetHINFOOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetHINFOPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetHttpTypeOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetHttpPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetMXOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetMXPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetNAPTROutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetNAPTRPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetNSOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetNSPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetPTROutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetPTRPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetRPOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetRPPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetSPFOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetSPFPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetSRVOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetSRVPropertiesLastValuesPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(GetTXTOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesLastValuesPropertiesOutput{})
+	pulumi.RegisterOutputType(GetTXTPropertiesLastValuesPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(GetTemplatePropertiesOutput{})
-	pulumi.RegisterOutputType(GetTemplateRecordTypeOutput{})
+	pulumi.RegisterOutputType(ItemsOutput{})
+	pulumi.RegisterOutputType(ItemsArrayOutput{})
 	pulumi.RegisterOutputType(ListMetadataOutput{})
 	pulumi.RegisterOutputType(ListMetadataPtrOutput{})
 	pulumi.RegisterOutputType(ListMetadataLinksPropertiesOutput{})
@@ -1143,15 +11276,127 @@ func init() {
 	pulumi.RegisterOutputType(ListTemplateRecordsPropertiesDataItemOutput{})
 	pulumi.RegisterOutputType(ListTemplateRecordsPropertiesDataItemArrayOutput{})
 	pulumi.RegisterOutputType(ListTemplatesPropertiesOutput{})
+	pulumi.RegisterOutputType(PropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(PropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(SimpleContactlistOutput{})
+	pulumi.RegisterOutputType(SimpleContactlistPtrOutput{})
+	pulumi.RegisterOutputType(SimpleContactlistLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(SimpleContactlistLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(SimpleDomainOutput{})
+	pulumi.RegisterOutputType(SimpleDomainPtrOutput{})
+	pulumi.RegisterOutputType(SimpleDomainLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(SimpleDomainLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(SimpleGeoproximityOutput{})
+	pulumi.RegisterOutputType(SimpleGeoproximityPtrOutput{})
+	pulumi.RegisterOutputType(SimpleGeoproximityLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(SimpleGeoproximityLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(SimpleIpfilterOutput{})
+	pulumi.RegisterOutputType(SimpleIpfilterPtrOutput{})
+	pulumi.RegisterOutputType(SimpleIpfilterLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(SimpleIpfilterLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(SimplePoolOutput{})
+	pulumi.RegisterOutputType(SimplePoolArrayOutput{})
+	pulumi.RegisterOutputType(SimplePoolLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(SimplePoolLinksPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(SimpleTemplateOutput{})
 	pulumi.RegisterOutputType(SimpleTemplatePtrOutput{})
 	pulumi.RegisterOutputType(SimpleTemplateLinksPropertiesOutput{})
 	pulumi.RegisterOutputType(SimpleTemplateLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(TagOutput{})
+	pulumi.RegisterOutputType(TagArrayOutput{})
+	pulumi.RegisterOutputType(TagLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(TagLinksPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(TemplateTypeOutput{})
 	pulumi.RegisterOutputType(TemplateTypePtrOutput{})
 	pulumi.RegisterOutputType(TemplateTypeArrayOutput{})
 	pulumi.RegisterOutputType(TemplateLinksPropertiesOutput{})
 	pulumi.RegisterOutputType(TemplateLinksPropertiesPtrOutput{})
-	pulumi.RegisterOutputType(TemplaterecordPropertiesLinksPropertiesOutput{})
-	pulumi.RegisterOutputType(TemplaterecordPropertiesLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(TemplaterecordLinksPropertiesOutput{})
+	pulumi.RegisterOutputType(TemplaterecordLinksPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueOutput{})
+	pulumi.RegisterOutputType(ValuePtrOutput{})
+	pulumi.RegisterOutputType(ValueARequestValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueARequestValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesValuesItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueARequestValuePropertiesValuesItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAValueOutput{})
+	pulumi.RegisterOutputType(ValueAValuePtrOutput{})
+	pulumi.RegisterOutputType(ValueAValuePropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(ValueAValuePropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesValuesItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAaaaRequestValuePropertiesValuesItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValueOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValuePtrOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValuePropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(ValueAaaaValuePropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesValuesItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAnameRequestValuePropertiesValuesItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAnameValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAnameValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(ValueAnameValuePropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(ValueCaaValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueCaaValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueCertValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueCertValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesValuesItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueCnameRequestValuePropertiesValuesItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueCnameValueOutput{})
+	pulumi.RegisterOutputType(ValueCnameValuePtrOutput{})
+	pulumi.RegisterOutputType(ValueCnameValuePropertiesValuesItemOutput{})
+	pulumi.RegisterOutputType(ValueCnameValuePropertiesValuesItemArrayOutput{})
+	pulumi.RegisterOutputType(ValueHinfoValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueHinfoValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueHttpValuePropertiesOutput{})
+	pulumi.RegisterOutputType(ValueHttpValuePropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueMxPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueMxPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueMxValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueMxValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueNaptrPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueNaptrPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueNaptrValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueNaptrValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueNsPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueNsPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueNsValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueNsValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValuePtrPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValuePtrPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValuePtrValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValuePtrValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueRpPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueRpPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueRpValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueRpValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueSpfPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueSpfPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueSpfValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueSpfValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueSrvPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueSrvPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueSrvValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueSrvValueItemPropertiesArrayOutput{})
+	pulumi.RegisterOutputType(ValueTxtPropertiesValueItemsOutput{})
+	pulumi.RegisterOutputType(ValueTxtPropertiesValueItemsArrayOutput{})
+	pulumi.RegisterOutputType(ValueTxtValueItemPropertiesOutput{})
+	pulumi.RegisterOutputType(ValueTxtValueItemPropertiesArrayOutput{})
 }
