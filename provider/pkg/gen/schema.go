@@ -39,11 +39,21 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 		Config: pschema.ConfigSpec{
 			Variables: map[string]pschema.PropertySpec{
 				"apiKey": {
-					Description: "The API key",
+					Description: "The Constellix API key",
 					TypeSpec:    pschema.TypeSpec{Type: "string"},
 					Language: map[string]pschema.RawMessage{
 						"csharp": rawMessage(map[string]interface{}{
 							"name": "ApiKey",
+						}),
+					},
+					Secret: true,
+				},
+				"secretKey": {
+					Description: "The Constellix secret key",
+					TypeSpec:    pschema.TypeSpec{Type: "string"},
+					Language: map[string]pschema.RawMessage{
+						"csharp": rawMessage(map[string]interface{}{
+							"name": "SecretKey",
 						}),
 					},
 					Secret: true,
@@ -78,7 +88,7 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 							"CONSTELLIX_SECRETKEY",
 						},
 					},
-					Description: "The Constellix Secret key.",
+					Description: "The Constellix secret key.",
 					TypeSpec:    pschema.TypeSpec{Type: "string"},
 					Language: map[string]pschema.RawMessage{
 						"csharp": rawMessage(map[string]interface{}{
